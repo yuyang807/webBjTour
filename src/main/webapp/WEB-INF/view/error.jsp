@@ -1,0 +1,21 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="/WEB-INF/view/include/taglib.jsp"%>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>温馨提示</title>
+    <script src="${ctxStatic}/juhema/flexible.js"></script>
+    <link href="${ctxStatic}/juhema/self.css?v=20170316" rel="stylesheet">
+</head>
+<body>
+<div class="null-page">
+    <div class="words">
+        <div class="cont">
+            <h3>温馨提示</h3>
+            <p>哎哟 页面没找到</p>
+        </div>
+    </div>
+    <div class="support"></div>
+</div>
+</body>
+</html>

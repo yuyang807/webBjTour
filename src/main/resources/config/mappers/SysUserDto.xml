@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.SysUserDto">
+
+    <sql id="Base_Column_List" >
+         id, company_id, office_id, login_name, password, no, name, email, phone, mobile, user_type, photo, login_ip, login_date, login_flag, create_by, create_date, update_by, update_date, remarks, del_flag
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.SysUserDto">
+       INSERT into sys_user
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          id,
+        </if>
+        <if test="companyId != null ">
+          company_id,
+        </if>
+        <if test="officeId != null ">
+          office_id,
+        </if>
+        <if test="loginName != null ">
+          login_name,
+        </if>
+        <if test="password != null ">
+          password,
+        </if>
+        <if test="no != null ">
+          no,
+        </if>
+        <if test="name != null ">
+          name,
+        </if>
+        <if test="email != null ">
+          email,
+        </if>
+        <if test="phone != null ">
+          phone,
+        </if>
+        <if test="mobile != null ">
+          mobile,
+        </if>
+        <if test="userType != null ">
+          user_type,
+        </if>
+        <if test="photo != null ">
+          photo,
+        </if>
+        <if test="loginIp != null ">
+          login_ip,
+        </if>
+        <if test="loginDate != null ">
+          login_date,
+        </if>
+        <if test="loginFlag != null ">
+          login_flag,
+        </if>
+        <if test="createBy != null ">
+          create_by,
+        </if>
+        <if test="createDate != null ">
+          create_date,
+        </if>
+        <if test="updateBy != null ">
+          update_by,
+        </if>
+        <if test="updateDate != null ">
+          update_date,
+        </if>
+        <if test="remarks != null ">
+          remarks,
+        </if>
+        <if test="delFlag != null ">
+          del_flag,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          #{id},
+        </if>
+        <if test="companyId != null ">
+          #{companyId},
+        </if>
+        <if test="officeId != null ">
+          #{officeId},
+        </if>
+        <if test="loginName != null ">
+          #{loginName},
+        </if>
+        <if test="password != null ">
+          #{password},
+        </if>
+        <if test="no != null ">
+          #{no},
+        </if>
+        <if test="name != null ">
+          #{name},
+        </if>
+        <if test="email != null ">
+          #{email},
+        </if>
+        <if test="phone != null ">
+          #{phone},
+        </if>
+        <if test="mobile != null ">
+          #{mobile},
+        </if>
+        <if test="userType != null ">
+          #{userType},
+        </if>
+        <if test="photo != null ">
+          #{photo},
+        </if>
+        <if test="loginIp != null ">
+          #{loginIp},
+        </if>
+        <if test="loginDate != null ">
+          #{loginDate},
+        </if>
+        <if test="loginFlag != null ">
+          #{loginFlag},
+        </if>
+        <if test="createBy != null ">
+          #{createBy},
+        </if>
+        <if test="createDate != null ">
+          #{createDate},
+        </if>
+        <if test="updateBy != null ">
+          #{updateBy},
+        </if>
+        <if test="updateDate != null ">
+          #{updateDate},
+        </if>
+        <if test="remarks != null ">
+          #{remarks},
+        </if>
+        <if test="delFlag != null ">
+          #{delFlag},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.SysUserDto">
+       DELETE FROM sys_user WHERE id = #{id};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.SysUserDto">
+       DELETE FROM sys_user WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="companyId != null ">
+          company_id = #{companyId} AND
+        </if>
+        <if test="officeId != null ">
+          office_id = #{officeId} AND
+        </if>
+        <if test="loginName != null ">
+          login_name = #{loginName} AND
+        </if>
+        <if test="password != null ">
+          password = #{password} AND
+        </if>
+        <if test="no != null ">
+          no = #{no} AND
+        </if>
+        <if test="name != null ">
+          name = #{name} AND
+        </if>
+        <if test="email != null ">
+          email = #{email} AND
+        </if>
+        <if test="phone != null ">
+          phone = #{phone} AND
+        </if>
+        <if test="mobile != null ">
+          mobile = #{mobile} AND
+        </if>
+        <if test="userType != null ">
+          user_type = #{userType} AND
+        </if>
+        <if test="photo != null ">
+          photo = #{photo} AND
+        </if>
+        <if test="loginIp != null ">
+          login_ip = #{loginIp} AND
+        </if>
+        <if test="loginDate != null ">
+          login_date = #{loginDate} AND
+        </if>
+        <if test="startLoginDate != null ">
+          login_date >= #{startLoginDate} AND
+        </if>
+        <if test="endLoginDate != null ">
+          login_date <![CDATA[<=]]> #{endLoginDate} AND
+        </if>
+        <if test="loginFlag != null ">
+          login_flag = #{loginFlag} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} AND
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.SysUserDto">
+       UPDATE sys_user
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="companyId != null ">
+          company_id = #{companyId} ,
+        </if>
+        <if test="officeId != null ">
+          office_id = #{officeId} ,
+        </if>
+        <if test="loginName != null ">
+          login_name = #{loginName} ,
+        </if>
+        <if test="password != null ">
+          password = #{password} ,
+        </if>
+        <if test="no != null ">
+          no = #{no} ,
+        </if>
+        <if test="name != null ">
+          name = #{name} ,
+        </if>
+        <if test="email != null ">
+          email = #{email} ,
+        </if>
+        <if test="phone != null ">
+          phone = #{phone} ,
+        </if>
+        <if test="mobile != null ">
+          mobile = #{mobile} ,
+        </if>
+        <if test="userType != null ">
+          user_type = #{userType} ,
+        </if>
+        <if test="photo != null ">
+          photo = #{photo} ,
+        </if>
+        <if test="loginIp != null ">
+          login_ip = #{loginIp} ,
+        </if>
+        <if test="loginDate != null ">
+          login_date = #{loginDate} ,
+        </if>
+        <if test="loginFlag != null ">
+          login_flag = #{loginFlag} ,
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} ,
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} ,
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} ,
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} ,
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE id = #{id}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.SysUserDto" resultType="SysUserDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM sys_user
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="companyId != null ">
+          company_id = #{companyId} AND
+        </if>
+        <if test="officeId != null ">
+          office_id = #{officeId} AND
+        </if>
+        <if test="loginName != null ">
+          login_name = #{loginName} AND
+        </if>
+        <if test="password != null ">
+          password = #{password} AND
+        </if>
+        <if test="no != null ">
+          no = #{no} AND
+        </if>
+        <if test="name != null ">
+          name = #{name} AND
+        </if>
+        <if test="email != null ">
+          email = #{email} AND
+        </if>
+        <if test="phone != null ">
+          phone = #{phone} AND
+        </if>
+        <if test="mobile != null ">
+          mobile = #{mobile} AND
+        </if>
+        <if test="userType != null ">
+          user_type = #{userType} AND
+        </if>
+        <if test="photo != null ">
+          photo = #{photo} AND
+        </if>
+        <if test="loginIp != null ">
+          login_ip = #{loginIp} AND
+        </if>
+        <if test="loginDate != null ">
+          login_date = #{loginDate} AND
+        </if>
+        <if test="startLoginDate != null ">
+          login_date >= #{startLoginDate} AND
+        </if>
+        <if test="endLoginDate != null ">
+          login_date <![CDATA[<=]]> #{endLoginDate} AND
+        </if>
+        <if test="loginFlag != null ">
+          login_flag = #{loginFlag} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} AND
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.SysUserDto" resultType="java.lang.Long">
+       SELECT count(*) FROM sys_user
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="companyId != null ">
+          company_id = #{companyId} AND
+        </if>
+        <if test="officeId != null ">
+          office_id = #{officeId} AND
+        </if>
+        <if test="loginName != null ">
+          login_name = #{loginName} AND
+        </if>
+        <if test="password != null ">
+          password = #{password} AND
+        </if>
+        <if test="no != null ">
+          no = #{no} AND
+        </if>
+        <if test="name != null ">
+          name = #{name} AND
+        </if>
+        <if test="email != null ">
+          email = #{email} AND
+        </if>
+        <if test="phone != null ">
+          phone = #{phone} AND
+        </if>
+        <if test="mobile != null ">
+          mobile = #{mobile} AND
+        </if>
+        <if test="userType != null ">
+          user_type = #{userType} AND
+        </if>
+        <if test="photo != null ">
+          photo = #{photo} AND
+        </if>
+        <if test="loginIp != null ">
+          login_ip = #{loginIp} AND
+        </if>
+        <if test="loginDate != null ">
+          login_date = #{loginDate} AND
+        </if>
+        <if test="startLoginDate != null ">
+          login_date >= #{startLoginDate} AND
+        </if>
+        <if test="endLoginDate != null ">
+          login_date <![CDATA[<=]]> #{endLoginDate} AND
+        </if>
+        <if test="loginFlag != null ">
+          login_flag = #{loginFlag} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} AND
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

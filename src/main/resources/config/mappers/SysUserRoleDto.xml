@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.SysUserRoleDto">
+
+    <sql id="Base_Column_List" >
+         user_id, role_id
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.SysUserRoleDto">
+       INSERT into sys_user_role
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="userId != null ">
+          user_id,
+        </if>
+        <if test="roleId != null ">
+          role_id,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="userId != null ">
+          #{userId},
+        </if>
+        <if test="roleId != null ">
+          #{roleId},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.SysUserRoleDto">
+       DELETE FROM sys_user_role WHERE role_id = #{roleId};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.SysUserRoleDto">
+       DELETE FROM sys_user_role WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="userId != null ">
+          user_id = #{userId} AND
+        </if>
+        <if test="roleId != null ">
+          role_id = #{roleId} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.SysUserRoleDto">
+       UPDATE sys_user_role
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="userId != null ">
+          user_id = #{userId} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE role_id = #{roleId}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.SysUserRoleDto" resultType="SysUserRoleDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM sys_user_role
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="userId != null ">
+          user_id = #{userId} AND
+        </if>
+        <if test="roleId != null ">
+          role_id = #{roleId} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.SysUserRoleDto" resultType="java.lang.Long">
+       SELECT count(*) FROM sys_user_role
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="userId != null ">
+          user_id = #{userId} AND
+        </if>
+        <if test="roleId != null ">
+          role_id = #{roleId} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

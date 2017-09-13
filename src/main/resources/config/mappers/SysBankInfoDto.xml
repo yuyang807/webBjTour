@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.SysBankInfoDto">
+
+    <sql id="Base_Column_List" >
+         id, bank_name, bank_code, branch_name, status, province_code, province_name, city_code, city_name
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.SysBankInfoDto">
+       INSERT into sys_bank_info
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          id,
+        </if>
+        <if test="bankName != null ">
+          bank_name,
+        </if>
+        <if test="bankCode != null ">
+          bank_code,
+        </if>
+        <if test="branchName != null ">
+          branch_name,
+        </if>
+        <if test="status != null ">
+          status,
+        </if>
+        <if test="provinceCode != null ">
+          province_code,
+        </if>
+        <if test="provinceName != null ">
+          province_name,
+        </if>
+        <if test="cityCode != null ">
+          city_code,
+        </if>
+        <if test="cityName != null ">
+          city_name,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          #{id},
+        </if>
+        <if test="bankName != null ">
+          #{bankName},
+        </if>
+        <if test="bankCode != null ">
+          #{bankCode},
+        </if>
+        <if test="branchName != null ">
+          #{branchName},
+        </if>
+        <if test="status != null ">
+          #{status},
+        </if>
+        <if test="provinceCode != null ">
+          #{provinceCode},
+        </if>
+        <if test="provinceName != null ">
+          #{provinceName},
+        </if>
+        <if test="cityCode != null ">
+          #{cityCode},
+        </if>
+        <if test="cityName != null ">
+          #{cityName},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.SysBankInfoDto">
+       DELETE FROM sys_bank_info WHERE id = #{id};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.SysBankInfoDto">
+       DELETE FROM sys_bank_info WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="bankName != null ">
+          bank_name = #{bankName} AND
+        </if>
+        <if test="bankCode != null ">
+          bank_code = #{bankCode} AND
+        </if>
+        <if test="branchName != null ">
+          branch_name = #{branchName} AND
+        </if>
+        <if test="status != null ">
+          status = #{status} AND
+        </if>
+        <if test="provinceCode != null ">
+          province_code = #{provinceCode} AND
+        </if>
+        <if test="provinceName != null ">
+          province_name = #{provinceName} AND
+        </if>
+        <if test="cityCode != null ">
+          city_code = #{cityCode} AND
+        </if>
+        <if test="cityName != null ">
+          city_name = #{cityName} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.SysBankInfoDto">
+       UPDATE sys_bank_info
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="bankName != null ">
+          bank_name = #{bankName} ,
+        </if>
+        <if test="bankCode != null ">
+          bank_code = #{bankCode} ,
+        </if>
+        <if test="branchName != null ">
+          branch_name = #{branchName} ,
+        </if>
+        <if test="status != null ">
+          status = #{status} ,
+        </if>
+        <if test="provinceCode != null ">
+          province_code = #{provinceCode} ,
+        </if>
+        <if test="provinceName != null ">
+          province_name = #{provinceName} ,
+        </if>
+        <if test="cityCode != null ">
+          city_code = #{cityCode} ,
+        </if>
+        <if test="cityName != null ">
+          city_name = #{cityName} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE id = #{id}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.SysBankInfoDto" resultType="SysBankInfoDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM sys_bank_info
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="bankName != null ">
+          bank_name = #{bankName} AND
+        </if>
+        <if test="bankCode != null ">
+          bank_code = #{bankCode} AND
+        </if>
+        <if test="branchName != null ">
+          branch_name = #{branchName} AND
+        </if>
+        <if test="status != null ">
+          status = #{status} AND
+        </if>
+        <if test="provinceCode != null ">
+          province_code = #{provinceCode} AND
+        </if>
+        <if test="provinceName != null ">
+          province_name = #{provinceName} AND
+        </if>
+        <if test="cityCode != null ">
+          city_code = #{cityCode} AND
+        </if>
+        <if test="cityName != null ">
+          city_name = #{cityName} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.SysBankInfoDto" resultType="java.lang.Long">
+       SELECT count(*) FROM sys_bank_info
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="bankName != null ">
+          bank_name = #{bankName} AND
+        </if>
+        <if test="bankCode != null ">
+          bank_code = #{bankCode} AND
+        </if>
+        <if test="branchName != null ">
+          branch_name = #{branchName} AND
+        </if>
+        <if test="status != null ">
+          status = #{status} AND
+        </if>
+        <if test="provinceCode != null ">
+          province_code = #{provinceCode} AND
+        </if>
+        <if test="provinceName != null ">
+          province_name = #{provinceName} AND
+        </if>
+        <if test="cityCode != null ">
+          city_code = #{cityCode} AND
+        </if>
+        <if test="cityName != null ">
+          city_name = #{cityName} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

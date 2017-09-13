@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.SysLogDto">
+
+    <sql id="Base_Column_List" >
+         id, type, title, create_by, create_date, remote_addr, user_agent, request_uri, method, params, exception
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.SysLogDto">
+       INSERT into sys_log
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          id,
+        </if>
+        <if test="type != null ">
+          type,
+        </if>
+        <if test="title != null ">
+          title,
+        </if>
+        <if test="createBy != null ">
+          create_by,
+        </if>
+        <if test="createDate != null ">
+          create_date,
+        </if>
+        <if test="remoteAddr != null ">
+          remote_addr,
+        </if>
+        <if test="userAgent != null ">
+          user_agent,
+        </if>
+        <if test="requestUri != null ">
+          request_uri,
+        </if>
+        <if test="method != null ">
+          method,
+        </if>
+        <if test="params != null ">
+          params,
+        </if>
+        <if test="exception != null ">
+          exception,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          #{id},
+        </if>
+        <if test="type != null ">
+          #{type},
+        </if>
+        <if test="title != null ">
+          #{title},
+        </if>
+        <if test="createBy != null ">
+          #{createBy},
+        </if>
+        <if test="createDate != null ">
+          #{createDate},
+        </if>
+        <if test="remoteAddr != null ">
+          #{remoteAddr},
+        </if>
+        <if test="userAgent != null ">
+          #{userAgent},
+        </if>
+        <if test="requestUri != null ">
+          #{requestUri},
+        </if>
+        <if test="method != null ">
+          #{method},
+        </if>
+        <if test="params != null ">
+          #{params},
+        </if>
+        <if test="exception != null ">
+          #{exception},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.SysLogDto">
+       DELETE FROM sys_log WHERE id = #{id};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.SysLogDto">
+       DELETE FROM sys_log WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="type != null ">
+          type = #{type} AND
+        </if>
+        <if test="title != null ">
+          title = #{title} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="remoteAddr != null ">
+          remote_addr = #{remoteAddr} AND
+        </if>
+        <if test="userAgent != null ">
+          user_agent = #{userAgent} AND
+        </if>
+        <if test="requestUri != null ">
+          request_uri = #{requestUri} AND
+        </if>
+        <if test="method != null ">
+          method = #{method} AND
+        </if>
+        <if test="params != null ">
+          params = #{params} AND
+        </if>
+        <if test="exception != null ">
+          exception = #{exception} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.SysLogDto">
+       UPDATE sys_log
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="type != null ">
+          type = #{type} ,
+        </if>
+        <if test="title != null ">
+          title = #{title} ,
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} ,
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} ,
+        </if>
+        <if test="remoteAddr != null ">
+          remote_addr = #{remoteAddr} ,
+        </if>
+        <if test="userAgent != null ">
+          user_agent = #{userAgent} ,
+        </if>
+        <if test="requestUri != null ">
+          request_uri = #{requestUri} ,
+        </if>
+        <if test="method != null ">
+          method = #{method} ,
+        </if>
+        <if test="params != null ">
+          params = #{params} ,
+        </if>
+        <if test="exception != null ">
+          exception = #{exception} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE id = #{id}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.SysLogDto" resultType="SysLogDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM sys_log
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="type != null ">
+          type = #{type} AND
+        </if>
+        <if test="title != null ">
+          title = #{title} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="remoteAddr != null ">
+          remote_addr = #{remoteAddr} AND
+        </if>
+        <if test="userAgent != null ">
+          user_agent = #{userAgent} AND
+        </if>
+        <if test="requestUri != null ">
+          request_uri = #{requestUri} AND
+        </if>
+        <if test="method != null ">
+          method = #{method} AND
+        </if>
+        <if test="params != null ">
+          params = #{params} AND
+        </if>
+        <if test="exception != null ">
+          exception = #{exception} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.SysLogDto" resultType="java.lang.Long">
+       SELECT count(*) FROM sys_log
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="type != null ">
+          type = #{type} AND
+        </if>
+        <if test="title != null ">
+          title = #{title} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="remoteAddr != null ">
+          remote_addr = #{remoteAddr} AND
+        </if>
+        <if test="userAgent != null ">
+          user_agent = #{userAgent} AND
+        </if>
+        <if test="requestUri != null ">
+          request_uri = #{requestUri} AND
+        </if>
+        <if test="method != null ">
+          method = #{method} AND
+        </if>
+        <if test="params != null ">
+          params = #{params} AND
+        </if>
+        <if test="exception != null ">
+          exception = #{exception} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

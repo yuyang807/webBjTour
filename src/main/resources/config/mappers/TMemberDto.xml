@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.TMemberDto">
+
+    <sql id="Base_Column_List" >
+         id, email_address, f_name, l_name, passport_num, ip1, ip2, ip3, ip4
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.TMemberDto">
+       INSERT into t_member
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          id,
+        </if>
+        <if test="emailAddress != null ">
+          email_address,
+        </if>
+        <if test="fName != null ">
+          f_name,
+        </if>
+        <if test="lName != null ">
+          l_name,
+        </if>
+        <if test="passportNum != null ">
+          passport_num,
+        </if>
+        <if test="ip1 != null ">
+          ip1,
+        </if>
+        <if test="ip2 != null ">
+          ip2,
+        </if>
+        <if test="ip3 != null ">
+          ip3,
+        </if>
+        <if test="ip4 != null ">
+          ip4,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          #{id},
+        </if>
+        <if test="emailAddress != null ">
+          #{emailAddress},
+        </if>
+        <if test="fName != null ">
+          #{fName},
+        </if>
+        <if test="lName != null ">
+          #{lName},
+        </if>
+        <if test="passportNum != null ">
+          #{passportNum},
+        </if>
+        <if test="ip1 != null ">
+          #{ip1},
+        </if>
+        <if test="ip2 != null ">
+          #{ip2},
+        </if>
+        <if test="ip3 != null ">
+          #{ip3},
+        </if>
+        <if test="ip4 != null ">
+          #{ip4},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.TMemberDto">
+       DELETE FROM t_member WHERE id = #{id};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.TMemberDto">
+       DELETE FROM t_member WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="emailAddress != null ">
+          email_address = #{emailAddress} AND
+        </if>
+        <if test="fName != null ">
+          f_name = #{fName} AND
+        </if>
+        <if test="lName != null ">
+          l_name = #{lName} AND
+        </if>
+        <if test="passportNum != null ">
+          passport_num = #{passportNum} AND
+        </if>
+        <if test="ip1 != null ">
+          ip1 = #{ip1} AND
+        </if>
+        <if test="ip2 != null ">
+          ip2 = #{ip2} AND
+        </if>
+        <if test="ip3 != null ">
+          ip3 = #{ip3} AND
+        </if>
+        <if test="ip4 != null ">
+          ip4 = #{ip4} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.TMemberDto">
+       UPDATE t_member
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="emailAddress != null ">
+          email_address = #{emailAddress} ,
+        </if>
+        <if test="fName != null ">
+          f_name = #{fName} ,
+        </if>
+        <if test="lName != null ">
+          l_name = #{lName} ,
+        </if>
+        <if test="passportNum != null ">
+          passport_num = #{passportNum} ,
+        </if>
+        <if test="ip1 != null ">
+          ip1 = #{ip1} ,
+        </if>
+        <if test="ip2 != null ">
+          ip2 = #{ip2} ,
+        </if>
+        <if test="ip3 != null ">
+          ip3 = #{ip3} ,
+        </if>
+        <if test="ip4 != null ">
+          ip4 = #{ip4} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE id = #{id}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.TMemberDto" resultType="TMemberDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM t_member
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="emailAddress != null ">
+          email_address = #{emailAddress} AND
+        </if>
+        <if test="fName != null ">
+          f_name = #{fName} AND
+        </if>
+        <if test="lName != null ">
+          l_name = #{lName} AND
+        </if>
+        <if test="passportNum != null ">
+          passport_num = #{passportNum} AND
+        </if>
+        <if test="ip1 != null ">
+          ip1 = #{ip1} AND
+        </if>
+        <if test="ip2 != null ">
+          ip2 = #{ip2} AND
+        </if>
+        <if test="ip3 != null ">
+          ip3 = #{ip3} AND
+        </if>
+        <if test="ip4 != null ">
+          ip4 = #{ip4} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.TMemberDto" resultType="java.lang.Long">
+       SELECT count(*) FROM t_member
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="emailAddress != null ">
+          email_address = #{emailAddress} AND
+        </if>
+        <if test="fName != null ">
+          f_name = #{fName} AND
+        </if>
+        <if test="lName != null ">
+          l_name = #{lName} AND
+        </if>
+        <if test="passportNum != null ">
+          passport_num = #{passportNum} AND
+        </if>
+        <if test="ip1 != null ">
+          ip1 = #{ip1} AND
+        </if>
+        <if test="ip2 != null ">
+          ip2 = #{ip2} AND
+        </if>
+        <if test="ip3 != null ">
+          ip3 = #{ip3} AND
+        </if>
+        <if test="ip4 != null ">
+          ip4 = #{ip4} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

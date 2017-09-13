@@ -1,0 +1,296 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    height: 100%;
+    background: #F5F5F5;
+}
+.payment-page{
+    height: 100%;
+    color: #333333;
+}
+.payment-page h3{
+    padding: 1.0rem 0.4rem 0;
+    text-align: center;
+    font-size: 0.427rem;
+    line-height: 0.533rem;
+}
+.payment-page .input-box{
+    margin: 0.987rem auto 0;
+    width: 8.827rem;
+    height: 1.307rem;
+    border: 0.027rem solid #e67f2b; 
+    border-radius: 0.133rem;
+    padding: 0 0.373rem;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -moz-box;
+    background: #ffffff;
+    position: relative;
+}
+.payment-page .input-box p{
+    line-height: 1.307rem;
+}
+.payment-page .input-box p.rArea{
+    text-align: right;
+    font-size: 0.507rem;
+    font-weight: bold;
+    color: #e67f2b;
+    -webkit-box-flex:1;
+    -moz-box-flex:1;
+}
+.payment-page .input-box p.lArea{
+    font-size: 0.4rem;
+    width: 2.8rem;
+}
+.payment-page .input-box i{
+    position: absolute;
+    height: 0.85rem;
+    width: 0.04rem;
+    background: #ffcc33;
+    top: 0.23rem;
+    right: 0.26rem;
+    -webkit-animation:twinkling 1s infinite ;
+}
+@-webkit-keyframes twinkling{
+    0%{
+        opacity:0;
+    }
+    25%{
+        opacity:0;
+    }
+    40%{
+        opacity:1;
+    }
+    100%{
+        opacity:1;
+    }
+}
+.num-box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    background: #ffffff;
+}
+.num-box a{
+    font-size: 0.481rem;
+    color: #333333;
+}
+.num-box .left-area{
+    width: 75%;
+}
+.num-box .left-area div{
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    display: -webkit-flex;
+}
+.num-box .left-area div a{
+    display: block;
+    width: 100%;
+    -webkit-box-flex:1;
+    -moz-box-flex:1;
+    flex:1;
+    -webkit-flex: 1;
+    text-align: center;
+    height: 1.707rem;
+    line-height: 1.707rem;
+    border-top: 0.013rem solid #d7d7d7;
+    border-right: 0.013rem solid #d7d7d7;
+}
+.num-box .right-area{
+    width: 25%;
+    display:-moz-box;
+    display:-webkit-box;
+    -moz-box-orient:vertical;
+    -webkit-box-orient:vertical;
+}
+.num-box .right-area a{
+    display: block;
+    border-top: 0.013rem solid #d7d7d7;
+    text-align: center;
+}
+.num-box .right-area a.del{
+    height: 1.707rem;
+    background: url("../../static/juhema/img/del.png") center center no-repeat;
+    background-size: 0.507rem;
+}
+.num-box .right-area a.sure{
+    -webkit-box-flex:3;
+    -moz-box-flex:3;
+    line-height: 0.8rem;
+    padding-top: 1.733rem;
+    font-size: 0.48rem;
+    background: #cccccc;
+    color: #ffffff;
+}
+.num-box .right-area a.sure.active{
+    background: #f2c11c;
+}
+.num-box .right-area a.sure i{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.num-box .right-area a.sure span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.support{
+    width: 100%;
+    height: 0.32rem;
+    background: url("../../static/juhema/img/tips.png") center center no-repeat;
+    background-size: 4.68rem;
+    position: absolute;
+    left: 0;
+    bottom: 0.933rem;
+}
+.num-box .support{
+    top: -0.853rem;
+}
+.null-page{
+    height: 100%;
+    position: relative;
+}
+.null-page .words{
+    margin: 0 auto ;
+    padding-top: 1.963rem;
+    width: 8.293rem;
+    height: 9.92rem;
+    background: url("../../static/juhema/img/null.png") center 1.963rem no-repeat;
+    background-size: 100%;
+}
+.null-page .words .cont{
+    padding-right: 1.2rem;
+    text-align: center;
+    margin-top: 1.6rem;
+}
+.null-page .words .cont h3{
+    color: #996633;
+    font-size: 0.45rem;
+    line-height: 1;
+}
+.null-page .words .cont p{
+    font-size: 0.4rem;
+    line-height: 1;
+    margin-top: 0.53rem;
+    color: #996633;
+}
+.state-page{
+    padding-top: 1.04rem;
+}
+.state-page .top-area{
+    text-align: center;
+    padding-top: 2.373rem;
+}
+.state-page.success .top-area{
+    background: url("../../static/juhema/img/ok.png") center 0 no-repeat;
+    background-size: 1.827rem;
+}
+.state-page .top-area span{
+    display: block;
+    line-height: 1;
+    font-size: 0.427rem;
+    font-weight: bold;
+}
+.state-page .cont{
+    margin: 1.28rem 0.56rem 0;
+    padding: 0 20px;
+    background: #ffffff;
+    border-radius: 0.093rem;
+}
+.state-page .cont .item{
+    height: 1.387rem;
+    line-height: 1.387rem;
+    display: -webkit-box;
+    display: -moz-box;
+}
+.state-page .cont .item:first-child{
+    border-bottom: 0.013rem solid #d7d7d7;
+}
+.state-page .cont .item h3{
+    -webkit-box-flex: 1;
+    font-size: 0.4rem;
+}
+.state-page .cont .item p{
+    -webkit-box-flex: 1;
+    text-align: right;
+    font-size: 0.48rem;
+}
+.state-page .cont .item p.red{
+    color: #ff6633;
+}
+.state-page .finish{
+    margin: 0.56rem 0.56rem;
+}
+.state-page .finish a{
+    display: block;
+    height: 1.36rem;
+    line-height: 1.36rem;
+    border-radius: 0.093rem;
+    font-size: 0.48rem;
+    text-align: center;
+    color: #ffffff;
+    background: #f0ba1a;
+}
+[data-dpr="1"] *{
+    border-width: 1px!important;
+}
+.wrong-tip{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #F5F5F5;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 99999;
+}
+.wrong-tip .words{
+    width: 8.29rem;
+    height: 9.92rem;
+    margin: 1.97rem auto 0;
+    background: url("../../static/juhema/img/wrong.png") center 0 no-repeat;
+    background-size: 100%;
+}
+.wrong-tip .words p{
+    width: 4.933rem;
+    text-align: center;
+    padding-top: 1.833rem;
+    margin-left: 1.333rem;
+    color: #ff3300;
+    line-height: 0.6rem;
+    height: 1.2rem;
+    font-size: 0;
+}
+.wrong-tip .words p i{
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+.wrong-tip .words p span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.4rem;
+}
+.wait-page{
+    padding-top: 3.31rem;
+    text-align: center;
+}
+.wait-page .words p{
+    font-size: 0.56rem;
+    color: #666666;
+}
+.wait-page .words p span{
+    color: #cc6633;
+}
+.wait-page .words img{
+    width: 2.4rem;
+    margin-right: 0.6rem;
+    margin-top: 0.5rem;
+}

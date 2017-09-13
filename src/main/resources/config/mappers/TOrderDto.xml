@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.TOrderDto">
+
+    <sql id="Base_Column_List" >
+         id, total_price, adult_num, teenager_num, child_num, baby_num, line_no, line_price, show_no, show_price, car_no, car_price, car_day, guide_no, guid_price, guide_day, order_status, create_date, update_date
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.TOrderDto">
+       INSERT into t_order
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          id,
+        </if>
+        <if test="totalPrice != null ">
+          total_price,
+        </if>
+        <if test="adultNum != null ">
+          adult_num,
+        </if>
+        <if test="teenagerNum != null ">
+          teenager_num,
+        </if>
+        <if test="childNum != null ">
+          child_num,
+        </if>
+        <if test="babyNum != null ">
+          baby_num,
+        </if>
+        <if test="lineNo != null ">
+          line_no,
+        </if>
+        <if test="linePrice != null ">
+          line_price,
+        </if>
+        <if test="showNo != null ">
+          show_no,
+        </if>
+        <if test="showPrice != null ">
+          show_price,
+        </if>
+        <if test="carNo != null ">
+          car_no,
+        </if>
+        <if test="carPrice != null ">
+          car_price,
+        </if>
+        <if test="carDay != null ">
+          car_day,
+        </if>
+        <if test="guideNo != null ">
+          guide_no,
+        </if>
+        <if test="guidPrice != null ">
+          guid_price,
+        </if>
+        <if test="guideDay != null ">
+          guide_day,
+        </if>
+        <if test="orderStatus != null ">
+          order_status,
+        </if>
+        <if test="createDate != null ">
+          create_date,
+        </if>
+        <if test="updateDate != null ">
+          update_date,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          #{id},
+        </if>
+        <if test="totalPrice != null ">
+          #{totalPrice},
+        </if>
+        <if test="adultNum != null ">
+          #{adultNum},
+        </if>
+        <if test="teenagerNum != null ">
+          #{teenagerNum},
+        </if>
+        <if test="childNum != null ">
+          #{childNum},
+        </if>
+        <if test="babyNum != null ">
+          #{babyNum},
+        </if>
+        <if test="lineNo != null ">
+          #{lineNo},
+        </if>
+        <if test="linePrice != null ">
+          #{linePrice},
+        </if>
+        <if test="showNo != null ">
+          #{showNo},
+        </if>
+        <if test="showPrice != null ">
+          #{showPrice},
+        </if>
+        <if test="carNo != null ">
+          #{carNo},
+        </if>
+        <if test="carPrice != null ">
+          #{carPrice},
+        </if>
+        <if test="carDay != null ">
+          #{carDay},
+        </if>
+        <if test="guideNo != null ">
+          #{guideNo},
+        </if>
+        <if test="guidPrice != null ">
+          #{guidPrice},
+        </if>
+        <if test="guideDay != null ">
+          #{guideDay},
+        </if>
+        <if test="orderStatus != null ">
+          #{orderStatus},
+        </if>
+        <if test="createDate != null ">
+          #{createDate},
+        </if>
+        <if test="updateDate != null ">
+          #{updateDate},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.TOrderDto">
+       DELETE FROM t_order WHERE id = #{id};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.TOrderDto">
+       DELETE FROM t_order WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="totalPrice != null ">
+          total_price = #{totalPrice} AND
+        </if>
+        <if test="adultNum != null ">
+          adult_num = #{adultNum} AND
+        </if>
+        <if test="teenagerNum != null ">
+          teenager_num = #{teenagerNum} AND
+        </if>
+        <if test="childNum != null ">
+          child_num = #{childNum} AND
+        </if>
+        <if test="babyNum != null ">
+          baby_num = #{babyNum} AND
+        </if>
+        <if test="lineNo != null ">
+          line_no = #{lineNo} AND
+        </if>
+        <if test="linePrice != null ">
+          line_price = #{linePrice} AND
+        </if>
+        <if test="showNo != null ">
+          show_no = #{showNo} AND
+        </if>
+        <if test="showPrice != null ">
+          show_price = #{showPrice} AND
+        </if>
+        <if test="carNo != null ">
+          car_no = #{carNo} AND
+        </if>
+        <if test="carPrice != null ">
+          car_price = #{carPrice} AND
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} AND
+        </if>
+        <if test="guideNo != null ">
+          guide_no = #{guideNo} AND
+        </if>
+        <if test="guidPrice != null ">
+          guid_price = #{guidPrice} AND
+        </if>
+        <if test="guideDay != null ">
+          guide_day = #{guideDay} AND
+        </if>
+        <if test="orderStatus != null ">
+          order_status = #{orderStatus} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.TOrderDto">
+       UPDATE t_order
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="totalPrice != null ">
+          total_price = #{totalPrice} ,
+        </if>
+        <if test="adultNum != null ">
+          adult_num = #{adultNum} ,
+        </if>
+        <if test="teenagerNum != null ">
+          teenager_num = #{teenagerNum} ,
+        </if>
+        <if test="childNum != null ">
+          child_num = #{childNum} ,
+        </if>
+        <if test="babyNum != null ">
+          baby_num = #{babyNum} ,
+        </if>
+        <if test="lineNo != null ">
+          line_no = #{lineNo} ,
+        </if>
+        <if test="linePrice != null ">
+          line_price = #{linePrice} ,
+        </if>
+        <if test="showNo != null ">
+          show_no = #{showNo} ,
+        </if>
+        <if test="showPrice != null ">
+          show_price = #{showPrice} ,
+        </if>
+        <if test="carNo != null ">
+          car_no = #{carNo} ,
+        </if>
+        <if test="carPrice != null ">
+          car_price = #{carPrice} ,
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} ,
+        </if>
+        <if test="guideNo != null ">
+          guide_no = #{guideNo} ,
+        </if>
+        <if test="guidPrice != null ">
+          guid_price = #{guidPrice} ,
+        </if>
+        <if test="guideDay != null ">
+          guide_day = #{guideDay} ,
+        </if>
+        <if test="orderStatus != null ">
+          order_status = #{orderStatus} ,
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE id = #{id}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.TOrderDto" resultType="TOrderDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM t_order
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="totalPrice != null ">
+          total_price = #{totalPrice} AND
+        </if>
+        <if test="adultNum != null ">
+          adult_num = #{adultNum} AND
+        </if>
+        <if test="teenagerNum != null ">
+          teenager_num = #{teenagerNum} AND
+        </if>
+        <if test="childNum != null ">
+          child_num = #{childNum} AND
+        </if>
+        <if test="babyNum != null ">
+          baby_num = #{babyNum} AND
+        </if>
+        <if test="lineNo != null ">
+          line_no = #{lineNo} AND
+        </if>
+        <if test="linePrice != null ">
+          line_price = #{linePrice} AND
+        </if>
+        <if test="showNo != null ">
+          show_no = #{showNo} AND
+        </if>
+        <if test="showPrice != null ">
+          show_price = #{showPrice} AND
+        </if>
+        <if test="carNo != null ">
+          car_no = #{carNo} AND
+        </if>
+        <if test="carPrice != null ">
+          car_price = #{carPrice} AND
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} AND
+        </if>
+        <if test="guideNo != null ">
+          guide_no = #{guideNo} AND
+        </if>
+        <if test="guidPrice != null ">
+          guid_price = #{guidPrice} AND
+        </if>
+        <if test="guideDay != null ">
+          guide_day = #{guideDay} AND
+        </if>
+        <if test="orderStatus != null ">
+          order_status = #{orderStatus} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.TOrderDto" resultType="java.lang.Long">
+       SELECT count(*) FROM t_order
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="totalPrice != null ">
+          total_price = #{totalPrice} AND
+        </if>
+        <if test="adultNum != null ">
+          adult_num = #{adultNum} AND
+        </if>
+        <if test="teenagerNum != null ">
+          teenager_num = #{teenagerNum} AND
+        </if>
+        <if test="childNum != null ">
+          child_num = #{childNum} AND
+        </if>
+        <if test="babyNum != null ">
+          baby_num = #{babyNum} AND
+        </if>
+        <if test="lineNo != null ">
+          line_no = #{lineNo} AND
+        </if>
+        <if test="linePrice != null ">
+          line_price = #{linePrice} AND
+        </if>
+        <if test="showNo != null ">
+          show_no = #{showNo} AND
+        </if>
+        <if test="showPrice != null ">
+          show_price = #{showPrice} AND
+        </if>
+        <if test="carNo != null ">
+          car_no = #{carNo} AND
+        </if>
+        <if test="carPrice != null ">
+          car_price = #{carPrice} AND
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} AND
+        </if>
+        <if test="guideNo != null ">
+          guide_no = #{guideNo} AND
+        </if>
+        <if test="guidPrice != null ">
+          guid_price = #{guidPrice} AND
+        </if>
+        <if test="guideDay != null ">
+          guide_day = #{guideDay} AND
+        </if>
+        <if test="orderStatus != null ">
+          order_status = #{orderStatus} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

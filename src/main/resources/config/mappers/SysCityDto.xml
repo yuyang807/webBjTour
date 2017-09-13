@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.SysCityDto">
+
+    <sql id="Base_Column_List" >
+         city_id, city_name, zip_code, province_id, create_date, update_date
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.SysCityDto">
+       INSERT into sys_city
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="cityId != null ">
+          city_id,
+        </if>
+        <if test="cityName != null ">
+          city_name,
+        </if>
+        <if test="zipCode != null ">
+          zip_code,
+        </if>
+        <if test="provinceId != null ">
+          province_id,
+        </if>
+        <if test="createDate != null ">
+          create_date,
+        </if>
+        <if test="updateDate != null ">
+          update_date,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="cityId != null ">
+          #{cityId},
+        </if>
+        <if test="cityName != null ">
+          #{cityName},
+        </if>
+        <if test="zipCode != null ">
+          #{zipCode},
+        </if>
+        <if test="provinceId != null ">
+          #{provinceId},
+        </if>
+        <if test="createDate != null ">
+          #{createDate},
+        </if>
+        <if test="updateDate != null ">
+          #{updateDate},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.SysCityDto">
+       DELETE FROM sys_city WHERE city_id = #{cityId};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.SysCityDto">
+       DELETE FROM sys_city WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="cityId != null ">
+          city_id = #{cityId} AND
+        </if>
+        <if test="cityName != null ">
+          city_name = #{cityName} AND
+        </if>
+        <if test="zipCode != null ">
+          zip_code = #{zipCode} AND
+        </if>
+        <if test="provinceId != null ">
+          province_id = #{provinceId} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.SysCityDto">
+       UPDATE sys_city
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="cityName != null ">
+          city_name = #{cityName} ,
+        </if>
+        <if test="zipCode != null ">
+          zip_code = #{zipCode} ,
+        </if>
+        <if test="provinceId != null ">
+          province_id = #{provinceId} ,
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE city_id = #{cityId}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.SysCityDto" resultType="SysCityDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM sys_city
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="cityId != null ">
+          city_id = #{cityId} AND
+        </if>
+        <if test="cityName != null ">
+          city_name = #{cityName} AND
+        </if>
+        <if test="zipCode != null ">
+          zip_code = #{zipCode} AND
+        </if>
+        <if test="provinceId != null ">
+          province_id = #{provinceId} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.SysCityDto" resultType="java.lang.Long">
+       SELECT count(*) FROM sys_city
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="cityId != null ">
+          city_id = #{cityId} AND
+        </if>
+        <if test="cityName != null ">
+          city_name = #{cityName} AND
+        </if>
+        <if test="zipCode != null ">
+          zip_code = #{zipCode} AND
+        </if>
+        <if test="provinceId != null ">
+          province_id = #{provinceId} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

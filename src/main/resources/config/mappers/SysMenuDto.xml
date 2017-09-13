@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.SysMenuDto">
+
+    <sql id="Base_Column_List" >
+         id, parent_id, parent_ids, name, sort, href, target, icon, is_show, permission, create_by, create_date, update_by, update_date, remarks, del_flag
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.SysMenuDto">
+       INSERT into sys_menu
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          id,
+        </if>
+        <if test="parentId != null ">
+          parent_id,
+        </if>
+        <if test="parentIds != null ">
+          parent_ids,
+        </if>
+        <if test="name != null ">
+          name,
+        </if>
+        <if test="sort != null ">
+          sort,
+        </if>
+        <if test="href != null ">
+          href,
+        </if>
+        <if test="target != null ">
+          target,
+        </if>
+        <if test="icon != null ">
+          icon,
+        </if>
+        <if test="isShow != null ">
+          is_show,
+        </if>
+        <if test="permission != null ">
+          permission,
+        </if>
+        <if test="createBy != null ">
+          create_by,
+        </if>
+        <if test="createDate != null ">
+          create_date,
+        </if>
+        <if test="updateBy != null ">
+          update_by,
+        </if>
+        <if test="updateDate != null ">
+          update_date,
+        </if>
+        <if test="remarks != null ">
+          remarks,
+        </if>
+        <if test="delFlag != null ">
+          del_flag,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          #{id},
+        </if>
+        <if test="parentId != null ">
+          #{parentId},
+        </if>
+        <if test="parentIds != null ">
+          #{parentIds},
+        </if>
+        <if test="name != null ">
+          #{name},
+        </if>
+        <if test="sort != null ">
+          #{sort},
+        </if>
+        <if test="href != null ">
+          #{href},
+        </if>
+        <if test="target != null ">
+          #{target},
+        </if>
+        <if test="icon != null ">
+          #{icon},
+        </if>
+        <if test="isShow != null ">
+          #{isShow},
+        </if>
+        <if test="permission != null ">
+          #{permission},
+        </if>
+        <if test="createBy != null ">
+          #{createBy},
+        </if>
+        <if test="createDate != null ">
+          #{createDate},
+        </if>
+        <if test="updateBy != null ">
+          #{updateBy},
+        </if>
+        <if test="updateDate != null ">
+          #{updateDate},
+        </if>
+        <if test="remarks != null ">
+          #{remarks},
+        </if>
+        <if test="delFlag != null ">
+          #{delFlag},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.SysMenuDto">
+       DELETE FROM sys_menu WHERE id = #{id};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.SysMenuDto">
+       DELETE FROM sys_menu WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="parentId != null ">
+          parent_id = #{parentId} AND
+        </if>
+        <if test="parentIds != null ">
+          parent_ids = #{parentIds} AND
+        </if>
+        <if test="name != null ">
+          name = #{name} AND
+        </if>
+        <if test="sort != null ">
+          sort = #{sort} AND
+        </if>
+        <if test="href != null ">
+          href = #{href} AND
+        </if>
+        <if test="target != null ">
+          target = #{target} AND
+        </if>
+        <if test="icon != null ">
+          icon = #{icon} AND
+        </if>
+        <if test="isShow != null ">
+          is_show = #{isShow} AND
+        </if>
+        <if test="permission != null ">
+          permission = #{permission} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} AND
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} AND
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.SysMenuDto">
+       UPDATE sys_menu
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="parentId != null ">
+          parent_id = #{parentId} ,
+        </if>
+        <if test="parentIds != null ">
+          parent_ids = #{parentIds} ,
+        </if>
+        <if test="name != null ">
+          name = #{name} ,
+        </if>
+        <if test="sort != null ">
+          sort = #{sort} ,
+        </if>
+        <if test="href != null ">
+          href = #{href} ,
+        </if>
+        <if test="target != null ">
+          target = #{target} ,
+        </if>
+        <if test="icon != null ">
+          icon = #{icon} ,
+        </if>
+        <if test="isShow != null ">
+          is_show = #{isShow} ,
+        </if>
+        <if test="permission != null ">
+          permission = #{permission} ,
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} ,
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} ,
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} ,
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} ,
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE id = #{id}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.SysMenuDto" resultType="SysMenuDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM sys_menu
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="parentId != null ">
+          parent_id = #{parentId} AND
+        </if>
+        <if test="parentIds != null ">
+          parent_ids = #{parentIds} AND
+        </if>
+        <if test="name != null ">
+          name = #{name} AND
+        </if>
+        <if test="sort != null ">
+          sort = #{sort} AND
+        </if>
+        <if test="href != null ">
+          href = #{href} AND
+        </if>
+        <if test="target != null ">
+          target = #{target} AND
+        </if>
+        <if test="icon != null ">
+          icon = #{icon} AND
+        </if>
+        <if test="isShow != null ">
+          is_show = #{isShow} AND
+        </if>
+        <if test="permission != null ">
+          permission = #{permission} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} AND
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} AND
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.SysMenuDto" resultType="java.lang.Long">
+       SELECT count(*) FROM sys_menu
+       WHERE 
+       <trim suffix="" suffixOverrides="AND">
+        <if test="id != null ">
+          id = #{id} AND
+        </if>
+        <if test="parentId != null ">
+          parent_id = #{parentId} AND
+        </if>
+        <if test="parentIds != null ">
+          parent_ids = #{parentIds} AND
+        </if>
+        <if test="name != null ">
+          name = #{name} AND
+        </if>
+        <if test="sort != null ">
+          sort = #{sort} AND
+        </if>
+        <if test="href != null ">
+          href = #{href} AND
+        </if>
+        <if test="target != null ">
+          target = #{target} AND
+        </if>
+        <if test="icon != null ">
+          icon = #{icon} AND
+        </if>
+        <if test="isShow != null ">
+          is_show = #{isShow} AND
+        </if>
+        <if test="permission != null ">
+          permission = #{permission} AND
+        </if>
+        <if test="createBy != null ">
+          create_by = #{createBy} AND
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} AND
+        </if>
+        <if test="startCreateDate != null ">
+          create_date >= #{startCreateDate} AND
+        </if>
+        <if test="endCreateDate != null ">
+          create_date <![CDATA[<=]]> #{endCreateDate} AND
+        </if>
+        <if test="updateBy != null ">
+          update_by = #{updateBy} AND
+        </if>
+        <if test="updateDate != null ">
+          update_date = #{updateDate} AND
+        </if>
+        <if test="startUpdateDate != null ">
+          update_date >= #{startUpdateDate} AND
+        </if>
+        <if test="endUpdateDate != null ">
+          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+        </if>
+        <if test="remarks != null ">
+          remarks = #{remarks} AND
+        </if>
+        <if test="delFlag != null ">
+          del_flag = #{delFlag} AND
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>
