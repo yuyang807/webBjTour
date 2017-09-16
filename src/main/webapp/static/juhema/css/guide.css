@@ -1,0 +1,327 @@
+.tour_guide_top {
+  color: #fff;
+}
+.tour_guide_top {
+  width: 100%;
+}
+.guide_input {
+  height: 2rem;
+  border-radius: 4px;
+  border: 1px solid #9b9b9b;
+  overflow: hidden;
+  width: 99%;
+  text-indent: 10px;
+}
+.tour_guide_ul {
+  border-bottom: 1px solid #9b9b9b;
+  padding: 0 15px;
+}
+.tour_guide_li {
+  height: 2rem;
+  line-height: 2rem;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+.tour_guide_total {
+  padding: 0 15px 15px;
+  text-align: right;
+  line-height: 3rem;
+  font-size: 0.8rem;
+}
+.tour_guide_font_big {
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  vertical-align: -0.4rem;
+}
+.tour_guide_li_left {
+  width: 55%;
+}
+.tour_guide_li_left span{
+	float:right;
+	font-weight: bold;
+}
+.tour_guide_li_right {
+  width: 40%;
+  height: 2rem;
+  border-radius: 4px;
+  border: 1px solid #9b9b9b;
+  overflow: hidden;
+}
+.tour_guide_table_box_top {
+  height: 50px;
+  background: #e9effa;
+}
+.tour_guide_table_box_top select {
+  height: 30px;
+  float: right;
+  margin: 10px;
+  width: 100px;
+  border: 1px solid #979797;
+}
+.tour_guide_table_top {
+  height: 50px;
+  background: #a8223c;
+}
+.tour_guide_table_box {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+.tour_guide_table {
+  border-left: 1px solid #9B9B9B;
+}
+.tour_guide_table_list {
+  border-right: 1px solid #9B9B9B;
+  border-bottom: 1px solid #9B9B9B;
+}
+.tour_guide_list {
+  display: inline-block;
+  margin: 10px 0;
+  height: 30px;
+  line-height: 15px;
+  color: #fff;
+  vertical-align: top;
+  background: none;
+  text-align: left;
+  position: relative;
+  font-size: 0.7rem;
+  overflow: hidden;
+}
+.tour_guide_list span {
+  margin-left: 5px;
+  display: block;
+}
+.tour_guide_td_list {
+  display: inline-block;
+  font-size: 0.7rem;
+  overflow: hidden;
+  word-break: break-all;
+  vertical-align: top;
+  padding: 10px 0;
+}
+.tour_guide_td_list2 {
+  position: relative;
+  float: left;
+}
+.tour_guide_td_list_in {
+  padding: 100% 50%;
+}
+.tour_guide_td_list_inside2 {
+  padding: 77% 50%;
+}
+.tour_guide_td_list_inside3 {
+  padding: 38% 50%;
+}
+.tour_guide_td_list_inside4 {
+  padding: 37.5% 50%;
+}
+.tour_guide_td_button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+.tour_guide_td_button_more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  overflow: hidden;
+}
+.tour_guide_tdinside_list {
+  font-size: 0.6rem;
+  height: 33.3%;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  overflow: hidden;
+}
+.tour_guide_tdinside_list100 {
+  font-size: 0.6rem;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.tour_guide_tdinside_list100 img {
+  width: 100%;
+  height: 100%;
+}
+.tour_guide_tdinside_list50 {
+  font-size: 0.6rem;
+  height: 50%;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  overflow: hidden;
+}
+.tour_guide_tdinside_list50 img {
+  width: 100%;
+  height: 99%;
+  border-bottom: 1px solid #ccc;
+}
+.tour_guide_tdinside_list2 {
+  height: 33.3%;
+  width: 100%;
+  overflow: hidden;
+}
+.tour_guide_tdinside_list2 img {
+  width: 100%;
+  height: 99%;
+  border-bottom: 1px solid #ccc;
+}
+.tour_book_now {
+  width: 60%;
+  border-radius: 3px;
+  line-height: 2rem;
+  color: #fff;
+  background: #a8223c;
+  margin: auto;
+}
+.tour_guide_td_inside {
+  margin: 0 5px;
+}
+.tour_guide_20 {
+  width: 20%;
+}
+.tour_guide_10 {
+  width: 15%;
+}
+.tour_guide_12 {
+  width: 12.5%;
+}
+.tour_guide_40 {
+  width: 30%;
+}
+.tour_guide_50 {
+  width: 40%;
+}
+.tour_guide_list_line {
+  width: 1px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  position: absolute;
+  background: #fff;
+}
+.tour_carRental_notice {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.tour_carRental_notice_top {
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #a8223c;
+}
+.tour_carRental_notice_ul {
+  margin: 0 5px 15px 30px;
+}
+.tour_carRental_notice_ul li {
+  list-style: decimal;
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+}
+.tour_payCopy_top {
+  line-height: 3rem;
+  position: relative;
+}
+.tour_payCopy_text {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  padding-right:6.5rem;
+}
+.payCopy_img{
+	height:7rem;
+	margin-right:1rem;
+}
+.tour_payCopy_checkbox_more{
+	position:absolute;
+	top:1.5rem;
+	left:0.3rem;
+	line-height:2rem;
+	font-size:0.8rem;
+}
+.tour_payCopy_checkbox_select{
+	position:absolute;
+	top:3.5rem;
+	left:0.3rem;
+	width:5.8rem;
+	bottom:0.3rem;
+}
+.tour_payCopy_checkbox {
+  position: absolute;
+  top: 0.7rem;
+  height: 1.6rem;
+  width: 6.4rem;
+  right: 0;
+  background: #FFE7C4;
+  cursor: pointer;
+}
+.tour_payCopy_checkbox_big{
+  position: absolute;
+  top: 0.7rem;
+  height: 6rem;
+  width: 6.4rem;
+  right: 0;
+  background: #FFE7C4;
+  cursor: pointer;
+}
+.tour_payCopy_checkbox_left{
+	position:absolute;
+	width:1rem;
+	height:1rem;
+	top:0.3rem;
+	left:0.3rem;
+	background:red;
+}
+.checkbox_hover .tour_payCopy_checkbox_left{
+	background:blue;
+}
+.tour_payCopy_checkbox_text{
+	position:absolute;
+	height:1rem;
+	line-height: 1rem;
+	top:0.3rem;
+	right:0.3rem;
+}
+.tour_payCopy_top_r {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: #a8223c;
+  border-radius: 0.3rem;
+  margin-right: 0.6rem;
+  display: inline-block;
+  vertical-align: 0.1rem;
+}
+.tour_payCopy_line{
+	border-bottom:1px solid #000000;
+	margin-bottom:1rem;
+}
+.payCopy_top_ul li{
+	color:#484848;
+}
+@media screen and (max-width: 800px) {
+  .tour_guide_table {
+    width: 800px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .payCopy_img{
+  	width:100%;
+  	height:auto;
+  }
+  .tour_faqs_ul{
+  	padding-left:0;
+  }
+}

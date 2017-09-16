@@ -1,0 +1,176 @@
+.tour_details_left {
+  width: 55%;
+  margin-right: 4%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+}
+.tour_list_left_pic {
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+}
+.tour_list_left_inside {
+  padding: 28.03030303%;
+}
+.tour_details_overview {
+  border: 1px solid #cccccc;
+  margin-bottom: 15px;
+}
+.tour_details_right_box {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+}
+.tour_details_right_in {
+  width: 100%;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+  position: relative;
+}
+.tour_guide_top_text {
+  position: absolute;
+  height: 4rem;
+  line-height: 4rem;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
+}
+.tour_details_right {
+  width: 40%;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+  position: relative;
+}
+.tour_details_overview_top {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  text-align: center;
+  color: #a8223c;
+}
+.tour_details_right_more_top {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  text-indent: 15px;
+  color: #a8223c;
+}
+.tour_details_overview_list {
+  margin: 0 20px 20px;
+}
+.tour_details_overview_list li {
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  text-indent: 30px;
+}
+.tour_details_left_list_title {
+  background:url(../icon/jiao.png) no-repeat 20px center #e44e47;
+  background-size: 1rem auto;
+  color: #fff;
+  font-size: 1.4rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-indent: 50px;
+  margin-top:5px;
+}
+.parentclose .tour_details_left_list_title {
+  background:url(../icon/jiao2.png) no-repeat 20px center #a8223c;
+  background-size: 1rem auto;
+}
+.icon_attr{
+	background:url(../icon/Group13.png) no-repeat 0 center;
+  background-size: 15px auto;
+}
+.tour_details_left_list_text {
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  border: 1px solid #ccc;
+}
+.tour_details_left_list_text li{
+	height:1.3rem;
+	line-height:1.3rem;
+	text-indent: 1.3rem;
+	background:url(../icon/right.png) no-repeat 0 center;
+	background-size: 1rem auto;
+}
+.tour_wrong li{
+	background:url(../icon/wrong.png) no-repeat 0 center;
+	background-size: 1rem auto;
+}
+.tour_details_right_img_li{
+	margin-bottom:20px;
+	position:relative;
+	overflow: hidden;
+}
+.tour_details_right_img_li_inner{
+	padding:34.3%;
+}
+.tour_details_right_img_bg{
+	height:28.4%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#000;
+	opacity: 0.6;
+}
+.tour_details_right_img_text{
+	height:28.4%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	color:#fff;
+}
+.tour_details_right_img_text_center{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:90%;
+	height:2.5rem;
+	font-size:0.9rem;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.tour_details_right_img_li_img{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.parentclose .tour_details_left_list_text{
+	display:none;
+}
+@media screen and (max-width: 800px) {
+  .tour_details_right_img_text_center{
+		font-size:0.8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .tour_details_left,
+  .tour_details_right,
+  .tour_details_right_box {
+    width: 99%;
+    margin-right: 0;
+  }
+	.tour_details_right_img_text_center{
+		height:3rem;
+	}
+  .tour_details_right_img_text_center{
+		font-size:1rem;
+  }
+}

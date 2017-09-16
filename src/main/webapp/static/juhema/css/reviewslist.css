@@ -1,0 +1,282 @@
+.tour_reviewslist_bg {
+  background: #e44e47;
+  color: #fff;
+}
+.tour_reviewslist_bg .public_title {
+  color: #fff;
+}
+.tour_reviewslist_list_bg {
+  background: #fff;
+  overflow: hidden;
+}
+.tour_reviewslist_list_bg_none {
+  background:transparent;
+  box-shadow:none;
+}
+.tour_toursbox_list_inbox {
+  padding: 47.68392371%;
+}
+.viewalltours {
+  margin: 0 auto 5%;
+  color: #fff;
+}
+.viewallreviews {
+  margin: 0 auto 5%;
+  color: #a8223c;
+}
+.tour_reviewslist_bottom {
+  position: absolute;
+  border-top:2px solid #599442;
+  background:#fff;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.tour_reviews_bg {
+  background: #000;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.tour_reviews_img {
+  width: 22.97297297%;
+  border-radius:50%;
+  border:2px solid #fff;
+  display: block;
+  top: -2px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.tour_reviews_img_top{
+	width:100%;
+	padding:6% 0;
+}
+.tour_reviews_img_bottom{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	padding:3% 0;
+	background:#fff;
+}
+.tour_reviewslist_top {
+  height: 13px;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+.tour_reviewslist_main {
+}
+/*.tour_reviewslist_main {
+  position: absolute;
+  top: 25%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}*/
+.tour_reviewslist_text {
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+  color: #000;
+  margin:0 10% 10%;
+}
+.tour_reviews_all_img{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+/*.tour_reviewslist_text {
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+  position: absolute;
+  top: 5px;
+  bottom: 21px;
+  left: 12.67605634%;
+  right: 12.67605634%;
+  color: #000;
+  overflow: hidden;
+  word-break: break-all;
+}*/
+.tour_reviews_name {
+  font-size: 0.7rem;
+  line-height: 1.4rem;
+  font-weight: bold;
+  color: #9b9b9b;
+  text-align: center;
+}
+/*
+.tour_reviews_name {
+  top: 15%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  font-size: 0.8rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+  color: #9b9b9b;
+}*/
+.tour_reviewslist_top_left {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: -12px;
+  height: 13px;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+.tour_reviewslist_top_right {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: -12px;
+  height: 13px;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+/*.tour_reviewslist_triangel{
+    top:-1px;
+    .AbsoluteCenterLeft();
+    .Triangle(bottom,13px,26px,#fff);
+}
+.tour_reviewslist_triangel2{
+    top:-1px;
+    .AbsoluteCenterLeft();
+    .Triangle(bottom,15px,28px,#ccc);
+}*/
+.tour_reviewslist_triangl_1_1 {
+  position: absolute;
+  top: -1px;
+  right: -16px;
+  border-left: 8px solid #ccc;
+  border-bottom: 8px solid #ccc;
+  border-top: 8px solid transparent;
+  border-right: 8px solid transparent;
+  width: 0;
+  height: 0;
+}
+.tour_reviewslist_triangl_1 {
+  position: absolute;
+  top: 0;
+  right: -13px;
+  border-left: 7px solid #fff;
+  border-bottom: 7px solid #fff;
+  border-top: 7px solid transparent;
+  border-right: 7px solid transparent;
+  width: 0;
+  height: 0;
+}
+.tour_reviewslist_triangl_2_1 {
+  position: absolute;
+  top: -1px;
+  left: -16px;
+  border-right: 8px solid #ccc;
+  border-bottom: 8px solid #ccc;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  width: 0;
+  height: 0;
+}
+.tour_reviewslist_triangl_2 {
+  position: absolute;
+  top: 0;
+  left: -13px;
+  border-right: 7px solid #fff;
+  border-bottom: 7px solid #fff;
+  border-top: 7px solid transparent;
+  border-left: 7px solid transparent;
+  width: 0;
+  height: 0;
+}
+.tour_reviewslist_icon {
+  width: 55.36723164%;
+  position: absolute;
+  top: 6.93333333%;
+  left: 22.45762712%;
+  background: #599442;
+}
+.tour_reviewslist_icon_inbox {
+  padding: 42.1319797%;
+}
+.tour_reviewslist_text1 {
+  top: 62.46648794%;
+  left: 0;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.3rem;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  text-decoration: underline;
+}
+.tour_reviewslist_text2 {
+  top: 75.06702413%;
+  left: 0;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.2rem;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+}
+.tour_reviewslist_text3 {
+  top: 84.45040214%;
+  left: 0;
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1.2rem;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+}
+@media screen and (max-width: 1200px) {
+  .tour_reviewslist_text {
+    bottom: 26px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .tour_reviewslist_text {
+    bottom: 6px;
+    left: 11.26760563%;
+    right: 11.26760563%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .tour_reviewslist_text {
+    bottom: 31px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .tour_reviewslist_text {
+    bottom: 21px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tour_reviewslist_text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .tour_reviews_name {
+    font-size: 16px;
+    line-height: 38px;
+  }
+  .tour_reviewslist_text1 {
+    font-size: 22px;
+  }
+  .tour_reviewslist_text2 {
+    font-size: 18px;
+  }
+  .tour_reviewslist_text3 {
+    font-size: 14px;
+  }
+}

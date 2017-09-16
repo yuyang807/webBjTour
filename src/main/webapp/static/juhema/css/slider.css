@@ -1,0 +1,147 @@
+.tour_slider {
+  position: relative;
+}
+.tour_slider_inside {
+  padding: 28.125%;
+}
+#tour_slider_main img {
+  width: 100%;
+  vertical-align: top;
+}
+.tour_slider_title {
+  top: 22.55134075%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  text-align: center;
+  font-size: 2.5rem;
+  width:100%;
+  color: #fff;
+}
+.tour_slider_title_text{
+  top: 37.55134075%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  text-align: center;
+  font-size: 0.8rem;
+  width: 80%;
+  word-break: break-all;
+  color: #fff;
+}
+.button_slider_top {
+  top: 54.67625899%;
+  left: 0px;
+  color: #ffffff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+}
+.button_slider_bottom {
+  top: 66.51406148%;
+  left: 0px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  background:transparent;
+  border:1px solid #fff;
+  border-radius: 3px;
+}
+.dianbox {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  bottom: 10%;
+  white-space: nowrap;
+}
+.pages img{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.dian {
+  height: 0.6rem;
+  width: 0.6rem;
+  background: #fff;
+  opacity: 0.3;
+  border-radius: 0.3rem;
+  margin-right: 0.7rem;
+  cursor: pointer;
+  display: inline-block;
+}
+.dianhover {
+  opacity: 1;
+}
+@media screen and (max-width: 1000px) {
+  .button_slider_top,
+  .button_slider_bottom {
+    width: 160px;
+    height: 40px;
+  }
+  .tour_slider_title {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .tour_slider_title {
+    font-size: 1.8rem;
+  }
+  .button_slider_top,
+  .button_slider_bottom {
+    width: 140px;
+    height: 35px;
+  }
+}
+@media screen and (max-width: 600px) {
+	.tour_slider_title_text{
+  	top: 34.55134075%;
+  	font-size:0.7rem;
+  }
+  .tour_slider {
+    margin-top: 50px;
+  }
+  .tour_slider_title {
+    font-size: 1.4rem;
+  }
+  .button_slider_top,
+  .button_slider_bottom {
+    width: 120px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+	.tour_slider_title_text{
+  	top: 34.55134075%;
+  	font-size:0.6rem;
+  	line-height:0.7rem;
+  }
+ 	.homepic_box .tour_slider_title_text{
+ 		top:40%;
+ 	} 
+  .tour_slider_title {
+    font-size: 16px;
+  }
+  .button_slider_top {
+    top: 50%;
+  }
+  .button_slider_top,
+  .button_slider_bottom {
+    width: 120px;
+    height: 20px;
+    font-size: 12px;
+  }
+}
