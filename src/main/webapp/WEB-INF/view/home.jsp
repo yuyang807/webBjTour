@@ -174,8 +174,7 @@
 					}
 				];
 				slider.init("tour_slider_main",datalist);
-				
-				var t_tours_list = [
+				/*var t_tours_list = [
 					{
 						"typeName":"BEIJING PRIVATE GREAT WALL DAY TOUR/GREAT WALL HIKING DAY TOUR",
 						"duration":"8 hours",
@@ -209,11 +208,19 @@
 						"tenP":500,
 						"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
 					}
-				];
+				];*/
 				function tosort(a,b){
-					return a.popularLevel-b.popularLevel;
+					return b.popularLevel-a.popularLevel;
 				}
-				tourlist.pushlist("tour_list_id",t_tours_list.sort(tosort));
+				$.ajax({
+					type:"get",
+					url:"/",
+					dataType:"json",
+					success:function(data){
+						tourlist.pushlist("tour_list_id",data.lineList.sort(tosort));
+					}
+				});
+				//tourlist.pushlist("tour_list_id",t_tours_list.sort(tosort));
 				$("#tour_reviews_id").on("mouseover",".tour_list_li",function(){
 					//$(this).find('.tour_reviewslist_bottom')[0].style.top = 20000/745+"%";
 					
