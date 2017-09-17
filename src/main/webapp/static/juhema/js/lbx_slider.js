@@ -24,15 +24,15 @@ var slider = function() {
 						slider_box = document.getElementById("pagelistmove");
 						t_len = t_data.length;
 						
-						var t_base_str = '<div class="pages" ><img src="{0}"/></div>';
+						var t_base_str = '<div class="pages" ><img src="{0}" onclick="linkfor(/list/{1})/></div>';
 						var t_base_dian = '<div class="dian" onmousedown="slider.dian({0})"></div>';
-						var t_all_str = slider.s(t_base_str,[t_data[t_len-1].img,t_data[t_len-1].name]);
+						var t_all_str = slider.s(t_base_str,[t_data[t_len-1].fileUrll,t_data[t_len-1].lineNo]);
 						var t_dian_str = "";
 						for(var i = 0;i < t_len;i++){
-							t_all_str += slider.s(t_base_str,[t_data[i].img,t_data[i].name]);
+							t_all_str += slider.s(t_base_str,[t_data[i].fileUrll,t_data[i].lineNo]);
 							t_dian_str += slider.s(t_base_dian,[i]);
 						}
-						t_all_str += slider.s(t_base_str,[t_data[0].img,t_data[0].name]);
+						t_all_str += slider.s(t_base_str,[t_data[0].fileUrll,t_data[0].lineNo]);
 						slider_box.innerHTML = t_all_str;
 						document.getElementById("dianbox").innerHTML = t_dian_str;
 					    document.getElementsByClassName("dian")[t_index].className = "dian dianhover";
