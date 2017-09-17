@@ -1,6 +1,6 @@
 
 var tourlist = function() {
-	var t_tours_str = `<li class="tour_list_li">
+	var t_tours_str = `<li class="tour_list_li" onclick="linkfor(/list/{lineNo})">
 					<div class="tour_list_imgbox">
 						<div class="tour_list_imginner"></div>
 						<img src="{fileUrl}"/>
@@ -11,11 +11,11 @@ var tourlist = function() {
 						</div>
 					</div>
 					<div class="tour_list_textall">
-						<div class="tour_list_textbox">{typeName}</div><div class="tour_list_textbox_right">
+						<div class="tour_list_textbox">{lineName}</div><div class="tour_list_textbox_right">
 							<div>From</div>
 							<div>{tenP} USD</div>
 						</div>
-						<div class="tour_list_textbox_more">{lineName}</div>
+						<div class="tour_list_textbox_more"></div>
 						<button class="tour_list_textbox_button buttoncolor1">View this trip</button>
 					</div>
 				</li>`;
@@ -30,6 +30,7 @@ var tourlist = function() {
 					'typeName':data[i].typeName,
 					'tenP':data[i].tenP,
 					'lineName':data[i].lineName,
+					'lineNo':data[i].lineNo
 				})
 			}
 			$("#"+id).html(t_str);
