@@ -159,7 +159,7 @@
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js" ></script>
 			<script>
 				
-				var datalist = [
+				/*var datalist = [
 					{
 						"name":"page1",
 						"img":"${ctxStatic}/juhema/img/IMG_1450.JPG"
@@ -172,7 +172,8 @@
 						"name":"page3",
 						"img":"${ctxStatic}/juhema/img/IMG_1452.JPG"
 					}
-				];
+				];*/
+				var datalist = ${picList};
 				slider.init("tour_slider_main",datalist);
 				var t_tours_list = ${lineList};
 				/*var t_tours_list = [
