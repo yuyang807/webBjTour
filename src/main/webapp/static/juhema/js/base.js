@@ -6,3 +6,6 @@ String.prototype.format2 = function ()
   	}
   	return temS;
   };
+function linkfor(url){
+	window.location.href = url;
+}
