@@ -23,46 +23,10 @@
 				<a href="home.html">Home</a>　>　 
 				<span>View The Tours</span>
 			</div>
-			<div class="public_title2">Day Tour / Layover Tour</div>
-			<ul id="tour_list_id" class="tour_list_ul">
-				
-			</ul>
-			<div>&nbsp;</div>
 		</div>
-		<div class="tour_list_box">
-			<h1 class="public_title2">Beijing Tour Package</h1>
-			<ul id="tour_list_id2" class="tour_list_ul">
-				
-			</ul>
-			<div>&nbsp;</div>
-		</div>
-		<div class="tour_list_box">
-			<div class="public_title2">Beijing Layover Tour</div>
-			<ul id="tour_list_id3" class="tour_list_ul">
-				
-			</ul>
-			<div>&nbsp;</div>
-		</div>
-		<div class="tour_list_box">
-			<div class="public_title2">Beijing Great Wall Hiking Day Tour</div>
-			<ul id="tour_list_id4" class="tour_list_ul">
-				
-			</ul>
-			<div>&nbsp;</div>
-		</div>
-		<div class="tour_list_box">
-			<div class="public_title2">Beijing Half Day Tour</div>
-			<ul id="tour_list_id5" class="tour_list_ul">
-				
-			</ul>
-			<div>&nbsp;</div>
-		</div>
-		<div class="tour_list_box">
-			<div class="public_title2">Beijing City Hutong Walking/Biking Tour</div>
-			<ul id="tour_list_id6" class="tour_list_ul">
-				
-			</ul>
-			<div>&nbsp;</div>
+		
+		<div id="tour_list_box_all">
+			
 		</div>
 		<div id="tour_reviews_id" class="tour_reviewslist_bg">
 			<div class="public_title">Costomize?</div>
@@ -109,60 +73,93 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20170316" ></script>
 		<script>
-			var t_tours_list6 = [
-				{
-					'img':'IMG_1343.JPG',
-					'text_left':'Getting Cheap Airfare For Last Minute Travel',
-					'prise':'$39',
-				},
-				{
-					'img':'IMG_1343.JPG',
-					'text_left':'Getting Cheap Airfare For Last Minute TravelLast Minute Minute Travel',
-					'prise':'$46',
-				},
-				{
-					'img':'IMG_1343.JPG',
-					'text_left':'Getting Cheap Airfare For Last Minute Travel',
-					'prise':'$38',
-				},
-				{
-					'img':'IMG_1343.JPG',
-					'text_left':'Getting Cheap Airfare',
-					'prise':'$38',
-				},
-				{
-					'img':'IMG_1375.JPG',
-					'text_left':'Getting Cheap Airfare For Last Minute Travel Minute Travel',
-					'prise':'$38',
+			/*var t_tours_list = [{
+				'typeName':'Beijing Tour Package',
+				"duration":"8 hours",
+				"lineTypeNo":true,
+				"popularLevel":1,
+				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
+				"lineNo":1,
+				"available":"Daily",
+				"tenP":500,
+				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
+			},{
+				'typeName':'Beijing Tour Package',
+				"duration":"8 hours",
+				"lineTypeNo":true,
+				"popularLevel":1,
+				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
+				"lineNo":1,
+				"available":"Daily",
+				"tenP":500,
+				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
+			},{
+				'typeName':'Beijing Layover Tour',
+				"duration":"8 hours",
+				"lineTypeNo":true,
+				"popularLevel":1,
+				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
+				"lineNo":1,
+				"available":"Daily",
+				"tenP":500,
+				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
+			},{
+				'typeName':'Beijing Layover Tour',
+				"duration":"8 hours",
+				"lineTypeNo":true,
+				"popularLevel":1,
+				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
+				"lineNo":1,
+				"available":"Daily",
+				"tenP":500,
+				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
+			},{
+				'typeName':'Beijing Layover Tour2',
+				"duration":"8 hours",
+				"lineTypeNo":true,
+				"popularLevel":1,
+				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
+				"lineNo":1,
+				"available":"Daily",
+				"tenP":500,
+				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
+			},{
+				'typeName':'Beijing Layover Tour2',
+				"duration":"8 hours",
+				"lineTypeNo":true,
+				"popularLevel":1,
+				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
+				"lineNo":1,
+				"available":"Daily",
+				"tenP":500,
+				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
+			}];*/
+			var t_tours_list = ${lineList};
+			var t_all_html = {};
+			for(var i in t_tours_list){
+				var t_key = t_tours_list[i]['typeName'];
+				if(!t_all_html[t_key]){
+					t_all_html[t_key] = [];
 				}
-			];
-			var t_tours_list3 = [
-				{
-					'img':'IMG_1343.JPG',
-					'text_left':'Getting Cheap Airfare For Last Minute Travel',
-					'prise':'$39',
-				},
-				{
-					'img':'IMG_1343.JPG',
-					'text_left':'Getting Cheap Airfare For Last Minute TravelLast Minute Minute Travel',
-					'prise':'$46',
-				},
-				{
-					'img':'IMG_1343.JPG',
-					'text_left':'Getting Cheap Airfare For Last Minute Travel',
-					'prise':'$38',
-				}
-			];
-			tourlist.pushlist("tour_list_id",t_tours_list6);
-			tourlist.pushlist("tour_list_id2",t_tours_list6);
-			tourlist.pushlist("tour_list_id3",t_tours_list3);
-			tourlist.pushlist("tour_list_id4",t_tours_list3);
-			tourlist.pushlist("tour_list_id5",t_tours_list3);
-			tourlist.pushlist("tour_list_id6",t_tours_list3);
+				t_all_html[t_key].push(t_tours_list[i]);
+			}
+			var t_html_str = `<div class="tour_list_box">
+				<h1 class="public_title2">{name}</h1>
+				<ul id="tour_list_id{id}" class="tour_list_ul">
+					
+				</ul>
+				<div>&nbsp;</div>
+			</div>`;
+			var htmlindex = 0;
+			for(var j in t_all_html){
+				htmlindex++;
+				$("#tour_list_box_all").append(t_html_str.format2({name:j,id:htmlindex}));
+				tourlist.pushlist("tour_list_id"+htmlindex,t_all_html[j]);
+			}
 		</script>
 	</body>
 </html>

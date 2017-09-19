@@ -38,13 +38,8 @@
 				</div>
 				<div class="tour_details_overview">
 					<h1 class="tour_details_overview_top">Over View</h1>
-					<ul class="tour_details_overview_list">
-						<li class="icon_attr">Attraction: The great wall、The forbiddencity</li>
-						<li class="icon_attr">Duration: 8 hours</li>
-						<li class="icon_attr">language: English</li>
-						<li class="icon_attr">Tour type: private tour</li>
-						<li class="icon_attr">Amount of Walking: Moderate</li>
-						<li class="icon_attr">Customizable: Yes</li>
+					<ul id="overviewid" class="tour_details_overview_list">
+						
 					</ul>
 				</div>
 				<div class="tour_details_left_list">
@@ -204,10 +199,10 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20170316" ></script>
 		<script>
 			var datalist = [
 				{
@@ -274,6 +269,24 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		t_parent.addClass("parentclose");
 		    	}
 		    });
+		    
+		    var t_obj = ${lineList}[0];
+		    var viewhtml = `
+		    	<li class="icon_attr">Attraction: {attraction}</li>
+				<li class="icon_attr">Duration: {duration}</li>
+				<li class="icon_attr">language: {language}</li>
+				<li class="icon_attr">Tour type: {tourtype}</li>
+				<li class="icon_attr">Amount of Walking: {amount}</li>
+				<li class="icon_attr">Customizable: {customizable}</li>
+		    `;
+		    $("#overviewid").html(viewhtml.format2({
+		    	attraction:t_obj['attractions'],
+		    	duration:t_obj['duration'],
+		    	language:t_obj['language'],
+		    	tourtype:t_obj['isPrivate'],
+		    	amount:t_obj['phylevel'],
+		    	customizable:t_obj['customizable']
+		    }));
 		</script>
 	</body>
 </html>
