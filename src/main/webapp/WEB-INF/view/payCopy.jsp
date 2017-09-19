@@ -54,44 +54,36 @@
 						--><button class="tour_guide_list tour_guide_40"><span>Notice</span></button>
 					</div>
 					<div class="tour_guide_table_list2">
-						   <div class="tour_guide_td_list2 tour_guide_10">
-						   		<div class="tour_guide_td_list_in"></div>
-						   		<button class="tour_guide_td_button">1-2<br>traveling<br>party</button>
-						   </div><!--
-						--><div class="tour_guide_td_list2 tour_guide_10">
-						   		<div class="tour_guide_td_list_in"></div>
-						   		<button class="tour_guide_td_button">2 Standard<br>suitcases<br>+2 carry-on<br>ones</button>
-						   </div><!--
-						--><div class="tour_guide_td_list2 tour_guide_10">
-						   		<div class="tour_guide_td_list_in"></div>
-						   		<div class="tour_guide_td_button">
-						   			<button class="tour_guide_tdinside_list">Passat Lingyu</button>
-						   			<button class="tour_guide_tdinside_list">Nissan</button>
-						   			<button class="tour_guide_tdinside_list border_none">Toyota</button>
-						   		</div>
-						</div><!--
-						--><div class="tour_guide_td_list2 tour_guide_10">
-					   		<div class="tour_guide_td_list_in"></div>
-					   		<div class="tour_guide_td_button">
-					   			<div class="tour_guide_tdinside_list2">
-					   				<img src="${ctxStatic}/juhema/img/carimg.png" />
-					   			</div>
-					   			<div class="tour_guide_tdinside_list2">
-					   				<img src="${ctxStatic}/juhema/img/carimg.png" />
-					   			</div>
-					   			<div class="tour_guide_tdinside_list2 border_none">
-					   				<img src="${ctxStatic}/juhema/img/carimg.png" />
-					   			</div>
-					   		</div>
-						</div><!--
-						--><div class="tour_guide_td_list2 tour_guide_50">
-					   		<div class="tour_guide_td_list_inside4"></div>
-					   		<div class="tour_guide_td_button_more">
-					   			1.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin, foot-juggle and more. Keep your eyes on the stage and you may even see a motorcycle or two.<br>
-					   			2.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin.<br>
-					   			3.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin, foot-juggle and more. Keep your eyes on the stage and you may even see a motorcycle or two.<br>
-					   		</div>
+					   	<button class="tour_guide_td_button_new">1-2<br>traveling<br>party</button>
+					   	<button class="tour_guide_td_button_new2">2 Standard<br>suitcases<br>+2 carry-on<br>ones</button>
+						<div class="tour_guide_td_list_new tour_guide_40">
+							<div class="tour_guide_car_list">
+								<div class="tour_guide_td_list_in_new"></div>
+							 	<button class="tour_guide_car_text">Passat Lingyu</button>
+							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
+							</div>
+							<div class="tour_guide_car_list">
+								<div class="tour_guide_td_list_in_new"></div>
+							 	<button class="tour_guide_car_text">Passat Lingyu</button>
+							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
+							</div>
+							<div class="tour_guide_car_list">
+								<div class="tour_guide_td_list_in_new"></div>
+							 	<button class="tour_guide_car_text">Passat Lingyu</button>
+							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
+							</div>
+							<div class="tour_guide_car_list">
+								<div class="tour_guide_td_list_in_new"></div>
+							 	<button class="tour_guide_car_text">Passat Lingyu</button>
+							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
+							</div>
 					   </div>
+				   		<div class="tour_guide_td_button_more_new">
+				   			1.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin, foot-juggle and more. Keep your eyes on the stage and you may even see a motorcycle or two.<br>
+				   			2.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin.<br>
+				   			2.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin.<br>
+				   		</div>
+					   	<div style="clear:both;"></div>
 					</div>
 				</div>
 			</div>
@@ -139,8 +131,6 @@
 				
 			</div>
 			<div class="contact_list">
-				<div class="contact_label">Any comments or special instructions?</div>
-				<textarea class="contact_textarea"></textarea>
 				<div class="payCopytotalprice">
 					Total Cost: <span>$230</span>
 				</div>
