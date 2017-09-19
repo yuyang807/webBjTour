@@ -96,6 +96,9 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				<div class="tour_details_right_in">
 					<img class="tour_guide_top" src="${ctxStatic}/juhema/icon/order_top.png" />
 					<div class="tour_guide_top_text">Book this Tour</div>
+					<form id="formsubmit" action="/tour/confirm" method="post">
+						<input type="text" style="display: none;" name="lineNo" id="linenumberid" />
+						<input type="text" style="display: none;" name="startDate" id="startDateid" />
 					<ul class="tour_guide_ul">
 						<li class="tour_guide_li">Select a date</li>
 						<li class="tour_guide_li ">
@@ -109,24 +112,59 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Adults <span>$75</span></div>
-							<select class="tour_guide_li_right fr">
-								<option>Full day</option>
-								<option>2</option>
+							<div class="tour_guide_li_left fl">Adults <span id="pricep1">$75</span></div>
+							<select name="adultNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p1')">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Children(3-11) <span>$65</span></div>
-							<select class="tour_guide_li_right fr">
-								<option>Full day</option>
-								<option>2</option>
+							<div class="tour_guide_li_left fl">Children1 <span id="pricep2">$65</span></div>
+							<select name="teenagerNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p2')">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+							</select>
+						</li>
+						<li class="tour_guide_li">
+							<div class="tour_guide_li_left fl">Children2 <span id="pricep3">$65</span></div>
+							<select name="childNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p3')">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+							</select>
+						</li>
+						<li class="tour_guide_li">
+							<div class="tour_guide_li_left fl">Children3 <span id="pricep4">$65</span></div>
+							<select name="babyNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p4')">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
 							</select>
 						</li>
 					</ul>
 					<div class="tour_guide_total">
-						<span>Total Cost:</span><span class="tour_guide_font_big">$600</span>
-						<button class="button100 buttoncolor1">BOOKING NOW</button>
+						<span>Total Cost:</span><span id="total_price" class="tour_guide_font_big">$600</span>
+						<button class="button100 buttoncolor1" onclick="tosubmit()" >BOOKING NOW</button>
 					</div>
+					</form>
 				</div>
 				<div class="tour_details_right_more_top">
 					You might also like…..
@@ -270,7 +308,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	}
 		    });
 		    
-		    var t_obj = ${lineList}[0];
+		    var datalist = ${lineList}[0];
 		    var viewhtml = `
 		    	<li class="icon_attr">Attraction: {attraction}</li>
 				<li class="icon_attr">Duration: {duration}</li>
@@ -280,13 +318,76 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				<li class="icon_attr">Customizable: {customizable}</li>
 		    `;
 		    $("#overviewid").html(viewhtml.format2({
-		    	attraction:t_obj['attractions'],
-		    	duration:t_obj['duration'],
-		    	language:t_obj['language'],
-		    	tourtype:t_obj['isPrivate'],
-		    	amount:t_obj['phylevel'],
-		    	customizable:t_obj['customizable']
+		    	attraction:datalist['attractions'],
+		    	duration:datalist['duration'],
+		    	language:datalist['language'],
+		    	tourtype:datalist['isPrivate'],
+		    	amount:datalist['phylevel'],
+		    	customizable:datalist['customizable']
 		    }));
+		    
+		    // 打折规则
+		    var t_number = {
+		    	p1:{
+		    		z:1,
+		    		n:0
+		    	},
+		    	p2:{
+		    		z:0.9,
+		    		n:0
+		    	},
+		    	p3:{
+		    		z:0.8,
+		    		n:0
+		    	},
+		    	p4:{
+		    		z:0.7,
+		    		n:0
+		    	}
+		    };
+		    /*var datalist = [{
+		    	oneP:100,
+		    	twoP:95,
+		    	threeP:90,
+		    	fourP:85,
+		    	fiveP:80,
+		    	sixP:75,
+		    	sevenP:70,
+		    	eightP:65,
+		    	nineP:60,
+		    	tenP:55
+		    }];*/
+		    $("#linenumberid").val(datalist[0]['lineNo']);
+		    var pricemap = ['oneP','twoP','threeP','fourP','fiveP','sixP','sevenP','eightP','nineP','tenP'];
+		    function showval(){
+		    	var t_all_num = 0;
+		    	var t_now_price = 0;
+		    	var t_all_price = 0;
+		    	for(var i in t_number){
+		    		t_all_num += parseInt(t_number[i]['n']);
+		    	}
+		    	if(t_all_num > pricemap.length){
+		    		t_now_price = datalist[0][pricemap[pricemap.length]];
+		    	}else{
+		    		t_now_price = datalist[0][pricemap[t_all_num]];
+		    	}
+		    	
+		    	for(var i in t_number){
+		    		var t_sigle_price = t_number[i]['z']*t_now_price;
+		    		$("#price"+i).html("$"+t_sigle_price.toFixed(0));
+		    		t_all_price += parseInt(t_sigle_price.toFixed(0)*t_number[i]['n']);
+		    	}
+		    	
+		    	$("#total_price").html("$"+t_all_price);
+		    }
+		    function selectprice(t_this,num){
+		    	t_number[num]['n'] = t_this.value;
+		    	showval();
+		    }
+		    function tosubmit(){
+		    	$("#startDateid").html((new Date(picker['_d'])).getTime());
+		    	$("#formsubmit").submit();
+		    }
 		</script>
 	</body>
 </html>
