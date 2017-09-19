@@ -98,12 +98,69 @@
   vertical-align: top;
   padding: 10px 0;
 }
+.tour_guide_td_list_new {
+	position:relative;
+	left:30%;
+	top:0;
+}
+.tour_guide_car_list{
+	position:relative;
+	border-bottom:1px solid #ccc;
+}
 .tour_guide_td_list2 {
   position: relative;
   float: left;
 }
+.tour_guide_table_list2{
+	position:relative;
+}
+.tour_guide_td_button_more_new{
+	position:absolute;
+	top:0;
+	width:39.5%;
+	right:0;
+	bottom:0;
+	overflow: hidden;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.tour_guide_td_button_new{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	width:15%;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.tour_guide_td_button_new2{
+	position:absolute;
+	top:0;
+	left:15%;
+	bottom:0;
+	width:15%;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.tour_guide_car_text{
+	width:50%;
+	height:100%;
+	left:0;
+	top:0;
+	position:absolute;
+}
+.tour_guide_car_img{
+	top:0;
+	right:0;
+	width:50%;
+	height:100%;
+	position:absolute;
+}
 .tour_guide_td_list_in {
   padding: 100% 50%;
+}
+.tour_guide_td_list_in_new{
+	padding: 16.5% 50%;
 }
 .tour_guide_td_list_inside2 {
   padding: 77% 50%;
