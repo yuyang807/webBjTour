@@ -27,14 +27,9 @@
 		</div>
 		<h1 class="public_title5">Shopping Basket</h1>
 		<div class="tour_list_box">
-			<div class="tour_faqs_ul">
+			<div id="personlist" class="tour_faqs_ul">
 				<img src="${ctxStatic}/juhema/img/IMG_1450.JPG" class="payCopy_img" />
-				<ul class="payCopy_top_ul">
-					<li>The Great Wall Tour</li>
-					<li>2 people, $200 </li>
-					<li>Dete: 14/07/2017</li>
-				</ul>
-				<div style="float:right;font-size:2rem;color:#9B9B9B;">$200</div>
+				
 			</div>
 			<div class="tour_guide_table_box">
 				<div class="tour_payCopy_top">
@@ -49,45 +44,9 @@
 						</select>
 					</div>
 				</div>
-				<div class="tour_guide_table">
-					<div class="tour_guide_table_top">
-						<button class="tour_guide_list tour_guide_10"><span>Size of party</span><div class="tour_guide_list_line"></div></button><!--
-						--><button class="tour_guide_list tour_guide_10"><span>Suitcase</span><div class="tour_guide_list_line"></div></button><!--
-						--><button class="tour_guide_list tour_guide_10"><span>Type of vehicle</span><div class="tour_guide_list_line"></div></button><!--
-						--><button class="tour_guide_list tour_guide_10"><span>Photo</span><div class="tour_guide_list_line"></div></button><!--
-						--><button class="tour_guide_list tour_guide_40"><span>Notice</span></button>
-					</div>
-					<div class="tour_guide_table_list2">
-					   	<button class="tour_guide_td_button_new">1-2<br>traveling<br>party</button>
-					   	<button class="tour_guide_td_button_new2">2 Standard<br>suitcases<br>+2 carry-on<br>ones</button>
-						<div class="tour_guide_td_list_new tour_guide_40">
-							<div class="tour_guide_car_list">
-								<div class="tour_guide_td_list_in_new"></div>
-							 	<button class="tour_guide_car_text">Passat Lingyu</button>
-							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
-							</div>
-							<div class="tour_guide_car_list">
-								<div class="tour_guide_td_list_in_new"></div>
-							 	<button class="tour_guide_car_text">Passat Lingyu</button>
-							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
-							</div>
-							<div class="tour_guide_car_list">
-								<div class="tour_guide_td_list_in_new"></div>
-							 	<button class="tour_guide_car_text">Passat Lingyu</button>
-							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
-							</div>
-							<div class="tour_guide_car_list">
-								<div class="tour_guide_td_list_in_new"></div>
-							 	<button class="tour_guide_car_text">Passat Lingyu</button>
-							 	<img class="tour_guide_car_img" src="${ctxStatic}/juhema/img/carimg.png" />
-							</div>
-					   </div>
-				   		<div class="tour_guide_td_button_more_new">
-				   			1.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin, foot-juggle and more. Keep your eyes on the stage and you may even see a motorcycle or two.<br>
-				   			2.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin.<br>
-				   			2.Let some of China’s most talented entertainers and athletes dazzle you for an evening with gravity-defying tricks and acrobatics. These spectacular performers will contort, balance, plate-spin.<br>
-				   		</div>
-					   	<div style="clear:both;"></div>
+				<div class="tour_guide_table_wai">
+					<div id="tour_guide_table_id" class="tour_guide_table">
+						
 					</div>
 				</div>
 			</div>
@@ -152,7 +111,70 @@
 				}else{
 					t_p.addClass("checkbox_hover");
 				}
-			})
+			});
+			var table_top_html = `
+				<div class="tour_guide_table_top">
+					<button class="tour_guide_list tour_guide_10"><span>Size of party</span><div class="tour_guide_list_line"></div></button><!--
+					--><button class="tour_guide_list tour_guide_20"><span>Type of vehicle</span><div class="tour_guide_list_line"></div></button><!--
+					--><button class="tour_guide_list tour_guide_20"><span>Photo</span><div class="tour_guide_list_line"></div></button><!--
+					--><button class="tour_guide_list tour_guide_45"><span>Notice</span></button>
+				</div>
+			`;
+			var table_str = `
+				<div class="tour_guide_table_list2">
+				   	<button class="tour_guide_td_button_new">1-2<br>traveling<br>party</button>
+					<div class="tour_guide_td_list_new tour_guide_50">
+						<div class="tour_guide_car_list">
+							<div class="tour_guide_td_list_in_new"></div>
+						 	<button class="tour_guide_car_text">Passat Lingyu</button>
+						 	<img class="tour_guide_car_img" src="img/carimg.png" />
+						</div>
+						<div class="tour_guide_car_list">
+							<div class="tour_guide_td_list_in_new"></div>
+						 	<button class="tour_guide_car_text">Passat Lingyu</button>
+						 	<img class="tour_guide_car_img" src="img/carimg.png" />
+						</div>
+						<div class="tour_guide_car_list">
+							<div class="tour_guide_td_list_in_new"></div>
+						 	<button class="tour_guide_car_text">Passat Lingyu</button>
+						 	<img class="tour_guide_car_img" src="img/carimg.png" />
+						</div>
+						<div class="tour_guide_car_list">
+							<div class="tour_guide_td_list_in_new"></div>
+						 	<button class="tour_guide_car_text">Passat Lingyu</button>
+						 	<img class="tour_guide_car_img" src="img/carimg.png" />
+						</div>
+				   </div>
+				   	<div style="clear:both;"></div>
+				</div>
+			`;
+			var table_str_more = `
+				<div class="tour_guide_td_button_more_new">
+		   			<div class="tour_guide_text_inner">
+			   			1.The rates above are quoted separately only with Chinese-speaking driver since Most of the drivers speaks little English.<br>                                             
+						2.Our Standard Cars (Nissan, Passat, Sonata...) are in a random arrangement.<br>
+						3.Your driver will pick you up at your hotel holding a piece of paper with your name. For urgent matters, please call your trip advisor on her or his mobile.
+					</div>
+		   		</div>
+			`;
+			$("#tour_guide_table_id").html(table_top_html+table_str+table_str+table_str_more);
+			var person_str = `
+				<ul class="payCopy_top_ul">
+					<li>The Great Wall Tour</li>
+					<li>{personnum} people, ${allprice} </li>
+					<li>Date: 14/07/2017</li>
+				</ul>
+				<div style="float:right;font-size:2rem;color:#9B9B9B;">${allprice}</div>
+			`;
+
+			var personnum = ${adultNum}+${teenagerNum}+${childNum}+${babyNum};
+			var allprice = ${adultNum}*${unitPrice}+
+			${teenagerNum}*${unitPrice}*0.9+
+			${childNum}*${unitPrice}*0.8;
+			$("#personlist").append(person_str.format2({
+				personnum:personnum,
+				allprice:allprice
+			}));
 		</script>
 	</body>
 </html>

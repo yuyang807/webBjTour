@@ -98,7 +98,7 @@
 					</li>
 				</ul>
 			</div>
-			<a id="howtobook" class="linklist" href="">View all Reviews >></a>
+			<a id="howtobook" class="linklist" href="/list">View all Reviews >></a>
 			<!--<button class="buttonpublic_nochange buttoncolor3 viewallreviews">View all Reviews</button>-->
 			<div>&nbsp;</div>
 		</div>
