@@ -40,9 +40,13 @@
 				<div class="tour_payCopy_top">
 					<div class="tour_payCopy_top_r"></div>
 					Airport/Railway station Pick up
-					<div class="tour_payCopy_checkbox">
-						<div class="tour_payCopy_checkbox_left"></div>
-						<div class="tour_payCopy_checkbox_text">$250</div>
+					<div class="tour_payCopy_checkbox_big">
+						<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
+						<div class="tour_payCopy_checkbox_text tour_payCopy_click">$250</div>
+						<div class="tour_payCopy_checkbox_more">Choose a row</div>
+						<select class="tour_payCopy_checkbox_select">
+							<option>row 1-4</option>
+						</select>
 					</div>
 				</div>
 				<div class="tour_guide_table">
@@ -90,22 +94,14 @@
 			
 			<div class="tour_payCopy_top">
 				<div class="tour_payCopy_top_r"></div>
-					Airport/Railway station Drop Off
-				<div class="tour_payCopy_checkbox">
-					<div class="tour_payCopy_checkbox_left"></div>
-					<div class="tour_payCopy_checkbox_text">$250</div>
-				</div>
-			</div>
-			<div class="tour_payCopy_text">
-				Reference  Airport/Railway staion Pick up.
-			</div>
-			
-			<div class="tour_payCopy_top">
-				<div class="tour_payCopy_top_r"></div>
 					Acrabatic Show In Chaoyang Theatre
-				<div class="tour_payCopy_checkbox">
-					<div class="tour_payCopy_checkbox_left"></div>
-					<div class="tour_payCopy_checkbox_text">$250</div>
+				<div class="tour_payCopy_checkbox_big">
+					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$250</div>
+					<div class="tour_payCopy_checkbox_more">Choose a row</div>
+					<select class="tour_payCopy_checkbox_select">
+						<option>row 1-4</option>
+					</select>
 				</div>
 			</div>
 			<div class="tour_payCopy_text">
@@ -116,8 +112,8 @@
 				<div class="tour_payCopy_top_r"></div>
 					Kungfu Show In Red Theatre
 				<div class="tour_payCopy_checkbox_big">
-					<div class="tour_payCopy_checkbox_left"></div>
-					<div class="tour_payCopy_checkbox_text">$250</div>
+					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$250</div>
 					<div class="tour_payCopy_checkbox_more">Choose a row</div>
 					<select class="tour_payCopy_checkbox_select">
 						<option>row 1-4</option>
@@ -149,11 +145,12 @@
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
 		<script>
-			$(".tour_payCopy_checkbox").click(function(){
-				if($(this).hasClass("checkbox_hover")){
-					$(this).removeClass("checkbox_hover");
+			$(".tour_payCopy_click").click(function(){
+				var t_p = $(this).parent();
+				if(t_p.hasClass("checkbox_hover")){
+					t_p.removeClass("checkbox_hover");
 				}else{
-					$(this).addClass("checkbox_hover");
+					t_p.addClass("checkbox_hover");
 				}
 			})
 		</script>

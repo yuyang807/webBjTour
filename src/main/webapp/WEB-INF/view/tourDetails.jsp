@@ -242,7 +242,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20170316" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20170316" ></script>
 		<script>
-			var datalist = [
+			/*var datalist = [
 				{
 					"name":"page1",
 					"img":"IMG_1450.JPG"
@@ -262,32 +262,9 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				{
 					"name":"page3",
 					"img":"IMG_1452.JPG"
-				},
-				{
-					"name":"page3",
-					"img":"IMG_1452.JPG"
-				},
-				{
-					"name":"page2",
-					"img":"IMG_1451.JPG"
-				},
-				{
-					"name":"page3",
-					"img":"IMG_1452.JPG"
-				},
-				{
-					"name":"page2",
-					"img":"IMG_1451.JPG"
-				},
-				{
-					"name":"page3",
-					"img":"IMG_1452.JPG"
-				},
-				{
-					"name":"page2",
-					"img":"IMG_1451.JPG"
 				}
-			];
+			];*/
+			var datalist = ${plist};
 			slider.init("tour_slider_main",datalist);
 			
 			
@@ -308,7 +285,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	}
 		    });
 		    
-		    var datalist = ${lineList}[0];
+		    var datalist = ${oneLine}[0];
 		    var viewhtml = `
 		    	<li class="icon_attr">Attraction: {attraction}</li>
 				<li class="icon_attr">Duration: {duration}</li>
@@ -388,6 +365,48 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	$("#startDateid").html((new Date(picker['_d'])).getTime());
 		    	$("#formsubmit").submit();
 		    }
+		    /*var lineList = [
+		    	{
+		    		"lineNo":123,
+		    		"lineName":123,
+		    		"available":123,
+		    		"duration":123,
+		    		"lineTypeNo":123,
+		    		"popularLevel":123,
+		    		"fileUrll":123
+		    	},
+		    	{
+		    		"lineNo":123,
+		    		"lineName":123,
+		    		"available":123,
+		    		"duration":123,
+		    		"lineTypeNo":123,
+		    		"popularLevel":123,
+		    		"fileUrll":123
+		    	}
+		    ];*/
+		   var lineList = ${lineList}[0];
+		    var lineliststr = `
+		    	<li class="tour_details_right_img_li"  onclick="linkfor(/list/{lineNo})">
+					<div class="tour_details_right_img_li_inner"></div>
+					<img class="tour_details_right_img_li_img" src="{fileUrll}" />
+					<div class="tour_details_right_img_bg"></div>
+					<div class="tour_details_right_img_text">
+						<div class="tour_details_right_img_text_center">
+							{lineName}
+						</div>
+					</div>
+				</li>
+		    `;
+		    var t_linelist_html = '';
+		    for(var i in lineList){
+		    	t_linelist_html += lineliststr.format2({
+		    		lineNo:lineList[i].lineNo,
+		    		fileUrll:lineList[i].fileUrll,
+		    		lineName:lineList[i].lineName
+		    	});
+		    }
+		    $("#tour_details_right_img_ul").html(t_linelist_html);
 		</script>
 	</body>
 </html>
