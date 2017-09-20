@@ -35,6 +35,12 @@ public class Constants {
      * 线路不含的附加项
      */
     public static final String REDIS_LINE_UN_ADD = "tour.line.unAdd.";
+    
+    /**
+     * 客户端IP前缀
+     */
+    public static final String REDIS_CLINET_IP = "cip.";
+    
     /**
      * 缓存线路有效时间
      */
@@ -44,6 +50,8 @@ public class Constants {
      * 缓存轮播图片地址有效时间
      */
     public static final long MAINPIC_EXPIRED_TIME = Long.parseLong(PropertiesUtil.getValue("application","mainPic.expired.time"));
+
+	public static final String WARN_EMAIL = PropertiesUtil.getValue("application", "warn.email");
     
     
     

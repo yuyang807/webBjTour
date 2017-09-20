@@ -1,4 +1,4 @@
-package qianbao.mybatis_generator;
+package yy.mybatis_generator;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -23,7 +23,7 @@ public class MakeJavaMybatisCode {
     public static final String user = "appuser";  
     public static final String password = "appuser";
     //需要生成的表名称,生成多个时以","分割开。为空时按整库生成
-    public static final String tableNames = "t_addition";
+    public static final String tableNames = "t_order";
     
     public static final String filePath="D:/workspace_tmp/webBJTour/src/main/java/com/yy/tourweb/web";
     

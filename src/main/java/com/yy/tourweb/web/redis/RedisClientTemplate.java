@@ -6,11 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.yy.tourweb.util.AppLogger;
+
 import redis.clients.jedis.ShardedJedis;
 
 @Repository("redisClientTemplate")
 public class RedisClientTemplate {
-    private static final Logger log = LoggerFactory.getLogger(RedisClientTemplate.class);
+	private static AppLogger logger = new AppLogger(RedisClientTemplate.class);
 
     @Resource
     private JedisDataSource redisDataSource;
@@ -27,7 +29,7 @@ public class RedisClientTemplate {
      * @param value
      * @return
      */
-    public String set(String key, String value) {
+    public String set(String key,int seconds, String value) {
         String result = null;
 
         ShardedJedis shardedJedis = redisDataSource.getRedisClient();
@@ -36,9 +38,9 @@ public class RedisClientTemplate {
         }
         boolean broken = false;
         try {
-            result = shardedJedis.set(key, value);
+            result = shardedJedis.setex(key, seconds, value);
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -64,7 +66,7 @@ public class RedisClientTemplate {
             result = shardedJedis.get(key);
 
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -82,7 +84,7 @@ public class RedisClientTemplate {
         try {
             result = shardedJedis.exists(key);
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -101,7 +103,7 @@ public class RedisClientTemplate {
             result = shardedJedis.type(key);
 
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -127,7 +129,7 @@ public class RedisClientTemplate {
             result = shardedJedis.expire(key, seconds);
 
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -153,7 +155,7 @@ public class RedisClientTemplate {
             result = shardedJedis.expireAt(key, unixTime);
 
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -172,7 +174,7 @@ public class RedisClientTemplate {
             result = shardedJedis.ttl(key);
 
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -191,7 +193,7 @@ public class RedisClientTemplate {
         try {
             result = shardedJedis.setbit(key, offset, value);
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -210,7 +212,7 @@ public class RedisClientTemplate {
         try {
             result = shardedJedis.getbit(key, offset);
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -228,7 +230,7 @@ public class RedisClientTemplate {
         try {
             result = shardedJedis.setrange(key, offset, value);
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);
@@ -247,7 +249,7 @@ public class RedisClientTemplate {
             result = shardedJedis.getrange(key, startOffset, endOffset);
 
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+        	logger.error(e.getMessage(), e);
             broken = true;
         } finally {
             redisDataSource.returnResource(shardedJedis, broken);

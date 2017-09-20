@@ -1,4 +1,4 @@
-package qianbao.mybatis_generator;
+package yy.mybatis_generator;
 
 import java.util.List;
 

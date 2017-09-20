@@ -4,6 +4,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Repository;
 
+import com.yy.tourweb.util.AppLogger;
+
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPool;
 
@@ -15,7 +17,7 @@ import redis.clients.jedis.ShardedJedisPool;
 @Repository("jedisDS")
 public class JedisDataSourceImpl implements JedisDataSource {
 
-//	private static final Logger LOG = LoggerFactory.getLogger(JedisDataSourceImpl.class);
+	private static AppLogger logger = new AppLogger(JedisDataSourceImpl.class);
     
 	@Resource
     private ShardedJedisPool shardedJedisPool;
@@ -27,7 +29,7 @@ public class JedisDataSourceImpl implements JedisDataSource {
             shardJedis = shardedJedisPool.getResource();
             return shardJedis;
         } catch (Exception e) {
-//            LOG.error("[JedisDS] getRedisClent error:" + e.getMessage());
+        	logger.error("[JedisDS] getRedisClent error:" + e.getMessage());
             if (null != shardJedis)
                 shardJedis.close();
         }
