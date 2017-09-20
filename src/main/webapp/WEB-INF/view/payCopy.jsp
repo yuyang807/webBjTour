@@ -120,30 +120,18 @@
 					--><button class="tour_guide_list tour_guide_45"><span>Notice</span></button>
 				</div>
 			`;
+			var car_str = `
+				<div class="tour_guide_car_list">
+					<div class="tour_guide_td_list_in_new"></div>
+				 	<button class="tour_guide_car_text">{carName}</button>
+				 	<img class="tour_guide_car_img" src="{carPicUrl}" />
+				</div>
+			`;
 			var table_str = `
 				<div class="tour_guide_table_list2">
-				   	<button class="tour_guide_td_button_new">1-2<br>traveling<br>party</button>
+				   	<button class="tour_guide_td_button_new">{carnum}<br>traveling<br>party</button>
 					<div class="tour_guide_td_list_new tour_guide_50">
-						<div class="tour_guide_car_list">
-							<div class="tour_guide_td_list_in_new"></div>
-						 	<button class="tour_guide_car_text">Passat Lingyu</button>
-						 	<img class="tour_guide_car_img" src="img/carimg.png" />
-						</div>
-						<div class="tour_guide_car_list">
-							<div class="tour_guide_td_list_in_new"></div>
-						 	<button class="tour_guide_car_text">Passat Lingyu</button>
-						 	<img class="tour_guide_car_img" src="img/carimg.png" />
-						</div>
-						<div class="tour_guide_car_list">
-							<div class="tour_guide_td_list_in_new"></div>
-						 	<button class="tour_guide_car_text">Passat Lingyu</button>
-						 	<img class="tour_guide_car_img" src="img/carimg.png" />
-						</div>
-						<div class="tour_guide_car_list">
-							<div class="tour_guide_td_list_in_new"></div>
-						 	<button class="tour_guide_car_text">Passat Lingyu</button>
-						 	<img class="tour_guide_car_img" src="img/carimg.png" />
-						</div>
+						{carlist}
 				   </div>
 				   	<div style="clear:both;"></div>
 				</div>
@@ -175,6 +163,54 @@
 				personnum:personnum,
 				allprice:allprice
 			}));
+			
+			//var carList = ${carList};
+		    var carList = [{
+		    	carTypeName:1,
+		    	carName:'1-1'
+		    },{
+		    	carTypeName:2,
+		    	carName:'2-1'
+		    },{
+		    	carTypeName:2,
+		    	carName:'2-2'
+		    },{
+		    	carTypeName:2,
+		    	carName:'2-3'
+		    },{
+		    	carTypeName:3,
+		    	carName:'3-1'
+		    },{
+		    	carTypeName:1,
+		    	carName:'1-2'
+		    },{
+		    	carTypeName:3,
+		    	carName:'3-2'
+		    }];
+		    var carmap = {};
+		    for(var i in carList){
+		    	var carkey = carList[i]['carTypeName'];
+		    	if(carmap[carkey] == undefined){
+		    		carmap[carkey] = [];
+		    	}
+		    	carmap[carkey].push(carList[i]);
+		    }
+		    console.log(carmap);
+		    var t_all_table = '';
+		    for(var i in carmap){
+		    	var onecarmap = carmap[i];
+		    	var t_car_list = "";
+		    	for(var j in onecarmap){
+		    		t_car_list += car_str.format2({
+		    			carName:onecarmap[j]['carName'],
+		    			carPicUrl:onecarmap[j]['carPicUrl']
+		    		})
+		    	}
+		    	t_all_table += table_str.format2({
+		    		carnum:i,
+		    		carlist:t_car_list
+		    	});
+		    }
 		</script>
 	</body>
 </html>
