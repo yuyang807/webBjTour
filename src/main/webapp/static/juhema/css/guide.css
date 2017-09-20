@@ -130,6 +130,7 @@
 }
 .tour_guide_text_inner{
 	padding:5%;
+	line-height:2rem;
 }
 .tour_guide_td_button_new{
 	position:absolute;
@@ -373,7 +374,7 @@
 }
 .tour_payCopy_line{
 	border-bottom:1px solid #000000;
-	margin-bottom:1rem;
+	margin:2rem 0 1rem;
 }
 .payCopy_top_ul li{
 	color:#484848;
