@@ -23,6 +23,7 @@ a {
 body {
   position: absolute;
   width: 100%;
+  font-family: helvetica;
 }
 button {
   border: none;
@@ -236,7 +237,7 @@ html {
 .big_submit {
 	height:2.5rem;
 	width:10rem;
-	background:#A8223C;
+	background:#e44e47;
 	color:#fff;
 	font-size:0.8rem;
 	margin-bottom:3rem;

@@ -153,13 +153,13 @@
 			</div>
 		</footer>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js?v=20170316" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20170316" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20170316" ></script>
 			<script>
 				
-				var datalist = [
+				/*var datalist = [
 					{
 						"name":"page1",
 						"img":"${ctxStatic}/juhema/img/IMG_1450.JPG"
@@ -172,7 +172,8 @@
 						"name":"page3",
 						"img":"${ctxStatic}/juhema/img/IMG_1452.JPG"
 					}
-				];
+				];*/
+				var datalist = ${picList};
 				slider.init("tour_slider_main",datalist);
 				var t_tours_list = ${lineList};
 				/*var t_tours_list = [
