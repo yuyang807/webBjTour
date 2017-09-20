@@ -4,16 +4,20 @@ import com.yy.tourweb.web.dto.IDto;
 
 /**
   * 图片表(t_pic)映射Dto
-  * @version 2017-09-10  * */ 
+  * @version 2017-09-14  * */ 
 public class TPicDto implements IDto {
     /**
      * 
      * */
     private Long id;
     /**
-     * 线路编号
+     * 图片编号
      * */
-    private Integer lineNo;
+    private Integer picNo;
+    /**
+     * 图片名称
+     * */
+    private String picName;
     /**
      * 文件路径
      * */
@@ -49,17 +53,31 @@ public class TPicDto implements IDto {
     }
 
     /**
-     * setLineNo 线路编号
+     * setPicNo 图片编号
      * */
-    public void setLineNo(Integer lineNo) {
-        this.lineNo=lineNo;
+    public void setPicNo(Integer picNo) {
+        this.picNo=picNo;
     }
 
     /**
-     * getLineNo 线路编号
+     * getPicNo 图片编号
      * */
-    public Integer getLineNo() {
-        return lineNo;
+    public Integer getPicNo() {
+        return picNo;
+    }
+
+    /**
+     * setPicName 图片名称
+     * */
+    public void setPicName(String picName) {
+        this.picName=picName;
+    }
+
+    /**
+     * getPicName 图片名称
+     * */
+    public String getPicName() {
+        return picName;
     }
 
     /**

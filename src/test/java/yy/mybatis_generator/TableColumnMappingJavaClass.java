@@ -1,4 +1,4 @@
-package qianbao.mybatis_generator;
+package yy.mybatis_generator;
 /**
  * 表字段映射java类
  * */

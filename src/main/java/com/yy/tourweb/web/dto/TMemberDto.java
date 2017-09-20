@@ -4,12 +4,16 @@ import com.yy.tourweb.web.dto.IDto;
 
 /**
   * 用户表(t_member)映射Dto
-  * @version 2017-09-07  * */ 
+  * @version 2017-09-16  * */ 
 public class TMemberDto implements IDto {
     /**
      * 
      * */
     private Long id;
+    /**
+     * 会员编号
+     * */
+    private Integer memberNo;
     /**
      * 邮箱地址
      * */
@@ -26,6 +30,10 @@ public class TMemberDto implements IDto {
      * 
      * */
     private String passportNum;
+    /**
+     * 电话
+     * */
+    private String phoneNum;
     /**
      * ip地址第一位
      * */
@@ -58,6 +66,20 @@ public class TMemberDto implements IDto {
      * */
     public Long getId() {
         return id;
+    }
+
+    /**
+     * setMemberNo 会员编号
+     * */
+    public void setMemberNo(Integer memberNo) {
+        this.memberNo=memberNo;
+    }
+
+    /**
+     * getMemberNo 会员编号
+     * */
+    public Integer getMemberNo() {
+        return memberNo;
     }
 
     /**
@@ -114,6 +136,20 @@ public class TMemberDto implements IDto {
      * */
     public String getPassportNum() {
         return passportNum;
+    }
+
+    /**
+     * setPhoneNum 电话
+     * */
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum=phoneNum;
+    }
+
+    /**
+     * getPhoneNum 电话
+     * */
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
     /**

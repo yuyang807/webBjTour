@@ -48,7 +48,7 @@ public class AdditionService implements IAdditionService{
 			params.put("lineNo", lineNo);
 			list = baseDao.queryByMap("TAdditionDto.queryLineAddition", params);
 			String jsonStr = JSONArray.toJSONString(list);
-			redisClient.set(key, jsonStr);
+			redisClient.set(key,3600*3, jsonStr);
 		}else{
 			list = JSONArray.parseArray(resultStr,List.class);
 		}

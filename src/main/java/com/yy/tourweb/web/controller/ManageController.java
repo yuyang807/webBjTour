@@ -6,15 +6,27 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.alibaba.fastjson.JSONArray;
+import com.yy.tourweb.common.Constants;
+import com.yy.tourweb.util.AppLogger;
+import com.yy.tourweb.util.EmailUtil;
+import com.yy.tourweb.web.dto.IDto;
+import com.yy.tourweb.web.dto.TCarDto;
+import com.yy.tourweb.web.dto.TCarkindDto;
+import com.yy.tourweb.web.dto.TLineDto;
+import com.yy.tourweb.web.dto.TMemberDto;
+import com.yy.tourweb.web.dto.TOrderDto;
 import com.yy.tourweb.web.dto.TPicDto;
+import com.yy.tourweb.web.dto.TShowDto;
 import com.yy.tourweb.web.service.IAdditionService;
+import com.yy.tourweb.web.service.IBaseService;
 import com.yy.tourweb.web.service.ILineService;
 import com.yy.tourweb.web.service.IPicService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +37,10 @@ import java.util.Map;
  */
 @Controller
 public class ManageController {
-//	private static AppLogger logger = new AppLogger(H5ManageController.class);
+	private static AppLogger logger = new AppLogger(ManageController.class);
+	
+	@Resource
+	private IBaseService baseService;
 	
 	@Resource
 	private ILineService lineService;
@@ -47,12 +62,12 @@ public class ManageController {
     	
     	//查询首页权重前12的线路list(包含：首页图url→上传图时对首页图进行等比压缩？line_no、名称、类型、价格、天数)
     	
-    	List<TPicDto> llist = picService.queryMainPicList();//先走redis查询，没有再查数据库
-    	List<Map<String,Object>> plist = lineService.queryLineList(0);//先走redis查询，没有再查数据库
+    	List<TPicDto> plist = picService.queryMainPicList();//先走redis查询，没有再查数据库
+    	List<Map<String,Object>> llist = lineService.queryLineList(0);//先走redis查询，没有再查数据库
     	
-		model.addAttribute("lineList", llist);
-    	model.addAttribute("picList", plist);
-		return "index";	
+		model.addAttribute("lineList", JSONArray.toJSON(llist));
+    	model.addAttribute("picList", JSONArray.toJSON(plist));
+		return "home";	
     }
     
     /**
@@ -63,7 +78,7 @@ public class ManageController {
     @RequestMapping("/list")
     public String showList(HttpServletRequest request, Model model) {
     	List<Map<String,Object>> llist = lineService.queryLineList(1);//先走redis查询，没有再查数据库
-		model.addAttribute("lineList", llist);
+		model.addAttribute("lineList", JSONArray.toJSON(llist));
 		return "list";	
     }
     
@@ -73,19 +88,205 @@ public class ManageController {
     	//优化方案：异步请求相似线路
     	try {
 			List<Map<String,Object>> oneLine = lineService.queryOneLine(lineNo);//先走redis查询，没有再查数据库
-			model.addAttribute("line", oneLine);
+			model.addAttribute("oneLine", JSONArray.toJSON(oneLine));
 		} catch (Exception e) {
-			System.out.println("您访问的页面不存在！");
+			logger.error("根据编号查询线路异常！",e);;
 			return "error";
 		}
     	
+    	Map<String, Object> params = new HashMap<String, Object>();
+    	params.put("lineNo", lineNo);
+    	List plist = baseService.queryListByMap("TPicDto.queryPicByLineNo", params);
     	List<Map<String,Object>> addList   = additionService.queryLineAddition(lineNo, 0);
     	List<Map<String,Object>> unaddlist = additionService.queryLineAddition(lineNo, 1);
     	
     	List<Map<String,Object>> llist = lineService.queryRandom3();
-    	model.addAttribute("llist", llist);
-    	model.addAttribute("addList", addList);
-    	model.addAttribute("unaddlist", unaddlist);
+    	model.addAttribute("plist", JSONArray.toJSON(plist));
+    	model.addAttribute("llist", JSONArray.toJSON(llist));
+    	model.addAttribute("addList", JSONArray.toJSON(addList));
+    	model.addAttribute("unaddList", JSONArray.toJSON(unaddlist));
+    	
+    	return "tour";
+    }
+    
+    @RequestMapping("/tour/basket")
+    public String preShopping(TOrderDto tod,Model model){
+    	//根据lineNo查询线路名称、url
+    	//根据lineNo与人数 查询单价
+    	//查询所有表演内容
+    	//查询所有车辆内容
+    	
+    	int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	List<Map<String, Object>> tldList = lineService.queryOneLine(String.valueOf(tod.getLineNo()));
+    	Map<String,Object> tldMap = tldList.get(0);
+    	String unitPrice = String.valueOf(getUnitPrice(totalNum,tldMap));
+    	model.addAttribute("lineNo", tod.getLineNo());
+    	model.addAttribute("adultNum", tod.getAdultNum());
+    	model.addAttribute("teenagerNum", tod.getTeenagerNum());
+    	model.addAttribute("childNum", tod.getChildNum());
+    	model.addAttribute("babyNum", tod.getBabyNum());
+    	model.addAttribute("startDate", tod.getStartDate());
+    	model.addAttribute("lineName", tldMap.get("lineName"));
+    	model.addAttribute("mainPicUrl", tldMap.get("mainPicUrl"));
+    	model.addAttribute("unitPrice", unitPrice);
+    	
+    	List<TShowDto> showList = (List<TShowDto>)(List) baseService.queryListByDto(new TShowDto());
+    	List<TCarDto>  carList  = (List<TCarDto>)(List)  baseService.queryListByDto(new TCarDto());
+    	model.addAttribute("showList", JSONArray.toJSON(showList));
+    	model.addAttribute("carList", JSONArray.toJSON(carList));
+    	
+    	return "basket";
+    }
+    
+    @RequestMapping("/tour/confirm")
+    public String confirmOrder(TOrderDto tod,Model model){
+    	//根据lineNo查询线路名称、url
+    	//根据lineNo与人数 查询单价
+    	//查询所选对应两个节目的信息
+    	//查询所选车辆的信息
+    	
+    	int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	List<Map<String, Object>> tldList = lineService.queryOneLine(String.valueOf(tod.getLineNo()));
+    	Map<String,Object> tldMap = tldList.get(0);
+    	String unitPrice = String.valueOf(getUnitPrice(totalNum,tldMap));
+    	model.addAttribute("lineNo", tod.getLineNo());
+    	model.addAttribute("adultNum", tod.getAdultNum());
+    	model.addAttribute("teenagerNum", tod.getTeenagerNum());
+    	model.addAttribute("childNum", tod.getChildNum());
+    	model.addAttribute("babyNum", tod.getBabyNum());
+    	model.addAttribute("startDate", tod.getStartDate());
+    	model.addAttribute("lineName", tldMap.get("lineName"));
+    	model.addAttribute("mainPicUrl", tldMap.get("mainPicUrl"));
+    	model.addAttribute("unitPrice", unitPrice);
+    	
+    	TShowDto tsd1 = null;
+    	TShowDto tsd2 = null;
+    	int showPrice1 = 0;
+    	int showPrice2 = 0; 
+    	if(tod.getShowNo1() != null){
+    		tsd1 = new TShowDto();
+    		tsd1.setShowNo(tod.getShowNo1());
+    		tsd1= (TShowDto) baseService.query(tsd1);
+    		showPrice1 = tsd1.getShowPrice();
+    	}
+    	if(tod.getShowNo2() != null){
+    		tsd2 = new TShowDto();
+    		tsd2.setShowNo(tod.getShowNo2());
+    		tsd2= (TShowDto) baseService.query(tsd2);
+    		showPrice2 = tsd2.getShowPrice();
+    	}
+    	model.addAttribute("showNo1", tod.getShowNo1());
+    	model.addAttribute("showPrice1", showPrice1);
+    	model.addAttribute("showNo2", tod.getShowNo2());
+    	model.addAttribute("showPrice2", showPrice2);
+    	
+    	TCarkindDto tcd1 = null;
+    	TCarkindDto tcd2 = null;
+    	int pickupPrice  = 0;
+    	int dropoffPrice = 0; 
+    	if(tod.getPickupCarTypeNo() != null){
+    		tcd1 = new TCarkindDto();
+    		tcd1.setCarTypeNo(tod.getPickupCarTypeNo());
+    		tcd1= (TCarkindDto) baseService.query(tcd1);
+    		pickupPrice = tcd1.getTransferPrice();
+    	}
+    	if(tod.getDropoffCarTypeNo() != null){
+    		tcd2 = new TCarkindDto();
+    		tcd2.setCarTypeNo(tod.getDropoffCarTypeNo());
+    		tcd2= (TCarkindDto) baseService.query(tcd2);
+    		dropoffPrice = tcd2.getTransferPrice();
+    	}
+    	model.addAttribute("pickupCarTypeNo", tod.getPickupCarTypeNo());
+    	model.addAttribute("pickupPrice", pickupPrice);
+    	model.addAttribute("dropoffCarTypeNo", tod.getDropoffCarTypeNo());
+    	model.addAttribute("dropoffPrice", dropoffPrice);
+    	
+    	return "basket";
+    }
+    
+    @RequestMapping("/tour/order/submit")
+    public String submitOrder(TOrderDto tod,Model model){
+    	//根据lineNo查询线路名称、url
+    	//根据lineNo与人数 查询单价
+    	//查询所选对应两个节目的信息
+    	//查询所选车辆的信息
+    	
+    	int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	List<Map<String, Object>> tldList = lineService.queryOneLine(String.valueOf(tod.getLineNo()));
+    	Map<String,Object> tldMap = tldList.get(0);
+    	String unitPrice = String.valueOf(getUnitPrice(totalNum,tldMap));
+    	String lineNo = String.valueOf(tod.getLineNo());
+    	
+    	TShowDto tsd1 = null;
+    	TShowDto tsd2 = null;
+    	int showPrice = 0;
+    	if(tod.getShowNo1() != null){
+    		tsd1 = new TShowDto();
+    		tsd1.setShowNo(tod.getShowNo1());
+    		tsd1= (TShowDto) baseService.query(tsd1);
+    		showPrice = tsd1.getShowPrice();
+    	}
+    	if(tod.getShowNo2() != null){
+    		tsd2 = new TShowDto();
+    		tsd2.setShowNo(tod.getShowNo2());
+    		tsd2= (TShowDto) baseService.query(tsd2);
+    		showPrice += tsd2.getShowPrice();
+    	}
+    	
+    	TCarkindDto tcd1 = null;
+    	TCarkindDto tcd2 = null;
+    	int car_price = 0; 
+    	if(tod.getPickupCarTypeNo() != null){
+    		tcd1 = new TCarkindDto();
+    		tcd1.setCarTypeNo(tod.getPickupCarTypeNo());
+    		tcd1= (TCarkindDto) baseService.query(tcd1);
+    		car_price = tcd1.getTransferPrice();
+    	}
+    	if(tod.getDropoffCarTypeNo() != null){
+    		tcd2 = new TCarkindDto();
+    		tcd2.setCarTypeNo(tod.getDropoffCarTypeNo());
+    		tcd2= (TCarkindDto) baseService.query(tcd2);
+    		car_price += tcd2.getTransferPrice();
+    	}
+    	
+    	//录入会员信息
+    	TMemberDto tmd = new TMemberDto();
+    	
+    	
+    	
+    	//发邮件
+    	/*String subject = jobDateStr+"日对账任务概况";
+		String content = "警告! \n           "+jobDateStr+"号  对账单汇总任务"+collectResult+"\n 如下通道对账任务执行成功，并完成数据汇总: \n "+fMarksStr+" \n 如下通道对账任务并未成功： \n "
+		 +unfMarksStr+" \n 请到后台管理中心查看任务具体执行情况。如有失败，请触发重新发送对账单，并在任务成功后，触发对账单汇总操作。";
+		logger.info(content);
+		String[] emailTo = Constants.WARN_EMAIL.split(",");
+		try {
+			EmailUtil.sendEmail(subject, emailTo, content);
+		} catch (Exception e) {
+			logger.error("发送对账任务汇总情况邮件异常！", e);
+		}*/
+    	
+    	
+//    	model.addAttribute("orderNo", JSONArray.toJSON(carList));//////////
+    	try {
+			List<Map<String,Object>> oneLine = lineService.queryOneLine(lineNo);//先走redis查询，没有再查数据库
+			model.addAttribute("oneLine", JSONArray.toJSON(oneLine));
+		} catch (Exception e) {
+			logger.error("根据编号查询线路异常！",e);;
+			return "error";
+		}
+    	
+    	Map<String, Object> params = new HashMap<String, Object>();
+    	params.put("lineNo", lineNo);
+    	List plist = baseService.queryListByMap("TPicDto.queryPicByLineNo", params);
+    	List<Map<String,Object>> addList   = additionService.queryLineAddition(lineNo, 0);
+    	List<Map<String,Object>> unaddlist = additionService.queryLineAddition(lineNo, 1);
+    	
+    	List<Map<String,Object>> llist = lineService.queryRandom3();
+    	model.addAttribute("plist", JSONArray.toJSON(plist));
+    	model.addAttribute("llist", JSONArray.toJSON(llist));
+    	model.addAttribute("addList", JSONArray.toJSON(addList));
+    	model.addAttribute("unaddList", JSONArray.toJSON(unaddlist));
     	
     	return "tour";
     }
@@ -355,7 +556,33 @@ public class ManageController {
         return json;
     }*/
     
-    /**
+    private int getUnitPrice(int totalNum, Map<String, Object> tldMap) {
+    	int up = 0;
+		if(totalNum == 1){
+			up = (Integer)tldMap.get("oneP");
+		}else if(totalNum == 2){
+			up = (Integer)tldMap.get("twoP");
+		}else if(totalNum == 3){
+			up = (Integer)tldMap.get("threeP");
+		}else if(totalNum == 4){
+			up = (Integer)tldMap.get("fourP");
+		}else if(totalNum == 5){
+			up = (Integer)tldMap.get("fiveP");
+		}else if(totalNum == 6){
+			up = (Integer)tldMap.get("sixP");
+		}else if(totalNum == 7){
+			up = (Integer)tldMap.get("sevenP");
+		}else if(totalNum == 8){
+			up = (Integer)tldMap.get("eightP");
+		}else if(totalNum == 9){
+			up = (Integer)tldMap.get("nineP");
+		}else if(totalNum == 10){
+			up = (Integer)tldMap.get("tenP");
+		}
+		return up;
+	}
+
+	/**
      * 支付返回等待页面
      * @param orderNo
      * @return

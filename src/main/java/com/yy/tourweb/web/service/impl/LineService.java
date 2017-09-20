@@ -47,9 +47,9 @@ public class LineService implements ILineService{
 		if(StringUtils.isBlank(resultStr)){
 			list = baseDao.queryByMap("TLineDto.queryLines", params);
 			String jsonStr = JSONArray.toJSONString(list);
-			redisClient.set(key, jsonStr);
+			redisClient.set(key,3600*3, jsonStr);
 		}else{
-			list = JSONArray.parseArray(resultStr,List.class);
+			list = JSONArray.parseObject(resultStr,List.class);
 		}
 		
         return list;
@@ -62,12 +62,12 @@ public class LineService implements ILineService{
 		resultStr = redisClient.get(Constants.REDIS_LINE_ID+lineNo);
 		if(StringUtils.isBlank(resultStr)){
 			Map<String, Object> params=new HashMap<String, Object>();
-			params.put("lineNo", lineNo);
+			params.put("lineNo", Integer.parseInt(lineNo));
 			list = baseDao.queryByMap("TLineDto.queryOneLine", params);
 			String jsonStr = JSONArray.toJSONString(list);
-			redisClient.set(Constants.REDIS_LINE_ID+String.valueOf(lineNo), jsonStr);
+			redisClient.set(Constants.REDIS_LINE_ID+String.valueOf(lineNo),3600*3, jsonStr);
 		}else{
-			list = JSONArray.parseArray(resultStr,List.class);
+			list = JSONArray.parseObject(resultStr,List.class);
 		}
 		
 		return list;
