@@ -60,7 +60,7 @@
 }
 .tour_guide_table_top {
   height: 50px;
-  background: #a8223c;
+  background: #e44e47;
 }
 .tour_guide_table_box {
   overflow: auto;
@@ -68,6 +68,10 @@
 }
 .tour_guide_table {
   border-left: 1px solid #9B9B9B;
+  position:relative;
+}
+.tour_guide_table_wai{
+	margin-right:7rem;
 }
 .tour_guide_table_list {
   border-right: 1px solid #9B9B9B;
@@ -100,7 +104,7 @@
 }
 .tour_guide_td_list_new {
 	position:relative;
-	left:30%;
+	left:15%;
 	top:0;
 }
 .tour_guide_car_list{
@@ -116,13 +120,16 @@
 }
 .tour_guide_td_button_more_new{
 	position:absolute;
-	top:0;
-	width:39.5%;
+	top:50px;
+	width:45%;
 	right:0;
 	bottom:0;
 	overflow: hidden;
 	border-right:1px solid #ccc;
 	border-bottom:1px solid #ccc;
+}
+.tour_guide_text_inner{
+	padding:5%;
 }
 .tour_guide_td_button_new{
 	position:absolute;
@@ -251,6 +258,9 @@
 }
 .tour_guide_10 {
   width: 15%;
+}
+.tour_guide_45 {
+  width: 45%;
 }
 .tour_guide_12 {
   width: 12.5%;
