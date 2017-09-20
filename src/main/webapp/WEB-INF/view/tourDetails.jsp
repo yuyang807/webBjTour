@@ -124,7 +124,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Children1 <span id="pricep2">$65</span></div>
+							<div class="tour_guide_li_left fl">Teenager <span id="pricep2">$65</span></div>
 							<select name="teenagerNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p2')">
 								<option value="0">0</option>
 								<option value="1">1</option>
@@ -136,7 +136,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Children2 <span id="pricep3">$65</span></div>
+							<div class="tour_guide_li_left fl">Child <span id="pricep3">$65</span></div>
 							<select name="childNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p3')">
 								<option value="0">0</option>
 								<option value="1">1</option>
@@ -148,8 +148,8 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Children3 <span id="pricep4">$65</span></div>
-							<select name="babyNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p4')">
+							<div class="tour_guide_li_left fl">Baby <span id="pricep4">$65</span></div>
+							<select name="babyNum" class="tour_guide_li_right fr" >
 								<option value="0">0</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -170,36 +170,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 					You might also like…..
 				</div>
 				<ul id="tour_details_right_img_ul">
-					<li class="tour_details_right_img_li">
-						<div class="tour_details_right_img_li_inner"></div>
-						<img class="tour_details_right_img_li_img" src="${ctxStatic}/juhema/img/WechatIMG63.jpeg" />
-						<div class="tour_details_right_img_bg"></div>
-						<div class="tour_details_right_img_text">
-							<div class="tour_details_right_img_text_center">
-								Mu Tian Yu Great Wall + Tian`an Men Square and Forbidden City
-							</div>
-						</div>
-					</li>
-					<li class="tour_details_right_img_li">
-						<div class="tour_details_right_img_li_inner"></div>
-						<img class="tour_details_right_img_li_img" src="${ctxStatic}/juhema/img/WechatIMG63.jpeg" />
-						<div class="tour_details_right_img_bg"></div>
-						<div class="tour_details_right_img_text">
-							<div class="tour_details_right_img_text_center">
-								Mu Tian Yu Great Wall + Tian`an Men Square and Forbidden City
-							</div>
-						</div>
-					</li>
-					<li class="tour_details_right_img_li">
-						<div class="tour_details_right_img_li_inner"></div>
-						<img class="tour_details_right_img_li_img" src="${ctxStatic}/juhema/img/WechatIMG63.jpeg" />
-						<div class="tour_details_right_img_bg"></div>
-						<div class="tour_details_right_img_text">
-							<div class="tour_details_right_img_text_center">
-								Mu Tian Yu Great Wall + Tian`an Men Square and Forbidden City
-							</div>
-						</div>
-					</li>
+					
 				</ul>
 				
 			</div>
@@ -286,6 +257,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    });
 		    
 		    var datalist = ${oneLine}[0];
+		    $("#linenumberid").val(datalist['lineNo']);
 		    var viewhtml = `
 		    	<li class="icon_attr">Attraction: {attraction}</li>
 				<li class="icon_attr">Duration: {duration}</li>
@@ -318,7 +290,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		n:0
 		    	},
 		    	p4:{
-		    		z:0.7,
+		    		z:0,
 		    		n:0
 		    	}
 		    };
@@ -362,7 +334,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	showval();
 		    }
 		    function tosubmit(){
-		    	$("#startDateid").html((new Date(picker['_d'])).getTime());
+		    	$("#startDateid").val((new Date(picker['_d'])).getTime());
 		    	$("#formsubmit").submit();
 		    }
 		    /*var lineList = [
