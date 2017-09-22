@@ -23,6 +23,7 @@
 
 		<logger name="com.yy.tourweb" level="debug" additivity="false">
 			<appender-ref ref="RollingFile" />
+			<appender-ref ref="Console" />
 		</logger>
 
 		<root level="info">

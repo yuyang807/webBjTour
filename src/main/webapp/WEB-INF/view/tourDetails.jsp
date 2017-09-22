@@ -96,7 +96,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				<div class="tour_details_right_in">
 					<img class="tour_guide_top" src="${ctxStatic}/juhema/icon/order_top.png" />
 					<div class="tour_guide_top_text">Book this Tour</div>
-					<form id="formsubmit" action="/tour/confirm" method="post">
+					<form id="formsubmit" action="/tour/basket" method="post">
 						<input type="text" style="display: none;" name="lineNo" id="linenumberid" />
 						<input type="text" style="display: none;" name="startDate" id="startDateid" />
 					<ul class="tour_guide_ul">

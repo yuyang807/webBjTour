@@ -5,9 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONArray;
 import com.yy.tourweb.common.Constants;
+import com.yy.tourweb.common.JsonObject;
 import com.yy.tourweb.util.AppLogger;
 import com.yy.tourweb.util.EmailUtil;
 import com.yy.tourweb.web.dto.IDto;
@@ -79,7 +81,7 @@ public class ManageController {
     public String showList(HttpServletRequest request, Model model) {
     	List<Map<String,Object>> llist = lineService.queryLineList(1);//先走redis查询，没有再查数据库
 		model.addAttribute("lineList", JSONArray.toJSON(llist));
-		return "list";	
+		return "viewTheTour";	
     }
     
     @RequestMapping("/list/{lineNo}")
@@ -102,21 +104,22 @@ public class ManageController {
     	
     	List<Map<String,Object>> llist = lineService.queryRandom3();
     	model.addAttribute("plist", JSONArray.toJSON(plist));
-    	model.addAttribute("llist", JSONArray.toJSON(llist));
+    	model.addAttribute("lineList", JSONArray.toJSON(llist));
     	model.addAttribute("addList", JSONArray.toJSON(addList));
     	model.addAttribute("unaddList", JSONArray.toJSON(unaddlist));
     	
-    	return "tour";
+    	return "tourDetails";
     }
     
     @RequestMapping("/tour/basket")
-    public String preShopping(TOrderDto tod,Model model){
+    public String preShopping(@PathVariable String adultNum,Model model){
+    	System.out.println(adultNum);
     	//根据lineNo查询线路名称、url
     	//根据lineNo与人数 查询单价
     	//查询所有表演内容
     	//查询所有车辆内容
     	
-    	int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	/*int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
     	List<Map<String, Object>> tldList = lineService.queryOneLine(String.valueOf(tod.getLineNo()));
     	Map<String,Object> tldMap = tldList.get(0);
     	String unitPrice = String.valueOf(getUnitPrice(totalNum,tldMap));
@@ -133,9 +136,9 @@ public class ManageController {
     	List<TShowDto> showList = (List<TShowDto>)(List) baseService.queryListByDto(new TShowDto());
     	List<TCarDto>  carList  = (List<TCarDto>)(List)  baseService.queryListByDto(new TCarDto());
     	model.addAttribute("showList", JSONArray.toJSON(showList));
-    	model.addAttribute("carList", JSONArray.toJSON(carList));
+    	model.addAttribute("carList", JSONArray.toJSON(carList));*/
     	
-    	return "basket";
+    	return "payCopy";
     }
     
     @RequestMapping("/tour/confirm")
@@ -201,11 +204,11 @@ public class ManageController {
     	model.addAttribute("dropoffCarTypeNo", tod.getDropoffCarTypeNo());
     	model.addAttribute("dropoffPrice", dropoffPrice);
     	
-    	return "basket";
+    	return "cardPay";
     }
     
     @RequestMapping("/tour/order/submit")
-    public String submitOrder(TOrderDto tod,Model model){
+    public @ResponseBody Object submitOrder(@JsonObject TOrderDto tod,@JsonObject TMemberDto tmd){
     	//根据lineNo查询线路名称、url
     	//根据lineNo与人数 查询单价
     	//查询所选对应两个节目的信息
@@ -250,7 +253,10 @@ public class ManageController {
     	}
     	
     	//录入会员信息
-    	TMemberDto tmd = new TMemberDto();
+    	TMemberDto tmd1 = new TMemberDto();
+    	//查询最大mem_no
+//    	baseService.queryByMap(sqlId, params)
+    	baseService.insert(tmd);
     	
     	
     	
@@ -270,7 +276,6 @@ public class ManageController {
 //    	model.addAttribute("orderNo", JSONArray.toJSON(carList));//////////
     	try {
 			List<Map<String,Object>> oneLine = lineService.queryOneLine(lineNo);//先走redis查询，没有再查数据库
-			model.addAttribute("oneLine", JSONArray.toJSON(oneLine));
 		} catch (Exception e) {
 			logger.error("根据编号查询线路异常！",e);;
 			return "error";
@@ -283,10 +288,6 @@ public class ManageController {
     	List<Map<String,Object>> unaddlist = additionService.queryLineAddition(lineNo, 1);
     	
     	List<Map<String,Object>> llist = lineService.queryRandom3();
-    	model.addAttribute("plist", JSONArray.toJSON(plist));
-    	model.addAttribute("llist", JSONArray.toJSON(llist));
-    	model.addAttribute("addList", JSONArray.toJSON(addList));
-    	model.addAttribute("unaddList", JSONArray.toJSON(unaddlist));
     	
     	return "tour";
     }

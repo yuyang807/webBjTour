@@ -13,13 +13,15 @@
         var ua = navigator.userAgent.toLowerCase();
         if(!(ua.match(/MicroMessenger/i)=="micromessenger" || ua.indexOf("alipay")!=-1))
         {
-            location.href="${ctxView}/null.jsp"
+           // location.href="${ctxView}/null.jsp"
         }
     </script>
 </head>
 <body>
 <div class="payment-page">
-    <input type="hidden" id="myData" data-code="${merchantCode}" data-ksn="${machineSn}">
+	<p>${lineList}</p>
+	<p>${picList}</p>
+    <!-- <input type="hidden" id="myData" data-code="${merchantCode}" data-ksn="${machineSn}">
     <h3>${merchantName}</h3>
     <div class="input-box">
         <p class="lArea">请输入金额</p>
@@ -63,7 +65,7 @@
             </p>
         </div>
         <div class="support"></div>
-    </div>
+    </div> -->
 </div>
 <script>
     if($('.input-box .rArea').html()){

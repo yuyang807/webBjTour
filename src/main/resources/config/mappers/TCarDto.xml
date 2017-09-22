@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TCarDto">
 
     <sql id="Base_Column_List" >
-         id, car_no, car_name, suitable_num, half_day_price, full_day_price, mty_price, jsl_price, transfer_price, suitcases_num, carryon_num, pid
+         id, car_no, car_name, car_type_no, pic_no
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TCarDto">
@@ -18,32 +18,11 @@
         <if test="carName != null ">
           car_name,
         </if>
-        <if test="suitableNum != null ">
-          suitable_num,
+        <if test="carTypeNo != null ">
+          car_type_no,
         </if>
-        <if test="halfDayPrice != null ">
-          half_day_price,
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price,
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price,
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price,
-        </if>
-        <if test="transferPrice != null ">
-          transfer_price,
-        </if>
-        <if test="suitcasesNum != null ">
-          suitcases_num,
-        </if>
-        <if test="carryonNum != null ">
-          carryon_num,
-        </if>
-        <if test="pid != null ">
-          pid,
+        <if test="picNo != null ">
+          pic_no,
         </if>
        </trim>
        <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -56,32 +35,11 @@
         <if test="carName != null ">
           #{carName},
         </if>
-        <if test="suitableNum != null ">
-          #{suitableNum},
+        <if test="carTypeNo != null ">
+          #{carTypeNo},
         </if>
-        <if test="halfDayPrice != null ">
-          #{halfDayPrice},
-        </if>
-        <if test="fullDayPrice != null ">
-          #{fullDayPrice},
-        </if>
-        <if test="mtyPrice != null ">
-          #{mtyPrice},
-        </if>
-        <if test="jslPrice != null ">
-          #{jslPrice},
-        </if>
-        <if test="transferPrice != null ">
-          #{transferPrice},
-        </if>
-        <if test="suitcasesNum != null ">
-          #{suitcasesNum},
-        </if>
-        <if test="carryonNum != null ">
-          #{carryonNum},
-        </if>
-        <if test="pid != null ">
-          #{pid},
+        <if test="picNo != null ">
+          #{picNo},
         </if>
        </trim>
     </insert>
@@ -102,32 +60,11 @@
         <if test="carName != null ">
           car_name = #{carName} AND
         </if>
-        <if test="suitableNum != null ">
-          suitable_num = #{suitableNum} AND
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} AND
         </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} AND
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} AND
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} AND
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} AND
-        </if>
-        <if test="transferPrice != null ">
-          transfer_price = #{transferPrice} AND
-        </if>
-        <if test="suitcasesNum != null ">
-          suitcases_num = #{suitcasesNum} AND
-        </if>
-        <if test="carryonNum != null ">
-          carryon_num = #{carryonNum} AND
-        </if>
-        <if test="pid != null ">
-          pid = #{pid} AND
+        <if test="picNo != null ">
+          pic_no = #{picNo} AND
         </if>
        </trim>
     </delete>
@@ -141,32 +78,11 @@
         <if test="carName != null ">
           car_name = #{carName} ,
         </if>
-        <if test="suitableNum != null ">
-          suitable_num = #{suitableNum} ,
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} ,
         </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} ,
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} ,
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} ,
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} ,
-        </if>
-        <if test="transferPrice != null ">
-          transfer_price = #{transferPrice} ,
-        </if>
-        <if test="suitcasesNum != null ">
-          suitcases_num = #{suitcasesNum} ,
-        </if>
-        <if test="carryonNum != null ">
-          carryon_num = #{carryonNum} ,
-        </if>
-        <if test="pid != null ">
-          pid = #{pid} ,
+        <if test="picNo != null ">
+          pic_no = #{picNo} ,
         </if>
         update_date=current_timestamp(),
        </trim>
@@ -190,32 +106,11 @@
         <if test="carName != null ">
           car_name = #{carName} AND
         </if>
-        <if test="suitableNum != null ">
-          suitable_num = #{suitableNum} AND
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} AND
         </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} AND
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} AND
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} AND
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} AND
-        </if>
-        <if test="transferPrice != null ">
-          transfer_price = #{transferPrice} AND
-        </if>
-        <if test="suitcasesNum != null ">
-          suitcases_num = #{suitcasesNum} AND
-        </if>
-        <if test="carryonNum != null ">
-          carryon_num = #{carryonNum} AND
-        </if>
-        <if test="pid != null ">
-          pid = #{pid} AND
+        <if test="picNo != null ">
+          pic_no = #{picNo} AND
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -235,32 +130,11 @@
         <if test="carName != null ">
           car_name = #{carName} AND
         </if>
-        <if test="suitableNum != null ">
-          suitable_num = #{suitableNum} AND
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} AND
         </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} AND
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} AND
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} AND
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} AND
-        </if>
-        <if test="transferPrice != null ">
-          transfer_price = #{transferPrice} AND
-        </if>
-        <if test="suitcasesNum != null ">
-          suitcases_num = #{suitcasesNum} AND
-        </if>
-        <if test="carryonNum != null ">
-          carryon_num = #{carryonNum} AND
-        </if>
-        <if test="pid != null ">
-          pid = #{pid} AND
+        <if test="picNo != null ">
+          pic_no = #{picNo} AND
         </if>
        </trim>
     </select>

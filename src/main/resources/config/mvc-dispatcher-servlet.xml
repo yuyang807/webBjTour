@@ -29,7 +29,7 @@
 	
 	<mvc:resources mapping="/static/**" location="/static/" cache-period="31536000"/>
 
-	<mvc:view-controller path="/" view-name="redirect:/hello"/>
+	<!-- <mvc:view-controller path="/" view-name="redirect:/hello"/> -->
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
 			<bean id="fastJsonHttpMessageConverter"
@@ -41,15 +41,17 @@
 				</property>
 			</bean>
 		</mvc:message-converters>
+		<!-- <mvc:argument-resolvers>
+            <bean class="com.yy.tourweb.Interceptor.JsonObjectArgResolverHandler"></bean>
+        </mvc:argument-resolvers> -->
 	</mvc:annotation-driven>
-
+	
 	<!-- 拦截器配置 -->
-	<!-- 配置Token拦截器，防止用户重复提交数据 -->
 	<mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/forwardAccredit"/>
-            <bean class="com.yy.tourweb.Interceptor.TokenInterceptor"/>
-        </mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.yy.tourweb.Interceptor.SubmitTimeAppInterceptor"/>
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 	<!-- freemarker -->

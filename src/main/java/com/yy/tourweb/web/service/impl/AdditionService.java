@@ -50,7 +50,7 @@ public class AdditionService implements IAdditionService{
 			String jsonStr = JSONArray.toJSONString(list);
 			redisClient.set(key,3600*3, jsonStr);
 		}else{
-			list = JSONArray.parseArray(resultStr,List.class);
+			list = JSONArray.parseObject(resultStr,List.class);
 		}
 		
         return list;
