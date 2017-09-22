@@ -75,6 +75,6 @@ public class LineService implements ILineService{
 
 	@Override
 	public List<Map<String, Object>> queryRandom3() {
-		return baseDao.queryByMap("TLineDto.queryRandom3", null);
+		return baseDao.queryByMap("TLineDto.queryRandom3", new HashMap<String,Object>());
 	}
 }

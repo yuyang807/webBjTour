@@ -414,10 +414,11 @@
        SELECT 
        tl.line_no lineNo, line_name lineName, available, duration,
        line_type_no lineTypeNo, type_name typeName, popular_level popularLevel, 
-       ten_p tenP,file_url
+       ten_p tenP,file_url fileUrl
        FROM t_line tl left join t_line_price tlp on tl.line_no = tlp.line_no
        LEFT JOIN t_linekind tlk on tl.line_type_no = tlk.type_no
-       left join t_pic tp on tl.line_no = tp.line_no
+       LEFT JOIN t_line_pic tlpic ON tl.line_no = tlpic.line_no
+		LEFT JOIN t_pic tp on tlpic.pic_no = tp.pic_no
        <if test="limit != null">
     	   where popular_level != 0 and is_main = 1 order by popular_level desc limit #{limit}
        </if>
@@ -431,25 +432,28 @@
        tl.line_no, line_name, available, duration, is_private, language, pick_up_point, 
        finish_point, pick_up_time, end_time, phy_level, hiking_dis, hiking_area, attractions, 
        customizable, layover_time, popular_level, line_type_no, detail,
-       type_name, file_url,
+       type_name, file_url mainPicUrl,
        one_p,two_p,three_p,four_p,five_p,six_p,seven_p,eight_p,nine_p,ten_p
        FROM t_line tl 
-       LEFT JOIN t_line_price tlp    on tl.line_no = tlp.line_no
-       LEFT JOIN t_linekind tlk      on tl.line_type_no = tlk.type_no
-       LEFT JOIN t_pic tp            on tl.line_no = tp.line_no
+       LEFT JOIN t_line_price tlp on tl.line_no = tlp.line_no
+       LEFT JOIN t_linekind tlk   on tl.line_type_no = tlk.type_no
+       LEFT JOIN t_line_pic tlpic on tl.line_no = tlpic.line_no
+       LEFT JOIN t_pic tp         on tlpic.pic_no = tp.pic_no
        <!-- LEFT JOIN t_line_addition tla on tl.line_no = tla.line_no --> 
-       where tl.line_no = #{lineNo}
+       where tl.line_no = #{lineNo} and tp.is_main = 1
        order by line_type_no,duration
     </select>
 
-	<select id="queryRandom3">
+	<select id="queryRandom3" resultType="map">
 		SELECT 
        tl.line_no lineNo, line_name lineName, available, duration,
        line_type_no lineTypeNo, type_name typeName, popular_level popularLevel, 
        ten_p tenP,file_url
-       FROM t_line tl left join t_line_price tlp on tl.line_no = tlp.line_no
-       LEFT JOIN t_linekind tlk on tl.line_type_no = tlk.type_no
-       left join t_pic tp on tl.line_no = tp.line_no
-		where is_main = 1 order by RAND() LIMIT 3
+       FROM t_line tl 
+       left join t_line_price tlp on tl.line_no = tlp.line_no
+       LEFT JOIN t_linekind tlk   on tl.line_type_no = tlk.type_no
+       LEFT JOIN t_line_pic tlpic on tl.line_no = tlpic.line_no
+       LEFT JOIN t_pic tp         on tlpic.pic_no = tp.pic_no
+       order by RAND() LIMIT 3
 	</select>
 </mapper>
