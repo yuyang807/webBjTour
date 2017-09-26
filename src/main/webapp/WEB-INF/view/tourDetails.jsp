@@ -260,11 +260,11 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    $("#linenumberid").val(datalist['lineNo']);
 		    var viewhtml = `
 		    	<li class="icon_attr">Attraction: {attraction}</li>
-				<li class="icon_attr">Duration: {duration}</li>
-				<li class="icon_attr">language: {language}</li>
-				<li class="icon_attr">Tour type: {tourtype}</li>
-				<li class="icon_attr">Amount of Walking: {amount}</li>
-				<li class="icon_attr">Customizable: {customizable}</li>
+				<li class="icon_dur">Duration: {duration}</li>
+				<li class="icon_lang">language: {language}</li>
+				<li class="icon_tour">Tour type: {tourtype}</li>
+				<li class="icon_amount">Amount of Walking: {amount}</li>
+				<li class="icon_cus">Customizable: {customizable}</li>
 		    `;
 		    $("#overviewid").html(viewhtml.format2({
 		    	attraction:datalist['attractions'],

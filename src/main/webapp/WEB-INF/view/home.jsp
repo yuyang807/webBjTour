@@ -51,7 +51,11 @@
 				<ul class="tour_list_ul">
 					<li class="tour_list_li tour_reviewslist_list_bg">
 						<div class="tour_toursbox_list_inbox"></div>
-						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/img/IMG_0498.JPG" />
+						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.JPG" />
+						<div class="tour_toursbox_top">
+							<div class="tour_toursbox_topfrom">- from -</div>
+							<div class="tour_toursbox_topname">Steven Byrd</div>
+						</div>
 						<div class="tour_reviews_bg"></div>
 						<div class="tour_reviewslist_bottom">
 							<div class="tour_reviews_img_top">
@@ -70,7 +74,11 @@
 					</li><!--
 					--><li class="tour_list_li tour_reviewslist_list_bg">
 						<div class="tour_toursbox_list_inbox"></div>
-						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/img/IMG_0498.JPG" />
+						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.JPG" />
+						<div class="tour_toursbox_top">
+							<div class="tour_toursbox_topfrom">- from -</div>
+							<div class="tour_toursbox_topname">Steven Byrd</div>
+						</div>
 						<div class="tour_reviews_bg"></div>
 						<div class="tour_reviewslist_bottom">
 							<div class="tour_reviews_img_top">
@@ -108,19 +116,19 @@
 				<div class="tour_step_box">
 					<div class="public_title">How To Book</div>
 					<div class="tour_step_list">
-						<img  class="tour_step_list_icon_for" src="${ctxStatic}/juhema/icon/Group 6 Copy 4.png" />
+						<img  class="tour_step_list_icon_for" src="${ctxStatic}/juhema/icon/Group6Copy4.png" />
 						<img class="tour_step_list_icon" src="${ctxStatic}/juhema/icon/Group9.png" />
 						<div class="tour_step_list_top">Step One</div>
 						<div class="tour_step_list_text">First browse our menu of the sample itineraries,choose the one you like,set your date and number of travel mates,and then click "book" button</div>
 					</div><br class="br_show_all"><!--
 					--><div class="tour_step_list">
-						<img  class="tour_step_list_icon_for tour_step_list_icon_for_hidden" src="${ctxStatic}/juhema/icon/Group 6 Copy 4.png" />
+						<img  class="tour_step_list_icon_for tour_step_list_icon_for_hidden" src="${ctxStatic}/juhema/icon/Group6Copy4.png" />
 						<img class="tour_step_list_icon" src="${ctxStatic}/juhema/icon/Group13.png" />
 						<div class="tour_step_list_top">Step Two</div>
 						<div class="tour_step_list_text">Fill in the form to complete your booking.No advance or booking fee is needed at this booking stage.You will ony be required to pay when you finally meet your tour guide in Beijing.</div>
 					</div><br class="br_show"><!--
 					--><div class="tour_step_list">
-						<img  class="tour_step_list_icon_for" src="${ctxStatic}/juhema/icon/Group 6 Copy 4.png" />
+						<img  class="tour_step_list_icon_for" src="${ctxStatic}/juhema/icon/Group6Copy4.png" />
 						<img class="tour_step_list_icon" src="${ctxStatic}/juhema/icon/Group14.png" />
 						<div class="tour_step_list_top">Step Three</div>
 						<div class="tour_step_list_text">A confirmation email will be sent within 24 hours of your booking.</div>
