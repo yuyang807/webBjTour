@@ -36,10 +36,12 @@
 					<a href="tourGuide.html" class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
 						<img src="${ctxStatic}/juhema/img/hire.png" />
+						<div class="tour_contomize_div">Hire a Tour Guide</div>
 					</a><!--
 					--><a href="carRental.html"  class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
 						<img src="${ctxStatic}/juhema/img/carrental.png" />
+						<div class="tour_contomize_div">Car Rental</div>
 					</a>
 				</div>
 				<div class="tour_contomize_text">If you have special requirements,please let us konw ,we would line to constomize a tour for you,and quote for you.</div>
