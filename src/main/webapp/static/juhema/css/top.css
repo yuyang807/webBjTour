@@ -66,8 +66,8 @@
   color: #fff;
 }
 .tour_top_ul_hover {
-  border-bottom: 1px solid #a8223c;
-  color: #a8223c !important;
+  border-bottom: 1px solid #e44e47;
+  color: #e44e47 !important;
 }
 @media screen and (max-width: 800px) {
   .tour_top_left {
@@ -120,7 +120,7 @@
     font-size: 12px;
   }
   .tour_top_ul .tour_top_ul_hover {
-    background: #a8223c;
+    background: #e44e47;
     color: #fff !important;
   }
   .tour_top_hide {

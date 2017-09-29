@@ -140,14 +140,14 @@ html {
   padding: 2% 0 2% 3%;
   font-size: 1.8rem;
   line-height: 1.8rem;
-  color: #A8223C;
+  color: #e44e47;
 }
 .public_title5 {
   padding: 0 0 2% 3%;
   font-size: 1.8rem;
   line-height: 1.8rem;
   text-align: center;
-  color: #A8223C;
+  color: #e44e47;
 }
 .tourlink {
   font-size: 0.7rem;
@@ -188,7 +188,7 @@ html {
   line-height: 2rem;
   text-align: center;
   color: #fff;
-  background: #a8223c;
+  background: #e44e47;
   position: relative;
 }
 .closedialog {
@@ -197,7 +197,7 @@ html {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
-  background: #fff;
+  background: url(../icon/QOWA8928w.png) repeat-x 0 0 / auto 100%;
   cursor: pointer;
 }
 .dialog_main {
