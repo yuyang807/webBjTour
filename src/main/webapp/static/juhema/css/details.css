@@ -54,13 +54,13 @@
   font-size: 1.4rem;
   line-height: 4rem;
   text-align: center;
-  color: #a8223c;
+  color: #e44e47;
 }
 .tour_details_right_more_top {
   font-size: 1.4rem;
   line-height: 3rem;
   text-indent: 15px;
-  color: #a8223c;
+  color: #e44e47;
 }
 .tour_details_overview_list {
   margin: 0 20px 20px;
@@ -87,7 +87,27 @@
   background-size: 1rem auto;
 }
 .icon_attr{
-	background:url(../icon/Group13.png) no-repeat 0 center;
+	background:url(../icon/DXYP2114.png) no-repeat 0 center;
+  background-size: 15px auto;
+}
+.icon_dur{
+	background:url(../icon/PGQQ5672.png) no-repeat 0 center;
+  background-size: 15px auto;
+}
+.icon_lang{
+	background:url(../icon/WLEU0406.png) no-repeat 0 center;
+  background-size: 15px auto;
+}
+.icon_tour{
+	background:url(../icon/KNHO7390.png) no-repeat 0 center;
+  background-size: 15px auto;
+}
+.icon_amount{
+	background:url(../icon/QXFJ9521.png) no-repeat 0 center;
+  background-size: 15px auto;
+}
+.icon_cus{
+	background:url(../icon/QOJA1361.png) no-repeat 0 center;
   background-size: 15px auto;
 }
 .tour_details_left_list_text {
@@ -100,12 +120,12 @@
 	height:1.3rem;
 	line-height:1.3rem;
 	text-indent: 1.3rem;
-	background:url(../icon/right.png) no-repeat 0 center;
-	background-size: 1rem auto;
+	background:url(../icon/DIMD7355.png) no-repeat 0 center;
+	background-size: 0.7rem auto;
 }
 .tour_wrong li{
-	background:url(../icon/wrong.png) no-repeat 0 center;
-	background-size: 1rem auto;
+	background:url(../icon/QOWA8928.png) no-repeat 0 center;
+	background-size: 0.6rem auto;
 }
 .tour_details_right_img_li{
 	margin-bottom:20px;

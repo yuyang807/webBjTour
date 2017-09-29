@@ -22,16 +22,19 @@
 }
 .viewallreviews {
   margin: 0 auto 5%;
-  color: #a8223c;
+  color: #e44e47;
 }
 .tour_reviewslist_bottom {
   position: absolute;
-  border-top:2px solid #599442;
+  border-top:6px solid #e1ff1b;
   background:#fff;
   top: 50%;
   bottom: 0;
   left: 0;
   right: 0;
+}
+.tour_reviewslist_bottom_color {
+  border-top:6px solid #4ee4d7;
 }
 .tour_reviews_bg {
   background: #000;
@@ -45,7 +48,7 @@
 .tour_reviews_img {
   width: 22.97297297%;
   border-radius:50%;
-  border:2px solid #fff;
+  border:6px solid #fff;
   display: block;
   top: -2px;
   position: absolute;
@@ -238,6 +241,17 @@
   position: absolute;
   width: 100%;
   color: #fff;
+}
+.tour_toursbox_top{
+	position:absolute;
+	height:2rem;
+	top:25%;
+	text-align: center;
+	width:100%;
+	margin-top:-1rem;
+}
+.tour_toursbox_topfrom{
+	font-size:0.8rem;
 }
 @media screen and (max-width: 1200px) {
   .tour_reviewslist_text {

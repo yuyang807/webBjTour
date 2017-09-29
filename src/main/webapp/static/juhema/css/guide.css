@@ -12,6 +12,15 @@
   width: 99%;
   text-indent: 10px;
 }
+.selectdatebox .guide_input{
+	width:34%;
+	float:left;
+}
+.selectdatebox .guide_text{
+	width:15%;
+	text-align: center;
+	float:left;
+}
 .tour_guide_ul {
   border-bottom: 1px solid #9b9b9b;
   padding: 0 15px;
@@ -68,6 +77,9 @@
 .tour_guide_table {
   border-left: 1px solid #9B9B9B;
   position:relative;
+}
+.tour_guide_table_none{
+	width:100% !important;
 }
 .tour_guide_table_wai{
 	margin-right:7rem;
@@ -139,6 +151,27 @@
 	width:15%;
 	border-right:1px solid #ccc;
 	border-bottom:1px solid #ccc;
+}
+.carrentallist{
+	left:12.5%;
+}
+.carrentaltable1{
+	left:0;
+}
+.carrentaltable2{
+	left:37.5%;
+}
+.carrentaltable3{
+	left:50%;
+}
+.carrentaltable4{
+	left:62.5%;
+}
+.carrentaltable5{
+	left:75%;
+}
+.carrentaltable6{
+	left:87.5%;
 }
 .tour_guide_td_button_new2{
 	position:absolute;
@@ -247,7 +280,7 @@
   border-radius: 3px;
   line-height: 2rem;
   color: #fff;
-  background: #a8223c;
+  background: #e44e47;
   margin: auto;
 }
 .tour_guide_td_inside {
@@ -264,6 +297,9 @@
 }
 .tour_guide_12 {
   width: 12.5%;
+}
+.tour_guide_24 {
+  width: 25%;
 }
 .tour_guide_40 {
   width: 30%;
@@ -289,7 +325,7 @@
   line-height: 4rem;
   font-size: 1.4rem;
   text-align: center;
-  color: #a8223c;
+  color: #e44e47;
 }
 .tour_carRental_notice_ul {
   margin: 0 5px 15px 30px;
@@ -365,7 +401,7 @@
 .tour_payCopy_top_r {
   width: 0.6rem;
   height: 0.6rem;
-  background: #a8223c;
+  background: #e44e47;
   border-radius: 0.3rem;
   margin-right: 0.6rem;
   display: inline-block;
