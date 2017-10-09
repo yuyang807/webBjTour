@@ -20,89 +20,99 @@
 		<div class="cardPay_bg_right"></div>
 		<div class="tour_list_box cardpay_bg">
 			 <div class="cardPay_left fl">
-				<div class="tourlink">
-					<a href="home.html">Home</a>　>　 
-					<a href="viewTheTour.html">View The Tours</a>　>　
-					<span>Day Tour / Layover Tour</span>
-				</div>
-				<h1 class="cardPayhead">
-					Customer information
-				</h1>
-				<h2 class="cardPaylisthead">
-					Contact address
-				</h2>
-				<div>
-					<input type="text" class="cardPayinput fl" placeholder="First Name" />
-					<input type="text" class="cardPayinput fr" placeholder="Last Name" />
-					<input type="text" class="cardPayinput fl" placeholder="E-mail Address" />
-					<input type="text" class="cardPayinput fr" placeholder="Phone" />
-					<div class="clearboth"></div>
-				</div>
-				<h2 class="cardPaylisthead">
-					Passport
-				</h2>
-				<div>
-					<input type="text" class="cardPayinput fl" placeholder="Passport Number" />
-					<div class="cardPayinput fr">
-						<select type="text" class="cardPayselect">
-							<option>United States</option>
-						</select>
+				<form action="/tour/order/submit" method="post">
+					<input type="hidden" name="lineNo" value="${lineNo}" />
+					<input type="hidden" name="adultNum" value="${adultNum}" />
+					<input type="hidden" name="teenagerNum" value="${teenagerNum}" />
+					<input type="hidden" name="babyNum" value="${babyNum}" />
+					<input type="hidden" name="startDate" value="${startDate}" />
+					<input type="hidden" name="pickupCarTypeNo" name="${pickupCarTypeNo}"  />
+					<input type="hidden" name="dropoffCarTypeNo" name="${dropoffCarTypeNo}"  />
+					<input type="hidden" name="showNo" name="${showNo}"  />
+					<div class="tourlink">
+						<a href="home.html">Home</a>　>　 
+						<a href="viewTheTour.html">View The Tours</a>　>　
+						<span>Day Tour / Layover Tour</span>
 					</div>
-					<div class="clearboth"></div>
-				</div>
-				<h2 class="cardPaylisthead">
-					Hotel
-				</h2>
-				<div>
-					<input type="text" class="cardPayinput fl" placeholder="Hotel Name" />
-					<input type="text" class="cardPayinput fr" placeholder="Hotel Contact Number" />
-					<input type="text" class="cardPayinputlong fl" placeholder="Hotel Address" />
-					<div class="clearboth"></div>
-				</div>
-				<h2 class="cardPaylisthead">
-					Arrival information
-				</h2>
-				<div>
-					<div class="cardPayinput fl">
-						<select type="text" class="cardPayselect">
-							<option>Arrival date</option>
-						</select>
+					<h1 class="cardPayhead">
+						Customer information
+					</h1>
+					<h2 class="cardPaylisthead">
+						Contact address
+					</h2>
+					<div>
+						<input type="text" class="cardPayinput fl" placeholder="First Name" />
+						<input type="text" class="cardPayinput fr" placeholder="Last Name" />
+						<input type="text" class="cardPayinput fl" placeholder="E-mail Address" />
+						<input type="text" class="cardPayinput fr" placeholder="Phone" />
+						<div class="clearboth"></div>
 					</div>
-					<input type="text" class="cardPayinput fr" placeholder="Arrivel airplane number" />
-					<div class="clearboth"></div>
-				</div>
-				<h2 class="cardPaylisthead">
-					Departure information
-				</h2>
-				<div>
-					<div class="cardPayinput fl">
-						<select type="text" class="cardPayselect">
-							<option>Departure date</option>
-						</select>
+					<h2 class="cardPaylisthead">
+						Passport
+					</h2>
+					<div>
+						<input type="text" class="cardPayinput fl" placeholder="Passport Number" />
+						<div class="cardPayinput fr">
+							<select type="text" class="cardPayselect">
+								<option>United States</option>
+							</select>
+						</div>
+						<div class="clearboth"></div>
 					</div>
-					<input type="text" class="cardPayinput fr" placeholder="Departure airplane number" />
-					<div class="clearboth"></div>
-				</div>
-				<h2 class="cardPaylisthead">
-					Tour start time
-				</h2>
-				<div>
-					<input type="text" class="cardPayinput fl" placeholder="start time" />
-					<div class="cardPayinput fr">
-						<select type="text" class="cardPayselect">
-							<option>AM</option>
-							<option>PM</option>
-						</select>
+					<h2 class="cardPaylisthead">
+						Hotel
+					</h2>
+					<div>
+						<input type="text" class="cardPayinput fl" placeholder="Hotel Name" />
+						<input type="text" class="cardPayinput fr" placeholder="Hotel Contact Number" />
+						<input type="text" class="cardPayinputlong fl" placeholder="Hotel Address" />
+						<div class="clearboth"></div>
 					</div>
+					<h2 class="cardPaylisthead">
+						Arrival information
+					</h2>
+					<div>
+						<div class="cardPayinput fl">
+							<select type="text" class="cardPayselect">
+								<option>Arrival date</option>
+							</select>
+						</div>
+						<input type="text" class="cardPayinput fr" placeholder="Arrivel airplane number" />
+						<div class="clearboth"></div>
+					</div>
+					<h2 class="cardPaylisthead">
+						Departure information
+					</h2>
+					<div>
+						<div class="cardPayinput fl">
+							<select type="text" class="cardPayselect">
+								<option>Departure date</option>
+							</select>
+						</div>
+						<input type="text" class="cardPayinput fr" placeholder="Departure airplane number" />
+						<div class="clearboth"></div>
+					</div>
+					<h2 class="cardPaylisthead">
+						Tour start time
+					</h2>
+					<div>
+						<input type="text" class="cardPayinput fl" placeholder="start time" />
+						<div class="cardPayinput fr">
+							<select type="text" class="cardPayselect">
+								<option>AM</option>
+								<option>PM</option>
+							</select>
+						</div>
+						<div class="clearboth"></div>
+					</div>
+					<div class="cardPaytext">
+						Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
+						We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
+					</div>
+					<textarea class="contact_textarea cardPaytextarea fr" ></textarea>
+					<button class="big_submit fr">submit</button>
 					<div class="clearboth"></div>
-				</div>
-				<div class="cardPaytext">
-					Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
-					We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
-				</div>
-				<textarea class="contact_textarea cardPaytextarea fr" ></textarea>
-				<button class="big_submit fr">submit</button>
-				<div class="clearboth"></div>
+				</form>
 			 </div>
 			 <div class="cardPay_mid fl"></div>
 			 <div class="cardPay_right fr">
