@@ -86,11 +86,22 @@
 				
 			</div>
 			<div class="contact_list">
-				<div class="payCopytotalprice">
-					Total Cost: <span>$230</span>
-				</div>
-				<button class="big_submit fr">Check Out</button>
-				<div class="clearboth"></div>
+				<form action="/tour/confirm" method="post">
+					<input type="hidden" name="lineNo" value="${lineNo}" />
+					<input type="hidden" name="adultNum" value="${adultNum}" />
+					<input type="hidden" name="teenagerNum" value="${teenagerNum}" />
+					<input type="hidden" name="babyNum" value="${babyNum}" />
+					<input type="hidden" name="startDate" value="${startDate}" />
+					<input type="hidden" id="pickupCarTypeNo" name="pickupCarTypeNo"  />
+					<input type="hidden" id="dropoffCarTypeNo" name="dropoffCarTypeNo"  />
+					<input type="hidden" id="showNo1" name="showNo1"  />
+					<input type="hidden" id="showNo2" name="showNo2"  />
+					<div class="payCopytotalprice">
+						Total Cost: <span>$230</span>
+					</div>
+					<button class="big_submit fr">Check Out</button>
+					<div class="clearboth"></div>
+				</form>
 			</div>
 		</div>
 		<footer class="tour_foot_bg">
