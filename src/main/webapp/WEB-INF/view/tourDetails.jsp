@@ -56,22 +56,22 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				</div>
 				<div class="tour_details_left_list">
 					<div class="tour_details_left_list_title">What`s included</div>
-					<ul class="tour_details_left_list_text">
-						<li>English-speaking tour guide service fee</li>
+					<ul id="addlistId" class="tour_details_left_list_text">
+						<!--<li>English-speaking tour guide service fee</li>
 						<li>Air-conditioned vehicle with a private driver</li>
 						<li>Delicious lunch in a local Chinese restaurant</li>
 						<li>All entrance tickets to the sights listed above</li>
-						<li>Round Trip cable car or chair lift up and toboggan down the wall</li>
+						<li>Round Trip cable car or chair lift up and toboggan down the wall</li>-->
  					</ul>
 				</div>
 				<div class="tour_details_left_list">
 					<div class="tour_details_left_list_title">What`s excluded</div>
-					<ul class="tour_details_left_list_text tour_wrong">
-						<li>Gratuity to the guide and driver</li>
+					<ul id="unaddlistId" class="tour_details_left_list_text tour_wrong">
+						<!--<li>Gratuity to the guide and driver</li>
 						<li>Chinese visa</li>
 						<li>Dinner</li>
 						<li>Accommodation</li>
-						<li>Personal Costs</li>
+						<li>Personal Costs</li>-->
  					</ul>
 				</div>
 				<div class="tour_details_left_list">
@@ -235,8 +235,8 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 					"img":"IMG_1452.JPG"
 				}
 			];*/
-			var datalist = ${plist};
-			slider.init("tour_slider_main",datalist);
+			var plist = ${plist};
+			slider.init("tour_slider_main",plist);
 			
 			
 			var picker = new Pikaday(
@@ -357,7 +357,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		"fileUrll":123
 		    	}
 		    ];*/
-		   var lineList = ${lineList}[0];
+		   var lineList = ${lineList};
 		    var lineliststr = `
 		    	<li class="tour_details_right_img_li"  onclick="linkfor(/list/{lineNo})">
 					<div class="tour_details_right_img_li_inner"></div>
@@ -379,6 +379,19 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	});
 		    }
 		    $("#tour_details_right_img_ul").html(t_linelist_html);
+		    
+		    var addList = ${addList};
+		    var addListstr = '';
+		    for(var i = 0; i < addList.length;i++){
+		    	addListstr += "<li>"+addList[i]['add_value']+"</li>";
+		    }
+		    $("#addlistId").html(addListstr);
+		    var unaddList = ${unaddlist};
+		    var unaddListstr = '';
+		    for(var i = 0; i < unaddList.length;i++){
+		    	unaddListstr += "<li>"+unaddList[i]['add_value']+"</li>";
+		    }
+		    $("#unaddlistId").html(unaddListstr);
 		</script>
 	</body>
 </html>
