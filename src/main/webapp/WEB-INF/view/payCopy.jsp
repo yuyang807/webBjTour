@@ -37,10 +37,18 @@
 					Airport/Railway station Pick up
 					<div class="tour_payCopy_checkbox_big">
 						<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-						<div class="tour_payCopy_checkbox_text tour_payCopy_click">$250</div>
-						<div class="tour_payCopy_checkbox_more">Choose a row</div>
-						<select class="tour_payCopy_checkbox_select">
-							<option>row 1-4</option>
+						<div class="tour_payCopy_checkbox_text tour_payCopy_click">$<span class="pickupprice"></span></div>
+						<div class="tour_payCopy_checkbox_more">Choose Drop off</div>
+						<select id="pickupselect" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
+							
+						</select>
+					</div>
+					<div class="tour_payCopy_checkbox_big2">
+						<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
+						<div class="tour_payCopy_checkbox_text tour_payCopy_click">$<span class="pickupprice"></span></div>
+						<div class="tour_payCopy_checkbox_more">Choose Pick up</div>
+						<select id="pickupselect2" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
+							
 						</select>
 					</div>
 				</div>
@@ -56,10 +64,10 @@
 					Acrabatic Show In Chaoyang Theatre
 				<div class="tour_payCopy_checkbox_big">
 					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$250</div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$<span id="acrobatpriceid"></span></div>
 					<div class="tour_payCopy_checkbox_more">Choose a row</div>
-					<select class="tour_payCopy_checkbox_select">
-						<option>row 1-4</option>
+					<select id="acrobaticid" class="tour_payCopy_checkbox_select" onchange="acrobat(this)">
+						
 					</select>
 				</div>
 			</div>
@@ -72,10 +80,10 @@
 					Kungfu Show In Red Theatre
 				<div class="tour_payCopy_checkbox_big">
 					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$250</div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$<span id="kungfupriceid"></span></div>
 					<div class="tour_payCopy_checkbox_more">Choose a row</div>
-					<select class="tour_payCopy_checkbox_select">
-						<option>row 1-4</option>
+					<select id="kungfuid" class="tour_payCopy_checkbox_select" onchange="kungfuchange(this)">
+						
 					</select>
 				</div>
 			</div>
@@ -86,12 +94,12 @@
 				
 			</div>
 			<div class="contact_list">
-				<form action="/tour/confirm" method="post">
-					<input type="hidden" name="lineNo" value="${lineNo}" />
-					<input type="hidden" name="adultNum" value="${adultNum}" />
-					<input type="hidden" name="teenagerNum" value="${teenagerNum}" />
-					<input type="hidden" name="babyNum" value="${babyNum}" />
-					<input type="hidden" name="startDate" value="${startDate}" />
+				<form id="payCopyformid" action="/tour/confirm" method="post">
+					<input type="hidden" name="lineNo" value=${lineNo} />
+					<input type="hidden" name="adultNum" value=${adultNum} />
+					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
+					<input type="hidden" name="babyNum" value=${babyNum} />
+					<input type="hidden" name="startDate" value='${startDate}' />
 					<input type="hidden" id="pickupCarTypeNo" name="pickupCarTypeNo"  />
 					<input type="hidden" id="dropoffCarTypeNo" name="dropoffCarTypeNo"  />
 					<input type="hidden" id="showNo1" name="showNo1"  />
@@ -175,36 +183,20 @@
 				allprice:allprice
 			}));
 			
-			//var carList = ${carList};
-		    var carList = [{
-		    	carTypeName:1,
-		    	carName:'1-1'
-		    },{
-		    	carTypeName:2,
-		    	carName:'2-1'
-		    },{
-		    	carTypeName:2,
-		    	carName:'2-2'
-		    },{
-		    	carTypeName:2,
-		    	carName:'2-3'
-		    },{
-		    	carTypeName:3,
-		    	carName:'3-1'
-		    },{
-		    	carTypeName:1,
-		    	carName:'1-2'
-		    },{
-		    	carTypeName:3,
-		    	carName:'3-2'
-		    }];
+			var carList = ${carList};
 		    var carmap = {};
+		    var cartypeobj = {};
 		    for(var i in carList){
 		    	var carkey = carList[i]['carTypeName'];
+		    	var cartypeno = carList[i]['carTypeNo'];
 		    	if(carmap[carkey] == undefined){
 		    		carmap[carkey] = [];
 		    	}
 		    	carmap[carkey].push(carList[i]);
+		    	cartypeobj[cartypeno] = {
+		    		name:carkey,
+		    		price:carList[i]['transferPrice']
+		    	};
 		    }
 		    console.log(carmap);
 		    var t_all_table = '';
@@ -221,6 +213,73 @@
 		    		carnum:i,
 		    		carlist:t_car_list
 		    	});
+		    }
+			$("#tour_guide_table_id").html(table_top_html+t_all_table+table_str_more);
+		    var carselectstr = '<option value={carid} >{carname}</option>';
+		    var carselectall = '';
+		    for(var i in cartypeobj){
+		    	carselectall += carselectstr.format2({
+		    		carid:i,
+		    		carname:cartypeobj[i]['name']
+		    	})
+		    }
+		    $("#pickupselect,#pickupselect2").html(carselectall);
+		    var t_select = $("#pickupselect").val();
+		    $(".pickupprice").html(cartypeobj[t_select]['price']);
+		    function changecarselect(tthis){
+		    	$(tthis).eq(0).parent().find(".pickupprice").html(cartypeobj[tthis.value]['price']);
+		    }
+		    
+		    var showlist = ${showList};
+		    var showlistobj = {};
+		    for(var i in showlist){
+		    	var name = showlist[i]['showName'];
+		    	var showNo = showlist[i]['showNo'];
+		    	if(showlistobj[name]){
+		    		showlistobj[name][showNo] = showlist[i];
+		    	}else{
+		    		showlistobj[name] = {};
+		    		showlistobj[name][showNo] = showlist[i];
+		    	}
+		    }
+		    
+		    for(var i in showlistobj){
+		    	var showselectstr = '<option value={showid} >{showname}</option>';
+		    	var showselectall = '';
+		    	var showchild = showlistobj[i]
+		    	for(var j in showchild){
+		    		showselectall += showselectstr.format2({
+		    			showid:showchild[j]['showNo'],
+		    			showname:showchild[j]['showrouws'],
+		    		})
+		    	}
+		    	if(i == 'kungfu'){
+		    		$("#kungfuid").html(showselectall);
+				    var t_select = $("#kungfuid").val();
+				    $("#kungfupriceid").html(showchild[t_select]['showPrice']);
+		    	}else{
+		    		$("#acrobaticid").html(showselectall);
+				    var t_select = $("#acrobaticid").val();
+				    
+				    $("#acrobatpriceid").html(showchild[t_select]['showPrice']);
+		    	}
+		    }
+		    function acrobat(tthis){
+		    	var arcobatobj = showlistobj['acrobatic show'];
+		    	var t_price = arcobatobj[tthis.value]['showPrice'];
+		    	$("#acrobatpriceid").html(t_price);
+		    }
+		    function kungfuchange(tthis){
+		    	var arcobatobj = showlistobj['kungfu'];
+		    	var t_price = arcobatobj[tthis.value]['showPrice'];
+		    	$("#kungfupriceid").html(t_price);
+		    }
+		    function checkout(){
+		    	$("#pickupCarTypeNo").val($("#pickupselect2").val());
+				$("#dropoffCarTypeNo").val($("#pickupselect").val());
+				$("#showNo1").val($("#acrobaticid").val());
+				$("#showNo2").val($("#kungfuid").val());
+				$("#payCopyformid").submit();
 		    }
 		</script>
 	</body>
