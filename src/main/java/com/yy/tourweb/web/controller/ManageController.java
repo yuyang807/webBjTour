@@ -112,8 +112,9 @@ public class ManageController {
     }
     
     @RequestMapping("/tour/basket")
-    public String preShopping(@PathVariable String adultNum,Model model){
-    	System.out.println(adultNum);
+    public String preShopping(TOrderDto tod,Model model){
+//    	System.out.println(adultNum);
+    	System.out.println(tod.getAdultNum());
     	//根据lineNo查询线路名称、url
     	//根据lineNo与人数 查询单价
     	//查询所有表演内容

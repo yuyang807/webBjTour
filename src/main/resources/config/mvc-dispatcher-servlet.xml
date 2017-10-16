@@ -41,9 +41,9 @@
 				</property>
 			</bean>
 		</mvc:message-converters>
-		<!-- <mvc:argument-resolvers>
+		<mvc:argument-resolvers>
             <bean class="com.yy.tourweb.Interceptor.JsonObjectArgResolverHandler"></bean>
-        </mvc:argument-resolvers> -->
+        </mvc:argument-resolvers>
 	</mvc:annotation-driven>
 	
 	<!-- 拦截器配置 -->
