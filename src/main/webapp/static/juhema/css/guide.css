@@ -340,7 +340,7 @@
   position: relative;
 }
 .tour_payCopy_text {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 0.8rem;
   padding-right:6.5rem;
 }
@@ -374,6 +374,15 @@
 .tour_payCopy_checkbox_big{
   position: absolute;
   top: 0.7rem;
+  height: 6rem;
+  width: 6.4rem;
+  right: 0;
+  background: #FFE7C4;
+  cursor: pointer;
+}
+.tour_payCopy_checkbox_big2{
+  position: absolute;
+  top: 7rem;
   height: 6rem;
   width: 6.4rem;
   right: 0;
