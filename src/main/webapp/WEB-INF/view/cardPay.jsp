@@ -20,99 +20,125 @@
 		<div class="cardPay_bg_right"></div>
 		<div class="tour_list_box cardpay_bg">
 			 <div class="cardPay_left fl">
-				<form action="/tour/order/submit" method="post">
-					<input type="hidden" name="lineNo" value="${lineNo}" />
-					<input type="hidden" name="adultNum" value="${adultNum}" />
-					<input type="hidden" name="teenagerNum" value="${teenagerNum}" />
-					<input type="hidden" name="babyNum" value="${babyNum}" />
-					<input type="hidden" name="startDate" value="${startDate}" />
-					<input type="hidden" name="pickupCarTypeNo" name="${pickupCarTypeNo}"  />
-					<input type="hidden" name="dropoffCarTypeNo" name="${dropoffCarTypeNo}"  />
-					<input type="hidden" name="showNo" name="${showNo}"  />
-					<div class="tourlink">
-						<a href="home.html">Home</a>　>　 
-						<a href="viewTheTour.html">View The Tours</a>　>　
-						<span>Day Tour / Layover Tour</span>
-					</div>
-					<h1 class="cardPayhead">
-						Customer information
-					</h1>
-					<h2 class="cardPaylisthead">
-						Contact address
-					</h2>
-					<div>
-						<input type="text" class="cardPayinput fl" placeholder="First Name" />
-						<input type="text" class="cardPayinput fr" placeholder="Last Name" />
-						<input type="text" class="cardPayinput fl" placeholder="E-mail Address" />
-						<input type="text" class="cardPayinput fr" placeholder="Phone" />
-						<div class="clearboth"></div>
-					</div>
-					<h2 class="cardPaylisthead">
-						Passport
-					</h2>
-					<div>
-						<input type="text" class="cardPayinput fl" placeholder="Passport Number" />
-						<div class="cardPayinput fr">
-							<select type="text" class="cardPayselect">
-								<option>United States</option>
-							</select>
-						</div>
-						<div class="clearboth"></div>
-					</div>
-					<h2 class="cardPaylisthead">
-						Hotel
-					</h2>
-					<div>
-						<input type="text" class="cardPayinput fl" placeholder="Hotel Name" />
-						<input type="text" class="cardPayinput fr" placeholder="Hotel Contact Number" />
-						<input type="text" class="cardPayinputlong fl" placeholder="Hotel Address" />
-						<div class="clearboth"></div>
-					</div>
-					<h2 class="cardPaylisthead">
-						Arrival information
-					</h2>
-					<div>
-						<div class="cardPayinput fl">
-							<select type="text" class="cardPayselect">
-								<option>Arrival date</option>
-							</select>
-						</div>
-						<input type="text" class="cardPayinput fr" placeholder="Arrivel airplane number" />
-						<div class="clearboth"></div>
-					</div>
-					<h2 class="cardPaylisthead">
-						Departure information
-					</h2>
-					<div>
-						<div class="cardPayinput fl">
-							<select type="text" class="cardPayselect">
-								<option>Departure date</option>
-							</select>
-						</div>
-						<input type="text" class="cardPayinput fr" placeholder="Departure airplane number" />
-						<div class="clearboth"></div>
-					</div>
-					<h2 class="cardPaylisthead">
-						Tour start time
-					</h2>
-					<div>
-						<input type="text" class="cardPayinput fl" placeholder="start time" />
-						<div class="cardPayinput fr">
-							<select type="text" class="cardPayselect">
-								<option>AM</option>
-								<option>PM</option>
-							</select>
-						</div>
-						<div class="clearboth"></div>
-					</div>
-					<div class="cardPaytext">
-						Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
-						We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
-					</div>
-					<textarea class="contact_textarea cardPaytextarea fr" ></textarea>
-					<button class="big_submit fr">submit</button>
+				<div class="tourlink">
+					<a href="home.html">Home</a>　>　 
+					<a href="viewTheTour.html">View The Tours</a>　>　
+					<span>Day Tour / Layover Tour</span>
+				</div>
+				<h1 class="cardPayhead">
+					Customer information
+				</h1>
+				<h2 class="cardPaylisthead">
+					Contact address
+				</h2>
+				<div>
+					<input type="text" class="cardPayinput fl" reg="firstname" placeholder="First Name" />
+					<input type="text" class="cardPayinput fr" reg="lastname" placeholder="Last Name" />
+					<div id="firstname" class="cardPaywaring fl waringhidden">firstname</div>
+					<div id="lastname" class="cardPaywaring fr waringhidden">lastname</div>
+					<div style="clear:both"></div>
+					<input type="text" class="cardPayinput fl" reg="eaddress" placeholder="E-mail Address" />
+					<input type="text" class="cardPayinput fr" reg="phone" placeholder="Phone" />
+					<div id="eaddress" class="cardPaywaring fl waringhidden">firstname</div>
+					<div id="phone" class="cardPaywaring fr waringhidden">lastname</div>
 					<div class="clearboth"></div>
+				</div>
+				<h2 class="cardPaylisthead">
+					Passport
+				</h2>
+				<div>
+					<input type="text" class="cardPayinput fl" reg="unitedstates" placeholder="Passport Number" />
+					<div class="cardPayinput fr">
+						<select type="text" class="cardPayselect">
+							<option>United States</option>
+						</select>
+					</div>
+					<div id="unitedstates" class="cardPaywaring fl waringhidden">firstname</div>
+					<div class="clearboth"></div>
+				</div>
+				<h2 class="cardPaylisthead">
+					Hotel
+				</h2>
+				<div>
+					<input type="text" class="cardPayinput fl" reg="hotelname" placeholder="Hotel Name" />
+					<input type="text" class="cardPayinput fr" reg="hotelnumber" placeholder="Hotel Contact Number" />
+					<div id="hotelname" class="cardPaywaring fl waringhidden">firstname</div>
+					<div id="hotelnumber" class="cardPaywaring fr waringhidden">lastname</div>
+					<div style="clear:both"></div>
+					<input type="text" style="width:99%;" class="cardPayinput fl" reg="hoteladdress" placeholder="Hotel Address" />
+					<div id="hoteladdress" class="cardPaywaring fl waringhidden">firstname</div>
+					<div class="clearboth"></div>
+				</div>
+				<h2 class="cardPaylisthead">
+					Arrival information
+				</h2>
+				<div>
+					<div class="cardPayinput fl">
+						<select type="text" class="cardPayselect">
+							<option>Arrival date</option>
+						</select>
+					</div>
+					<input type="text" class="cardPayinput fr" reg="arrivelairnumber" placeholder="Arrivel airplane number" />
+					<div id="arrivelairnumber" class="cardPaywaring fr waringhidden">lastname</div>
+					<div style="clear:both"></div>
+				</div>
+				<h2 class="cardPaylisthead">
+					Departure information
+				</h2>
+				<div>
+					<div class="cardPayinput fl">
+						<select type="text" class="cardPayselect">
+							<option>Departure date</option>
+						</select>
+					</div>
+					<input type="text" class="cardPayinput fr" reg="depairnum" placeholder="Departure airplane number" />
+					<div id="depairnum" class="cardPaywaring fr waringhidden">lastname</div>
+					<div style="clear:both"></div>
+				</div>
+				<h2 class="cardPaylisthead">
+					Tour start time
+				</h2>
+				<div>
+					<input type="text" class="cardPayinput fl" reg="starttime" placeholder="start time" />
+					<div class="cardPayinput fr">
+						<select type="text" class="cardPayselect">
+							<option>AM</option>
+							<option>PM</option>
+						</select>
+					</div>
+					<div id="starttime" class="cardPaywaring fl waringhidden">firstname</div>
+					<div style="clear:both"></div>
+				</div>
+				<div class="cardPaytext">
+					Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
+					We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
+				</div>
+				<textarea class="contact_textarea cardPaytextarea fr" ></textarea>
+				<form action="/tour/order/submit" method="post">
+					<input type="hidden" name="lineNo" value=${lineNo} />
+					<input type="hidden" name="adultNum" value=${adultNum} />
+					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
+					<input type="hidden" name="babyNum" value=${babyNum} />
+					<input type="hidden" name="childNum" value=${childNum} />
+					<input type="hidden" name="startDate" value="${startDate}" />
+					<input type="hidden" name="pickupCarTypeNo" name=${pickupCarTypeNo}  />
+					<input type="hidden" name="dropoffCarTypeNo" name=${dropoffCarTypeNo}  />
+					<input type="hidden" name="showNo" name=${showNo}  />
+					<input type="hidden" name="fName" id="fName" />
+					<input type="hidden" name="lName" id="lName" />
+					<input type="hidden" name="emailAddress" id="emailAddress" />
+					<input type="hidden" name="phoneNum" id="phoneNum" />
+					<input type="hidden" name="hotelName" id="hotelName" />
+					<input type="hidden" name="hotelAddress" id="hotelAddress" />
+					<input type="hidden" name="hotelTell" id="hotelTell" />
+					<input type="hidden" name="arrivalDate" id="arrivalDate" />
+					<input type="hidden" name="aAirplanNum" id="aAirplanNum" />
+					<input type="hidden" name="startTime" id="startTime" />
+					<input type="hidden" name="instructions" id="instructions" />
+					<input type="hidden" name="totalPrice" id="totalPrice" />
 				</form>
+				<button class="big_submit fr">submit</button>
+				<div class="clearboth"></div>
 			 </div>
 			 <div class="cardPay_mid fl"></div>
 			 <div class="cardPay_right fr">
@@ -123,23 +149,23 @@
 				 			The Great Wall Tour
 				 		</div>
 				 		<div class="cardPay_right_li">
-				 			Date:14/07/2017
+				 			Date:${startDate}
 				 		</div>
 				 		<div class="cardPay_right_li">
-				 			1 Adult $100
-				 			<span>$100</span>
+				 			${adultNum} Adult $${unitPrice}
+				 			<span>$${adultNum*unitPrice}</span>
 				 		</div>
 				 		<div class="cardPay_right_li">
-				 			1 Child $100
-				 			<span>$80</span>
+				 			${childNum} Child $${unitPrice*0.8}
+				 			<span>$${childNum*unitPrice*0.8}</span>
 				 		</div>
 				 		<div class="cardPay_right_li">
 				 			Airport/Railway station Pick up
-				 			<span>$20</span>
+				 			<span>$${pickupPrice}</span>
 				 		</div>
 				 		<div class="cardPay_right_li">
 				 			Airport Drop Off
-				 			<span>$20</span>
+				 			<span>$${dropoffPrice}</span>
 				 		</div>
 				 	</div>
 					<div class="clearboth"></div>
@@ -160,5 +186,29 @@
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
+		<script>
+			var t_reglist = {
+				
+			}
+			var inputandreg = {
+				
+			}
+			function cardpaysub(){
+				var t_input = $("input.cardPayinput");
+				for(var i = 0 ;i < t_input.length;i++){
+					var t_regkey = t_input.eq(i).attr("reg");
+					var t_regval = t_input.eq(i).val();
+					if(t_regval == ""){
+						t_input.eq(i).addClass('inputerror');
+						$("#"+t_regkey).removeClass('waringhidden');
+					}
+				}
+			}
+			$(".tour_list_box").on("focus","input",function(){
+				var t_regkey = $(this).attr("reg");
+				$(this).removeClass('inputerror');
+				$("#"+t_regkey).addClass('waringhidden');
+			});
+		</script>
  	</body>
 </html>

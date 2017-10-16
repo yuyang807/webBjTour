@@ -97,66 +97,66 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 					<img class="tour_guide_top" src="${ctxStatic}/juhema/icon/order_top.png" />
 					<div class="tour_guide_top_text">Book this Tour</div>
 					<form id="formsubmit" action="/tour/basket" method="post">
-						<input type="text" style="display: none;" name="lineNo" id="linenumberid" />
+						<input type="number" style="display: none;" name="lineNo" id="linenumberid" />
 						<input type="text" style="display: none;" name="startDate" id="startDateid" />
 					<ul class="tour_guide_ul">
 						<li class="tour_guide_li">Select a date</li>
 						<li class="tour_guide_li ">
 							<input id="datepicker" class="guide_input fr" type="text" />
 						</li>
-						<li class="tour_guide_li">
+						<!--<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Select a currency</div>
 							<select class="tour_guide_li_right fr">
 								<option>CNY</option>
 								<option>2</option>
 							</select>
-						</li>
+						</li>-->
 						<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Adults <span id="pricep1">$75</span></div>
 							<select name="adultNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p1')">
-								<option value="0">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
+								<option value=0 >0</option>
+								<option value=1 >1</option>
+								<option value=2 >2</option>
+								<option value=3 >3</option>
+								<option value=4 >4</option>
+								<option value=5 >5</option>
+								<option value=6 >6</option>
 							</select>
 						</li>
 						<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Teenager <span id="pricep2">$65</span></div>
 							<select name="teenagerNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p2')">
-								<option value="0">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
+								<option value=0 >0</option>
+								<option value=1 >1</option>
+								<option value=2 >2</option>
+								<option value=3 >3</option>
+								<option value=4 >4</option>
+								<option value=5 >5</option>
+								<option value=6 >6</option>
 							</select>
 						</li>
 						<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Child <span id="pricep3">$65</span></div>
 							<select name="childNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p3')">
-								<option value="0">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
+								<option value=0 >0</option>
+								<option value=1 >1</option>
+								<option value=2 >2</option>
+								<option value=3 >3</option>
+								<option value=4 >4</option>
+								<option value=5 >5</option>
+								<option value=6 >6</option>
 							</select>
 						</li>
 						<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Baby <span id="pricep4">$65</span></div>
 							<select name="babyNum" class="tour_guide_li_right fr" >
-								<option value="0">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
+								<option value=0 >0</option>
+								<option value=1 >1</option>
+								<option value=2 >2</option>
+								<option value=3 >3</option>
+								<option value=4 >4</option>
+								<option value=5 >5</option>
+								<option value=6 >6</option>
 							</select>
 						</li>
 					</ul>
