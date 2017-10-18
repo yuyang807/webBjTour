@@ -97,7 +97,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 					<img class="tour_guide_top" src="${ctxStatic}/juhema/icon/order_top.png" />
 					<div class="tour_guide_top_text">Book this Tour</div>
 					<form id="formsubmit" action="/tour/basket" method="post">
-						<input type="number" style="display: none;" name="lineNo" id="linenumberid" />
+						<input type="text" style="display: none;" name="lineNo" id="linenumberid" />
 						<input type="text" style="display: none;" name="startDate" id="startDateid" />
 					<ul class="tour_guide_ul">
 						<li class="tour_guide_li">Select a date</li>
@@ -306,7 +306,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	nineP:60,
 		    	tenP:55
 		    }];*/
-		    $("#linenumberid").val(datalist[0]['lineNo']);
+		    $("#linenumberid").val(datalist['lineNo']);
 		    var pricemap = ['oneP','twoP','threeP','fourP','fiveP','sixP','sevenP','eightP','nineP','tenP'];
 		    function showval(){
 		    	var t_all_num = 0;
@@ -386,7 +386,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	addListstr += "<li>"+addList[i]['add_value']+"</li>";
 		    }
 		    $("#addlistId").html(addListstr);
-		    var unaddList = ${unaddlist};
+		    var unaddList = ${unaddList};
 		    var unaddListstr = '';
 		    for(var i = 0; i < unaddList.length;i++){
 		    	unaddListstr += "<li>"+unaddList[i]['add_value']+"</li>";

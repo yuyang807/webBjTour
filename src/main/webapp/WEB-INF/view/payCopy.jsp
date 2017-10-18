@@ -194,7 +194,7 @@
 		    	}
 		    	carmap[carkey].push(carList[i]);
 		    	cartypeobj[cartypeno] = {
-		    		name:carkey,
+		    		name:carList[i]['carName'],
 		    		price:carList[i]['transferPrice']
 		    	};
 		    }
@@ -250,7 +250,7 @@
 		    	for(var j in showchild){
 		    		showselectall += showselectstr.format2({
 		    			showid:showchild[j]['showNo'],
-		    			showname:showchild[j]['showrouws'],
+		    			showname:showchild[j]['rows'],
 		    		})
 		    	}
 		    	if(i == 'kungfu'){
