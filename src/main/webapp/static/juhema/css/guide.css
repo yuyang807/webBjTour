@@ -395,10 +395,12 @@
 	height:1rem;
 	top:0.3rem;
 	left:0.3rem;
-	background:red;
+	border:1px solid red;
 }
 .checkbox_hover .tour_payCopy_checkbox_left{
-	background:blue;
+	background:url(../icon/DIMD7355w.png) red no-repeat center center;
+	background-size:0.8rem 0.8rem;
+	border:1px solid red;
 }
 .tour_payCopy_checkbox_text{
 	position:absolute;

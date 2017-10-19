@@ -306,7 +306,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	nineP:60,
 		    	tenP:55
 		    }];*/
-		    $("#linenumberid").val(datalist[0]['lineNo']);
+		    $("#linenumberid").val(datalist['lineNo']);
 		    var pricemap = ['oneP','twoP','threeP','fourP','fiveP','sixP','sevenP','eightP','nineP','tenP'];
 		    function showval(){
 		    	var t_all_num = 0;
@@ -316,9 +316,9 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		t_all_num += parseInt(t_number[i]['n']);
 		    	}
 		    	if(t_all_num > pricemap.length){
-		    		t_now_price = datalist[0][pricemap[pricemap.length]];
+		    		t_now_price = datalist[pricemap[pricemap.length]];
 		    	}else{
-		    		t_now_price = datalist[0][pricemap[t_all_num]];
+		    		t_now_price = datalist[pricemap[t_all_num]];
 		    	}
 		    	
 		    	for(var i in t_number){
