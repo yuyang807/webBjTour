@@ -51,7 +51,7 @@
 				<ul class="tour_list_ul">
 					<li class="tour_list_li tour_reviewslist_list_bg">
 						<div class="tour_toursbox_list_inbox"></div>
-						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.JPG" />
+						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.png" />
 						<div class="tour_toursbox_top">
 							<div class="tour_toursbox_topfrom">- from -</div>
 							<div class="tour_toursbox_topname">Steven Byrd</div>
@@ -74,7 +74,7 @@
 					</li><!--
 					--><li class="tour_list_li tour_reviewslist_list_bg">
 						<div class="tour_toursbox_list_inbox"></div>
-						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.JPG" />
+						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.png" />
 						<div class="tour_toursbox_top">
 							<div class="tour_toursbox_topfrom">- from -</div>
 							<div class="tour_toursbox_topname">Steven Byrd</div>
