@@ -62,9 +62,9 @@
 			<div class="tour_payCopy_top">
 				<div class="tour_payCopy_top_r"></div>
 					Acrabatic Show In Chaoyang Theatre
-				<div class="tour_payCopy_checkbox_big">
+				<div class="tour_payCopy_checkbox_big" k="c3">
 					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$<span id="acrobatpriceid"></span></div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec3">$<span id="acrobatpriceid"></span></div>
 					<div class="tour_payCopy_checkbox_more">Choose a row</div>
 					<select id="acrobaticid" class="tour_payCopy_checkbox_select" onchange="acrobat(this)">
 						
@@ -78,9 +78,9 @@
 			<div class="tour_payCopy_top">
 				<div class="tour_payCopy_top_r"></div>
 					Kungfu Show In Red Theatre
-				<div class="tour_payCopy_checkbox_big">
+				<div class="tour_payCopy_checkbox_big" k="c4">
 					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-					<div class="tour_payCopy_checkbox_text tour_payCopy_click">$<span id="kungfupriceid"></span></div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec4">$<span id="kungfupriceid"></span></div>
 					<div class="tour_payCopy_checkbox_more">Choose a row</div>
 					<select id="kungfuid" class="tour_payCopy_checkbox_select" onchange="kungfuchange(this)">
 						
@@ -104,12 +104,12 @@
 					<input type="hidden" id="dropoffCarTypeNo" name="dropoffCarTypeNo"  />
 					<input type="hidden" id="showNo1" name="showNo1"  />
 					<input type="hidden" id="showNo2" name="showNo2"  />
+				</form>
 					<div class="payCopytotalprice">
 						Total Cost: <span>$230</span>
 					</div>
 					<button class="big_submit fr">Check Out</button>
 					<div class="clearboth"></div>
-				</form>
 			</div>
 		</div>
 		<footer class="tour_foot_bg">
@@ -123,13 +123,23 @@
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
 		<script>
+			var checkobj = {
+				c1:false,
+				c2:false,
+				c3:false,
+				c4:false
+			}
 			$(".tour_payCopy_click").click(function(){
 				var t_p = $(this).parent();
+				var tkey = t_p.attr("k");
 				if(t_p.hasClass("checkbox_hover")){
 					t_p.removeClass("checkbox_hover");
+					checkobj[tkey] = false;
 				}else{
 					t_p.addClass("checkbox_hover");
+					checkobj[tkey] = true;
 				}
+				getallprice();
 			});
 			var table_top_html = `
 				<div class="tour_guide_table_top">
@@ -228,6 +238,7 @@
 		    $(".pickupprice").html(cartypeobj[t_select]['price']);
 		    function changecarselect(tthis){
 		    	$(tthis).eq(0).parent().find(".pickupprice").html(cartypeobj[tthis.value]['price']);
+		    	getallprice()
 		    }
 		    
 		    var showlist = ${showList};
@@ -268,11 +279,13 @@
 		    	var arcobatobj = showlistobj['acrobatic show'];
 		    	var t_price = arcobatobj[tthis.value]['showPrice'];
 		    	$("#acrobatpriceid").html(t_price);
+		    	getallprice()
 		    }
 		    function kungfuchange(tthis){
 		    	var arcobatobj = showlistobj['kungfu'];
 		    	var t_price = arcobatobj[tthis.value]['showPrice'];
 		    	$("#kungfupriceid").html(t_price);
+		    	getallprice()
 		    }
 		    function checkout(){
 		    	$("#pickupCarTypeNo").val($("#pickupselect2").val());
@@ -280,6 +293,16 @@
 				$("#showNo1").val($("#acrobaticid").val());
 				$("#showNo2").val($("#kungfuid").val());
 				$("#payCopyformid").submit();
+		    }
+		    function getallprice(){
+		    	var t_price = 0;
+		    	for(var i in checkobj){
+		    		if(checkobj[i]){
+		    			console.log($("#price"+i).html());
+		    			t_price += parseInt($("#price"+i+" span").html());
+		    		}
+		    	}
+		    	$("#total_bottom_price").html("$"+(t_price+allprice));
 		    }
 		</script>
 	</body>
