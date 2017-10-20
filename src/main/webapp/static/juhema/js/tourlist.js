@@ -47,7 +47,7 @@ var tourlist = function() {
 				this.style.boxShadow= "0px 0px 3px 0 #ccc";
 			});
 			$("#"+id).on("click",".tour_list_li",function(){
-				window.location.href = "tourDetails.html";
+				//window.location.href = "tourDetails.html";
 			});
 		}
 	}

@@ -77,7 +77,7 @@ function showmenu(){
 function isindexof(key,list){
 	if(key.indexOf("/") < 0 && list.indexOf("/") < 0){
 		return true;
-	}else if(key.indexOf(list) > -1){
+	}else if(key.indexOf(list) > -1 && list.indexOf("/") > -1){
 		return true;
 	}else{
 		return false;
