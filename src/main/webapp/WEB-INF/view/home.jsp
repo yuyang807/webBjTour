@@ -40,7 +40,7 @@
 			<ul id="tour_list_id" class="tour_list_ul">
 				
 			</ul>
-			<a class="linktours" href="">View all tours >></a>
+			<a class="linktours" href="/list">View all tours >></a>
 			<!--<button class="buttonpublic_nochange buttoncolor1 viewalltours">View all tours</button>-->
 			<div>&nbsp;</div>
 		</div>
