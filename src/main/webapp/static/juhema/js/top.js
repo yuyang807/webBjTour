@@ -1,28 +1,28 @@
 
 var location_obj = [
 	{
-		"url":"home.html",
-		"key":["home.html"],
+		"url":"",
+		"key":"",
 		"text":"Home"
 	},
 	{
-		"url":"viewTheTour.html",
-		"key":["viewTheTour.html","tourDetails.html","tourGuide.html","carRental.html","payCopy.html","cardPay.html"],
+		"url":"/list",
+		"key":"/list",
 		"text":"Our Tours"
 	},
 	{
 		"url":"travelTips.html",
-		"key":["travelTips.html"],
+		"key":"travelTips.html",
 		"text":"Travel Tips"
 	},
 	{
 		"url":"FAQs.html",
-		"key":["FAQs.html"],
+		"key":"FAQs.html",
 		"text":"FAQs"
 	},
 	{
 		"url":"contactUs.html",
-		"key":["contactUs.html"],
+		"key":"contactUs.html",
 		"text":"Contact Us"
 	}
 ];
@@ -75,11 +75,18 @@ function showmenu(){
 	};
 }
 function isindexof(key,list){
-	for(var i in list){
+	if(key.indexOf("/") < 0 && list.indexOf("/") < 0){
+		return true;
+	}else if(key.indexOf(list) > -1){
+		return true;
+	}else{
+		return false;
+	}
+	/*for(var i in list){
 		if(key.indexOf(list[i]) > -1){
 			return true;
 		}
-	}
+	}*/
 	return false;
 }
 $(window).scroll(function(event){  
