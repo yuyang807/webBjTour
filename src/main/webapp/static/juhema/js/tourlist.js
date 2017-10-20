@@ -1,6 +1,6 @@
 
 var tourlist = function() {
-	var t_tours_str = `<li class="tour_list_li" onclick="linkfor(/list/{lineNo})">
+	var t_tours_str = `<li class="tour_list_li" onclick="linkfor('/list/{lineNo}')">
 					<div class="tour_list_imgbox">
 						<div class="tour_list_imginner"></div>
 						<img src="{fileUrl}"/>
@@ -45,9 +45,6 @@ var tourlist = function() {
 			});
 			$("#"+id).on("mouseleave",".tour_list_li",function(){
 				this.style.boxShadow= "0px 0px 3px 0 #ccc";
-			});
-			$("#"+id).on("click",".tour_list_li",function(){
-				//window.location.href = "tourDetails.html";
 			});
 		}
 	}

@@ -1,8 +1,8 @@
 
 var location_obj = [
 	{
-		"url":"",
-		"key":"",
+		"url":"localhost:8080",
+		"key":"localhost:8080",
 		"text":"Home"
 	},
 	{
