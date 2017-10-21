@@ -1,8 +1,8 @@
 
 var location_obj = [
 	{
-		"url":"localhost:8080",
-		"key":"localhost:8080",
+		"url":"http://localhost:8080",
+		"key":"",
 		"text":"Home"
 	},
 	{
@@ -91,7 +91,6 @@ function isindexof(key,list){
 }
 $(window).scroll(function(event){  
     var wScrollY = window.scrollY; // 当前滚动条位置  
-    console.log(wScrollY);
     if(wScrollY > 60){
     	$("#tour_top_id").addClass("tour_top_black");
     }else{
