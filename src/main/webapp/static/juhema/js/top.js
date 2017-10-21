@@ -1,7 +1,7 @@
 
 var location_obj = [
 	{
-		"url":"http://localhost:8080",
+		"url":"/",
 		"key":"",
 		"text":"Home"
 	},
@@ -75,7 +75,7 @@ function showmenu(){
 	};
 }
 function isindexof(key,list){
-	if(key.indexOf("/") < 0 && list.indexOf("/") < 0){
+	if(key.indexOf("/list") < 0 && list.indexOf("/") < 0){
 		return true;
 	}else if(key.indexOf(list) > -1 && list.indexOf("/") > -1){
 		return true;
