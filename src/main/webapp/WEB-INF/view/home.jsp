@@ -28,7 +28,7 @@
 			<div id="tour_slider_main"></div>
 			<h1 class="tour_slider_title">Discover New Views In Beijing</h1>
 			<div class="tour_slider_title_text">We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years of experience.</div>
-			<button class="buttonpublic buttoncolor1 button_slider_top">
+			<button class="buttonpublic buttoncolor1 button_slider_top" onclick="javascript:window.location.href='list'">
 				VIEW THE TOURS
 			</button>
 			<button class="buttonpublic buttoncolor2 button_slider_bottom" onclick="javascript:window.location.href='#howtobook'">
