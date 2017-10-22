@@ -20,7 +20,7 @@
 		<div class="tour_list_box">
 			
 			<div class="tourlink">
-				<a href="home.html">Home</a>　>　 
+				<a href="/">Home</a>　>　 
 				<span>View The Tours</span>
 			</div>
 		</div>
@@ -33,12 +33,12 @@
 			
 			<div class="tour_list_box">
 				<div class="tour_contomize_ul">
-					<a href="tourGuide.html" class="tour_contomize_list">
+					<a href="/guides" class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
 						<img src="${ctxStatic}/juhema/icon/ATIQ0483.jpg" />
 						<div class="tour_contomize_div">Hire a Tour Guide</div>
 					</a><!--
-					--><a href="carRental.html"  class="tour_contomize_list">
+					--><a href="/cars"  class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
 						<img src="${ctxStatic}/juhema/icon/FXSG2704.jpg" />
 						<div class="tour_contomize_div">Car Rental</div>

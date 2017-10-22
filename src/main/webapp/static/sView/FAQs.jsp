@@ -19,7 +19,7 @@
 		</header>
 		<div id="backid" class="tour_list_box">
 			<div class="tourlink">
-				<a href="home.html">Home</a>　>　 
+				<a href="/">Home</a>　>　 
 				<span>FAQs</span>
 			</div>
 		</div>

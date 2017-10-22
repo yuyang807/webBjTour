@@ -16,7 +16,10 @@
 			
 		</header>
 		<div class="contactbox">
-			<div class="tourlink">Home > Contect Us</div>
+			<div class="tourlink">
+				<a href="/">Home</a>　>　 
+				<span>Contect Us</span>
+			</div>
 			<div class="contacttitle">Copntact Us</div>
 			<div class="contacttext">
 				We are here to answer any questions you may have about our combadi experiences. Reach out to us and we'll respond as soon as we can.<br><br>
