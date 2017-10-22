@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="/WEB-INF/view/include/taglib.jsp"%>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
