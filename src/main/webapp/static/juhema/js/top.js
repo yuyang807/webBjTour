@@ -75,7 +75,7 @@ function showmenu(){
 	};
 }
 function isindexof(key,list){
-	if(key.indexOf("/list") < 0 && list == ''){
+	if(key.slice(-1) == '/' && list == ''){
 		return true;
 	}else if(key.indexOf(list) > -1 && list.indexOf("/") > -1){
 		return true;

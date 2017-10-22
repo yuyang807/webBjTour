@@ -31,7 +31,7 @@
 		<div class="tour_list_box">
 			<img class="tour_details_left" src="${ctxStatic}/juhema/img/guide_img.png" /><!--
 			--><div class="tour_details_right">
-				<img class="tour_guide_top" src="icon/order_top.png" />
+				<img class="tour_guide_top" src="${ctxStatic}/juhema/icon/order_top.png" />
 				<div class="tour_guide_top_text">Hire a Tour Guide</div>
 				<ul class="tour_guide_ul">
 					<li class="tour_guide_li">Select a date</li>
