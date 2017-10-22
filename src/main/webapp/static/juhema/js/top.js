@@ -11,18 +11,18 @@ var location_obj = [
 		"text":"Our Tours"
 	},
 	{
-		"url":"travelTips.html",
-		"key":"travelTips.html",
+		"url":"/travelTips",
+		"key":"/travelTips",
 		"text":"Travel Tips"
 	},
 	{
-		"url":"FAQs.html",
-		"key":"FAQs.html",
+		"url":"/FAQs",
+		"key":"/FAQs",
 		"text":"FAQs"
 	},
 	{
-		"url":"contactUs.html",
-		"key":"contactUs.html",
+		"url":"/contactUs",
+		"key":"/contactUs",
 		"text":"Contact Us"
 	}
 ];
