@@ -16,12 +16,12 @@ var location_obj = [
 		"text":"Travel Tips"
 	},
 	{
-		"url":"/FAQs",
+		"url":"/static/sView/FAQs.jsp",
 		"key":"/FAQs",
 		"text":"FAQs"
 	},
 	{
-		"url":"/contactUs",
+		"url":"/static/sView/contactUs.jsp",
 		"key":"/contactUs",
 		"text":"Contact Us"
 	}
@@ -75,7 +75,7 @@ function showmenu(){
 	};
 }
 function isindexof(key,list){
-	if(key.indexOf("/list") < 0 && list.indexOf("/") < 0){
+	if(key.indexOf("/list") < 0 && list == ''){
 		return true;
 	}else if(key.indexOf(list) > -1 && list.indexOf("/") > -1){
 		return true;

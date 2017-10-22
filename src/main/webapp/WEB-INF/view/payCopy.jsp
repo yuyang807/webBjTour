@@ -20,8 +20,8 @@
 		</header>
 		<div class="tour_list_box">
 			<div class="tourlink">
-				<a href="home.html">Home</a>　>　 
-				<a href="viewTheTour.html">View The Tours</a>　>　
+				<a href="/">Home</a>　>　 
+				<a href="/list">View The Tours</a>　>　
 				<span>Day Tour / Layover Tour</span>
 			</div>
 		</div>
