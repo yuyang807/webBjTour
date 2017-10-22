@@ -35,12 +35,12 @@
 				<div class="tour_contomize_ul">
 					<a href="tourGuide.html" class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
-						<img src="${ctxStatic}/juhema/img/hire.png" />
+						<img src="${ctxStatic}/juhema/icon/ATIQ0483.jpg" />
 						<div class="tour_contomize_div">Hire a Tour Guide</div>
 					</a><!--
 					--><a href="carRental.html"  class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
-						<img src="${ctxStatic}/juhema/img/carrental.png" />
+						<img src="${ctxStatic}/juhema/icon/FXSG2704.jpg" />
 						<div class="tour_contomize_div">Car Rental</div>
 					</a>
 				</div>
@@ -79,67 +79,6 @@
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20170316" ></script>
 		<script>
-			/*var t_tours_list = [{
-				'typeName':'Beijing Tour Package',
-				"duration":"8 hours",
-				"lineTypeNo":true,
-				"popularLevel":1,
-				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-				"lineNo":1,
-				"available":"Daily",
-				"tenP":500,
-				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-			},{
-				'typeName':'Beijing Tour Package',
-				"duration":"8 hours",
-				"lineTypeNo":true,
-				"popularLevel":1,
-				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-				"lineNo":1,
-				"available":"Daily",
-				"tenP":500,
-				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-			},{
-				'typeName':'Beijing Layover Tour',
-				"duration":"8 hours",
-				"lineTypeNo":true,
-				"popularLevel":1,
-				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-				"lineNo":1,
-				"available":"Daily",
-				"tenP":500,
-				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-			},{
-				'typeName':'Beijing Layover Tour',
-				"duration":"8 hours",
-				"lineTypeNo":true,
-				"popularLevel":1,
-				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-				"lineNo":1,
-				"available":"Daily",
-				"tenP":500,
-				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-			},{
-				'typeName':'Beijing Layover Tour2',
-				"duration":"8 hours",
-				"lineTypeNo":true,
-				"popularLevel":1,
-				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-				"lineNo":1,
-				"available":"Daily",
-				"tenP":500,
-				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-			},{
-				'typeName':'Beijing Layover Tour2',
-				"duration":"8 hours",
-				"lineTypeNo":true,
-				"popularLevel":1,
-				"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-				"lineNo":1,
-				"available":"Daily",
-				"tenP":500,
-				"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-			}];*/
 			var t_tours_list = ${lineList};
 			var t_all_html = {};
 			for(var i in t_tours_list){
