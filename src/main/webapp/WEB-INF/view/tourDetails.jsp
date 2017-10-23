@@ -112,51 +112,67 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 							</select>
 						</li>-->
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Adults <span id="pricep1">$75</span></div>
+							<div class="tour_guide_li_left fl">Adults <span id="pricep1">$0</span></div>
 							<select name="adultNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p1')">
-								<option value=0 >0</option>
-								<option value=1 >1</option>
-								<option value=2 >2</option>
-								<option value=3 >3</option>
-								<option value=4 >4</option>
-								<option value=5 >5</option>
-								<option value=6 >6</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Teenager <span id="pricep2">$65</span></div>
+							<div class="tour_guide_li_left fl">Teenager <span id="pricep2">$0</span></div>
 							<select name="teenagerNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p2')">
-								<option value=0 >0</option>
-								<option value=1 >1</option>
-								<option value=2 >2</option>
-								<option value=3 >3</option>
-								<option value=4 >4</option>
-								<option value=5 >5</option>
-								<option value=6 >6</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Child <span id="pricep3">$65</span></div>
+							<div class="tour_guide_li_left fl">Child <span id="pricep3">$0</span></div>
 							<select name="childNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p3')">
-								<option value=0 >0</option>
-								<option value=1 >1</option>
-								<option value=2 >2</option>
-								<option value=3 >3</option>
-								<option value=4 >4</option>
-								<option value=5 >5</option>
-								<option value=6 >6</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
 							</select>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Baby <span id="pricep4">$65</span></div>
+							<div class="tour_guide_li_left fl">Baby <span id="pricep4">$0</span></div>
 							<select name="babyNum" class="tour_guide_li_right fr" >
-								<option value=0 >0</option>
-								<option value=1 >1</option>
-								<option value=2 >2</option>
-								<option value=3 >3</option>
-								<option value=4 >4</option>
-								<option value=5 >5</option>
-								<option value=6 >6</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
 							</select>
 						</li>
 					</ul>
@@ -294,7 +310,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		n:0
 		    	}
 		    };
-		    /*var datalist = [{
+		    /*var datalist = {
 		    	oneP:100,
 		    	twoP:95,
 		    	threeP:90,
@@ -305,9 +321,9 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	eightP:65,
 		    	nineP:60,
 		    	tenP:55
-		    }];*/
+		    };*/
 		    $("#linenumberid").val(datalist['lineNo']);
-		    var pricemap = ['oneP','twoP','threeP','fourP','fiveP','sixP','sevenP','eightP','nineP','tenP'];
+		    var pricemap = ['oneP','oneP','twoP','threeP','fourP','fiveP','sixP','sevenP','eightP','nineP','tenP'];
 		    function showval(){
 		    	var t_all_num = 0;
 		    	var t_now_price = 0;
@@ -329,9 +345,29 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	
 		    	$("#total_price").html("$"+t_all_price);
 		    }
+		    function getallnum(){
+		    	var t_all_num = 0;
+		    	for(var i in t_number){
+		    		if(i != 'p4'){
+		    			t_all_num += parseInt(t_number[i]['n']);
+		    		}
+		    	}
+		    	if(t_all_num > 10){
+		    		alert("人数超出10人，请重新选择（样式，文案再定义）");
+		    		return false;
+		    	}else{
+		    		return true;
+		    	}
+		    }
 		    function selectprice(t_this,num){
+		    	var t_old_num = t_number[num]['n'];
 		    	t_number[num]['n'] = t_this.value;
-		    	showval();
+		    	if(getallnum()){
+		    		showval();
+		    	}else{
+		    		t_number[num]['n'] = t_old_num;
+		    		t_this.value = t_old_num;
+		    	}
 		    }
 		    function tosubmit(){
 		    	$("#startDateid").val((new Date(picker['_d'])).getTime());
