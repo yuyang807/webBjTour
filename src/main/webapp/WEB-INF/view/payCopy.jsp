@@ -94,7 +94,7 @@
 				
 			</div>
 			<div class="contact_list">
-				<form id="payCopyformid" action="/tour/confirm" method="post">
+				<form id="payCopyformid" action="/tour/order/submit" method="post">
 					<input type="hidden" name="lineNo" value=${lineNo} />
 					<input type="hidden" name="adultNum" value=${adultNum} />
 					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
@@ -108,7 +108,7 @@
 					<div class="payCopytotalprice">
 						Total Cost: <span>$230</span>
 					</div>
-					<button class="big_submit fr">Check Out</button>
+					<button class="big_submit fr" onclick="checkout()">Check Out</button>
 					<div class="clearboth"></div>
 			</div>
 		</div>
