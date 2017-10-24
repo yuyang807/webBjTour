@@ -126,6 +126,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 								<option value="9">9</option>
 								<option value="10">10</option>
 							</select>
+							<div class="clearboth"></div>
 						</li>
 						<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Teenager <span id="pricep2">$0</span></div>
@@ -142,6 +143,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 								<option value="9">9</option>
 								<option value="10">10</option>
 							</select>
+							<div class="clearboth"></div>
 						</li>
 						<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Child <span id="pricep3">$0</span></div>
@@ -158,9 +160,10 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 								<option value="9">9</option>
 								<option value="10">10</option>
 							</select>
+							<div class="clearboth"></div>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Baby <span id="pricep4">$0</span></div>
+							<div class="tour_guide_li_left fl">Infant free(height under 1.2 meters equalling 3.9feet) <span id="pricep4">$0</span></div>
 							<select name="babyNum" class="tour_guide_li_right fr" >
 								<option value="0">0</option>
 								<option value="1">1</option>
@@ -174,6 +177,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 								<option value="9">9</option>
 								<option value="10">10</option>
 							</select>
+							<div class="clearboth"></div>
 						</li>
 					</ul>
 					<div class="tour_guide_total">
