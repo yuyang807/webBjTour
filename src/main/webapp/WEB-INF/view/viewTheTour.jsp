@@ -33,12 +33,12 @@
 			
 			<div class="tour_list_box">
 				<div class="tour_contomize_ul">
-					<a href="/guides" class="tour_contomize_list">
+					<a href="/list/guides" class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
 						<img src="${ctxStatic}/juhema/icon/ATIQ0483.jpg" />
 						<div class="tour_contomize_div">Hire a Tour Guide</div>
 					</a><!--
-					--><a href="/cars"  class="tour_contomize_list">
+					--><a href="/list/cars"  class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
 						<img src="${ctxStatic}/juhema/icon/FXSG2704.jpg" />
 						<div class="tour_contomize_div">Car Rental</div>
