@@ -20,6 +20,7 @@ public class DateUtil extends org.apache.commons.lang3.time.DateUtils {
     private static final String LINE_PATTERN = "yyyy-MM-dd";
     private static final String NOLINE_PATTERN = "yyyyMMdd";
     private static final String TEMP_PATTERN = "yyyy-MM-dd HH:mm:ss";
+    private static final String MINUTE_PATTERN = "HH:mm";
 
     private static final ThreadLocal<SimpleDateFormat> threadLocal = new ThreadLocal<SimpleDateFormat>();
     private static final Object object = new Object();
@@ -207,7 +208,7 @@ public class DateUtil extends org.apache.commons.lang3.time.DateUtils {
     }
 
     public static Date getCurrentDateTime() {
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        DateFormat format = new SimpleDateFormat(TEMP_PATTERN);
         String dateStr = format.format(new Date());
         try {
             return format.parse(dateStr);
@@ -217,6 +218,26 @@ public class DateUtil extends org.apache.commons.lang3.time.DateUtils {
         }
     }
 
+    /**
+     * 时间戳字符串 转化为   年月日格式字符串
+     * @param timestamp
+     */
+    public static String getDateStrBylong(String timestamp){
+    	SimpleDateFormat format =  new SimpleDateFormat(LINE_PATTERN);  
+        Long time=new Long(timestamp);  
+        return format.format(time);  
+    }
+    
+    /**
+     * 时间戳字符串 转化为  时分秒格式字符串
+     * @param timestamp
+     */
+    public static String getTimeStrBylong(String timestamp){
+    	SimpleDateFormat format =  new SimpleDateFormat(MINUTE_PATTERN);  
+    	Long time=new Long(timestamp);  
+    	return format.format(time);  
+    }
+    
     public static Date parseDate(Object str) {
         if (str == null) {
             return null;

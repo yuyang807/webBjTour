@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TMemberDto">
 
     <sql id="Base_Column_List" >
-         id, member_no, email_address, f_name, l_name, passport_num, phone_num, ip1, ip2, ip3, ip4
+         id, member_no, email_address, f_name, l_name, passport_num, phone_num, ip1, ip2, ip3, ip4, createDate, updateDate
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TMemberDto">
@@ -42,6 +42,12 @@
         <if test="ip4 != null ">
           ip4,
         </if>
+        <if test="createDate != null ">
+          create_date,
+        </if>
+        <if test="updateDate != null ">
+          update_date,
+        </if>
        </trim>
        <trim prefix="values (" suffix=")" suffixOverrides="," >
         <if test="id != null ">
@@ -76,6 +82,12 @@
         </if>
         <if test="ip4 != null ">
           #{ip4},
+        </if>
+        <if test="createDate != null ">
+          #{createDate},
+        </if>
+        <if test="updateDate != null ">
+          #{updateDate},
         </if>
        </trim>
     </insert>
