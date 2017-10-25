@@ -44,10 +44,10 @@
 					<li class="tour_guide_li">Select a date</li>
 					<li class="tour_guide_li selectdatebox">
 						<span class="guide_text">From</span>
-						<input id="datepicker" name="startDate" reg="datepickertime" class="guide_input fr" type="text" />
+						<input id="datepicker" onblur="getallprice()" name="startDate" reg="datepickertime" class="guide_input fr" type="text" />
 						<input id="guideDay" type="hidden" name="guideDay"  />
 						<span class="guide_text">To</span>
-						<input id="datepicker2" reg="datepickertime2" class="guide_input fr" type="text" style="float:right;" />
+						<input id="datepicker2" onblur="getallprice()" reg="datepickertime2" class="guide_input fr" type="text" style="float:right;" />
 					</li>
 					<li>
 						<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
@@ -71,7 +71,7 @@
 				</ul>
 				</form>
 				<div class="tour_guide_total">
-					<span>Total Cost:</span><span class="tour_guide_font_big">￥600.</span><span>00</span>
+					<span>Total Cost:</span><span class="tour_guide_font_big">￥<span id="allprice"></span>.</span><span>00</span>
 					<button class="button100 buttoncolor1" onclick="cardpaysub()">BOOKING NOW</button>
 				</div>
 			</div>
@@ -193,7 +193,9 @@
 			var guidelist = ${guidesList};
 			var guideliststr = table_top_html;
 			var selectoption = '';
+			var guidelistobj = {};
 			for(var i in guidelist){
+				guidelistobj[guidelist[i].guideNo] = guidelist[i].price;
 				guideliststr += table_str.format2({
 					name:guidelist[i].serviceName,
 					guidetime:guidelist[i].serviceDuration,
@@ -206,7 +208,7 @@
 				});
 			}
 			$("#tour_guide_table_id").html(guideliststr);
-			$("#guidelist").html(guideliststr);
+			$("#guidelist").html(selectoption);
 			function cardpaysub(){
 				var t_input = $("input.guide_input");
 				var t_len = t_input.length;
@@ -232,6 +234,15 @@
 					
 				}
 				//$("#guideform").submit();
+			}
+			function getallprice(){
+				var t_day = 1;
+				if($("#datepicker").val() != "" && $("#datepicker2").val() != ""){
+					t_day = ((new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime())/3600000/24+1;
+				}
+				var type = $("#guidelist").val();
+				var t_prices_one = guidelistobj[type];
+				$("#allprice").val(t_prices_one*t_day);
 			}
 			$(".tour_details_right").on("focus","input",function(){
 				var t_regkey = $(this).attr("reg");
