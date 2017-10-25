@@ -44,7 +44,7 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
 	var t
 	document.body.style.overflow = "hidden";
 	$("body").append(dialog_str.format2({
-		carTypeNo:$("#tour_book_now_id").attr("regt");
+		carTypeNo:$("#tour_book_now_id").attr("regt")
 	}));
 	picker = new Pikaday(
     {
