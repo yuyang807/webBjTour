@@ -111,15 +111,15 @@
 					<div class="tour_guide_td_list_new carrentallist tour_guide_24">
 						{carlist}
 				   </div>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{carnum}<br>traveling<br>party</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{carnum}<br>traveling<br>party</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{carnum}<br>traveling<br>party</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{carnum}<br>traveling<br>party</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable6"><div class="tour_book_now">Book Now</div></button>
+				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{halfDayPrice}</button>
+				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{fullDayPrice}</button>
+				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{mtyPrice}</button>
+				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{jslPrice}</button>
+				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable6"><div id="tour_book_now_id" class="tour_book_now" regt="{carTypeNo}">Book Now</div></button>
 				   	<div style="clear:both;"></div>
 				</div>
 			`;
-			var carList = [{
+			/*var carList = [{
 		    	carTypeName:1,
 		    	carName:'1-1'
 		    },{
@@ -140,7 +140,8 @@
 		    },{
 		    	carTypeName:3,
 		    	carName:'3-2'
-		    }];
+		    }];*/
+		    var carList = ${carsList};
 		    var carmap = {};
 		    for(var i in carList){
 		    	var carkey = carList[i]['carTypeName'];
@@ -162,7 +163,12 @@
 		    	}
 		    	t_all_table += table_str.format2({
 		    		carnum:i,
-		    		carlist:t_car_list
+		    		carlist:t_car_list,
+		    		halfDayPrice:onecarmap[0].halfDayPrice,
+		    		fullDayPrice:onecarmap[0].fullDayPrice,
+		    		mtyPrice:onecarmap[0].mtyPrice,
+		    		jslPrice:onecarmap[0].jslPrice,
+		    		carTypeNo:onecarmap[0].carTypeNo
 		    	});
 		    }
 			$("#tour_guide_table_id").html(table_top_html+t_all_table);
