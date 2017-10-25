@@ -32,10 +32,10 @@ public class SubmitTimeAppInterceptor implements HandlerInterceptor {
         THREAD_LOCAL.set(startTime);
         ResponseVo<String> responseVo;
         try {
-        	String clientIP = request.getRemoteAddr();
+        	String clientIP = HttpUtils.getRemoteHost(request);
         	LOGGER.info("Client IP："+clientIP);
         	LOGGER.info("Client request URL："+request.getRequestURL());
-        	if(request.getRequestURI().contains("/order/") || request.getRequestURI().contains("/advice/")){
+        	if(request.getRequestURI().contains("/order/") || request.getRequestURI().contains("/submit/")){
         		String times = redisClient.get(Constants.REDIS_CLINET_IP+request.getRemoteAddr());
         		if(StringUtils.isNoneBlank(times) && Integer.parseInt(times) > 5){
         			responseVo = new ResponseVo<String>();
@@ -67,7 +67,7 @@ public class SubmitTimeAppInterceptor implements HandlerInterceptor {
             return false;
         }
     }
-
+    
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 

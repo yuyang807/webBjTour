@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TAdviceDto">
 
     <sql id="Base_Column_List" >
-         id, email_address, f_name, l_name, content, ip1, ip2, ip3, ip4, is_inform, lid
+         id, email_address, f_name, l_name, content, ip1, ip2, ip3, ip4, is_inform, lid, create_date, update_date
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TAdviceDto">
@@ -42,6 +42,7 @@
         <if test="lid != null ">
           lid,
         </if>
+        create_date
        </trim>
        <trim prefix="values (" suffix=")" suffixOverrides="," >
         <if test="id != null ">
@@ -77,6 +78,7 @@
         <if test="lid != null ">
           #{lid},
         </if>
+        current_timestamp()
        </trim>
     </insert>
 

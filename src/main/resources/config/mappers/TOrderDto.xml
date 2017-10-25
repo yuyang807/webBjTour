@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TOrderDto">
 
     <sql id="Base_Column_List" >
-         id, order_no, hotel_name, hotel_tel, hotel_address, arrival_date, a_airplan_num, departure_date, d_airplan_num, start_date, start_time, total_price, adult_num, teenager_num, child_num, baby_num, line_no, line_price, show_no1, show_no2, show_price, pickup_car_type_no, dropoff_car_type_no, car_no, car_price, guide_no, guid_price, guide_day, order_status, instructions, member_no, create_date, update_date
+         id, order_no, hotel_name, hotel_tel, hotel_address, arrival_date, a_airplan_num, departure_date, d_airplan_num, start_date, start_time, total_price, adult_num, teenager_num, child_num, baby_num, line_no, line_price, show_no1, show_no2, show_price, pickup_car_type_no, dropoff_car_type_no, car_type_no, car_price, car_day, guide_no, guid_price, guide_day, order_status, instructions, member_no, create_date, update_date
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TOrderDto">
@@ -78,11 +78,14 @@
         <if test="dropoffCarTypeNo != null ">
           dropoff_car_type_no,
         </if>
-        <if test="carNo != null ">
-          car_no,
+        <if test="carTypeNo != null ">
+          car_type_no,
         </if>
         <if test="carPrice != null ">
           car_price,
+        </if>
+        <if test="carDay != null ">
+          car_day,
         </if>
         <if test="guideNo != null ">
           guide_no,
@@ -179,11 +182,14 @@
         <if test="dropoffCarTypeNo != null ">
           #{dropoffCarTypeNo},
         </if>
-        <if test="carNo != null ">
-          #{carNo},
+        <if test="carTypeNo != null ">
+          #{carTypeNo},
         </if>
         <if test="carPrice != null ">
           #{carPrice},
+        </if>
+        <if test="carDay != null ">
+          #{carDay},
         </if>
         <if test="guideNo != null ">
           #{guideNo},
@@ -237,35 +243,17 @@
         <if test="arrivalDate != null ">
           arrival_date = #{arrivalDate} AND
         </if>
-        <if test="startArrivalDate != null ">
-          arrival_date >= #{startArrivalDate} AND
-        </if>
-        <if test="endArrivalDate != null ">
-          arrival_date <![CDATA[<=]]> #{endArrivalDate} AND
-        </if>
         <if test="aAirplanNum != null ">
           a_airplan_num = #{aAirplanNum} AND
         </if>
         <if test="departureDate != null ">
           departure_date = #{departureDate} AND
         </if>
-        <if test="startDepartureDate != null ">
-          departure_date >= #{startDepartureDate} AND
-        </if>
-        <if test="endDepartureDate != null ">
-          departure_date <![CDATA[<=]]> #{endDepartureDate} AND
-        </if>
         <if test="dAirplanNum != null ">
           d_airplan_num = #{dAirplanNum} AND
         </if>
         <if test="startDate != null ">
           start_date = #{startDate} AND
-        </if>
-        <if test="startStartDate != null ">
-          start_date >= #{startStartDate} AND
-        </if>
-        <if test="endStartDate != null ">
-          start_date <![CDATA[<=]]> #{endStartDate} AND
         </if>
         <if test="startTime != null ">
           start_time = #{startTime} AND
@@ -306,11 +294,14 @@
         <if test="dropoffCarTypeNo != null ">
           dropoff_car_type_no = #{dropoffCarTypeNo} AND
         </if>
-        <if test="carNo != null ">
-          car_no = #{carNo} AND
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} AND
         </if>
         <if test="carPrice != null ">
           car_price = #{carPrice} AND
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} AND
         </if>
         <if test="guideNo != null ">
           guide_no = #{guideNo} AND
@@ -420,11 +411,14 @@
         <if test="dropoffCarTypeNo != null ">
           dropoff_car_type_no = #{dropoffCarTypeNo} ,
         </if>
-        <if test="carNo != null ">
-          car_no = #{carNo} ,
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} ,
         </if>
         <if test="carPrice != null ">
           car_price = #{carPrice} ,
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} ,
         </if>
         <if test="guideNo != null ">
           guide_no = #{guideNo} ,
@@ -478,35 +472,17 @@
         <if test="arrivalDate != null ">
           arrival_date = #{arrivalDate} AND
         </if>
-        <if test="startArrivalDate != null ">
-          arrival_date >= #{startArrivalDate} AND
-        </if>
-        <if test="endArrivalDate != null ">
-          arrival_date <![CDATA[<=]]> #{endArrivalDate} AND
-        </if>
         <if test="aAirplanNum != null ">
           a_airplan_num = #{aAirplanNum} AND
         </if>
         <if test="departureDate != null ">
           departure_date = #{departureDate} AND
         </if>
-        <if test="startDepartureDate != null ">
-          departure_date >= #{startDepartureDate} AND
-        </if>
-        <if test="endDepartureDate != null ">
-          departure_date <![CDATA[<=]]> #{endDepartureDate} AND
-        </if>
         <if test="dAirplanNum != null ">
           d_airplan_num = #{dAirplanNum} AND
         </if>
         <if test="startDate != null ">
           start_date = #{startDate} AND
-        </if>
-        <if test="startStartDate != null ">
-          start_date >= #{startStartDate} AND
-        </if>
-        <if test="endStartDate != null ">
-          start_date <![CDATA[<=]]> #{endStartDate} AND
         </if>
         <if test="startTime != null ">
           start_time = #{startTime} AND
@@ -547,11 +523,14 @@
         <if test="dropoffCarTypeNo != null ">
           dropoff_car_type_no = #{dropoffCarTypeNo} AND
         </if>
-        <if test="carNo != null ">
-          car_no = #{carNo} AND
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} AND
         </if>
         <if test="carPrice != null ">
           car_price = #{carPrice} AND
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} AND
         </if>
         <if test="guideNo != null ">
           guide_no = #{guideNo} AND
@@ -616,35 +595,17 @@
         <if test="arrivalDate != null ">
           arrival_date = #{arrivalDate} AND
         </if>
-        <if test="startArrivalDate != null ">
-          arrival_date >= #{startArrivalDate} AND
-        </if>
-        <if test="endArrivalDate != null ">
-          arrival_date <![CDATA[<=]]> #{endArrivalDate} AND
-        </if>
         <if test="aAirplanNum != null ">
           a_airplan_num = #{aAirplanNum} AND
         </if>
         <if test="departureDate != null ">
           departure_date = #{departureDate} AND
         </if>
-        <if test="startDepartureDate != null ">
-          departure_date >= #{startDepartureDate} AND
-        </if>
-        <if test="endDepartureDate != null ">
-          departure_date <![CDATA[<=]]> #{endDepartureDate} AND
-        </if>
         <if test="dAirplanNum != null ">
           d_airplan_num = #{dAirplanNum} AND
         </if>
         <if test="startDate != null ">
           start_date = #{startDate} AND
-        </if>
-        <if test="startStartDate != null ">
-          start_date >= #{startStartDate} AND
-        </if>
-        <if test="endStartDate != null ">
-          start_date <![CDATA[<=]]> #{endStartDate} AND
         </if>
         <if test="startTime != null ">
           start_time = #{startTime} AND
@@ -685,11 +646,14 @@
         <if test="dropoffCarTypeNo != null ">
           dropoff_car_type_no = #{dropoffCarTypeNo} AND
         </if>
-        <if test="carNo != null ">
-          car_no = #{carNo} AND
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} AND
         </if>
         <if test="carPrice != null ">
           car_price = #{carPrice} AND
+        </if>
+        <if test="carDay != null ">
+          car_day = #{carDay} AND
         </if>
         <if test="guideNo != null ">
           guide_no = #{guideNo} AND

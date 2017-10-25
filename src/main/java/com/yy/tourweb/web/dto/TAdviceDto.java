@@ -1,5 +1,7 @@
 package com.yy.tourweb.web.dto;
 
+import java.util.Date;
+
 import com.yy.tourweb.web.dto.IDto;
 
 /**
@@ -46,7 +48,28 @@ public class TAdviceDto implements IDto {
      * 是否发送邮件通知（0:未发送，1:已发送）
      * */
     private Integer isInform;
-    /**
+    
+    private Date createDate;
+    
+    private Date updateDate;
+    
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	/**
      * 关联线路id
      * */
     private Long lid;
@@ -82,35 +105,23 @@ public class TAdviceDto implements IDto {
         return emailAddress;
     }
 
-    /**
-     * setFName first name
-     * */
-    public void setFName(String fName) {
-        this.fName=fName;
-    }
+    public String getfName() {
+		return fName;
+	}
 
-    /**
-     * getFName first name
-     * */
-    public String getFName() {
-        return fName;
-    }
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
 
-    /**
-     * setLName last name
-     * */
-    public void setLName(String lName) {
-        this.lName=lName;
-    }
+	public String getlName() {
+		return lName;
+	}
 
-    /**
-     * getLName last name
-     * */
-    public String getLName() {
-        return lName;
-    }
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
 
-    /**
+	/**
      * setContent 咨询内容
      * */
     public void setContent(String content) {

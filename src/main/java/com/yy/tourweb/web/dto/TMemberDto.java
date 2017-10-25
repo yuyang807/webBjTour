@@ -1,5 +1,7 @@
 package com.yy.tourweb.web.dto;
 
+import java.util.Date;
+
 import com.yy.tourweb.web.dto.IDto;
 
 /**
@@ -50,6 +52,10 @@ public class TMemberDto implements IDto {
      * ip地址第四位
      * */
     private Integer ip4;
+    
+    private Date createDate;
+    
+    private Date updateDate;
     /**
      * 排序字段加排序规则组合体columnName desc
      * */
@@ -94,34 +100,6 @@ public class TMemberDto implements IDto {
      * */
     public String getEmailAddress() {
         return emailAddress;
-    }
-
-    /**
-     * setFName first name
-     * */
-    public void setFName(String fName) {
-        this.fName=fName;
-    }
-
-    /**
-     * getFName first name
-     * */
-    public String getFName() {
-        return fName;
-    }
-
-    /**
-     * setLName last name
-     * */
-    public void setLName(String lName) {
-        this.lName=lName;
-    }
-
-    /**
-     * getLName last name
-     * */
-    public String getLName() {
-        return lName;
     }
 
     /**
@@ -218,5 +196,37 @@ public class TMemberDto implements IDto {
     public String getOrderByStr() {
         return orderByStr;
     }
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
 
 }

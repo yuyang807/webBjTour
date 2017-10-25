@@ -95,7 +95,7 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TCarDto" resultType="TCarDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_car
-       WHERE 
+       WHERE 1=1
        <trim suffix="" suffixOverrides="AND">
         <if test="id != null ">
           id = #{id} AND
@@ -139,4 +139,12 @@
        </trim>
     </select>
 <!-- ##############################################自定义sql分界线##################################################################### -->
+	
+	<select id="queryCarAllInfo" resultType="map">
+		select car_name carName, tc.car_type_no carTypeNo, pic_no picNo, car_type_name carTypeName,half_day_price halfDayPrice, 
+		full_day_price fullDayPrice, mty_price mtyPrice,jsl_price jslPrice, transfer_price transferPrice, suitcases_num suitcasesNum,
+		carryon_num carryonNum from t_car tc, t_carkind tck 
+		where tc.car_type_no = tck.car_type_no
+	</select>
+	
 </mapper>

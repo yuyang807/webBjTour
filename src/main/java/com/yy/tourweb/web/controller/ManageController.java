@@ -8,13 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.yy.tourweb.common.Constants;
 import com.yy.tourweb.common.JsonObject;
 import com.yy.tourweb.util.AppLogger;
+import com.yy.tourweb.util.DateUtil;
 import com.yy.tourweb.util.EmailUtil;
+import com.yy.tourweb.util.HttpUtils;
 import com.yy.tourweb.web.dto.IDto;
-import com.yy.tourweb.web.dto.TCarDto;
+import com.yy.tourweb.web.dto.TAdditionDto;
+import com.yy.tourweb.web.dto.TAdviceDto;
 import com.yy.tourweb.web.dto.TCarkindDto;
+import com.yy.tourweb.web.dto.TGuideDto;
 import com.yy.tourweb.web.dto.TLineDto;
 import com.yy.tourweb.web.dto.TMemberDto;
 import com.yy.tourweb.web.dto.TOrderDto;
@@ -23,11 +28,14 @@ import com.yy.tourweb.web.dto.TShowDto;
 import com.yy.tourweb.web.service.IAdditionService;
 import com.yy.tourweb.web.service.IBaseService;
 import com.yy.tourweb.web.service.ILineService;
+
+
 import com.yy.tourweb.web.service.IPicService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -120,7 +128,7 @@ public class ManageController {
     	//查询所有表演内容
     	//查询所有车辆内容
     	
-    	/*int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
     	List<Map<String, Object>> tldList = lineService.queryOneLine(String.valueOf(tod.getLineNo()));
     	Map<String,Object> tldMap = tldList.get(0);
     	String unitPrice = String.valueOf(getUnitPrice(totalNum,tldMap));
@@ -135,9 +143,9 @@ public class ManageController {
     	model.addAttribute("unitPrice", unitPrice);
     	
     	List<TShowDto> showList = (List<TShowDto>)(List) baseService.queryListByDto(new TShowDto());
-    	List<TCarDto>  carList  = (List<TCarDto>)(List)  baseService.queryListByDto(new TCarDto());
+    	List<Map<String, Object>>  carList  = baseService.queryByMap("TCarDto.queryCarAllInfo", new HashMap<String, Object>());
     	model.addAttribute("showList", JSONArray.toJSON(showList));
-    	model.addAttribute("carList", JSONArray.toJSON(carList));*/
+    	model.addAttribute("carList", JSONArray.toJSON(carList));
     	
     	return "payCopy";
     }
@@ -149,7 +157,7 @@ public class ManageController {
     	//查询所选对应两个节目的信息
     	//查询所选车辆的信息
     	
-    	int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	int totalNum = (tod.getAdultNum()==null?0:tod.getAdultNum())+(tod.getTeenagerNum()==null?0:tod.getTeenagerNum())+(tod.getChildNum()==null?0:tod.getChildNum());
     	List<Map<String, Object>> tldList = lineService.queryOneLine(String.valueOf(tod.getLineNo()));
     	Map<String,Object> tldMap = tldList.get(0);
     	String unitPrice = String.valueOf(getUnitPrice(totalNum,tldMap));
@@ -158,7 +166,7 @@ public class ManageController {
     	model.addAttribute("teenagerNum", tod.getTeenagerNum());
     	model.addAttribute("childNum", tod.getChildNum());
     	model.addAttribute("babyNum", tod.getBabyNum());
-    	model.addAttribute("startDate", tod.getStartDate());
+    	model.addAttribute("startDate", Long.parseLong(tod.getStartDate())/1000);
     	model.addAttribute("lineName", tldMap.get("lineName"));
     	model.addAttribute("mainPicUrl", tldMap.get("mainPicUrl"));
     	model.addAttribute("unitPrice", unitPrice);
@@ -179,10 +187,12 @@ public class ManageController {
     		tsd2= (TShowDto) baseService.query(tsd2);
     		showPrice2 = tsd2.getShowPrice();
     	}
+    	int showPrice1Total = showPrice1*(tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum()+tod.getBabyNum())/100;
+    	int showPrice2Total = showPrice2*(tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum()+tod.getBabyNum())/100;
     	model.addAttribute("showNo1", tod.getShowNo1());
-    	model.addAttribute("showPrice1", showPrice1);
+    	model.addAttribute("showPrice1", showPrice1Total);
     	model.addAttribute("showNo2", tod.getShowNo2());
-    	model.addAttribute("showPrice2", showPrice2);
+    	model.addAttribute("showPrice2", showPrice2Total);
     	
     	TCarkindDto tcd1 = null;
     	TCarkindDto tcd2 = null;
@@ -210,47 +220,58 @@ public class ManageController {
     
     @RequestMapping("/tour/order/submit")
     public @ResponseBody Object submitOrder(@JsonObject TOrderDto tod,@JsonObject TMemberDto tmd){
+    	
     	//根据lineNo查询线路名称、url
     	//根据lineNo与人数 查询单价
     	//查询所选对应两个节目的信息
     	//查询所选车辆的信息
     	
-    	int totalNum = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	
+    	int totalPriceNum  = tod.getAdultNum()+tod.getTeenagerNum()+tod.getChildNum();
+    	int totalPeopleNum = totalPriceNum + tod.getBabyNum();
     	List<Map<String, Object>> tldList = lineService.queryOneLine(String.valueOf(tod.getLineNo()));
     	Map<String,Object> tldMap = tldList.get(0);
-    	String unitPrice = String.valueOf(getUnitPrice(totalNum,tldMap));
+    	String unitPrice = String.valueOf(getUnitPrice(totalPriceNum,tldMap));
     	String lineNo = String.valueOf(tod.getLineNo());
     	
     	TShowDto tsd1 = null;
+    	String tsd1rows = "";
     	TShowDto tsd2 = null;
+    	String tsd2rows = "";
     	int showPrice = 0;
     	if(tod.getShowNo1() != null){
     		tsd1 = new TShowDto();
     		tsd1.setShowNo(tod.getShowNo1());
     		tsd1= (TShowDto) baseService.query(tsd1);
     		showPrice = tsd1.getShowPrice();
+    		tsd1rows = tsd1.getRows();
     	}
     	if(tod.getShowNo2() != null){
     		tsd2 = new TShowDto();
     		tsd2.setShowNo(tod.getShowNo2());
     		tsd2= (TShowDto) baseService.query(tsd2);
     		showPrice += tsd2.getShowPrice();
+    		tsd2rows = tsd2.getRows();
     	}
     	
     	TCarkindDto tcd1 = null;
+    	String carType1 =  "";
     	TCarkindDto tcd2 = null;
+    	String carType2 =  "";
     	int car_price = 0; 
     	if(tod.getPickupCarTypeNo() != null){
     		tcd1 = new TCarkindDto();
     		tcd1.setCarTypeNo(tod.getPickupCarTypeNo());
     		tcd1= (TCarkindDto) baseService.query(tcd1);
     		car_price = tcd1.getTransferPrice();
+    		carType1 = tcd1.getCarTypeName();
     	}
     	if(tod.getDropoffCarTypeNo() != null){
     		tcd2 = new TCarkindDto();
     		tcd2.setCarTypeNo(tod.getDropoffCarTypeNo());
     		tcd2= (TCarkindDto) baseService.query(tcd2);
     		car_price += tcd2.getTransferPrice();
+    		carType2 = tcd2.getCarTypeName();
     	}
     	
     	//录入会员信息
@@ -260,27 +281,33 @@ public class ManageController {
     	baseService.insert(tmd);
     	
     	
+//    	model.addAttribute("orderNo", JSONArray.toJSON(carList));//////////
+    	List<Map<String,Object>> oneLine = new ArrayList<Map<String,Object>>();
+    	try {
+    		oneLine = lineService.queryOneLine(lineNo);//先走redis查询，没有再查数据库
+    	} catch (Exception e) {
+    		logger.error("根据编号查询线路异常！",e);;
+    		return "error";
+    	}
     	
     	//发邮件
-    	/*String subject = jobDateStr+"日对账任务概况";
-		String content = "警告! \n           "+jobDateStr+"号  对账单汇总任务"+collectResult+"\n 如下通道对账任务执行成功，并完成数据汇总: \n "+fMarksStr+" \n 如下通道对账任务并未成功： \n "
-		 +unfMarksStr+" \n 请到后台管理中心查看任务具体执行情况。如有失败，请触发重新发送对账单，并在任务成功后，触发对账单汇总操作。";
+    	String subject = DateUtil.getDateStrBylong(tod.getStartDate())+"号有新订单了！";
+		String content = "线路编号： "+tod.getLineNo()+"\n 线路名称："+oneLine.get(0).get("lineName")+"\n 出行时间："+DateUtil.getDateStrBylong(tod.getStartDate())
+				+" \n 预订成人数："+tod.getAdultNum()+";Teenager："+tod.getTeenagerNum()+"；Child："+tod.getChildNum()+"；Baby："+tod.getBabyNum()
+				+" \n \n 接机/站车型："+carType1+"座 \n 送机/站车型："+carType2+"座 \n \n 杂技排数："+tsd1rows+"\n 功夫排数："+tsd2rows
+				+" \n \n 联系人："+tmd.getfName()+" "+tmd.getlName()+"\n Email："+tmd.getEmailAddress()+"\n 护照编号："+tmd.getPassportNum()
+				+" \n 下榻酒店："+tod.getHotelName()+"\n 酒店地址："+tod.getHotelAddress()+"\n \n 到达航班号："+tod.getAAirplanNum()
+				+" \n 离开航班号："+tod.getDAirplanNum()+"\n 预计开始行程时间："+DateUtil.getTimeStrBylong(tod.getStartTime())+"\n \n 备注："+tod.getInstructions()
+				+" \n \n 总价：";
 		logger.info(content);
-		String[] emailTo = Constants.WARN_EMAIL.split(",");
+		String[] emailTo = Constants.ORDER_EMAIL.split(",");
 		try {
 			EmailUtil.sendEmail(subject, emailTo, content);
 		} catch (Exception e) {
 			logger.error("发送对账任务汇总情况邮件异常！", e);
-		}*/
-    	
-    	
-//    	model.addAttribute("orderNo", JSONArray.toJSON(carList));//////////
-    	try {
-			List<Map<String,Object>> oneLine = lineService.queryOneLine(lineNo);//先走redis查询，没有再查数据库
-		} catch (Exception e) {
-			logger.error("根据编号查询线路异常！",e);;
-			return "error";
 		}
+    	
+    	
     	
     	Map<String, Object> params = new HashMap<String, Object>();
     	params.put("lineNo", lineNo);
@@ -293,270 +320,6 @@ public class ManageController {
     	return "tour";
     }
     
-/*    *//**
-     * 提交订单 并从支付系统获取微信或支付宝授权 返回给前端
-     * @param posOrderDto
-     *//*
-    @RequestMapping("/forwardAccredit")
-//    @Token(needRemoveToken=true)
-    public @ResponseBody Object getAccredit(PosOrderDto posOrderDto) {
-    	logger.info("forwardAccredit::"+"orderAmt:"+posOrderDto.getOrderAmt()+"|orderPayType:"+posOrderDto.getPayType());
-    	JSONObject json = new JSONObject();
-		String bizCode = "";
-		HashMap<String,Object> errMap = new HashMap<String, Object>();
-		if(posOrderDto.getPayType() == null){
-			logger.error("用户请求参数异常");
-			json.put("errInfo", "H1002");
-			errMap.put("errCode", PosERRCode.ERROR_CODE_PARAM.getCode());
-			errMap.put("errMsg", PosERRCode.ERROR_CODE_PARAM.getDesc());
-			json.put("errInfo", errMap);
-			return json;
-		}else if(3 == posOrderDto.getPayType()){//wechat
-    		bizCode = "WCPAY";
-    	}else if(2 == posOrderDto.getPayType()){//alipay
-    		bizCode = "ALPAY";
-    	}else{
-    		logger.error("用户在非支付宝或微信终端打开");
-    		errMap.put("errCode", PosERRCode.ERROR_CODE_CLIENT.getCode());
-            errMap.put("errMsg", PosERRCode.ERROR_CODE_CLIENT.getDesc());
-			json.put("errInfo", errMap);
-    		return json;
-    	}
-    	
-        // 订单金额不能为0
-        if (StringUtils.isBlank(String.valueOf(posOrderDto.getOrderAmt())) || 
-        		!Pattern.compile("^[1-9][0-9]*$").matcher(String.valueOf(posOrderDto.getOrderAmt())).find()) {
-            logger.info("订单金额为0");
-            errMap.put("errCode", PosERRCode.ERROR_CODE_NO_MONEY.getCode());
-            errMap.put("errMsg", PosERRCode.ERROR_CODE_NO_MONEY.getDesc());
-			json.put("errInfo", errMap);
-            return json;
-        }
-
-        PosMerchantDto pmd = merchantService.queryByMerchantCodeRedis(posOrderDto.getMerchantCode());
-        String merchantName = pmd.getMerchantName(); 
-        String signPlistName = merchantName;
-        String terminalDate = String.valueOf(System.currentTimeMillis());
-
-        String payTradeNo = "";
-        String httpForm = "";
-        PosMerchantServiceDto msd = posMerchantBizService.queryOpenedBizByPayTypeRedis(pmd.getMerchantCode(), bizCode);
-        if (msd == null) {
-            if(3 == posOrderDto.getPayType()){//wechat
-            	logger.info("该商户未开通微信服务，请尝试使用支付宝付款！");
-            	json.put("errInfo", "H1005");
-            	errMap.put("errCode", PosERRCode.ERROR_CODE_NO_WECHAT.getCode());
-                errMap.put("errMsg", PosERRCode.ERROR_CODE_NO_WECHAT.getDesc());
-    			json.put("errInfo", errMap);
-            	return json;
-        	}else if(2 == posOrderDto.getPayType()){//alipay
-        		logger.info("该商户未开通支付宝服务，请尝试使用微信付款！");
-        		json.put("errInfo", "H1006");
-        		errMap.put("errCode", PosERRCode.ERROR_CODE_NO_ALIPAY.getCode());
-                errMap.put("errMsg", PosERRCode.ERROR_CODE_NO_ALIPAY.getDesc());
-    			json.put("errInfo", errMap);
-        		return json;
-        	}else{
-        		logger.error("用户请求参数异常");
-    			json.put("errInfo", "H1002");
-    			errMap.put("errCode", PosERRCode.ERROR_CODE_PARAM.getCode());
-    			errMap.put("errMsg", PosERRCode.ERROR_CODE_PARAM.getDesc());
-    			json.put("errInfo", errMap);
-    			return json;
-        	}
-        }
-        
-        String payMerchantCode = 
-        		posRouteServiceFacade.queryRouteMerchant(posOrderDto.getMerchantCode(), posOrderDto.getPayType(), PayWayEnum.PYA_TYPE_H5.getCode());
-        String orderNo = seqService.getNewOrderNo();
-
-        // 2: 支付宝       3: 微信
-        Integer clearType = msd.getClearType();
-        // 支付公司分配的收单渠道标识 一清商户默认为微信和支付宝真实账号，二清商户未空
-        String channelId = payMerchantCode;
-        PosMerchantAppkeyDto appKeyDto = null;
-        if (SquarePayTypeEnum.PAY_TYPE_WECHAT.getCode().equals(String.valueOf(posOrderDto.getPayType())) && 
-        		Integer.valueOf(ClearTypeEnum.CLEAR_TYPE_2.getCode()).equals(clearType)) {
-            logger.info("##微信二清查询商户支付秘钥");
-            appKeyDto = posMerchantBizService.queryAppKeyByCodeRedis(payMerchantCode);
-            //微信二清支付
-            channelId = null;
-        }
-        try {
-        	Map<String, Object> squareMap = PayUtil.mobilePay(signPlistName, "", channelId, orderNo, posOrderDto.getOrderAmt(), String.valueOf(posOrderDto.getPayType()), appKeyDto);
-			if (squareMap != null && "00000000".equals(squareMap.get("responseCode"))) {
-				payTradeNo = squareMap.get("tradeNo") + "";
-				httpForm = ((JSONObject) squareMap.get("submitForm")) + "";
-			} else {
-				logger.info("支付系统返回订单状态不成功！");
-				errMap.put("errCode", PosERRCode.ERROR_CODE_PAY_SYS_ERR.getCode());
-				errMap.put("errMsg", PosERRCode.ERROR_CODE_PAY_SYS_ERR.getDesc());
-				json.put("errInfo", errMap);
-				return json;
-			}
-		} catch (Exception e) {
-			logger.error(e);
-			errMap.put("errCode", PosERRCode.ERROR_CODE_SYS.getCode());
-			errMap.put("errMsg", PosERRCode.ERROR_CODE_SYS.getDesc());
-			json.put("errInfo", errMap);
-    		return json;
-		}
-    
-        posOrderDto.setReferNo(payTradeNo);
-        posOrderDto.setPayWay(3);//新增3
-    
-        posOrderDto.setOrderNo(orderNo);
-        posOrderDto.setTradeStatus(Integer.parseInt(TradestatusEnum.TRADESTATUS_CREATE.getCode()));
-        posOrderDto.setMerchantName(merchantName);
-        posOrderDto.setMachineSn(posOrderDto.getMachineSn());
-        posOrderDto.setOrderAmt(posOrderDto.getOrderAmt());
-        posOrderDto.setTradeAmt(posOrderDto.getOrderAmt());
-        //交易类型 默认 1消费
-        posOrderDto.setTradeType(1);
-        posOrderDto.setTerminalDate(terminalDate);
-        posOrderDto.setOrderType(1);
-        Calendar c = Calendar.getInstance();
-        posOrderDto.setCreateDate(c.getTime());
-        posOrderDto.setUpdateDate(c.getTime());
-        posOrderDto.setChan_id(1);//新增
-        
-        posOrderDto.setHqMerchantCode(pmd.getHqMerchantCode());
-        posOrderDto.setMerchantPayCode(payMerchantCode);
-        baseService.insert(posOrderDto);
-
-        json.put("errInfo", PosERRCode.SUCCESS.getCode());
-        json.put("httpForm", httpForm);
-        logger.info("Json:"+json);
-        return json;
-    }
-    
-    *//**
-     * 订单完成后 由微信成功页面跳转到自定义成功页面
-     * @param orderNo
-     *//*
-    @RequestMapping("/success/{orderNo}")
-    public String redirectSuc(@PathVariable String orderNo,Model model) {
-    	PosOrderDto pod = new PosOrderDto();
-    	pod.setOrderNo(orderNo);
-    	pod = (PosOrderDto) baseService.query(pod);
-    	
-    	BigDecimal orderAmtCut = new BigDecimal(pod.getOrderAmt()).movePointLeft(2);
-    	model.addAttribute("orderAmt",orderAmtCut);
-    	if(!TradestatusEnum.TRADESTATUS_SUCCESS.getCode().equals(String.valueOf(pod.getTradeStatus()))){
-    		model.addAttribute("merchantCode", pod.getMerchantCode());
-    		model.addAttribute("machineSn", pod.getMachineSn());
-    		logger.info("redirect to index.jsp");
-    		return "index";	
-    	}else{
-    		String end6orderNo = orderNo.substring(orderNo.length()-6);
-    		model.addAttribute("orderNo",end6orderNo);
-    		model.addAttribute("merchantName",pod.getMerchantName());
-    		logger.info("redirect to success.jsp");
-    		return "success";
-    	}
-    }
-    
-    *//**
-     * 验证订单状态
-     * @param pod
-     *//*
-    @RequestMapping("/checkStatus")
-    @ResponseBody
-    public Object checkStatus(PosOrderDto pod) {
-    	logger.info("checkStatus::orderNo:"+pod.getOrderNo());
-    	JSONObject json = new JSONObject();
-    	String orderNo = pod.getOrderNo();
-    	pod = (PosOrderDto) baseService.query(pod);
-    	
-    	json.put("orderNo",orderNo);
-    	int tradeStatus = pod.getTradeStatus();
-    	json.put("tradeStatus",tradeStatus);
-    	//终态直接返回
-    	if(Integer.valueOf(TradestatusEnum.TRADESTATUS_SUCCESS.getCode()) == tradeStatus
-    			||Integer.valueOf(TradestatusEnum.TRADESTATUS_FAIL.getCode()) == tradeStatus){
-    		logger.info("Json:"+json);
-    		return json;
-    	}
-    	
-        String payType = pod.getPayType().toString();
-        PosMerchantAppkeyDto appKeyDto=null;
-        if (SquarePayTypeEnum.PAY_TYPE_WECHAT.getCode().equals(payType)) {
-        	PosMerchantDto pmd = merchantService.queryByMerchantCodeRedis(pod.getMerchantCode());
-            PosMerchantServiceDto merchantServiceDto = posMerchantBizService.queryOpenedBizByPayTypeRedis(pmd.getMerchantCode(), payType);
-            if (merchantServiceDto != null && Integer.valueOf(ClearTypeEnum.CLEAR_TYPE_2.getCode()).equals(merchantServiceDto.getClearType())) {
-                String merchantPayCode = 
-                		posRouteServiceFacade.queryRouteMerchant(pod.getMerchantCode(), pod.getPayType(), PayWayEnum.PYA_TYPE_H5.getCode());
-                appKeyDto = posMerchantBizService.queryAppKeyByCodeRedis(merchantPayCode);
-            }
-        }
-        
-        Map<String, Object> resultMap = new HashMap<String, Object>();
-		try {
-			resultMap = PayUtil.queryMobilPayStatus(orderNo, appKeyDto);
-		} catch (Exception e) {
-			logger.error(e);
-			return json;
-		}
-		int updateNum = 0;
-        if (resultMap != null) {
-            *//**
-             * 支付返回交易状态 S:成功 F:失败 I:处理中
-             * *//*
-            Object payResTradeStatus = resultMap.get("tradeStatus");
-            if (null!=payResTradeStatus) {
-            	String payResTradeStatusStr = payResTradeStatus.toString();
-            	if ("S".equals(payResTradeStatusStr)) {
-                    tradeStatus = Integer.valueOf(TradestatusEnum.TRADESTATUS_SUCCESS.getCode());
-                }
-                if ("F".equals(payResTradeStatusStr)) {
-                    tradeStatus = Integer.valueOf(TradestatusEnum.TRADESTATUS_FAIL.getCode());
-                }
-                if ("I".equals(payResTradeStatusStr)) {
-                    tradeStatus = Integer.valueOf(TradestatusEnum.TRADESTATUS_DEALING.getCode());
-                }
-			}
-            
-            Map<String, Object> updateMap=new HashMap<String, Object>();
-            updateMap.put("tradeResCode", resultMap.get("responseCode").toString());
-            updateMap.put("tradeResRemark", resultMap.get("responseDesc").toString());
-            if(resultMap.get("tradeAmount") != null){
-                updateMap.put("tradeAmt", Long.valueOf(resultMap.get("tradeAmount").toString()));
-            }
-            updateMap.put("referNo", resultMap.get("tradeNo").toString());
-            updateMap.put("tradeStatus", tradeStatus);
-            updateMap.put("oldTradeStatus", pod.getTradeStatus());
-            if (null != resultMap.get("tradeTime")) {
-                updateMap.put("tradeDate", new Date(Long.parseLong(resultMap.get("tradeTime").toString())));
-            }else {
-                updateMap.put("tradeDate", new Date());
-            }
-            //成功或失败更新到数据库中
-            if (Integer.valueOf(TradestatusEnum.TRADESTATUS_SUCCESS.getCode()) == tradeStatus
-                    ||Integer.valueOf(TradestatusEnum.TRADESTATUS_FAIL.getCode()).equals(tradeStatus)) {
-                updateNum = posOrderService.updateOrderStatus(updateMap);
-                //考虑并发关闭订单问题
-                if (updateNum == 0) {
-                    //重新查找数据库最新记录
-                    pod = posOrderService.queryOrderInfo(null, orderNo, pod.getMachineSn());
-                    if (TradestatusEnum.TRADESTATUS_CLOSE.getCode().equals(pod.getTradeStatus().toString())) {
-                        updateMap.put("oldTradeStatus", pod.getTradeStatus());
-                        tradeStatus = pod.getTradeStatus();
-                        updateNum = posOrderService.updateOrderStatus(updateMap);
-                    }
-                }
-            }else {
-                //原订单终态等于创建时,更新订单状态为处理中
-                if (TradestatusEnum.TRADESTATUS_CREATE.getCode().equals(pod.getTradeStatus().toString())) {
-                	updateNum = posOrderService.updateOrderStatus(updateMap);
-                }
-            }
-        }
-        if(updateNum != 0){
-        	json.put("tradeStatus", tradeStatus);
-        }
-        logger.info("Json:"+json);
-        return json;
-    }*/
     
     private int getUnitPrice(int totalNum, Map<String, Object> tldMap) {
     	int up = 0;
@@ -584,6 +347,100 @@ public class ManageController {
 		return up;
 	}
 
+    @RequestMapping("/list/guides")
+    public String redirectGuides(Model model){
+    	return "tourGuide";
+    } 
+    
+    @RequestMapping("/list/cars")
+    public String redirectCars(Model model){
+    	return "carRental";
+    } 
+    
+    @RequestMapping("/advice")
+    public String redirectContact(Model model){
+    	return "contactUs";
+    } 
+    
+    /**
+     * 提交咨询信息
+     * @param request
+     * @param tad
+     */
+    @RequestMapping("/advice/submit")
+    @ResponseBody
+    public Object submitAdvice(HttpServletRequest request,TAdviceDto tad){
+    	JSONObject json = new JSONObject();
+    	//发邮件
+    	String subject = "您有一条来自"+(String)tad.getfName()+tad.getlName()+"咨询信息";
+		String content = "名字："+tad.getlName()+" \n 联系邮箱： "+tad.getEmailAddress()+"\n 提问时间："+DateUtil.getCurrentDateTime()+"\n 咨询内容："+tad.getContent();
+		logger.info(content);
+		String[] emailTo = Constants.ORDER_EMAIL.split(",");
+		int emailFlag = 0;
+		try {
+			EmailUtil.sendEmail(subject, emailTo, content);
+			emailFlag = 1;
+		} catch (Exception e) {
+			logger.error("发送咨询信息提醒邮件异常！", e);
+		}
+    	
+    	tad.setIsInform(emailFlag);
+    	String clientIP = HttpUtils.getRemoteHost(request);
+    	String[] ipsArray = clientIP.split(".");
+    	tad.setIp1(Integer.valueOf(ipsArray[0]));
+    	tad.setIp2(Integer.valueOf(ipsArray[1]));
+    	tad.setIp3(Integer.valueOf(ipsArray[2]));
+    	tad.setIp4(Integer.valueOf(ipsArray[3]));
+    	
+    	baseService.insert(tad);
+    	json.put("resultCode", "00000000");
+    	
+    	return json;
+    }
+    
+    /**
+     * 提交预订导游信息
+     * @param request
+     * @param tod
+     */
+    @RequestMapping("/guides/confirm")
+    public String confirmGuides(TOrderDto tod, Model model){
+    	TGuideDto tgd = new TGuideDto();
+    	tgd.setGuideNo(tod.getGuideNo());
+    	tgd = (TGuideDto) baseService.query(tgd);
+    	
+    	model.addAttribute("startDate",tod.getStartDate());
+    	model.addAttribute("guideDay",tod.getGuideDay());
+    	model.addAttribute("guideNo",tod.getGuideNo());
+    	model.addAttribute("serciceName",tgd.getServiceName());
+    	model.addAttribute("flag","guides");
+    	
+    	return "cardPay";
+    }
+    
+    /**
+     * 提交预订车信息
+     * @param request
+     * @param tod
+     */
+    @RequestMapping("/cars/confirm")
+    public String confirmCars(TOrderDto tod, Model model){
+    	TCarkindDto tckd = new TCarkindDto();
+    	tckd.setCarTypeNo(tod.getCarTypeNo());
+    	tckd = (TCarkindDto) baseService.query(tckd);
+    	
+    	model.addAttribute("startDate",tod.getStartDate());
+    	model.addAttribute("carTypeNo",tod.getCarTypeNo());
+    	model.addAttribute("carDay",tod.getCarDay());
+    	model.addAttribute("carTypeName",tckd.getCarTypeName());
+    	model.addAttribute("flag","cars");
+    	
+    	return "cardPay";
+    }
+    
+    
+    
+    
 	/**
      * 支付返回等待页面
      * @param orderNo

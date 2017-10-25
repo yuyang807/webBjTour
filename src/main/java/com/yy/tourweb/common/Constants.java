@@ -42,6 +42,21 @@ public class Constants {
     public static final String REDIS_CLINET_IP = "cip.";
     
     /**
+     * 美元汇率
+     */
+    public static final String REDIS_EXCHANGE_RATE = "usd.rate";
+    
+    /**
+     * 车辆类型信息
+     */
+    public static final String REDIS_CAR = "tour.carTypeNo.";
+
+    /**
+     * 导游信息
+     */
+    public static final String REDIS_GUIDE = "tour.guideNo.";
+    
+    /**
      * 缓存线路有效时间
      */
     public static final long LINE_EXPIRED_TIME = Long.parseLong(PropertiesUtil.getValue("application","line.expired.time"));
@@ -51,7 +66,7 @@ public class Constants {
      */
     public static final long MAINPIC_EXPIRED_TIME = Long.parseLong(PropertiesUtil.getValue("application","mainPic.expired.time"));
 
-	public static final String WARN_EMAIL = PropertiesUtil.getValue("application", "warn.email");
+	public static final String ORDER_EMAIL = PropertiesUtil.getValue("application", "order.email");
     
     
     

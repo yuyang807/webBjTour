@@ -429,11 +429,11 @@
 
 	<select id="queryOneLine" parameterType="map" resultType="map">
        SELECT 
-       tl.line_no, line_name, available, duration, is_private, language, pick_up_point, 
-       finish_point, pick_up_time, end_time, phy_level, hiking_dis, hiking_area, attractions, 
-       customizable, layover_time, popular_level, line_type_no, detail,
-       type_name, file_url mainPicUrl,
-       one_p,two_p,three_p,four_p,five_p,six_p,seven_p,eight_p,nine_p,ten_p
+       tl.line_no lineNo, line_name lineName, available, duration, is_private isPrivate, language, pick_up_point pickUpPoint, 
+       finish_point finishPoint, pick_up_time pickUpTime, end_time endTime, phy_level phyLevel, hiking_dis hikingDis, hiking_area hikingArea, attractions, 
+       customizable, layover_time layoverTime, popular_level popularLevel, line_type_no lineTypeNo, detail,
+       type_name typeName, file_url mainPicUrl,
+       one_p oneP,two_p twoP,three_p threeP,four_p fourP,five_p fiveP,six_p sixP,seven_p sevenP,eight_p eightP,nine_p nineP,ten_p tenP
        FROM t_line tl 
        LEFT JOIN t_line_price tlp on tl.line_no = tlp.line_no
        LEFT JOIN t_linekind tlk   on tl.line_type_no = tlk.type_no
