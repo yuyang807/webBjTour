@@ -21,7 +21,7 @@ var location_obj = [
 		"text":"FAQs"
 	},
 	{
-		"url":"/static/sView/contactUs.jsp",
+		"url":"/advice",
 		"key":"/contactUs",
 		"text":"Contact Us"
 	}
@@ -77,7 +77,7 @@ function showmenu(){
 function isindexof(key,list){
 	if(key.slice(-1) == '/' && list == ''){
 		return true;
-	}else if(key.indexOf(list) > -1 && list.indexOf("/") > -1){
+	}else if(key.indexOf(list) > -1 && list.indexOf("/") > -1 && key.indexOf("undefined") < 0){
 		return true;
 	}else{
 		return false;
