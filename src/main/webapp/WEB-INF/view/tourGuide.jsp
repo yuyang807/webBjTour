@@ -173,7 +173,7 @@
 					</div>
 				</div>
 			`;
-			var guide_option = "<option value='{id}' >{name}</option>";
+			var guide_option = "<option value={id} >{name}</option>";
 			/*var guidelist = [
 				{
 					guideNo:4,
