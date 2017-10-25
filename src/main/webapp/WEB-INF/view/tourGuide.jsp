@@ -33,15 +33,28 @@
 			--><div class="tour_details_right">
 				<img class="tour_guide_top" src="${ctxStatic}/juhema/icon/order_top.png" />
 				<div class="tour_guide_top_text">Hire a Tour Guide</div>
+				<form id="guideform" action="/guides/confirm" method="post" >
 				<ul class="tour_guide_ul">
+					<li class="tour_guide_li">
+						<div class="tour_guide_li_left fl">choice a guide</div>
+						<select id="guidelist" name="guideNo" class="tour_guide_li_right fr">
+							
+						</select>
+					</li>
 					<li class="tour_guide_li">Select a date</li>
 					<li class="tour_guide_li selectdatebox">
 						<span class="guide_text">From</span>
-						<input id="datepicker" class="guide_input fr" type="text" />
+						<input id="datepicker" name="startDate" reg="datepickertime" class="guide_input fr" type="text" />
+						<input id="guideDay" type="hidden" name="guideDay"  />
 						<span class="guide_text">To</span>
-						<input id="datepicker2" class="guide_input fr" type="text" style="float:right;" />
+						<input id="datepicker2" reg="datepickertime2" class="guide_input fr" type="text" style="float:right;" />
 					</li>
-					<li class="tour_guide_li">
+					<li>
+						<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
+						<div id="datepickertime2" class="cardPaywaring fr waringhidden">end time</div>
+						<div style="clear:both"></div>
+					</li>
+					<!--<li class="tour_guide_li">
 						<div class="tour_guide_li_left fl">Select a currency</div>
 						<select class="tour_guide_li_right fr">
 							<option>CNY</option>
@@ -54,11 +67,12 @@
 							<option>Full day</option>
 							<option>2</option>
 						</select>
-					</li>
+					</li>-->
 				</ul>
+				</form>
 				<div class="tour_guide_total">
 					<span>Total Cost:</span><span class="tour_guide_font_big">￥600.</span><span>00</span>
-					<button class="button100 buttoncolor1">BOOKING NOW</button>
+					<button class="button100 buttoncolor1" onclick="cardpaysub()">BOOKING NOW</button>
 				</div>
 			</div>
 			<div class="tour_guide_table_box">
@@ -122,6 +136,14 @@
 		        maxDate: new Date('2020-12-31'),
 		        yearRange: [2000,2020]
 		    });
+			var picker2 = new Pikaday(
+		    {
+		        field: document.getElementById('datepicker2'),
+		        firstDay: 1,
+		        minDate: new Date('2000-01-01'),
+		        maxDate: new Date('2020-12-31'),
+		        yearRange: [2000,2020]
+		    });
 		    var table_top_html = `
 				<div class="tour_guide_table_top">
 					<button class="tour_guide_list tour_guide_24"><span>TOUR GUIDE SERVICE</span><div class="tour_guide_list_line"></div></button><!--
@@ -133,7 +155,7 @@
 			var table_str = `
 				<div class="tour_guide_table_list">
 					   <div class="tour_guide_td_list tour_guide_24">
-					   	<div class="tour_guide_td_inside">HALF DAY<br>({guidetime} hours)</div></div><!--
+					   	<div class="tour_guide_td_inside">{name}<br>({guidetime} hours)</div></div><!--
 					--><div class="tour_guide_td_list tour_guide_24">
 							<div class="tour_guide_td_inside">
 							{guidetext}
@@ -151,27 +173,72 @@
 					</div>
 				</div>
 			`;
-			var guidelist = [
+			var guide_option = "<option value='{id}' >{name}</option>";
+			/*var guidelist = [
 				{
-					guidetime:4,
-					guidetext:"You can choose one site among Tian'anmen Square&Forbidden City,Temple of Heaven,Summer Palace and so on of the city area.",
-					guideprice:"400RMB"
+					guideNo:4,
+					serviceName:"服务名称1",
+					serviceDuration:"服务时长1",
+					price:400,
+					introduction:"You can choose one site among Tian'anmen Square&Forbidden City,Temple of Heaven,Summer Palace and so on of the city area."
 				},
 				{
-					guidetime:6,
-					guidetext:"You can choose two sites among Tian'anmen Square&Forbidden City,Temple of Heaven,Summer Palace and so on of the city area,or go the outskirt of Beijing like Great Wall.",
-					guideprice:"600RMB"
-				},
-			];
+					guideNo:4,
+					serviceName:"服务名称1",
+					serviceDuration:"服务时长1",
+					price:400,
+					introduction:"You can choose one site among Tian'anmen Square&Forbidden City,Temple of Heaven,Summer Palace and so on of the city area."
+				}
+			]*/
+			var guidelist = ${guidesList};
 			var guideliststr = table_top_html;
+			var selectoption = '';
 			for(var i in guidelist){
 				guideliststr += table_str.format2({
-					guidetime:guidelist[i].guidetime,
-					guidetext:guidelist[i].guidetext,
-					guideprice:guidelist[i].guideprice
+					name:guidelist[i].serviceName,
+					guidetime:guidelist[i].serviceDuration,
+					guidetext:guidelist[i].introduction,
+					guideprice:guidelist[i].price
 				}); 
+				selectoption += guide_option.format2({
+					id:guidelist[i].guideNo,
+					name:guidelist[i].serviceName
+				});
 			}
 			$("#tour_guide_table_id").html(guideliststr);
+			$("#guidelist").html(guideliststr);
+			function cardpaysub(){
+				var t_input = $("input.guide_input");
+				var t_len = t_input.length;
+				var all_len = t_len;
+				for(var i = 0 ;i < t_input.length;i++){
+					var t_regkey = t_input.eq(i).attr("reg");
+					var t_val = t_input.eq(i).val();
+					if(t_val == ""){
+						all_len--;
+						t_input.eq(i).addClass('inputerror');
+						$("#"+t_regkey).removeClass('waringhidden');
+					}
+				}
+				if(all_len == t_len){
+					var abc = (new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime();
+					if(abc < 0){
+						alert("开始日期不可以大于结束日期");
+					}else{
+						//console.log(abc/3600000/24+1);
+						$("#guideDay").val(abc/3600000/24+1);
+						$("#guideform").submit();
+					}
+					
+				}
+				//$("#guideform").submit();
+			}
+			$(".tour_details_right").on("focus","input",function(){
+				var t_regkey = $(this).attr("reg");
+				$(this).removeClass('inputerror');
+				$("#"+t_regkey).addClass('waringhidden');
+				//submiterror();
+			});
 		</script>
 	</body>
 </html>

@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20170316" />
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20170316" />
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/contact.css?v=20170316" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20170316" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -28,32 +29,38 @@
 			<ul class="contact_list_ul">
 				<li class="contact_list">
 					<div class="contact_label">Name</div>
-					<div class="contact_input"><input type="text" /></div>
+					<div class="contact_input"><input type="text" id="contactnameid" reg="contactname" class="contactinput" /></div>
+					<div id="contactname" class="cardPaywaring fl waringhidden">name</div>
+					<div style="clear:both"></div>
 				</li>
 				<li class="contact_list">
 					<div class="contact_label">E-mail</div>
-					<div class="contact_input"><input type="text" /></div>
+					<div class="contact_input"><input type="text" id="contactmailid" reg="contactmail" class="contactinput" /></div>
+					<div id="contactmail" class="cardPaywaring fl waringhidden">email</div>
+					<div style="clear:both"></div>
 				</li>
 				<li class="contact_list">
 					<div class="contact_label">How did you hear about us?</div>
 					<div class="contact_input">
-						<select>
-							<option>Personal Referral</option>
-							<option>Personal Referral2</option>
-							<option>Personal Referral3</option>
+						<select id="knowid">
+							<option value=1 >Google search</option>
+							<option value=2 >TripAdvisor</option>
+							<option value=3 >friend''s recommending</option>
 						</select>
 					</div>
 				</li>
 				<li class="contact_list">
 					<div class="contact_label">Name of Personal Referral?</div>
-					<div class="contact_input"><input type="text" /></div>
+					<div class="contact_input"><input type="text" id="contactrefid" /></div>
 				</li>
 				<li class="contact_list">
 					<div class="contact_label">How may I help you?</div>
-					<textarea class="contact_textarea"></textarea>
+					<textarea id="contacttextareaid" class="contact_textarea contactinput" reg="contacttextarea" ></textarea>
+					<div id="contacttextarea" class="cardPaywaring fl waringhidden">Referral</div>
+					<div style="clear:both"></div>
 				</li>
 			</ul>
-			<button class="buttoncolor1 contact_submit">Submit</button>
+			<button class="buttoncolor1 contact_submit" onclick="contactsub()">Submit</button>
 		</div>
 		
 		<footer class="tour_foot_bg">
@@ -77,6 +84,42 @@
 				var isblock = menudisplay?"block":"none";
 				$("#tour_top_ul_id").css("display",menudisplay?"block":"none");*/
 			}
+			function contactsub(){
+				var t_input = $(".contactinput");
+				var t_len = t_input.length;
+				var all_len = t_len;
+				for(var i = 0 ;i < t_input.length;i++){
+					var t_regkey = t_input.eq(i).attr("reg");
+					var t_val = t_input.eq(i).val();
+					if(t_val == ""){
+						all_len--;
+						t_input.eq(i).addClass('inputerror');
+						$("#"+t_regkey).removeClass('waringhidden');
+					}
+				}
+				if(all_len == t_len){
+					$.ajax({
+						type:"post",
+						url:"/advice/submit",
+						data:{
+							lName:$("#contactnameid").val(),
+							emailAddress:$("#contactmailid").val(),
+							content:$("#contacttextareaid").val(),
+							knowWay:$("#knowid").val(),
+							referralName:$("#contactrefid").val()
+						},
+						success:function(data){
+							alert(data);
+						}
+					});
+				}
+			}
+			$(".contactbox").on("focus",".contactinput",function(){
+				var t_regkey = $(this).attr("reg");
+				$(this).removeClass('inputerror');
+				$("#"+t_regkey).addClass('waringhidden');
+				//submiterror();
+			});
 		</script>
 	</body>
 </html>
