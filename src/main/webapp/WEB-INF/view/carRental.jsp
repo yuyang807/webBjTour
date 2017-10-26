@@ -119,28 +119,12 @@
 				   	<div style="clear:both;"></div>
 				</div>
 			`;
-			/*var carList = [{
-		    	carTypeName:1,
-		    	carName:'1-1'
-		    },{
-		    	carTypeName:2,
-		    	carName:'2-1'
-		    },{
-		    	carTypeName:2,
-		    	carName:'2-2'
-		    },{
-		    	carTypeName:2,
-		    	carName:'2-3'
-		    },{
-		    	carTypeName:3,
-		    	carName:'3-1'
-		    },{
-		    	carTypeName:1,
-		    	carName:'1-2'
-		    },{
-		    	carTypeName:3,
-		    	carName:'3-2'
-		    }];*/
+			var touroption = `
+				<option value=1 >halfDayPrice</option>
+				<option value=2 >fullDayPrice</option>
+				<option value=3 >mtyPrice</option>
+				<option value=4 >jslPrice</option>
+			`;
 		    var carList = ${carsList};
 		    var carmap = {};
 		    for(var i in carList){
@@ -170,6 +154,7 @@
 		    		jslPrice:onecarmap[0].jslPrice,
 		    		carTypeNo:onecarmap[0].carTypeNo
 		    	});
+		    	
 		    }
 			$("#tour_guide_table_id").html(table_top_html+t_all_table);
 		</script>

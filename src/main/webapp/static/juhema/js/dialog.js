@@ -16,11 +16,11 @@ var dialog_str = `
 					<input type="hidden" name="carDay" id="guideDay" />
 					<input type="hidden" name="startDate" id="startDate" />
 					<div class="dialog_main_li_top">Select start date</div>
-					<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="guide_input fl" type="text" />
+					<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="guide_inputtime guide_input fl" type="text" />
 					<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
 					<div style="clear:both"></div>
 				</li>
-				<li class="dialog_main_li">
+				<li id="datepicker2box" class="dialog_main_li">
 					<div class="dialog_main_li_top">Select end date</div>
 					<input id="datepicker2" reg="datepickertime2" class="guide_input fl" type="text" />
 					<div id="datepickertime2" onblur="getallprice()" class="cardPaywaring fl waringhidden">end time</div>
@@ -28,9 +28,8 @@ var dialog_str = `
 				</li>
 				<li class="dialog_main_li">
 					<div class="dialog_main_li_top">Tour Option</div>
-					<select class="dialog_main_li_input">
-						<option>1</option>
-						<option>2</option>
+					<select id="touroption" onchange="touroptionchange()" class="dialog_main_li_input">
+						
 					</select>
 				</li>
 			</ul>
@@ -42,11 +41,11 @@ var dialog_str = `
 var picker = 0;
 var picker2 = 0;
 $("#tour_guide_table_id").on("click",".tour_book_now",function(){
-	var t
 	document.body.style.overflow = "hidden";
 	$("body").append(dialog_str.format2({
 		carTypeNo:$("#tour_book_now_id").attr("regt")
 	}));
+	$("#touroption").html(touroption);
 	picker = new Pikaday(
     {
         field: document.getElementById('datepicker'),
@@ -71,8 +70,16 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
 		//submiterror();
 	});
 });
+function touroptionchange(){
+	var t_key = $("#touroption").val();
+	if(t_key == 1){
+		$("#datepicker2box").show();
+	}else{
+		$("#datepicker2box").hide();
+	}
+}
 function dialogsubmit(){
-	var t_input = $("input.guide_input");
+	var t_input = $("input.guide_inputtime");
 	var t_len = t_input.length;
 	var all_len = t_len;
 	for(var i = 0 ;i < t_input.length;i++){
@@ -85,16 +92,21 @@ function dialogsubmit(){
 		}
 	}
 	if(all_len == t_len){
-		var abc = (new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime();
-		if(abc < 0){
-			alert("开始日期不可以大于结束日期");
-		}else{
-			//console.log(abc/3600000/24+1);
+		if($("#datepickertime2").val() == ""){
 			$("#startDate").val((new Date(picker['_d'])).getTime());
-			$("#guideDay").val(abc/3600000/24+1);
+			$("#guideDay").val(1);
 			$("#carrenform").submit();
+		}else{
+			var abc = (new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime();
+			if(abc < 0){
+				alert("开始日期不可以大于结束日期");
+			}else{
+				//console.log(abc/3600000/24+1);
+				$("#startDate").val((new Date(picker['_d'])).getTime());
+				$("#guideDay").val(abc/3600000/24+1);
+				$("#carrenform").submit();
+			}
 		}
-		
 	}
 }
 function getallprice(){
