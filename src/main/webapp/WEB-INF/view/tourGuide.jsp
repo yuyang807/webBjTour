@@ -44,7 +44,8 @@
 					<li class="tour_guide_li">Select a date</li>
 					<li class="tour_guide_li selectdatebox">
 						<span class="guide_text">From</span>
-						<input id="datepicker" onblur="getallprice()" name="startDate" reg="datepickertime" class="guide_input fr" type="text" />
+						<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="guide_input fr" type="text" />
+						<input id="startDate" type="hidden" name="startDate"  />
 						<input id="guideDay" type="hidden" name="guideDay"  />
 						<span class="guide_text">To</span>
 						<input id="datepicker2" onblur="getallprice()" reg="datepickertime2" class="guide_input fr" type="text" style="float:right;" />
@@ -228,6 +229,7 @@
 						alert("开始日期不可以大于结束日期");
 					}else{
 						//console.log(abc/3600000/24+1);
+						$("#startDate").val((new Date(picker['_d'])).getTime());
 						$("#guideDay").val(abc/3600000/24+1);
 						$("#guideform").submit();
 					}
