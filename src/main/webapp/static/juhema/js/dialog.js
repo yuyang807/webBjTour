@@ -12,17 +12,18 @@ var dialog_str = `
 					</select>
 				</li>-->
 				<li class="dialog_main_li">
-					<input type="hidden" name="carTypeNo" value="{carTypeNo}" />
+					<input type="hidden" id="carTypeNoid" name="carTypeNo" value="{carTypeNo}" />
 					<input type="hidden" name="carDay" id="guideDay" />
+					<input type="hidden" name="startDate" id="startDate" />
 					<div class="dialog_main_li_top">Select start date</div>
-					<input id="datepicker" name="startDate" reg="datepickertime" class="guide_input fl" type="text" />
+					<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="guide_input fl" type="text" />
 					<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
 					<div style="clear:both"></div>
 				</li>
 				<li class="dialog_main_li">
 					<div class="dialog_main_li_top">Select end date</div>
 					<input id="datepicker2" reg="datepickertime2" class="guide_input fl" type="text" />
-					<div id="datepickertime2" class="cardPaywaring fl waringhidden">end time</div>
+					<div id="datepickertime2" onblur="getallprice()" class="cardPaywaring fl waringhidden">end time</div>
 					<div style="clear:both"></div>
 				</li>
 				<li class="dialog_main_li">
@@ -89,11 +90,21 @@ function dialogsubmit(){
 			alert("开始日期不可以大于结束日期");
 		}else{
 			//console.log(abc/3600000/24+1);
+			$("#startDate").val((new Date(picker['_d'])).getTime());
 			$("#guideDay").val(abc/3600000/24+1);
 			$("#carrenform").submit();
 		}
 		
 	}
+}
+function getallprice(){
+	var t_day = 1;
+	if($("#datepicker").val() != "" && $("#datepicker2").val() != ""){
+		t_day = ((new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime())/3600000/24+1;
+	}
+	var type = $("#guidelist").val();
+	//var t_prices_one = guidelistobj[type];
+	//$("#allprice").val(t_prices_one*t_day);
 }
 /*$(".tour_book_now").click(function(){
 	document.body.style.overflow = "hidden";
@@ -116,57 +127,21 @@ function removedialog(){
 var successdialogstr = `
 	<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>
 	<div class="dialog_box dialog_remove">
-		<div class="dialog_title">Car Rental<div class="closedialog" onclick="removedialog()"></div></div>
-		<ul class="dialog_main">
-			<li class="dialog_main_li">
-				<div class="dialog_main_li_top">Size of party</div>
-				<select class="dialog_main_li_input">
-					<option>1</option>
-					<option>2</option>
-				</select>
-			</li>
-			<li class="dialog_main_li">
-				<div class="dialog_main_li_top">Select a date</div>
-				<input id="datepicker" class="guide_input fr" type="text" />
-			</li>
-			<li class="dialog_main_li">
-				<div class="dialog_main_li_top">Tour Option</div>
-				<select class="dialog_main_li_input">
-					<option>1</option>
-					<option>2</option>
-				</select>
-			</li>
-		</ul>
-		<div class="dialog_bottom_total">Total Cost: 　<span>￥600</span>.00</div>
-		<button class="dialog_bottom_btn buttoncolor1">Submit</button>
+		<div class="submit_s_icon"></div>
+		<div class="submit_s_text">
+			Your order has been submited successfully
+		</div>
+		<button class="dialog_bottom_btn buttoncolor1" onclick="javascript:window.location.href = '/'">back to home page</button>
 	</div>
 `;
 var errordialogstr = `
 	<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>
 	<div class="dialog_box dialog_remove">
-		<div class="dialog_title">Car Rental<div class="closedialog" onclick="removedialog()"></div></div>
-		<ul class="dialog_main">
-			<li class="dialog_main_li">
-				<div class="dialog_main_li_top">Size of party</div>
-				<select class="dialog_main_li_input">
-					<option>1</option>
-					<option>2</option>
-				</select>
-			</li>
-			<li class="dialog_main_li">
-				<div class="dialog_main_li_top">Select a date</div>
-				<input id="datepicker" class="guide_input fr" type="text" />
-			</li>
-			<li class="dialog_main_li">
-				<div class="dialog_main_li_top">Tour Option</div>
-				<select class="dialog_main_li_input">
-					<option>1</option>
-					<option>2</option>
-				</select>
-			</li>
-		</ul>
-		<div class="dialog_bottom_total">Total Cost: 　<span>￥600</span>.00</div>
-		<button class="dialog_bottom_btn buttoncolor1">Submit</button>
+		<div class="submit_s_icon_error"></div>
+		<div class="submit_s_text">
+			Submission failure
+		</div>
+		<button class="dialog_bottom_btn buttoncolor1" onclick="submitfunction()">resubmit</button>
 	</div>
 `;
 function submitsuccess(){

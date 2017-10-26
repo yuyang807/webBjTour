@@ -200,6 +200,22 @@ html {
   background: url(../icon/QOWA8928w.png) repeat-x 0 0 / auto 100%;
   cursor: pointer;
 }
+.submit_s_icon{
+	width:100px;
+	height:100px;
+	margin:4rem auto 2rem;
+	background:url(../icon/20171023135320.png) repeat-x 0 0 / auto 100%;
+}
+.submit_s_icon_error{
+	width:100px;
+	height:100px;
+	margin:4rem auto 2rem;
+	background:url(../icon/20171023135327.png) repeat-x 0 0 / auto 100%;
+}
+.submit_s_text{
+	margin:0 20px 2rem;
+	text-align: center;
+}
 .dialog_main {
   border-bottom: 1px solid #9b9b9b;
   padding-bottom: 1rem;
