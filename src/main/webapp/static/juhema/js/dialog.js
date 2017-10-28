@@ -34,7 +34,7 @@ var dialog_str = `
 				</li>
 			</ul>
 		</form>
-		<div class="dialog_bottom_total">Total Cost: 　<span>￥600</span>.00</div>
+		<div class="dialog_bottom_total">Total Cost: 　<span>￥<span id="cardialogprice">600</span></span>.00</div>
 		<button class="dialog_bottom_btn buttoncolor1" onclick="dialogsubmit()">Submit</button>
 	</div>
 `;
@@ -75,9 +75,21 @@ function touroptionchange(){
 	var t_key = $("#touroption").val();
 	t_regkey = $(this).attr("reg");
 	var t_obj = carmap[t_regkey];
+	var price_key = '';
+	if(t_key == 1101){
+		price_key = 'fullDayPrice';
+	}else if(t_key == 1102){
+		price_key = 'mtyPrice';
+	}else if(t_key == 1103){
+		price_key = 'jslPrice';
+	}else if(t_key == 1104){
+		price_key = 'halfDayPrice';
+	};
+	var t_select_price = t_obj[price_key];
+	$("#cardialogprice").html(t_select_price);
 	//找到当前种类对象
 	//找到当前种类的价格
-	if(t_key == 1){
+	if(t_key == 1101){
 		$("#datepicker2box").show();
 	}else{
 		$("#datepicker2box").hide();
