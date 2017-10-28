@@ -244,7 +244,7 @@
 				}
 				var type = $("#guidelist").val();
 				var t_prices_one = guidelistobj[type];
-				$("#allprice").val(t_prices_one*t_day);
+				$("#allprice").html(t_prices_one*t_day);
 			}
 			$(".tour_details_right").on("focus","input",function(){
 				var t_regkey = $(this).attr("reg");
