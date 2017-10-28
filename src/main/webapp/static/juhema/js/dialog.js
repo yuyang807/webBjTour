@@ -64,7 +64,7 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
         yearRange: [2000,2020]
     });
     
-	t_regkey = $(this).attr("reg");
+	t_regkey = $(this).attr("regt");
 	$(".dialog_main").on("focus","input",function(){
 		$(this).removeClass('inputerror');
 		$("#"+t_regkey).addClass('waringhidden');
@@ -73,7 +73,6 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
 });
 function touroptionchange(){
 	var t_key = $("#touroption").val();
-	t_regkey = $(this).attr("reg");
 	var t_obj = carmap[t_regkey];
 	var price_key = '';
 	if(t_key == 1101){
