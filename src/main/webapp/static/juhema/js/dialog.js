@@ -12,7 +12,7 @@ var dialog_str = `
 					</select>
 				</li>-->
 				<li class="dialog_main_li">
-					<input type="hidden" id="carTypeNoid" name="carTypeNo" value="{carTypeNo}" />
+					<input type="hidden" id="carTypeNoid" name="carTypeNo" value={carTypeNo} />
 					<input type="hidden" name="carDay" id="guideDay" />
 					<input type="hidden" name="startDate" id="startDate" />
 					<div class="dialog_main_li_top">Select start date</div>
@@ -28,7 +28,7 @@ var dialog_str = `
 				</li>
 				<li class="dialog_main_li">
 					<div class="dialog_main_li_top">Tour Option</div>
-					<select id="touroption" onchange="touroptionchange()" class="dialog_main_li_input">
+					<select id="touroption" name="carServiceNo" onchange="touroptionchange()" class="dialog_main_li_input">
 						
 					</select>
 				</li>
