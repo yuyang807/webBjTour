@@ -32,7 +32,7 @@
 					Contact address
 				</h2>
 				<form id="cardpayform" action="/tour/order/submit" method="post">
-					<input type="text" id="allprice" name="totalPrice" value=${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice} />
+					<input type="text" id="allprice" name="totalPrice" value='${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}' />
 					<input type="hidden" name="lineNo" value=${lineNo} />
 					<input type="hidden" name="adultNum" value=${adultNum} />
 					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
