@@ -133,7 +133,7 @@
 		    var carList = ${carsList};
 		    var carmap = {};
 		    for(var i in carList){
-		    	var carkey = carList[i]['carTypeName'];
+		    	var carkey = carList[i]['carTypeNo'];
 		    	if(carmap[carkey] == undefined){
 		    		carmap[carkey] = [];
 		    	}
