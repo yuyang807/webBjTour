@@ -119,12 +119,17 @@
 				   	<div style="clear:both;"></div>
 				</div>
 			`;
-			var touroption = `
+			/*var touroption = `
 				<option value=1 >halfDayPrice</option>
 				<option value=2 >fullDayPrice</option>
 				<option value=3 >mtyPrice</option>
 				<option value=4 >jslPrice</option>
-			`;
+			`;*/
+			var servicelist = ${serviceList};
+			var touroption = '';
+			for(var i in servicelist){
+				touroption += '<option value='+servicelist[i]['carServiceNo']+' >'+servicelist[i]['carServiceName']+'</option>'
+			}
 		    var carList = ${carsList};
 		    var carmap = {};
 		    for(var i in carList){

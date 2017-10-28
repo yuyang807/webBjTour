@@ -40,6 +40,7 @@ var dialog_str = `
 `;
 var picker = 0;
 var picker2 = 0;
+var t_regkey = 0;
 $("#tour_guide_table_id").on("click",".tour_book_now",function(){
 	document.body.style.overflow = "hidden";
 	$("body").append(dialog_str.format2({
@@ -63,8 +64,8 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
         yearRange: [2000,2020]
     });
     
+	t_regkey = $(this).attr("reg");
 	$(".dialog_main").on("focus","input",function(){
-		var t_regkey = $(this).attr("reg");
 		$(this).removeClass('inputerror');
 		$("#"+t_regkey).addClass('waringhidden');
 		//submiterror();
@@ -72,6 +73,10 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
 });
 function touroptionchange(){
 	var t_key = $("#touroption").val();
+	t_regkey = $(this).attr("reg");
+	var t_obj = carmap[t_regkey];
+	//找到当前种类对象
+	//找到当前种类的价格
 	if(t_key == 1){
 		$("#datepicker2box").show();
 	}else{
