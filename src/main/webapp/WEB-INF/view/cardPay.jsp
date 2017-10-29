@@ -336,7 +336,7 @@
 					$.ajax({
 						type:"post",
 						url:"/tour/order/submit",
-						data:$('#cardpayform').serialize(),
+						data:{TOrderDto:$('#cardpayform').serialize()},
 						success:function(data){
 							console.log(data);
 						}

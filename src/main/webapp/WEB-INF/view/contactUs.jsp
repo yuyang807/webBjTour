@@ -102,14 +102,16 @@
 						type:"post",
 						url:"/advice/submit",
 						data:{
-							lName:$("#contactnameid").val(),
-							emailAddress:$("#contactmailid").val(),
-							content:$("#contacttextareaid").val(),
-							knowWay:$("#knowid").val(),
-							referralName:$("#contactrefid").val()
+							TMemberDto:{
+								lName:$("#contactnameid").val(),
+								emailAddress:$("#contactmailid").val(),
+								content:$("#contacttextareaid").val(),
+								knowWay:$("#knowid").val(),
+								referralName:$("#contactrefid").val()
+							}
 						},
 						success:function(data){
-							alert(data);
+							console.log(data);
 						}
 					});
 				}
