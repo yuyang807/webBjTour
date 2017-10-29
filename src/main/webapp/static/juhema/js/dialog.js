@@ -73,7 +73,7 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
 });
 function touroptionchange(){
 	var t_key = $("#touroption").val();
-	var t_obj = carmap[t_regkey];
+	var t_obj = carmap[t_regkey][0];
 	var price_key = '';
 	if(t_key == 1101){
 		price_key = 'fullDayPrice';
