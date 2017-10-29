@@ -26,13 +26,13 @@ var slider = function() {
 						
 						var t_base_str = '<div class="pages" ><img src="{0}" onclick="linkfor(\'/list/{1}\')" /></div>';
 						var t_base_dian = '<div class="dian" onmousedown="slider.dian({0})"></div>';
-						var t_all_str = slider.s(t_base_str,[t_data[t_len-1].fileUrll,t_data[t_len-1].lineNo]);
+						var t_all_str = slider.s(t_base_str,[t_data[t_len-1].fileUrl,t_data[t_len-1].lineNo]);
 						var t_dian_str = "";
 						for(var i = 0;i < t_len;i++){
-							t_all_str += slider.s(t_base_str,[t_data[i].fileUrll,t_data[i].lineNo]);
+							t_all_str += slider.s(t_base_str,[t_data[i].fileUrl,t_data[i].lineNo]);
 							t_dian_str += slider.s(t_base_dian,[i]);
 						}
-						t_all_str += slider.s(t_base_str,[t_data[0].fileUrll,t_data[0].lineNo]);
+						t_all_str += slider.s(t_base_str,[t_data[0].fileUrl,t_data[0].lineNo]);
 						slider_box.innerHTML = t_all_str;
 						document.getElementById("dianbox").innerHTML = t_dian_str;
 					    document.getElementsByClassName("dian")[t_index].className = "dian dianhover";
