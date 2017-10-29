@@ -102,13 +102,11 @@
 						type:"post",
 						url:"/advice/submit",
 						data:{
-							TMemberDto:{
-								lName:$("#contactnameid").val(),
-								emailAddress:$("#contactmailid").val(),
-								content:$("#contacttextareaid").val(),
-								knowWay:$("#knowid").val(),
-								referralName:$("#contactrefid").val()
-							}
+							lName:$("#contactnameid").val(),
+							emailAddress:$("#contactmailid").val(),
+							content:$("#contacttextareaid").val(),
+							knowWay:$("#knowid").val(),
+							referralName:$("#contactrefid").val()
 						},
 						success:function(data){
 							console.log(data);

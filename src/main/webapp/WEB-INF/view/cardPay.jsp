@@ -52,7 +52,7 @@
 						Passport
 					</h2>
 					<div>
-						<input type="text" class="cardPayinput fl" name="" reg="unitedstates" placeholder="Passport Number" value="0" />
+						<input type="text" class="cardPayinput fl"  reg="unitedstates" placeholder="Passport Number" value="0" />
 						<div class="cardPayinput fr">
 							<select type="text" class="cardPayselect">
 								<option>United States</option>
@@ -333,16 +333,42 @@
 					}
 				}
 				if(all_num == t_len){
+					var formobj = getserialize($('#cardpayform').serialize());
+					var TOrderDto = formobj;
+					var TMemberDto = {};
+					TMemberDto.fName = TOrderDto['fName'];
+					TMemberDto.lName = TOrderDto['lName'];
+					TMemberDto.emailAddress = TOrderDto['emailAddress'];
+					TMemberDto.phoneNum = TOrderDto['phoneNum'];
+					TMemberDto.passportNum = TOrderDto['passportNum'];
+					delete TOrderDto['fName'];
+					delete TOrderDto['lName'];
+					delete TOrderDto['emailAddress'];
+					delete TOrderDto['phoneNum'];
+					delete TOrderDto['passportNum'];
 					$.ajax({
 						type:"post",
 						url:"/tour/order/submit",
-						data:{TOrderDto:$('#cardpayform').serialize()},
+						data:{
+							TOrderDto:TOrderDto,
+							TMemberDto:TMemberDto
+						},
 						success:function(data){
-							console.log(data);
+							console.log(data.resultCode);
 						}
 					});
 					
 				}
+			}
+			function getserialize(formobj){
+				var t_array = formobj.split("&");
+				var obj = {};
+				for(var i in t_array){
+					var k = t_array[i].split("=")[0];
+					var v = t_array[i].split("=")[1];
+					obj[k] = v;
+				}
+				return obj;
 			}
 			$(".tour_list_box").on("focus","input",function(){
 				var t_regkey = $(this).attr("reg");
