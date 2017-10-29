@@ -32,16 +32,10 @@
 					Contact address
 				</h2>
 				<form id="cardpayform" action="/tour/order/submit" method="post">
-					<input type="text" id="allprice" name="totalPrice" value='${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}' />
-					<input type="hidden" name="lineNo" value=${lineNo} />
-					<input type="hidden" name="adultNum" value=${adultNum} />
-					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
-					<input type="hidden" name="babyNum" value=${babyNum} />
-					<input type="hidden" name="childNum" value=${childNum} />
-					<input type="hidden" name="startDate" value="${startDate}" />
-					<input type="hidden" name="pickupCarTypeNo" name=${pickupCarTypeNo}  />
-					<input type="hidden" name="dropoffCarTypeNo" name=${dropoffCarTypeNo}  />
-					<input type="hidden" name="showNo" name=${showNo}  />
+					
+					<div id="hiddensubmit">
+						
+					</div>
 					<div>
 						<input type="text" class="cardPayinput fl" name="fName" reg="firstname" placeholder="First Name" />
 						<input type="text" class="cardPayinput fr" name="lName" reg="lastname" placeholder="Last Name" />
@@ -125,28 +119,6 @@
 						We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
 					</div>
 					<textarea class="contact_textarea cardPaytextarea fr" name="instructions" ></textarea>
-				<!--<form action="/tour/order/submit" method="post">
-					<input type="hidden" name="lineNo" value=${lineNo} />
-					<input type="hidden" name="adultNum" value=${adultNum} />
-					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
-					<input type="hidden" name="babyNum" value=${babyNum} />
-					<input type="hidden" name="childNum" value=${childNum} />
-					<input type="hidden" name="startDate" value="${startDate}" />
-					<input type="hidden" name="pickupCarTypeNo" name=${pickupCarTypeNo}  />
-					<input type="hidden" name="dropoffCarTypeNo" name=${dropoffCarTypeNo}  />
-					<input type="hidden" name="showNo" name=${showNo}  />
-					<input type="hidden" name="fName" id="fName" />
-					<input type="hidden" name="lName" id="lName" />
-					<input type="hidden" name="emailAddress" id="emailAddress" />
-					<input type="hidden" name="phoneNum" id="phoneNum" />
-					<input type="hidden" name="hotelName" id="hotelName" />
-					<input type="hidden" name="hotelAddress" id="hotelAddress" />
-					<input type="hidden" name="hotelTell" id="hotelTell" />
-					<input type="hidden" name="arrivalDate" id="arrivalDate" />
-					<input type="hidden" name="aAirplanNum" id="aAirplanNum" />
-					<input type="hidden" name="startTime" id="startTime" />
-					<input type="hidden" name="instructions" id="instructions" />
-					<input type="hidden" name="totalPrice" id="totalPrice" />-->
 				</form>
 				<button class="big_submit fr">submit</button>
 				<div class="clearboth"></div>
@@ -170,6 +142,34 @@
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
 		<script>
+			var flag1hide = `
+				<input type="text" id="allprice" name="totalPrice" value='${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}' />
+				<input type="hidden" name="lineNo" value=${lineNo} />
+				<input type="hidden" name="adultNum" value=${adultNum} />
+				<input type="hidden" name="teenagerNum" value=${teenagerNum} />
+				<input type="hidden" name="babyNum" value=${babyNum} />
+				<input type="hidden" name="childNum" value=${childNum} />
+				<input type="hidden" name="startDate" value="${startDate}" />
+				<input type="hidden" name="pickupCarTypeNo" name=${pickupCarTypeNo}  />
+				<input type="hidden" name="dropoffCarTypeNo" name=${dropoffCarTypeNo}  />
+				<input type="hidden" name="showNo" name=${showNo}  />
+				<input type="hidden" name="orderType" name=${flag}  />
+			`;
+			var flagcarhide = `
+				<input type="text" id="allprice" name="totalPrice" value='' />
+				<input type="hidden" name="startDate" value="${startDate}" />
+				<input type="hidden" name="carTypeNo" value=${carTypeNo} />
+				<input type="hidden" name="carDay" value=${carDay} />
+				<input type="hidden" name="carServiceNo" value=${carServiceNo} />
+				<input type="hidden" name="orderType" name=${flag}  />
+			`;
+			var flagguidehide = `
+				<input type="text" id="allprice" name="totalPrice" value='' />
+				<input type="hidden" name="startDate" value="${startDate}" />
+				<input type="hidden" name="guideNo" value=${guideNo} />
+				<input type="hidden" name="guideDay" value=${guideDay} />
+				<input type="hidden" name="orderType" name=${flag}  />
+			`;
 			var flag1str = `
 				<img class="cardPay_right_img fl" src="{img}" />
 			 	<div class="cardPay_right_ul fr">
@@ -201,21 +201,113 @@
 			 		Total Cost: <span>$200</span>
 			 	</div>
 			`;
-			$("#cardPay_right_id").html(flag1str.format2({
-				img:${ctxStatic}+'/juhema/img/WechatIMG58.jpeg',
-				datestr:${startDate},
-				adultNum:${adultNum},
-				unitPrice:${unitPrice},
-				allPrice:${unitPrice*adultNum},
-			}));
+			var flagcarstr = `
+				<img class="cardPay_right_img fl" src="{img}" />
+			 	<div class="cardPay_right_ul fr">
+			 		<div class="cardPay_name">
+			 			car
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			startDate:{startDate}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			carDay:{carDay}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			carTypeNo:{carTypeNo}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			carTypeName:{carTypeName}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			carServiceNo:{carServiceNo}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			carServiceName:{carServiceName}
+			 		</div>
+			 	</div>
+				<div class="clearboth"></div>
+			 	<div class="cardPay_right_total">
+			 		Total Cost: <span>$200</span>
+			 	</div>
+			`;
+			var flagguidestr = `
+				<img class="cardPay_right_img fl" src="{img}" />
+			 	<div class="cardPay_right_ul fr">
+			 		<div class="cardPay_name">
+			 			guide
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			startDate:{startDate}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			guideDay:{guideDay}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			guideNo:{guideNo}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			serviceName:{serviceName}
+			 		</div>
+			 	</div>
+				<div class="clearboth"></div>
+			 	<div class="cardPay_right_total">
+			 		Total Cost: <span>$200</span>
+			 	</div>
+			`;
+			var flag = ${flag};
+			if(flag == 1){
+				//线路
+				$("#cardPay_right_id").html(flag1str.format2({
+					img:'${ctxStatic}/juhema/img/WechatIMG58.jpeg',
+					datestr:'${startDate}',
+					adultNum:'${adultNum}',
+					unitPrice:'${unitPrice}',
+					allPrice:'${unitPrice*adultNum}',
+				}));
+				$("#hiddensubmit").html(flag1hide);
+			}else if(flag == 2){
+				//汽车
+				var startDate = '${startDate}';
+				var carTypeNo = '${carTypeNo}';
+				var carTypeName = '${carTypeName}';
+				var carDay = '${carDay}';
+				var carServiceNo = '${carServiceNo}';
+				var carServiceName = '${carServiceName}';
+				$("#cardPay_right_id").html(flagcarstr.format2({
+					img:'${ctxStatic}/juhema/img/WechatIMG58.jpeg',
+					startDate:'${startDate}',
+					carTypeNo:'${carTypeNo}',
+					carTypeName:'${carTypeName}',
+					carDay:'${carDay}',
+					carServiceNo:'${carServiceNo}',
+					carServiceName:'${carServiceName}'
+				}));
+				$("#hiddensubmit").html(flagcarhide);
+			}else if(flag == 3){
+				//导游
+				var startDate = '${startDate}';
+				var guideDay = '${guideDay}';
+				var guideNo = '${guideNo}';
+				var serviceName = '${serviceName}'
+				$("#cardPay_right_id").html(flagguidestr.format2({
+					img:'${ctxStatic}/juhema/img/WechatIMG58.jpeg',
+					startDate:'${startDate}',
+					guideDay:'${guideDay}',
+					guideNo:'${guideNo}',
+					serviceName:'${serviceName}'
+				}));
+				$("#hiddensubmit").html(flagguidehide);
+			}
+			
 			var t_reglist = {
 				
 			}
 			var inputandreg = {
 				
 			}
-			var flag = ${flag};
-			var startDay = ${startDay};
+			
+			/*var startDate = ${startDate};
 			
 			var carTypeNo = '${carTypeNo}';
 			var carTypeName = ${carTypeName}+'';
@@ -225,7 +317,7 @@
 			
 			var serviceName = ${serviceName};
 			var guideDay = ${guideDay};
-			var guideNo = ${guideNo};
+			var guideNo = ${guideNo};*/
 			function cardpaysub(){
 				var t_input = $("input.cardPayinput");
 				var t_len = t_input.length;
