@@ -153,36 +153,8 @@
 			 </div>
 			 <div class="cardPay_mid fl"></div>
 			 <div class="cardPay_right fr">
-			 	<div class="cardPay_right_box">
-				 	<img class="cardPay_right_img fl" src="${ctxStatic}/juhema/img/WechatIMG58.jpeg" />
-				 	<div class="cardPay_right_ul fr">
-				 		<div class="cardPay_name">
-				 			The Great Wall Tour
-				 		</div>
-				 		<div class="cardPay_right_li">
-				 			Date:${startDate}
-				 		</div>
-				 		<div class="cardPay_right_li">
-				 			${adultNum} Adult $${unitPrice}
-				 			<span>$${adultNum*unitPrice}</span>
-				 		</div>
-				 		<div class="cardPay_right_li">
-				 			${childNum} Child $${unitPrice*0.8}
-				 			<span>$${childNum*unitPrice*0.8}</span>
-				 		</div>
-				 		<div class="cardPay_right_li">
-				 			Airport/Railway station Pick up
-				 			<span>$${pickupPrice}</span>
-				 		</div>
-				 		<div class="cardPay_right_li">
-				 			Airport Drop Off
-				 			<span>$${dropoffPrice}</span>
-				 		</div>
-				 	</div>
-					<div class="clearboth"></div>
-				 	<div class="cardPay_right_total">
-				 		Total Cost: <span>$200</span>
-				 	</div>
+			 	<div id="cardPay_right_id" class="cardPay_right_box">
+				 	
 			 	</div>
 			 </div>
 			 <div class="clearboth"></div>
@@ -198,12 +170,62 @@
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
 		<script>
+			var flag1str = `
+				<img class="cardPay_right_img fl" src="{img}" />
+			 	<div class="cardPay_right_ul fr">
+			 		<div class="cardPay_name">
+			 			The Great Wall Tour
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			Date:{datestr}
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			{adultNum} Adult ${unitPrice}
+			 			<span>${allPrice}</span>
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			0 Child $0
+			 			<span>$0</span>
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			Airport/Railway station Pick up
+			 			<span>$0</span>
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			Airport Drop Off
+			 			<span>$0</span>
+			 		</div>
+			 	</div>
+				<div class="clearboth"></div>
+			 	<div class="cardPay_right_total">
+			 		Total Cost: <span>$200</span>
+			 	</div>
+			`;
+			$("#cardPay_right_id").html(flag1str.format2({
+				img:${ctxStatic}+'/juhema/img/WechatIMG58.jpeg',
+				datestr:${startDate},
+				adultNum:${adultNum},
+				unitPrice:${unitPrice},
+				allPrice:${unitPrice*adultNum},
+			}));
 			var t_reglist = {
 				
 			}
 			var inputandreg = {
 				
 			}
+			var flag = ${flag};
+			var cartypeno = ${carTypeNo};
+			var cartypeno = ${carTypeName};
+			var cartypeno = ${startDay};
+			var cartypeno = ${carDay};
+			var cartypeno = ${carServiceNo};
+			var cartypeno = ${carServiceName};
+			
+			var cartypeno = ${startDay};
+			var cartypeno = ${serviceName};
+			var cartypeno = ${guideDay};
+			var cartypeno = ${guideNo};
 			function cardpaysub(){
 				var t_input = $("input.cardPayinput");
 				var t_len = t_input.length;
