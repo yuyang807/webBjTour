@@ -85,7 +85,11 @@ function touroptionchange(){
 		price_key = 'halfDayPrice';
 	};
 	var t_select_price = t_obj[price_key];
-	$("#cardialogprice").html(t_select_price);
+	var t_day = 1;
+	if($("#datepicker").val() != "" && $("#datepicker2").val() != "" && t_key == 1101){
+		t_day = ((new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime())/3600000/24+1;
+	}
+	$("#cardialogprice").html(t_select_price*t_day);
 	//找到当前种类对象
 	//找到当前种类的价格
 	if(t_key == 1101){
