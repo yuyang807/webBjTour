@@ -215,17 +215,17 @@
 				
 			}
 			var flag = ${flag};
-			var cartypeno = ${carTypeNo};
-			var cartypeno = ${carTypeName};
-			var cartypeno = ${startDay};
-			var cartypeno = ${carDay};
-			var cartypeno = ${carServiceNo};
-			var cartypeno = ${carServiceName};
+			var startDay = ${startDay};
 			
-			var cartypeno = ${startDay};
-			var cartypeno = ${serviceName};
-			var cartypeno = ${guideDay};
-			var cartypeno = ${guideNo};
+			var carTypeNo = '${carTypeNo}';
+			var carTypeName = ${carTypeName}+'';
+			var carDay = ${carDay};
+			var carServiceNo = ${carServiceNo};
+			var carServiceName = ${carServiceName};
+			
+			var serviceName = ${serviceName};
+			var guideDay = ${guideDay};
+			var guideNo = ${guideNo};
 			function cardpaysub(){
 				var t_input = $("input.cardPayinput");
 				var t_len = t_input.length;
