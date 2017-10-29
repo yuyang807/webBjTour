@@ -401,7 +401,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    var lineliststr = `
 		    	<li class="tour_details_right_img_li"  onclick="linkfor(/list/{lineNo})">
 					<div class="tour_details_right_img_li_inner"></div>
-					<img class="tour_details_right_img_li_img" src="{fileUrll}" />
+					<img class="tour_details_right_img_li_img" src="{fileUrl}" />
 					<div class="tour_details_right_img_bg"></div>
 					<div class="tour_details_right_img_text">
 						<div class="tour_details_right_img_text_center">
@@ -414,7 +414,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    for(var i in lineList){
 		    	t_linelist_html += lineliststr.format2({
 		    		lineNo:lineList[i].lineNo,
-		    		fileUrll:lineList[i].fileUrll,
+		    		fileUrl:lineList[i].fileUrl,
 		    		lineName:lineList[i].lineName
 		    	});
 		    }

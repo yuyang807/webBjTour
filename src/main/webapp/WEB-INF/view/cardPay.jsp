@@ -156,7 +156,7 @@
 				<input type="hidden" name="orderType" name=${flag}  />
 			`;
 			var flagcarhide = `
-				<input type="text" id="allprice" name="totalPrice" value='' />
+				<input type="text" id="allprice" name="totalPrice" value='100' />
 				<input type="hidden" name="startDate" value="${startDate}" />
 				<input type="hidden" name="carTypeNo" value=${carTypeNo} />
 				<input type="hidden" name="carDay" value=${carDay} />
@@ -164,7 +164,7 @@
 				<input type="hidden" name="orderType" name=${flag}  />
 			`;
 			var flagguidehide = `
-				<input type="text" id="allprice" name="totalPrice" value='' />
+				<input type="text" id="allprice" name="totalPrice" value='200' />
 				<input type="hidden" name="startDate" value="${startDate}" />
 				<input type="hidden" name="guideNo" value=${guideNo} />
 				<input type="hidden" name="guideDay" value=${guideDay} />
