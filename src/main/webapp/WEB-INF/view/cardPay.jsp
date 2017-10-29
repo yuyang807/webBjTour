@@ -37,13 +37,13 @@
 						
 					</div>
 					<div>
-						<input type="text" class="cardPayinput fl" name="fName" reg="firstname" placeholder="First Name" />
-						<input type="text" class="cardPayinput fr" name="lName" reg="lastname" placeholder="Last Name" />
+						<input type="text" class="cardPayinput fl" name="fName" reg="firstname" placeholder="First Name" value="0" />
+						<input type="text" class="cardPayinput fr" name="lName" reg="lastname" placeholder="Last Name" value="0" />
 						<div id="firstname" class="cardPaywaring fl waringhidden">firstname</div>
 						<div id="lastname" class="cardPaywaring fr waringhidden">lastname</div>
 						<div style="clear:both"></div>
-						<input type="text" class="cardPayinput fl" name="emailAddress" reg="eaddress" placeholder="E-mail Address" />
-						<input type="text" class="cardPayinput fr" name="phoneNum" reg="phone" placeholder="Phone" />
+						<input type="text" class="cardPayinput fl" name="emailAddress" reg="eaddress" placeholder="E-mail Address" value="0" />
+						<input type="text" class="cardPayinput fr" name="phoneNum" reg="phone" placeholder="Phone" value="0" />
 						<div id="eaddress" class="cardPaywaring fl waringhidden">firstname</div>
 						<div id="phone" class="cardPaywaring fr waringhidden">lastname</div>
 						<div class="clearboth"></div>
@@ -52,7 +52,7 @@
 						Passport
 					</h2>
 					<div>
-						<input type="text" class="cardPayinput fl" name="" reg="unitedstates" placeholder="Passport Number" />
+						<input type="text" class="cardPayinput fl" name="" reg="unitedstates" placeholder="Passport Number" value="0" />
 						<div class="cardPayinput fr">
 							<select type="text" class="cardPayselect">
 								<option>United States</option>
@@ -65,12 +65,12 @@
 						Hotel
 					</h2>
 					<div>
-						<input type="text" class="cardPayinput fl" name="hotelName" reg="hotelname" placeholder="Hotel Name" />
-						<input type="text" class="cardPayinput fr" name="hotelTel" reg="hotelnumber" placeholder="Hotel Contact Number" />
+						<input type="text" class="cardPayinput fl" name="hotelName" reg="hotelname" placeholder="Hotel Name" value="0" />
+						<input type="text" class="cardPayinput fr" name="hotelTel" reg="hotelnumber" placeholder="Hotel Contact Number" value="0" />
 						<div id="hotelname" class="cardPaywaring fl waringhidden">firstname</div>
 						<div id="hotelnumber" class="cardPaywaring fr waringhidden">lastname</div>
 						<div style="clear:both"></div>
-						<input type="text" style="width:99%;" name="hotelAddress" class="cardPayinput fl" reg="hoteladdress" placeholder="Hotel Address" />
+						<input type="text" style="width:99%;" name="hotelAddress" class="cardPayinput fl" reg="hoteladdress" placeholder="Hotel Address" value="0" />
 						<div id="hoteladdress" class="cardPaywaring fl waringhidden">firstname</div>
 						<div class="clearboth"></div>
 					</div>
@@ -83,7 +83,7 @@
 								<option>Arrival date</option>
 							</select>
 						</div>
-						<input type="text" class="cardPayinput fr" name="aAirplanNum" reg="arrivelairnumber" placeholder="Arrivel airplane number" />
+						<input type="text" class="cardPayinput fr" name="aAirplanNum" reg="arrivelairnumber" placeholder="Arrivel airplane number" value="0" />
 						<div id="arrivelairnumber" class="cardPaywaring fr waringhidden">lastname</div>
 						<div style="clear:both"></div>
 					</div>
@@ -96,7 +96,7 @@
 								<option>Departure date</option>
 							</select>
 						</div>
-						<input type="text" class="cardPayinput fr" name="departureDate" reg="depairnum" placeholder="Departure airplane number" />
+						<input type="text" class="cardPayinput fr" name="departureDate" reg="depairnum" placeholder="Departure airplane number" value="0" />
 						<div id="depairnum" class="cardPaywaring fr waringhidden">lastname</div>
 						<div style="clear:both"></div>
 					</div>
@@ -104,7 +104,7 @@
 						Tour start time
 					</h2>
 					<div>
-						<input type="text" class="cardPayinput fl" name="startTime" reg="starttime" placeholder="start time" />
+						<input type="text" class="cardPayinput fl" name="startTime" reg="starttime" placeholder="start time" value="0" />
 						<div class="cardPayinput fr">
 							<select type="text" class="cardPayselect">
 								<option>AM</option>
@@ -118,9 +118,9 @@
 						Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
 						We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
 					</div>
-					<textarea class="contact_textarea cardPaytextarea fr" name="instructions" ></textarea>
+					<textarea class="contact_textarea cardPaytextarea fr" name="instructions" >0</textarea>
 				</form>
-				<button class="big_submit fr">submit</button>
+				<button class="big_submit fr" onclick="cardpaysub()">submit</button>
 				<div class="clearboth"></div>
 			 </div>
 			 <div class="cardPay_mid fl"></div>
@@ -333,7 +333,15 @@
 					}
 				}
 				if(all_num == t_len){
-					$("#cardpayform").submit();
+					$.ajax({
+						type:"post",
+						url:"/tour/order/submit",
+						data:$('#cardpayform').serialize(),
+						success:function(data){
+							console.log(data);
+						}
+					});
+					
 				}
 			}
 			$(".tour_list_box").on("focus","input",function(){
