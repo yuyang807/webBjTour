@@ -102,7 +102,7 @@
 				<div class="tour_guide_car_list">
 					<div class="tour_guide_td_list_in_new"></div>
 				 	<button class="tour_guide_car_text">{carName}</button>
-				 	<img class="tour_guide_car_img" src="{carPicUrl}" />
+				 	<img class="tour_guide_car_img" src="{fileUrl}" />
 				</div>
 			`;
 			var table_str = `
@@ -147,7 +147,7 @@
 		    	for(var j in onecarmap){
 		    		t_car_list += car_str.format2({
 		    			carName:onecarmap[j]['carName'],
-		    			carPicUrl:onecarmap[j]['carPicUrl']
+		    			fileUrl:onecarmap[j]['fileUrl']
 		    		})
 		    	}
 		    	t_all_table += table_str.format2({

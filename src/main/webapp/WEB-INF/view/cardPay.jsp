@@ -252,7 +252,7 @@
 			 	</div>
 				<div class="clearboth"></div>
 			 	<div class="cardPay_right_total">
-			 		Total Cost: <span>$200</span>
+			 		Total Cost: <span>$ {totalprice}</span>
 			 	</div>
 			`;
 			var flag = ${flag};
