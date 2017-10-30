@@ -156,19 +156,19 @@
 				<input type="hidden" name="orderType" value=${flag}  />
 			`;
 			var flagcarhide = `
-				<input type="text" id="allprice" name="totalPrice" value='100' />
+				<input type="text" id="allprice" name="totalPrice" value='${carDay*unitPrice}' />
 				<input type="hidden" name="startDate" value="${startDate}" />
 				<input type="hidden" name="carTypeNo" value=${carTypeNo} />
 				<input type="hidden" name="carDay" value=${carDay} />
 				<input type="hidden" name="carServiceNo" value=${carServiceNo} />
-				<input type="hidden" name="orderType" name=${flag}  />
+				<input type="hidden" name="orderType" value=${flag}  />
 			`;
 			var flagguidehide = `
-				<input type="text" id="allprice" name="totalPrice" value='200' />
+				<input type="text" id="allprice" name="totalPrice" value='${guideDay*unitPrice}' />
 				<input type="hidden" name="startDate" value="${startDate}" />
 				<input type="hidden" name="guideNo" value=${guideNo} />
 				<input type="hidden" name="guideDay" value=${guideDay} />
-				<input type="hidden" name="orderType" name=${flag}  />
+				<input type="hidden" name="orderType" value=${flag}  />
 			`;
 			var flag1str = `
 				<img class="cardPay_right_img fl" src="{img}" />
@@ -180,7 +180,7 @@
 			 			Date:{datestr}
 			 		</div>
 			 		<div class="cardPay_right_li">
-			 			{adultNum} Adult ${unitPrice}
+			 			{adultNum} Adult $ {unitPrice}
 			 			<span>${allPrice}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
@@ -198,7 +198,7 @@
 			 	</div>
 				<div class="clearboth"></div>
 			 	<div class="cardPay_right_total">
-			 		Total Cost: <span>$200</span>
+			 		Total Cost: <span>$ {totalprice}</span>
 			 	</div>
 			`;
 			var flagcarstr = `
@@ -228,7 +228,7 @@
 			 	</div>
 				<div class="clearboth"></div>
 			 	<div class="cardPay_right_total">
-			 		Total Cost: <span>$200</span>
+			 		Total Cost: <span>$ {totalprice}</span>
 			 	</div>
 			`;
 			var flagguidestr = `
@@ -264,6 +264,7 @@
 					adultNum:'${adultNum}',
 					unitPrice:'${unitPrice}',
 					allPrice:'${unitPrice*adultNum}',
+					totalprice:'${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}'
 				}));
 				$("#hiddensubmit").html(flag1hide);
 			}else if(flag == 2){
@@ -281,7 +282,8 @@
 					carTypeName:'${carTypeName}',
 					carDay:'${carDay}',
 					carServiceNo:'${carServiceNo}',
-					carServiceName:'${carServiceName}'
+					carServiceName:'${carServiceName}',
+					totalprice:'${carDay*unitPrice}'
 				}));
 				$("#hiddensubmit").html(flagcarhide);
 			}else if(flag == 3){
@@ -295,7 +297,8 @@
 					startDate:'${startDate}',
 					guideDay:'${guideDay}',
 					guideNo:'${guideNo}',
-					serviceName:'${serviceName}'
+					serviceName:'${serviceName}',
+					totalprice:'${guideDay*unitPrice}'
 				}));
 				$("#hiddensubmit").html(flagguidehide);
 			}
