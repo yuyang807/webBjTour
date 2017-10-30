@@ -350,10 +350,10 @@
 						type:"post",
 						url:"/tour/order/submit",
 						//data:getserialize($('#cardpayform').serialize()),
-						data:{
-							TOrderDto:TOrderDto,
-							TMemberDto:TMemberDto
-						}
+						dataType:"json",
+						contentType:"application/json",
+						//data:getserialize($('#cardpayform').serialize()),
+						data:JSON.stringify({"tod":JSON.stringify(TOrderDto),"tmd":JSON.stringify(TMemberDto)}),
 						success:function(data){
 							console.log(data.resultCode);
 						}
