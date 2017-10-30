@@ -150,10 +150,10 @@
 				<input type="hidden" name="babyNum" value=${babyNum} />
 				<input type="hidden" name="childNum" value=${childNum} />
 				<input type="hidden" name="startDate" value="${startDate}" />
-				<input type="hidden" name="pickupCarTypeNo" name=${pickupCarTypeNo}  />
-				<input type="hidden" name="dropoffCarTypeNo" name=${dropoffCarTypeNo}  />
-				<input type="hidden" name="showNo" name=${showNo}  />
-				<input type="hidden" name="orderType" name=${flag}  />
+				<input type="hidden" name="pickupCarTypeNo" value=${pickupCarTypeNo}  />
+				<input type="hidden" name="dropoffCarTypeNo" value=${dropoffCarTypeNo}  />
+				<input type="hidden" name="showNo" value=${showNo}  />
+				<input type="hidden" name="orderType" value=${flag}  />
 			`;
 			var flagcarhide = `
 				<input type="text" id="allprice" name="totalPrice" value='100' />
