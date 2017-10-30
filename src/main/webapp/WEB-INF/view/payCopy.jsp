@@ -97,6 +97,7 @@
 				<form id="payCopyformid" action="/tour/confirm" method="post">
 					<input type="hidden" name="lineNo" value=${lineNo} />
 					<input type="hidden" name="adultNum" value=${adultNum} />
+					<input type="hidden" name="childNum" value=${childNum} />
 					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
 					<input type="hidden" name="babyNum" value=${babyNum} />
 					<input type="hidden" name="startDate" value='${startDate}' />
