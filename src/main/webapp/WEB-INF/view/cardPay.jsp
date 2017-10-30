@@ -349,7 +349,11 @@
 					$.ajax({
 						type:"post",
 						url:"/tour/order/submit",
-						data:getserialize($('#cardpayform').serialize()),
+						//data:getserialize($('#cardpayform').serialize()),
+						data:{
+							TOrderDto:TOrderDto,
+							TMemberDto:TMemberDto
+						}
 						success:function(data){
 							console.log(data.resultCode);
 						}
