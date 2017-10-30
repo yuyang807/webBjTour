@@ -94,7 +94,7 @@
 				
 			</div>
 			<div class="contact_list">
-				<form id="payCopyformid" action="/tour/order/submit" method="post">
+				<form id="payCopyformid" action="/tour/confirm" method="post">
 					<input type="hidden" name="lineNo" value=${lineNo} />
 					<input type="hidden" name="adultNum" value=${adultNum} />
 					<input type="hidden" name="teenagerNum" value=${teenagerNum} />
