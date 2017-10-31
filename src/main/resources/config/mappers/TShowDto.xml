@@ -55,25 +55,25 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TShowDto">
-       DELETE FROM t_show WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_show 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="showNo != null ">
-          show_no = #{showNo} AND
+          AND show_no = #{showNo} 
         </if>
         <if test="showName != null ">
-          show_name = #{showName} AND
+          AND show_name = #{showName} 
         </if>
         <if test="rows != null ">
-          rows = #{rows} AND
+          AND rows = #{rows} 
         </if>
         <if test="showPrice != null ">
-          show_price = #{showPrice} AND
+          AND show_price = #{showPrice} 
         </if>
         <if test="remark != null ">
-          remark = #{remark} AND
+          AND remark = #{remark} 
         </if>
        </trim>
     </delete>
@@ -107,25 +107,24 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TShowDto" resultType="TShowDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_show
-       WHERE 1=1
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="showNo != null ">
-          show_no = #{showNo} AND
+          AND show_no = #{showNo} 
         </if>
         <if test="showName != null ">
-          show_name = #{showName} AND
+          AND show_name = #{showName} 
         </if>
         <if test="rows != null ">
-          rows = #{rows} AND
+          AND rows = #{rows} 
         </if>
         <if test="showPrice != null ">
-          show_price = #{showPrice} AND
+          AND show_price = #{showPrice} 
         </if>
         <if test="remark != null ">
-          remark = #{remark} AND
+          AND remark = #{remark} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -134,25 +133,24 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TShowDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_show
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="showNo != null ">
-          show_no = #{showNo} AND
+          AND show_no = #{showNo} 
         </if>
         <if test="showName != null ">
-          show_name = #{showName} AND
+          AND show_name = #{showName} 
         </if>
         <if test="rows != null ">
-          rows = #{rows} AND
+          AND rows = #{rows} 
         </if>
         <if test="showPrice != null ">
-          show_price = #{showPrice} AND
+          AND show_price = #{showPrice} 
         </if>
         <if test="remark != null ">
-          remark = #{remark} AND
+          AND remark = #{remark} 
         </if>
        </trim>
     </select>

@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * PosBossAppInterceptor
+ * 提交次数限制
  *
- * @author lufl
- * @date 2016/4/26
+ * @author yy
+ * @date 2017/4/26
  */
 public class SubmitTimeAppInterceptor implements HandlerInterceptor {
     private static final AppLogger LOGGER = new AppLogger(SubmitTimeAppInterceptor.class);

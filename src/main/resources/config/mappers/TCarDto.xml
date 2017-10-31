@@ -49,22 +49,22 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TCarDto">
-       DELETE FROM t_car WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_car 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="carNo != null ">
-          car_no = #{carNo} AND
+          AND car_no = #{carNo} 
         </if>
         <if test="carName != null ">
-          car_name = #{carName} AND
+          AND car_name = #{carName} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
         </if>
         <if test="picNo != null ">
-          pic_no = #{picNo} AND
+          AND pic_no = #{picNo} 
         </if>
        </trim>
     </delete>
@@ -95,22 +95,21 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TCarDto" resultType="TCarDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_car
-       WHERE 1=1
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="carNo != null ">
-          car_no = #{carNo} AND
+          AND car_no = #{carNo} 
         </if>
         <if test="carName != null ">
-          car_name = #{carName} AND
+          AND car_name = #{carName} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
         </if>
         <if test="picNo != null ">
-          pic_no = #{picNo} AND
+          AND pic_no = #{picNo} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -119,32 +118,32 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TCarDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_car
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="carNo != null ">
-          car_no = #{carNo} AND
+          AND car_no = #{carNo} 
         </if>
         <if test="carName != null ">
-          car_name = #{carName} AND
+          AND car_name = #{carName} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
         </if>
         <if test="picNo != null ">
-          pic_no = #{picNo} AND
+          AND pic_no = #{picNo} 
         </if>
        </trim>
     </select>
 <!-- ##############################################自定义sql分界线##################################################################### -->
 	
 	<select id="queryCarAllInfo" resultType="map">
-		select car_name carName, tc.car_type_no carTypeNo, pic_no picNo, car_type_name carTypeName,half_day_price halfDayPrice, 
-		full_day_price fullDayPrice, mty_price mtyPrice,jsl_price jslPrice, transfer_price transferPrice, suitcases_num suitcasesNum,
-		carryon_num carryonNum from t_car tc, t_carkind tck 
-		where tc.car_type_no = tck.car_type_no
+		select car_name carName, tc.car_type_no carTypeNo, tc.pic_no picNo, file_url fileUrl, car_type_name carTypeName, 
+		half_day_price halfDayPrice,full_day_price fullDayPrice, mty_price mtyPrice,jsl_price jslPrice, transfer_price transferPrice, 
+		suitcases_num suitcasesNum,	carryon_num carryonNum from t_car tc 
+		left join t_carkind tck on tc.car_type_no = tck.car_type_no 
+		left join t_pic tp on tc.pic_no = tp.pic_no
 	</select>
 	
 </mapper>

@@ -5,7 +5,7 @@ import com.yy.tourweb.web.dto.IDto;
 
 /**
   * 订单表(t_order)映射Dto
-  * @version 2017-09-20  * */ 
+  * @version 2017-10-28  * */ 
 public class TOrderDto implements IDto {
     /**
      * 
@@ -32,14 +32,6 @@ public class TOrderDto implements IDto {
      * */
     private String arrivalDate;
     /**
-     * 范围查询到达日期使用
-     * */
-    private String startArrivalDate;
-    /**
-     * 范围查询到达日期使用
-     * */
-    private String endArrivalDate;
-    /**
      * 到达航班号
      * */
     private String aAirplanNum;
@@ -47,14 +39,6 @@ public class TOrderDto implements IDto {
      * 离开日期
      * */
     private String departureDate;
-    /**
-     * 范围查询离开日期使用
-     * */
-    private String startDepartureDate;
-    /**
-     * 范围查询离开日期使用
-     * */
-    private String endDepartureDate;
     /**
      * 离开航班号
      * */
@@ -64,21 +48,13 @@ public class TOrderDto implements IDto {
      * */
     private String startDate;
     /**
-     * 范围查询订单开始日期使用
-     * */
-    private String startStartDate;
-    /**
-     * 范围查询订单开始日期使用
-     * */
-    private String endStartDate;
-    /**
      * 行程开始时间(时:分:秒)
      * */
     private String startTime;
     /**
      * 总价
      * */
-    private Integer totalPrice;
+    private String totalPrice;
     /**
      * 成人价格
      * */
@@ -102,7 +78,7 @@ public class TOrderDto implements IDto {
     /**
      * 线路总价钱
      * */
-    private Integer linePrice;
+    private String linePrice;
     /**
      * 演出1编号
      * */
@@ -128,12 +104,16 @@ public class TOrderDto implements IDto {
      * */
     private Integer carTypeNo;
     /**
+     * 车辆服务编号
+     * */
+    private Integer carServiceNo;
+    /**
      * 车总价格
      * */
     private Integer carPrice;
     /**
      * 租车天数
-     */
+     * */
     private Integer carDay;
     /**
      * 导游服务编号
@@ -151,6 +131,10 @@ public class TOrderDto implements IDto {
      * 订单状态(1:创建待确认;2:已确认待服务;3:已服务;4:已拒绝)
      * */
     private Integer orderStatus;
+    /**
+     * 订单类型(1:线路;2:车;3:导游)
+     * */
+    private Integer orderType;
     /**
      * 其他说明信息
      * */
@@ -257,6 +241,19 @@ public class TOrderDto implements IDto {
         return hotelAddress;
     }
 
+    /**
+     * setArrivalDate 到达日期
+     * */
+    public void setArrivalDate(String arrivalDate) {
+        this.arrivalDate=arrivalDate;
+    }
+
+    /**
+     * getArrivalDate 到达日期
+     * */
+    public String getArrivalDate() {
+        return arrivalDate;
+    }
 
     /**
      * setAAirplanNum 到达航班号
@@ -273,6 +270,20 @@ public class TOrderDto implements IDto {
     }
 
     /**
+     * setDepartureDate 离开日期
+     * */
+    public void setDepartureDate(String departureDate) {
+        this.departureDate=departureDate;
+    }
+
+    /**
+     * getDepartureDate 离开日期
+     * */
+    public String getDepartureDate() {
+        return departureDate;
+    }
+
+    /**
      * setDAirplanNum 离开航班号
      * */
     public void setDAirplanNum(String dAirplanNum) {
@@ -284,6 +295,20 @@ public class TOrderDto implements IDto {
      * */
     public String getDAirplanNum() {
         return dAirplanNum;
+    }
+
+    /**
+     * setStartDate 订单开始日期
+     * */
+    public void setStartDate(String startDate) {
+        this.startDate=startDate;
+    }
+
+    /**
+     * getStartDate 订单开始日期
+     * */
+    public String getStartDate() {
+        return startDate;
     }
 
     /**
@@ -303,14 +328,14 @@ public class TOrderDto implements IDto {
     /**
      * setTotalPrice 总价
      * */
-    public void setTotalPrice(Integer totalPrice) {
+    public void setTotalPrice(String totalPrice) {
         this.totalPrice=totalPrice;
     }
 
     /**
      * getTotalPrice 总价
      * */
-    public Integer getTotalPrice() {
+    public String getTotalPrice() {
         return totalPrice;
     }
 
@@ -387,14 +412,14 @@ public class TOrderDto implements IDto {
     /**
      * setLinePrice 线路总价钱
      * */
-    public void setLinePrice(Integer linePrice) {
+    public void setLinePrice(String linePrice) {
         this.linePrice=linePrice;
     }
 
     /**
      * getLinePrice 线路总价钱
      * */
-    public Integer getLinePrice() {
+    public String getLinePrice() {
         return linePrice;
     }
 
@@ -476,10 +501,24 @@ public class TOrderDto implements IDto {
     }
 
     /**
-     * getCarTypeNoo 车类型编号
+     * getCarTypeNo 车类型编号
      * */
     public Integer getCarTypeNo() {
         return carTypeNo;
+    }
+
+    /**
+     * setCarServiceNo 车辆服务编号
+     * */
+    public void setCarServiceNo(Integer carServiceNo) {
+        this.carServiceNo=carServiceNo;
+    }
+
+    /**
+     * getCarServiceNo 车辆服务编号
+     * */
+    public Integer getCarServiceNo() {
+        return carServiceNo;
     }
 
     /**
@@ -494,6 +533,20 @@ public class TOrderDto implements IDto {
      * */
     public Integer getCarPrice() {
         return carPrice;
+    }
+
+    /**
+     * setCarDay 租车天数
+     * */
+    public void setCarDay(Integer carDay) {
+        this.carDay=carDay;
+    }
+
+    /**
+     * getCarDay 租车天数
+     * */
+    public Integer getCarDay() {
+        return carDay;
     }
 
     /**
@@ -550,6 +603,20 @@ public class TOrderDto implements IDto {
      * */
     public Integer getOrderStatus() {
         return orderStatus;
+    }
+
+    /**
+     * setOrderType 订单类型(1:线路;2:车;3:导游)
+     * */
+    public void setOrderType(Integer orderType) {
+        this.orderType=orderType;
+    }
+
+    /**
+     * getOrderType 订单类型(1:线路;2:车;3:导游)
+     * */
+    public Integer getOrderType() {
+        return orderType;
     }
 
     /**
@@ -675,116 +742,4 @@ public class TOrderDto implements IDto {
         return orderByStr;
     }
 
-	public String getArrivalDate() {
-		return arrivalDate;
-	}
-
-	public void setArrivalDate(String arrivalDate) {
-		this.arrivalDate = arrivalDate;
-	}
-
-	public String getStartArrivalDate() {
-		return startArrivalDate;
-	}
-
-	public void setStartArrivalDate(String startArrivalDate) {
-		this.startArrivalDate = startArrivalDate;
-	}
-
-	public String getEndArrivalDate() {
-		return endArrivalDate;
-	}
-
-	public void setEndArrivalDate(String endArrivalDate) {
-		this.endArrivalDate = endArrivalDate;
-	}
-
-	public String getDepartureDate() {
-		return departureDate;
-	}
-
-	public void setDepartureDate(String departureDate) {
-		this.departureDate = departureDate;
-	}
-
-	public String getStartDepartureDate() {
-		return startDepartureDate;
-	}
-
-	public void setStartDepartureDate(String startDepartureDate) {
-		this.startDepartureDate = startDepartureDate;
-	}
-
-	public String getEndDepartureDate() {
-		return endDepartureDate;
-	}
-
-	public void setEndDepartureDate(String endDepartureDate) {
-		this.endDepartureDate = endDepartureDate;
-	}
-
-	public String getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-
-	public String getStartStartDate() {
-		return startStartDate;
-	}
-
-	public void setStartStartDate(String startStartDate) {
-		this.startStartDate = startStartDate;
-	}
-
-	public String getEndStartDate() {
-		return endStartDate;
-	}
-
-	public void setEndStartDate(String endStartDate) {
-		this.endStartDate = endStartDate;
-	}
-
-	public Date getStartCreateDate() {
-		return startCreateDate;
-	}
-
-	public void setStartCreateDate(Date startCreateDate) {
-		this.startCreateDate = startCreateDate;
-	}
-
-	public Date getEndCreateDate() {
-		return endCreateDate;
-	}
-
-	public void setEndCreateDate(Date endCreateDate) {
-		this.endCreateDate = endCreateDate;
-	}
-
-	public Date getStartUpdateDate() {
-		return startUpdateDate;
-	}
-
-	public void setStartUpdateDate(Date startUpdateDate) {
-		this.startUpdateDate = startUpdateDate;
-	}
-
-	public Date getEndUpdateDate() {
-		return endUpdateDate;
-	}
-
-	public void setEndUpdateDate(Date endUpdateDate) {
-		this.endUpdateDate = endUpdateDate;
-	}
-
-	public Integer getCarDay() {
-		return carDay;
-	}
-
-	public void setCarDay(Integer carDay) {
-		this.carDay = carDay;
-	}
-    
 }

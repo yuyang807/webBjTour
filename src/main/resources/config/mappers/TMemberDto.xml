@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TMemberDto">
 
     <sql id="Base_Column_List" >
-         id, member_no, email_address, f_name, l_name, passport_num, phone_num, ip1, ip2, ip3, ip4, createDate, updateDate
+         id, member_no, email_address, f_name, l_name, passport_num, phone_num, ip1, ip2, ip3, ip4, status, create_date, update_date
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TMemberDto">
@@ -42,12 +42,11 @@
         <if test="ip4 != null ">
           ip4,
         </if>
-        <if test="createDate != null ">
+        <if test="status != null ">
+          status,
+        </if>
           create_date,
-        </if>
-        <if test="updateDate != null ">
           update_date,
-        </if>
        </trim>
        <trim prefix="values (" suffix=")" suffixOverrides="," >
         <if test="id != null ">
@@ -83,12 +82,11 @@
         <if test="ip4 != null ">
           #{ip4},
         </if>
-        <if test="createDate != null ">
-          #{createDate},
+        <if test="status != null ">
+          #{status},
         </if>
-        <if test="updateDate != null ">
-          #{updateDate},
-        </if>
+          current_timestamp(),
+          current_timestamp(),
        </trim>
     </insert>
 
@@ -97,40 +95,61 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TMemberDto">
-       DELETE FROM t_member WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_member 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="memberNo != null ">
-          member_no = #{memberNo} AND
+          AND member_no = #{memberNo} 
         </if>
         <if test="emailAddress != null ">
-          email_address = #{emailAddress} AND
+          AND email_address = #{emailAddress} 
         </if>
         <if test="fName != null ">
-          f_name = #{fName} AND
+          AND f_name = #{fName} 
         </if>
         <if test="lName != null ">
-          l_name = #{lName} AND
+          AND l_name = #{lName} 
         </if>
         <if test="passportNum != null ">
-          passport_num = #{passportNum} AND
+          AND passport_num = #{passportNum} 
         </if>
         <if test="phoneNum != null ">
-          phone_num = #{phoneNum} AND
+          AND phone_num = #{phoneNum} 
         </if>
         <if test="ip1 != null ">
-          ip1 = #{ip1} AND
+          AND ip1 = #{ip1} 
         </if>
         <if test="ip2 != null ">
-          ip2 = #{ip2} AND
+          AND ip2 = #{ip2} 
         </if>
         <if test="ip3 != null ">
-          ip3 = #{ip3} AND
+          AND ip3 = #{ip3} 
         </if>
         <if test="ip4 != null ">
-          ip4 = #{ip4} AND
+          AND ip4 = #{ip4} 
+        </if>
+        <if test="status != null ">
+          AND status = #{status} 
+        </if>
+        <if test="createDate != null ">
+          AND create_date = #{createDate} 
+        </if>
+        <if test="startCreateDate != null ">
+          AND create_date >= #{startCreateDate} 
+        </if>
+        <if test="endCreateDate != null ">
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
+        </if>
+        <if test="updateDate != null ">
+          AND update_date = #{updateDate} 
+        </if>
+        <if test="startUpdateDate != null ">
+          AND update_date >= #{startUpdateDate} 
+        </if>
+        <if test="endUpdateDate != null ">
+          AND update_date <![CDATA[<=]]> #{endUpdateDate} 
         </if>
        </trim>
     </delete>
@@ -168,9 +187,15 @@
         <if test="ip4 != null ">
           ip4 = #{ip4} ,
         </if>
+        <if test="status != null ">
+          status = #{status} ,
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} ,
+        </if>
         update_date=current_timestamp(),
        </trim>
-       WHERE id = #{id}
+       WHERE member_no = #{memberNo} 
        <if test="updateDate != null" >
           AND update_date = #{updateDate}
        </if>
@@ -179,40 +204,60 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TMemberDto" resultType="TMemberDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_member
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="memberNo != null ">
-          member_no = #{memberNo} AND
+          AND member_no = #{memberNo} 
         </if>
         <if test="emailAddress != null ">
-          email_address = #{emailAddress} AND
+          AND email_address = #{emailAddress} 
         </if>
         <if test="fName != null ">
-          f_name = #{fName} AND
+          AND f_name = #{fName} 
         </if>
         <if test="lName != null ">
-          l_name = #{lName} AND
+          AND l_name = #{lName} 
         </if>
         <if test="passportNum != null ">
-          passport_num = #{passportNum} AND
+          AND passport_num = #{passportNum} 
         </if>
         <if test="phoneNum != null ">
-          phone_num = #{phoneNum} AND
+          AND phone_num = #{phoneNum} 
         </if>
         <if test="ip1 != null ">
-          ip1 = #{ip1} AND
+          AND ip1 = #{ip1} 
         </if>
         <if test="ip2 != null ">
-          ip2 = #{ip2} AND
+          AND ip2 = #{ip2} 
         </if>
         <if test="ip3 != null ">
-          ip3 = #{ip3} AND
+          AND ip3 = #{ip3} 
         </if>
         <if test="ip4 != null ">
-          ip4 = #{ip4} AND
+          AND ip4 = #{ip4} 
+        </if>
+        <if test="status != null ">
+          AND status = #{status} 
+        </if>
+        <if test="createDate != null ">
+          AND create_date = #{createDate} 
+        </if>
+        <if test="startCreateDate != null ">
+          AND create_date >= #{startCreateDate} 
+        </if>
+        <if test="endCreateDate != null ">
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
+        </if>
+        <if test="updateDate != null ">
+          AND update_date = #{updateDate} 
+        </if>
+        <if test="startUpdateDate != null ">
+          AND update_date >= #{startUpdateDate} 
+        </if>
+        <if test="endUpdateDate != null ">
+          AND update_date <![CDATA[<=]]> #{endUpdateDate} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -221,42 +266,65 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TMemberDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_member
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="memberNo != null ">
-          member_no = #{memberNo} AND
+          AND member_no = #{memberNo} 
         </if>
         <if test="emailAddress != null ">
-          email_address = #{emailAddress} AND
+          AND email_address = #{emailAddress} 
         </if>
         <if test="fName != null ">
-          f_name = #{fName} AND
+          AND f_name = #{fName} 
         </if>
         <if test="lName != null ">
-          l_name = #{lName} AND
+          AND l_name = #{lName} 
         </if>
         <if test="passportNum != null ">
-          passport_num = #{passportNum} AND
+          AND passport_num = #{passportNum} 
         </if>
         <if test="phoneNum != null ">
-          phone_num = #{phoneNum} AND
+          AND phone_num = #{phoneNum} 
         </if>
         <if test="ip1 != null ">
-          ip1 = #{ip1} AND
+          AND ip1 = #{ip1} 
         </if>
         <if test="ip2 != null ">
-          ip2 = #{ip2} AND
+          AND ip2 = #{ip2} 
         </if>
         <if test="ip3 != null ">
-          ip3 = #{ip3} AND
+          AND ip3 = #{ip3} 
         </if>
         <if test="ip4 != null ">
-          ip4 = #{ip4} AND
+          AND ip4 = #{ip4} 
+        </if>
+        <if test="status != null ">
+          AND status = #{status} 
+        </if>
+        <if test="createDate != null ">
+          AND create_date = #{createDate} 
+        </if>
+        <if test="startCreateDate != null ">
+          AND create_date >= #{startCreateDate} 
+        </if>
+        <if test="endCreateDate != null ">
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
+        </if>
+        <if test="updateDate != null ">
+          AND update_date = #{updateDate} 
+        </if>
+        <if test="startUpdateDate != null ">
+          AND update_date >= #{startUpdateDate} 
+        </if>
+        <if test="endUpdateDate != null ">
+          AND update_date <![CDATA[<=]]> #{endUpdateDate} 
         </if>
        </trim>
     </select>
 <!-- ##############################################自定义sql分界线##################################################################### -->
+	<select id="queryNextMemNo" resultType="java.lang.Integer">
+		select MAX(member_no)+1 from t_member
+	</select>
 </mapper>

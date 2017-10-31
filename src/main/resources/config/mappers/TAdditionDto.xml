@@ -37,16 +37,16 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TAdditionDto">
-       DELETE FROM t_addition WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_addition 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="addNo != null ">
-          add_no = #{addNo} AND
+          AND add_no = #{addNo} 
         </if>
         <if test="addValue != null ">
-          add_value = #{addValue} AND
+          AND add_value = #{addValue} 
         </if>
        </trim>
     </delete>
@@ -71,16 +71,15 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TAdditionDto" resultType="TAdditionDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_addition
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          id = #{id} 
         </if>
         <if test="addNo != null ">
-          add_no = #{addNo} AND
+          AND add_no = #{addNo} 
         </if>
         <if test="addValue != null ">
-          add_value = #{addValue} AND
+          AND add_value = #{addValue} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -89,16 +88,15 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TAdditionDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_addition
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          id = #{id} 
         </if>
         <if test="addNo != null ">
-          add_no = #{addNo} AND
+          AND add_no = #{addNo} 
         </if>
         <if test="addValue != null ">
-          add_value = #{addValue} AND
+          AND add_value = #{addValue} 
         </if>
        </trim>
     </select>

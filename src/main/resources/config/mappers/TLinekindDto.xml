@@ -37,16 +37,16 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TLinekindDto">
-       DELETE FROM t_linekind WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_linekind 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="typeNo != null ">
-          type_no = #{typeNo} AND
+          AND type_no = #{typeNo} 
         </if>
         <if test="typeName != null ">
-          type_name = #{typeName} AND
+          AND type_name = #{typeName} 
         </if>
        </trim>
     </delete>
@@ -71,16 +71,15 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TLinekindDto" resultType="TLinekindDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_linekind
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="typeNo != null ">
-          type_no = #{typeNo} AND
+          AND type_no = #{typeNo} 
         </if>
         <if test="typeName != null ">
-          type_name = #{typeName} AND
+          AND type_name = #{typeName} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -89,16 +88,15 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TLinekindDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_linekind
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="typeNo != null ">
-          type_no = #{typeNo} AND
+          AND type_no = #{typeNo} 
         </if>
         <if test="typeName != null ">
-          type_name = #{typeName} AND
+          AND type_name = #{typeName} 
         </if>
        </trim>
     </select>
