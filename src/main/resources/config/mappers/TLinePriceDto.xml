@@ -91,43 +91,43 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TLinePriceDto">
-       DELETE FROM t_line_price WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_line_price 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="oneP != null ">
-          one_p = #{oneP} AND
+          AND one_p = #{oneP} 
         </if>
         <if test="twoP != null ">
-          two_p = #{twoP} AND
+          AND two_p = #{twoP} 
         </if>
         <if test="threeP != null ">
-          three_p = #{threeP} AND
+          AND three_p = #{threeP} 
         </if>
         <if test="fourP != null ">
-          four_p = #{fourP} AND
+          AND four_p = #{fourP} 
         </if>
         <if test="fiveP != null ">
-          five_p = #{fiveP} AND
+          AND five_p = #{fiveP} 
         </if>
         <if test="sixP != null ">
-          six_p = #{sixP} AND
+          AND six_p = #{sixP} 
         </if>
         <if test="sevenP != null ">
-          seven_p = #{sevenP} AND
+          AND seven_p = #{sevenP} 
         </if>
         <if test="eightP != null ">
-          eight_p = #{eightP} AND
+          AND eight_p = #{eightP} 
         </if>
         <if test="nineP != null ">
-          nine_p = #{nineP} AND
+          AND nine_p = #{nineP} 
         </if>
         <if test="tenP != null ">
-          ten_p = #{tenP} AND
+          AND ten_p = #{tenP} 
         </if>
        </trim>
     </delete>
@@ -179,43 +179,42 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TLinePriceDto" resultType="TLinePriceDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_line_price
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="oneP != null ">
-          one_p = #{oneP} AND
+          AND one_p = #{oneP} 
         </if>
         <if test="twoP != null ">
-          two_p = #{twoP} AND
+          AND two_p = #{twoP} 
         </if>
         <if test="threeP != null ">
-          three_p = #{threeP} AND
+          AND three_p = #{threeP} 
         </if>
         <if test="fourP != null ">
-          four_p = #{fourP} AND
+          AND four_p = #{fourP} 
         </if>
         <if test="fiveP != null ">
-          five_p = #{fiveP} AND
+          AND five_p = #{fiveP} 
         </if>
         <if test="sixP != null ">
-          six_p = #{sixP} AND
+          AND six_p = #{sixP} 
         </if>
         <if test="sevenP != null ">
-          seven_p = #{sevenP} AND
+          AND seven_p = #{sevenP} 
         </if>
         <if test="eightP != null ">
-          eight_p = #{eightP} AND
+          AND eight_p = #{eightP} 
         </if>
         <if test="nineP != null ">
-          nine_p = #{nineP} AND
+          AND nine_p = #{nineP} 
         </if>
         <if test="tenP != null ">
-          ten_p = #{tenP} AND
+          AND ten_p = #{tenP} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -224,43 +223,42 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TLinePriceDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_line_price
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="oneP != null ">
-          one_p = #{oneP} AND
+          AND one_p = #{oneP} 
         </if>
         <if test="twoP != null ">
-          two_p = #{twoP} AND
+          AND two_p = #{twoP} 
         </if>
         <if test="threeP != null ">
-          three_p = #{threeP} AND
+          AND three_p = #{threeP} 
         </if>
         <if test="fourP != null ">
-          four_p = #{fourP} AND
+          AND four_p = #{fourP} 
         </if>
         <if test="fiveP != null ">
-          five_p = #{fiveP} AND
+          AND five_p = #{fiveP} 
         </if>
         <if test="sixP != null ">
-          six_p = #{sixP} AND
+          AND six_p = #{sixP} 
         </if>
         <if test="sevenP != null ">
-          seven_p = #{sevenP} AND
+          AND seven_p = #{sevenP} 
         </if>
         <if test="eightP != null ">
-          eight_p = #{eightP} AND
+          AND eight_p = #{eightP} 
         </if>
         <if test="nineP != null ">
-          nine_p = #{nineP} AND
+          AND nine_p = #{nineP} 
         </if>
         <if test="tenP != null ">
-          ten_p = #{tenP} AND
+          AND ten_p = #{tenP} 
         </if>
        </trim>
     </select>

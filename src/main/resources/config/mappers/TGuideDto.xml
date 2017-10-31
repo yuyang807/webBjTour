@@ -61,28 +61,28 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TGuideDto">
-       DELETE FROM t_guide WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_guide 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="guideNo != null ">
-          guide_no = #{guideNo} AND
+          AND guide_no = #{guideNo} 
         </if>
         <if test="serviceName != null ">
-          service_name = #{serviceName} AND
+          AND service_name = #{serviceName} 
         </if>
         <if test="serviceDuration != null ">
-          service_duration = #{serviceDuration} AND
+          AND service_duration = #{serviceDuration} 
         </if>
         <if test="customizable != null ">
-          customizable = #{customizable} AND
+          AND customizable = #{customizable} 
         </if>
         <if test="price != null ">
-          price = #{price} AND
+          AND price = #{price} 
         </if>
         <if test="introduction != null ">
-          introduction = #{introduction} AND
+          AND introduction = #{introduction} 
         </if>
        </trim>
     </delete>
@@ -119,28 +119,27 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TGuideDto" resultType="TGuideDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_guide
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="guideNo != null ">
-          guide_no = #{guideNo} AND
+          AND guide_no = #{guideNo} 
         </if>
         <if test="serviceName != null ">
-          service_name = #{serviceName} AND
+          AND service_name = #{serviceName} 
         </if>
         <if test="serviceDuration != null ">
-          service_duration = #{serviceDuration} AND
+          AND service_duration = #{serviceDuration} 
         </if>
         <if test="customizable != null ">
-          customizable = #{customizable} AND
+          AND customizable = #{customizable} 
         </if>
         <if test="price != null ">
-          price = #{price} AND
+          AND price = #{price} 
         </if>
         <if test="introduction != null ">
-          introduction = #{introduction} AND
+          AND introduction = #{introduction} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -149,28 +148,27 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TGuideDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_guide
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="guideNo != null ">
-          guide_no = #{guideNo} AND
+          AND guide_no = #{guideNo} 
         </if>
         <if test="serviceName != null ">
-          service_name = #{serviceName} AND
+          AND service_name = #{serviceName} 
         </if>
         <if test="serviceDuration != null ">
-          service_duration = #{serviceDuration} AND
+          AND service_duration = #{serviceDuration} 
         </if>
         <if test="customizable != null ">
-          customizable = #{customizable} AND
+          AND customizable = #{customizable} 
         </if>
         <if test="price != null ">
-          price = #{price} AND
+          AND price = #{price} 
         </if>
         <if test="introduction != null ">
-          introduction = #{introduction} AND
+          AND introduction = #{introduction} 
         </if>
        </trim>
     </select>

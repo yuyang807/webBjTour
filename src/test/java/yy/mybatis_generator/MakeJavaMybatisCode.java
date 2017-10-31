@@ -23,7 +23,7 @@ public class MakeJavaMybatisCode {
     public static final String user = "appuser";  
     public static final String password = "appuser";
     //需要生成的表名称,生成多个时以","分割开。为空时按整库生成
-    public static final String tableNames = "t_order";
+    public static final String tableNames = "t_carkind_service";
     
     public static final String filePath="D:/workspace_tmp/webBJTour/src/main/java/com/yy/tourweb/web";
     
@@ -138,7 +138,7 @@ public class MakeJavaMybatisCode {
                     insertMapperBuf1.append("          #{").append(camelCaseColumnName).append("},\n").append("        </if>\n");
                     //表字段映射的java数据类型字段
                     String javadataType = MySqlDateTypeMappingEnum.getEnum(columndataType).getDesc();
-                    whereMapperBuf.append("          ").append(columnName).append(" = #{").append(camelCaseColumnName).append("} AND\n").append("        </if>\n");
+                    whereMapperBuf.append("          AND ").append(columnName).append(" = #{").append(camelCaseColumnName).append("} \n").append("        </if>\n");
                     if (!columnName.equals(primaryKey)&&!"update_date".equals(columnName)) {
                         updateMapperBuf.append("        <if test=\"").append(camelCaseColumnName).append(" != null \">\n");
                         updateMapperBuf.append("          ").append(columnName).append(" = #{").append(camelCaseColumnName).append("} ,\n").append("        </if>\n");
@@ -182,9 +182,9 @@ public class MakeJavaMybatisCode {
                         setgetBuf.append("        return ").append("end"+firstCharUpperColumnName).append(";\n").append("    }\n\n");
                         
                         whereMapperBuf.append("        <if test=\"").append("start"+firstCharUpperColumnName).append(" != null \">\n");
-                        whereMapperBuf.append("          ").append(columnName).append(" >= #{").append("start"+firstCharUpperColumnName).append("} AND\n").append("        </if>\n");
+                        whereMapperBuf.append("          AND ").append(columnName).append(" >= #{").append("start"+firstCharUpperColumnName).append("} \n").append("        </if>\n");
                         whereMapperBuf.append("        <if test=\"").append("end"+firstCharUpperColumnName).append(" != null \">\n");
-                        whereMapperBuf.append("          ").append(columnName).append(" <![CDATA[<=]]> #{").append("end"+firstCharUpperColumnName).append("} AND\n").append("        </if>\n");
+                        whereMapperBuf.append("          AND ").append(columnName).append(" <![CDATA[<=]]> #{").append("end"+firstCharUpperColumnName).append("} \n").append("        </if>\n");
                     }
                 }
                 
@@ -214,8 +214,8 @@ public class MakeJavaMybatisCode {
                 mapperXml.append("       DELETE FROM ").append(tableName).append(" WHERE ").append(primaryKey).append(" = #{").append(toCamelCase(primaryKey)).append("};\n");
                 mapperXml.append("    </delete>\n\n");
                 mapperXml.append("    <delete id=\"delete\" parameterType=\"").append(mainPackage).append(".dto.").append(className).append("\">\n");
-                mapperXml.append("       DELETE FROM ").append(tableName).append(" WHERE \n");
-                mapperXml.append("       <trim suffix=\"\" suffixOverrides=\"AND\">\n");
+                mapperXml.append("       DELETE FROM ").append(tableName).append(" \n");
+                mapperXml.append("       <trim prefix=\"WHERE\" prefixOverrides=\"AND\">\n");
                 mapperXml.append(whereMapperBuf).append("       </trim>\n");
                 mapperXml.append("    </delete>\n\n");
                 mapperXml.append("    <update id=\"update\" parameterType=\"").append(mainPackage).append(".dto.").append(className).append("\">\n");
@@ -231,8 +231,7 @@ public class MakeJavaMybatisCode {
                 mapperXml.append(" resultType=\"").append(className).append("\">\n");
                 mapperXml.append("       SELECT <include refid=\"Base_Column_List\" />").append("\n");
                 mapperXml.append("       FROM ").append(tableName).append("\n");
-                mapperXml.append("       WHERE ").append("\n");
-                mapperXml.append("       <trim suffix=\"\" suffixOverrides=\"AND\">\n");
+                mapperXml.append("       <trim prefix=\"WHERE\" prefixOverrides=\"AND\">\n");
                 mapperXml.append(whereMapperBuf).append("       </trim>\n");
                 mapperXml.append("       <if test=\"orderByStr != null\">\n");
                 mapperXml.append("       order by ${orderByStr}\n");
@@ -241,8 +240,7 @@ public class MakeJavaMybatisCode {
                 mapperXml.append("    <select id=\"count\" parameterType=\"").append(mainPackage).append(".dto.").append(className).append("\"");
                 mapperXml.append(" resultType=\"java.lang.Long\">\n");
                 mapperXml.append("       SELECT count(*) FROM ").append(tableName).append("\n");
-                mapperXml.append("       WHERE ").append("\n");
-                mapperXml.append("       <trim suffix=\"\" suffixOverrides=\"AND\">\n");
+                mapperXml.append("       <trim prefix=\"WHERE\" prefixOverrides=\"AND\">\n");
                 mapperXml.append(whereMapperBuf).append("       </trim>\n");
                 mapperXml.append("    </select>\n");
                 

@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TCarkindDto">
 
     <sql id="Base_Column_List" >
-         id, car_type_no, car_type_name, half_day_price, full_day_price, mty_price, jsl_price, transfer_price, suitcases_num, carryon_num
+         id, car_type_no, car_type_name, transfer_price, suitcases_num, carryon_num
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TCarkindDto">
@@ -17,18 +17,6 @@
         </if>
         <if test="carTypeName != null ">
           car_type_name,
-        </if>
-        <if test="halfDayPrice != null ">
-          half_day_price,
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price,
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price,
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price,
         </if>
         <if test="transferPrice != null ">
           transfer_price,
@@ -50,18 +38,6 @@
         <if test="carTypeName != null ">
           #{carTypeName},
         </if>
-        <if test="halfDayPrice != null ">
-          #{halfDayPrice},
-        </if>
-        <if test="fullDayPrice != null ">
-          #{fullDayPrice},
-        </if>
-        <if test="mtyPrice != null ">
-          #{mtyPrice},
-        </if>
-        <if test="jslPrice != null ">
-          #{jslPrice},
-        </if>
         <if test="transferPrice != null ">
           #{transferPrice},
         </if>
@@ -79,37 +55,25 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TCarkindDto">
-       DELETE FROM t_carkind WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_carkind 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
         </if>
         <if test="carTypeName != null ">
-          car_type_name = #{carTypeName} AND
-        </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} AND
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} AND
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} AND
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} AND
+          AND car_type_name = #{carTypeName} 
         </if>
         <if test="transferPrice != null ">
-          transfer_price = #{transferPrice} AND
+          AND transfer_price = #{transferPrice} 
         </if>
         <if test="suitcasesNum != null ">
-          suitcases_num = #{suitcasesNum} AND
+          AND suitcases_num = #{suitcasesNum} 
         </if>
         <if test="carryonNum != null ">
-          carryon_num = #{carryonNum} AND
+          AND carryon_num = #{carryonNum} 
         </if>
        </trim>
     </delete>
@@ -122,18 +86,6 @@
         </if>
         <if test="carTypeName != null ">
           car_type_name = #{carTypeName} ,
-        </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} ,
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} ,
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} ,
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} ,
         </if>
         <if test="transferPrice != null ">
           transfer_price = #{transferPrice} ,
@@ -155,37 +107,24 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TCarkindDto" resultType="TCarkindDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_carkind
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
         </if>
         <if test="carTypeName != null ">
-          car_type_name = #{carTypeName} AND
-        </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} AND
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} AND
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} AND
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} AND
+          AND car_type_name = #{carTypeName} 
         </if>
         <if test="transferPrice != null ">
-          transfer_price = #{transferPrice} AND
+          AND transfer_price = #{transferPrice} 
         </if>
         <if test="suitcasesNum != null ">
-          suitcases_num = #{suitcasesNum} AND
+          AND suitcases_num = #{suitcasesNum} 
         </if>
         <if test="carryonNum != null ">
-          carryon_num = #{carryonNum} AND
+          AND carryon_num = #{carryonNum} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -194,39 +133,38 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TCarkindDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_carkind
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
         </if>
         <if test="carTypeName != null ">
-          car_type_name = #{carTypeName} AND
-        </if>
-        <if test="halfDayPrice != null ">
-          half_day_price = #{halfDayPrice} AND
-        </if>
-        <if test="fullDayPrice != null ">
-          full_day_price = #{fullDayPrice} AND
-        </if>
-        <if test="mtyPrice != null ">
-          mty_price = #{mtyPrice} AND
-        </if>
-        <if test="jslPrice != null ">
-          jsl_price = #{jslPrice} AND
+          AND car_type_name = #{carTypeName} 
         </if>
         <if test="transferPrice != null ">
-          transfer_price = #{transferPrice} AND
+          AND transfer_price = #{transferPrice} 
         </if>
         <if test="suitcasesNum != null ">
-          suitcases_num = #{suitcasesNum} AND
+          AND suitcases_num = #{suitcasesNum} 
         </if>
         <if test="carryonNum != null ">
-          carryon_num = #{carryonNum} AND
+          AND carryon_num = #{carryonNum} 
         </if>
        </trim>
     </select>
 <!-- ##############################################自定义sql分界线##################################################################### -->
+
+		
+	<select id="queryCarAllInfo" resultType="map">
+		SELECT car_name carName, tc.car_type_no carTypeNo,	tc.pic_no picNo, file_url fileUrl, car_type_name carTypeName, 
+			(select car_service_price from t_carkind_service tcs where car_service_no='1104' and tcs.car_type_no = tc.car_type_no) halfDayPrice,
+			(select car_service_price from t_carkind_service tcs where car_service_no='1101' and tcs.car_type_no = tc.car_type_no) fullDayPrice,
+			(select car_service_price from t_carkind_service tcs where car_service_no='1102' and tcs.car_type_no = tc.car_type_no) mtyPrice,
+			(select car_service_price from t_carkind_service tcs where car_service_no='1103' and tcs.car_type_no = tc.car_type_no) jslPrice,
+			transfer_price transferPrice,	suitcases_num suitcasesNum,	carryon_num carryonNum FROM	t_car tc
+		LEFT JOIN t_carkind tck ON tc.car_type_no = tck.car_type_no
+		LEFT JOIN t_pic tp ON tc.pic_no = tp.pic_no
+	</select>
 </mapper>

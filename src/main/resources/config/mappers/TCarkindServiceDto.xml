@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yy.tourweb.web.dto.TCarkindServiceDto">
+
+    <sql id="Base_Column_List" >
+         id, car_service_no, car_service_price, car_type_no
+    </sql>
+
+    <insert id="insert" parameterType="com.yy.tourweb.web.dto.TCarkindServiceDto">
+       INSERT into t_carkind_service
+       <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          id,
+        </if>
+        <if test="carServiceNo != null ">
+          car_service_no,
+        </if>
+        <if test="carServicePrice != null ">
+          car_service_price,
+        </if>
+        <if test="carTypeNo != null ">
+          car_type_no,
+        </if>
+       </trim>
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null ">
+          #{id},
+        </if>
+        <if test="carServiceNo != null ">
+          #{carServiceNo},
+        </if>
+        <if test="carServicePrice != null ">
+          #{carServicePrice},
+        </if>
+        <if test="carTypeNo != null ">
+          #{carTypeNo},
+        </if>
+       </trim>
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.yy.tourweb.web.dto.TCarkindServiceDto">
+       DELETE FROM t_carkind_service WHERE id = #{id};
+    </delete>
+
+    <delete id="delete" parameterType="com.yy.tourweb.web.dto.TCarkindServiceDto">
+       DELETE FROM t_carkind_service 
+       <trim prefix="WHERE" prefixOverrides="AND">
+        <if test="id != null ">
+          AND id = #{id} 
+        </if>
+        <if test="carServiceNo != null ">
+          AND car_service_no = #{carServiceNo} 
+        </if>
+        <if test="carServicePrice != null ">
+          AND car_service_price = #{carServicePrice} 
+        </if>
+        <if test="carTypeNo != null ">
+          AND car_type_no = #{carTypeNo} 
+        </if>
+       </trim>
+    </delete>
+
+    <update id="update" parameterType="com.yy.tourweb.web.dto.TCarkindServiceDto">
+       UPDATE t_carkind_service
+       <trim prefix="SET" suffixOverrides=",">
+        <if test="carServiceNo != null ">
+          car_service_no = #{carServiceNo} ,
+        </if>
+        <if test="carServicePrice != null ">
+          car_service_price = #{carServicePrice} ,
+        </if>
+        <if test="carTypeNo != null ">
+          car_type_no = #{carTypeNo} ,
+        </if>
+        update_date=current_timestamp(),
+       </trim>
+       WHERE id = #{id}
+       <if test="updateDate != null" >
+          AND update_date = #{updateDate}
+       </if>
+    </update>
+
+    <select id="query" parameterType="com.yy.tourweb.web.dto.TCarkindServiceDto" resultType="TCarkindServiceDto">
+       SELECT <include refid="Base_Column_List" />
+       FROM t_carkind_service
+       <trim prefix="WHERE" prefixOverrides="AND">
+        <if test="id != null ">
+          AND id = #{id} 
+        </if>
+        <if test="carServiceNo != null ">
+          AND car_service_no = #{carServiceNo} 
+        </if>
+        <if test="carServicePrice != null ">
+          AND car_service_price = #{carServicePrice} 
+        </if>
+        <if test="carTypeNo != null ">
+          AND car_type_no = #{carTypeNo} 
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
+    <select id="count" parameterType="com.yy.tourweb.web.dto.TCarkindServiceDto" resultType="java.lang.Long">
+       SELECT count(*) FROM t_carkind_service
+       <trim prefix="WHERE" prefixOverrides="AND">
+        <if test="id != null ">
+          AND id = #{id} 
+        </if>
+        <if test="carServiceNo != null ">
+          AND car_service_no = #{carServiceNo} 
+        </if>
+        <if test="carServicePrice != null ">
+          AND car_service_price = #{carServicePrice} 
+        </if>
+        <if test="carTypeNo != null ">
+          AND car_type_no = #{carTypeNo} 
+        </if>
+       </trim>
+    </select>
+<!-- ##############################################自定义sql分界线##################################################################### -->
+</mapper>

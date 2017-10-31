@@ -1,12 +1,11 @@
 package com.yy.tourweb.web.dto;
 
 import java.util.Date;
-
 import com.yy.tourweb.web.dto.IDto;
 
 /**
   * 用户表(t_member)映射Dto
-  * @version 2017-09-16  * */ 
+  * @version 2017-10-30  * */ 
 public class TMemberDto implements IDto {
     /**
      * 
@@ -52,10 +51,34 @@ public class TMemberDto implements IDto {
      * ip地址第四位
      * */
     private Integer ip4;
-    
+    /**
+     * 会员状态(0:待确认；1:已确认待审核；2:已审核；3:已拉黑)
+     * */
+    private Integer status;
+    /**
+     * 
+     * */
     private Date createDate;
-    
+    /**
+     * 范围查询使用
+     * */
+    private Date startCreateDate;
+    /**
+     * 范围查询使用
+     * */
+    private Date endCreateDate;
+    /**
+     * 
+     * */
     private Date updateDate;
+    /**
+     * 范围查询使用
+     * */
+    private Date startUpdateDate;
+    /**
+     * 范围查询使用
+     * */
+    private Date endUpdateDate;
     /**
      * 排序字段加排序规则组合体columnName desc
      * */
@@ -100,6 +123,34 @@ public class TMemberDto implements IDto {
      * */
     public String getEmailAddress() {
         return emailAddress;
+    }
+
+    /**
+     * setFName first name
+     * */
+    public void setFName(String fName) {
+        this.fName=fName;
+    }
+
+    /**
+     * getFName first name
+     * */
+    public String getFName() {
+        return fName;
+    }
+
+    /**
+     * setLName last name
+     * */
+    public void setLName(String lName) {
+        this.lName=lName;
+    }
+
+    /**
+     * getLName last name
+     * */
+    public String getLName() {
+        return lName;
     }
 
     /**
@@ -187,6 +238,104 @@ public class TMemberDto implements IDto {
     }
 
     /**
+     * setStatus 会员状态(0:待确认；1:已确认待审核；2:已审核；3:已拉黑)
+     * */
+    public void setStatus(Integer status) {
+        this.status=status;
+    }
+
+    /**
+     * getStatus 会员状态(0:待确认；1:已确认待审核；2:已审核；3:已拉黑)
+     * */
+    public Integer getStatus() {
+        return status;
+    }
+
+    /**
+     * setCreateDate 
+     * */
+    public void setCreateDate(Date createDate) {
+        this.createDate=createDate;
+    }
+
+    /**
+     * getCreateDate 
+     * */
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    /**
+     * setStartcreateDate 
+     * */
+    public void setStartcreateDate(Date startCreateDate) {
+        this.startCreateDate=startCreateDate;
+    }
+
+    /**
+     * getStartcreateDate 
+     * */
+    public Date getStartcreateDate() {
+        return startCreateDate;
+    }
+
+    /**
+     * setEndcreateDate 
+     * */
+    public void setEndcreateDate(Date endCreateDate) {
+        this.endCreateDate=endCreateDate;
+    }
+
+    /**
+     * getEndcreateDate 
+     * */
+    public Date getEndcreateDate() {
+        return endCreateDate;
+    }
+
+    /**
+     * setUpdateDate 
+     * */
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate=updateDate;
+    }
+
+    /**
+     * getUpdateDate 
+     * */
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    /**
+     * setStartupdateDate 
+     * */
+    public void setStartupdateDate(Date startUpdateDate) {
+        this.startUpdateDate=startUpdateDate;
+    }
+
+    /**
+     * getStartupdateDate 
+     * */
+    public Date getStartupdateDate() {
+        return startUpdateDate;
+    }
+
+    /**
+     * setEndupdateDate 
+     * */
+    public void setEndupdateDate(Date endUpdateDate) {
+        this.endUpdateDate=endUpdateDate;
+    }
+
+    /**
+     * getEndupdateDate 
+     * */
+    public Date getEndupdateDate() {
+        return endUpdateDate;
+    }
+
+    /**
      * 排序字段加排序规则组合体columnName desc
      * */
     public void setOrderByStr(String orderByStr) {
@@ -196,37 +345,5 @@ public class TMemberDto implements IDto {
     public String getOrderByStr() {
         return orderByStr;
     }
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
-
-	public String getfName() {
-		return fName;
-	}
-
-	public void setfName(String fName) {
-		this.fName = fName;
-	}
-
-	public String getlName() {
-		return lName;
-	}
-
-	public void setlName(String lName) {
-		this.lName = lName;
-	}
 
 }

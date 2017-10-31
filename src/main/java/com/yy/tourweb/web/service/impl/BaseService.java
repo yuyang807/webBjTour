@@ -84,4 +84,14 @@ public class BaseService implements IBaseService {
     public PagingResult<IDto> selectPagination(PageEntity<IDto> pageEntity) {
         return baseDao.selectPagination(pageEntity);
     }
+
+	@Override
+	public Object queryObjectByMap(String sqlId, Map<String, Object> params) {
+		return baseDao.queryObjectByMap(sqlId, params);
+	}
+	
+	@Override
+	public Object queryObjectByDto(String sqlId, IDto _dto) {
+		return baseDao.queryObjectByDto(sqlId, _dto);
+	}
 }

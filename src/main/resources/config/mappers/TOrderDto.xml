@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TOrderDto">
 
     <sql id="Base_Column_List" >
-         id, order_no, hotel_name, hotel_tel, hotel_address, arrival_date, a_airplan_num, departure_date, d_airplan_num, start_date, start_time, total_price, adult_num, teenager_num, child_num, baby_num, line_no, line_price, show_no1, show_no2, show_price, pickup_car_type_no, dropoff_car_type_no, car_type_no, car_price, car_day, guide_no, guid_price, guide_day, order_status, instructions, member_no, create_date, update_date
+         id, order_no, hotel_name, hotel_tel, hotel_address, arrival_date, a_airplan_num, departure_date, d_airplan_num, start_date, start_time, total_price, adult_num, teenager_num, child_num, baby_num, line_no, line_price, show_no1, show_no2, show_price, pickup_car_type_no, dropoff_car_type_no, car_type_no, car_service_no, car_price, car_day, guide_no, guid_price, guide_day, order_status, order_type, instructions, member_no, create_date, update_date
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TOrderDto">
@@ -81,6 +81,9 @@
         <if test="carTypeNo != null ">
           car_type_no,
         </if>
+        <if test="carServiceNo != null ">
+          car_service_no,
+        </if>
         <if test="carPrice != null ">
           car_price,
         </if>
@@ -98,6 +101,9 @@
         </if>
         <if test="orderStatus != null ">
           order_status,
+        </if>
+        <if test="orderType != null ">
+          order_type,
         </if>
         <if test="instructions != null ">
           instructions,
@@ -185,6 +191,9 @@
         <if test="carTypeNo != null ">
           #{carTypeNo},
         </if>
+        <if test="carServiceNo != null ">
+          #{carServiceNo},
+        </if>
         <if test="carPrice != null ">
           #{carPrice},
         </if>
@@ -202,6 +211,9 @@
         </if>
         <if test="orderStatus != null ">
           #{orderStatus},
+        </if>
+        <if test="orderType != null ">
+          #{orderType},
         </if>
         <if test="instructions != null ">
           #{instructions},
@@ -223,121 +235,127 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TOrderDto">
-       DELETE FROM t_order WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_order 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="orderNo != null ">
-          order_no = #{orderNo} AND
+          AND order_no = #{orderNo} 
         </if>
         <if test="hotelName != null ">
-          hotel_name = #{hotelName} AND
+          AND hotel_name = #{hotelName} 
         </if>
         <if test="hotelTel != null ">
-          hotel_tel = #{hotelTel} AND
+          AND hotel_tel = #{hotelTel} 
         </if>
         <if test="hotelAddress != null ">
-          hotel_address = #{hotelAddress} AND
+          AND hotel_address = #{hotelAddress} 
         </if>
         <if test="arrivalDate != null ">
-          arrival_date = #{arrivalDate} AND
+          AND arrival_date = #{arrivalDate} 
         </if>
         <if test="aAirplanNum != null ">
-          a_airplan_num = #{aAirplanNum} AND
+          AND a_airplan_num = #{aAirplanNum} 
         </if>
         <if test="departureDate != null ">
-          departure_date = #{departureDate} AND
+          AND departure_date = #{departureDate} 
         </if>
         <if test="dAirplanNum != null ">
-          d_airplan_num = #{dAirplanNum} AND
+          AND d_airplan_num = #{dAirplanNum} 
         </if>
         <if test="startDate != null ">
-          start_date = #{startDate} AND
+          AND start_date = #{startDate} 
         </if>
         <if test="startTime != null ">
-          start_time = #{startTime} AND
+          AND start_time = #{startTime} 
         </if>
         <if test="totalPrice != null ">
-          total_price = #{totalPrice} AND
+          AND total_price = #{totalPrice} 
         </if>
         <if test="adultNum != null ">
-          adult_num = #{adultNum} AND
+          AND adult_num = #{adultNum} 
         </if>
         <if test="teenagerNum != null ">
-          teenager_num = #{teenagerNum} AND
+          AND teenager_num = #{teenagerNum} 
         </if>
         <if test="childNum != null ">
-          child_num = #{childNum} AND
+          AND child_num = #{childNum} 
         </if>
         <if test="babyNum != null ">
-          baby_num = #{babyNum} AND
+          AND baby_num = #{babyNum} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="linePrice != null ">
-          line_price = #{linePrice} AND
+          AND line_price = #{linePrice} 
         </if>
         <if test="showNo1 != null ">
-          show_no1 = #{showNo1} AND
+          AND show_no1 = #{showNo1} 
         </if>
         <if test="showNo2 != null ">
-          show_no2 = #{showNo2} AND
+          AND show_no2 = #{showNo2} 
         </if>
         <if test="showPrice != null ">
-          show_price = #{showPrice} AND
+          AND show_price = #{showPrice} 
         </if>
         <if test="pickupCarTypeNo != null ">
-          pickup_car_type_no = #{pickupCarTypeNo} AND
+          AND pickup_car_type_no = #{pickupCarTypeNo} 
         </if>
         <if test="dropoffCarTypeNo != null ">
-          dropoff_car_type_no = #{dropoffCarTypeNo} AND
+          AND dropoff_car_type_no = #{dropoffCarTypeNo} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
+        </if>
+        <if test="carServiceNo != null ">
+          AND car_service_no = #{carServiceNo} 
         </if>
         <if test="carPrice != null ">
-          car_price = #{carPrice} AND
+          AND car_price = #{carPrice} 
         </if>
         <if test="carDay != null ">
-          car_day = #{carDay} AND
+          AND car_day = #{carDay} 
         </if>
         <if test="guideNo != null ">
-          guide_no = #{guideNo} AND
+          AND guide_no = #{guideNo} 
         </if>
         <if test="guidPrice != null ">
-          guid_price = #{guidPrice} AND
+          AND guid_price = #{guidPrice} 
         </if>
         <if test="guideDay != null ">
-          guide_day = #{guideDay} AND
+          AND guide_day = #{guideDay} 
         </if>
         <if test="orderStatus != null ">
-          order_status = #{orderStatus} AND
+          AND order_status = #{orderStatus} 
+        </if>
+        <if test="orderType != null ">
+          AND order_type = #{orderType} 
         </if>
         <if test="instructions != null ">
-          instructions = #{instructions} AND
+          AND instructions = #{instructions} 
         </if>
         <if test="memberNo != null ">
-          member_no = #{memberNo} AND
+          AND member_no = #{memberNo} 
         </if>
         <if test="createDate != null ">
-          create_date = #{createDate} AND
+          AND create_date = #{createDate} 
         </if>
         <if test="startCreateDate != null ">
-          create_date >= #{startCreateDate} AND
+          AND create_date >= #{startCreateDate} 
         </if>
         <if test="endCreateDate != null ">
-          create_date <![CDATA[<=]]> #{endCreateDate} AND
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
         </if>
         <if test="updateDate != null ">
-          update_date = #{updateDate} AND
+          AND update_date = #{updateDate} 
         </if>
         <if test="startUpdateDate != null ">
-          update_date >= #{startUpdateDate} AND
+          AND update_date >= #{startUpdateDate} 
         </if>
         <if test="endUpdateDate != null ">
-          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+          AND update_date <![CDATA[<=]]> #{endUpdateDate} 
         </if>
        </trim>
     </delete>
@@ -414,6 +432,9 @@
         <if test="carTypeNo != null ">
           car_type_no = #{carTypeNo} ,
         </if>
+        <if test="carServiceNo != null ">
+          car_service_no = #{carServiceNo} ,
+        </if>
         <if test="carPrice != null ">
           car_price = #{carPrice} ,
         </if>
@@ -431,6 +452,9 @@
         </if>
         <if test="orderStatus != null ">
           order_status = #{orderStatus} ,
+        </if>
+        <if test="orderType != null ">
+          order_type = #{orderType} ,
         </if>
         <if test="instructions != null ">
           instructions = #{instructions} ,
@@ -452,121 +476,126 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TOrderDto" resultType="TOrderDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_order
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="orderNo != null ">
-          order_no = #{orderNo} AND
+          AND order_no = #{orderNo} 
         </if>
         <if test="hotelName != null ">
-          hotel_name = #{hotelName} AND
+          AND hotel_name = #{hotelName} 
         </if>
         <if test="hotelTel != null ">
-          hotel_tel = #{hotelTel} AND
+          AND hotel_tel = #{hotelTel} 
         </if>
         <if test="hotelAddress != null ">
-          hotel_address = #{hotelAddress} AND
+          AND hotel_address = #{hotelAddress} 
         </if>
         <if test="arrivalDate != null ">
-          arrival_date = #{arrivalDate} AND
+          AND arrival_date = #{arrivalDate} 
         </if>
         <if test="aAirplanNum != null ">
-          a_airplan_num = #{aAirplanNum} AND
+          AND a_airplan_num = #{aAirplanNum} 
         </if>
         <if test="departureDate != null ">
-          departure_date = #{departureDate} AND
+          AND departure_date = #{departureDate} 
         </if>
         <if test="dAirplanNum != null ">
-          d_airplan_num = #{dAirplanNum} AND
+          AND d_airplan_num = #{dAirplanNum} 
         </if>
         <if test="startDate != null ">
-          start_date = #{startDate} AND
+          AND start_date = #{startDate} 
         </if>
         <if test="startTime != null ">
-          start_time = #{startTime} AND
+          AND start_time = #{startTime} 
         </if>
         <if test="totalPrice != null ">
-          total_price = #{totalPrice} AND
+          AND total_price = #{totalPrice} 
         </if>
         <if test="adultNum != null ">
-          adult_num = #{adultNum} AND
+          AND adult_num = #{adultNum} 
         </if>
         <if test="teenagerNum != null ">
-          teenager_num = #{teenagerNum} AND
+          AND teenager_num = #{teenagerNum} 
         </if>
         <if test="childNum != null ">
-          child_num = #{childNum} AND
+          AND child_num = #{childNum} 
         </if>
         <if test="babyNum != null ">
-          baby_num = #{babyNum} AND
+          AND baby_num = #{babyNum} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="linePrice != null ">
-          line_price = #{linePrice} AND
+          AND line_price = #{linePrice} 
         </if>
         <if test="showNo1 != null ">
-          show_no1 = #{showNo1} AND
+          AND show_no1 = #{showNo1} 
         </if>
         <if test="showNo2 != null ">
-          show_no2 = #{showNo2} AND
+          AND show_no2 = #{showNo2} 
         </if>
         <if test="showPrice != null ">
-          show_price = #{showPrice} AND
+          AND show_price = #{showPrice} 
         </if>
         <if test="pickupCarTypeNo != null ">
-          pickup_car_type_no = #{pickupCarTypeNo} AND
+          AND pickup_car_type_no = #{pickupCarTypeNo} 
         </if>
         <if test="dropoffCarTypeNo != null ">
-          dropoff_car_type_no = #{dropoffCarTypeNo} AND
+          AND dropoff_car_type_no = #{dropoffCarTypeNo} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
+        </if>
+        <if test="carServiceNo != null ">
+          AND car_service_no = #{carServiceNo} 
         </if>
         <if test="carPrice != null ">
-          car_price = #{carPrice} AND
+          AND car_price = #{carPrice} 
         </if>
         <if test="carDay != null ">
-          car_day = #{carDay} AND
+          AND car_day = #{carDay} 
         </if>
         <if test="guideNo != null ">
-          guide_no = #{guideNo} AND
+          AND guide_no = #{guideNo} 
         </if>
         <if test="guidPrice != null ">
-          guid_price = #{guidPrice} AND
+          AND guid_price = #{guidPrice} 
         </if>
         <if test="guideDay != null ">
-          guide_day = #{guideDay} AND
+          AND guide_day = #{guideDay} 
         </if>
         <if test="orderStatus != null ">
-          order_status = #{orderStatus} AND
+          AND order_status = #{orderStatus} 
+        </if>
+        <if test="orderType != null ">
+          AND order_type = #{orderType} 
         </if>
         <if test="instructions != null ">
-          instructions = #{instructions} AND
+          AND instructions = #{instructions} 
         </if>
         <if test="memberNo != null ">
-          member_no = #{memberNo} AND
+          AND member_no = #{memberNo} 
         </if>
         <if test="createDate != null ">
-          create_date = #{createDate} AND
+          AND create_date = #{createDate} 
         </if>
         <if test="startCreateDate != null ">
-          create_date >= #{startCreateDate} AND
+          AND create_date >= #{startCreateDate} 
         </if>
         <if test="endCreateDate != null ">
-          create_date <![CDATA[<=]]> #{endCreateDate} AND
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
         </if>
         <if test="updateDate != null ">
-          update_date = #{updateDate} AND
+          AND update_date = #{updateDate} 
         </if>
         <if test="startUpdateDate != null ">
-          update_date >= #{startUpdateDate} AND
+          AND update_date >= #{startUpdateDate} 
         </if>
         <if test="endUpdateDate != null ">
-          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+          AND update_date <![CDATA[<=]]> #{endUpdateDate} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -575,121 +604,126 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TOrderDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_order
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="orderNo != null ">
-          order_no = #{orderNo} AND
+          AND order_no = #{orderNo} 
         </if>
         <if test="hotelName != null ">
-          hotel_name = #{hotelName} AND
+          AND hotel_name = #{hotelName} 
         </if>
         <if test="hotelTel != null ">
-          hotel_tel = #{hotelTel} AND
+          AND hotel_tel = #{hotelTel} 
         </if>
         <if test="hotelAddress != null ">
-          hotel_address = #{hotelAddress} AND
+          AND hotel_address = #{hotelAddress} 
         </if>
         <if test="arrivalDate != null ">
-          arrival_date = #{arrivalDate} AND
+          AND arrival_date = #{arrivalDate} 
         </if>
         <if test="aAirplanNum != null ">
-          a_airplan_num = #{aAirplanNum} AND
+          AND a_airplan_num = #{aAirplanNum} 
         </if>
         <if test="departureDate != null ">
-          departure_date = #{departureDate} AND
+          AND departure_date = #{departureDate} 
         </if>
         <if test="dAirplanNum != null ">
-          d_airplan_num = #{dAirplanNum} AND
+          AND d_airplan_num = #{dAirplanNum} 
         </if>
         <if test="startDate != null ">
-          start_date = #{startDate} AND
+          AND start_date = #{startDate} 
         </if>
         <if test="startTime != null ">
-          start_time = #{startTime} AND
+          AND start_time = #{startTime} 
         </if>
         <if test="totalPrice != null ">
-          total_price = #{totalPrice} AND
+          AND total_price = #{totalPrice} 
         </if>
         <if test="adultNum != null ">
-          adult_num = #{adultNum} AND
+          AND adult_num = #{adultNum} 
         </if>
         <if test="teenagerNum != null ">
-          teenager_num = #{teenagerNum} AND
+          AND teenager_num = #{teenagerNum} 
         </if>
         <if test="childNum != null ">
-          child_num = #{childNum} AND
+          AND child_num = #{childNum} 
         </if>
         <if test="babyNum != null ">
-          baby_num = #{babyNum} AND
+          AND baby_num = #{babyNum} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="linePrice != null ">
-          line_price = #{linePrice} AND
+          AND line_price = #{linePrice} 
         </if>
         <if test="showNo1 != null ">
-          show_no1 = #{showNo1} AND
+          AND show_no1 = #{showNo1} 
         </if>
         <if test="showNo2 != null ">
-          show_no2 = #{showNo2} AND
+          AND show_no2 = #{showNo2} 
         </if>
         <if test="showPrice != null ">
-          show_price = #{showPrice} AND
+          AND show_price = #{showPrice} 
         </if>
         <if test="pickupCarTypeNo != null ">
-          pickup_car_type_no = #{pickupCarTypeNo} AND
+          AND pickup_car_type_no = #{pickupCarTypeNo} 
         </if>
         <if test="dropoffCarTypeNo != null ">
-          dropoff_car_type_no = #{dropoffCarTypeNo} AND
+          AND dropoff_car_type_no = #{dropoffCarTypeNo} 
         </if>
         <if test="carTypeNo != null ">
-          car_type_no = #{carTypeNo} AND
+          AND car_type_no = #{carTypeNo} 
+        </if>
+        <if test="carServiceNo != null ">
+          AND car_service_no = #{carServiceNo} 
         </if>
         <if test="carPrice != null ">
-          car_price = #{carPrice} AND
+          AND car_price = #{carPrice} 
         </if>
         <if test="carDay != null ">
-          car_day = #{carDay} AND
+          AND car_day = #{carDay} 
         </if>
         <if test="guideNo != null ">
-          guide_no = #{guideNo} AND
+          AND guide_no = #{guideNo} 
         </if>
         <if test="guidPrice != null ">
-          guid_price = #{guidPrice} AND
+          AND guid_price = #{guidPrice} 
         </if>
         <if test="guideDay != null ">
-          guide_day = #{guideDay} AND
+          AND guide_day = #{guideDay} 
         </if>
         <if test="orderStatus != null ">
-          order_status = #{orderStatus} AND
+          AND order_status = #{orderStatus} 
+        </if>
+        <if test="orderType != null ">
+          AND order_type = #{orderType} 
         </if>
         <if test="instructions != null ">
-          instructions = #{instructions} AND
+          AND instructions = #{instructions} 
         </if>
         <if test="memberNo != null ">
-          member_no = #{memberNo} AND
+          AND member_no = #{memberNo} 
         </if>
         <if test="createDate != null ">
-          create_date = #{createDate} AND
+          AND create_date = #{createDate} 
         </if>
         <if test="startCreateDate != null ">
-          create_date >= #{startCreateDate} AND
+          AND create_date >= #{startCreateDate} 
         </if>
         <if test="endCreateDate != null ">
-          create_date <![CDATA[<=]]> #{endCreateDate} AND
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
         </if>
         <if test="updateDate != null ">
-          update_date = #{updateDate} AND
+          AND update_date = #{updateDate} 
         </if>
         <if test="startUpdateDate != null ">
-          update_date >= #{startUpdateDate} AND
+          AND update_date >= #{startUpdateDate} 
         </if>
         <if test="endUpdateDate != null ">
-          update_date <![CDATA[<=]]> #{endUpdateDate} AND
+          AND update_date <![CDATA[<=]]> #{endUpdateDate} 
         </if>
        </trim>
     </select>

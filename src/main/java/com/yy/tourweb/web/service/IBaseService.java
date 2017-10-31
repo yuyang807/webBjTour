@@ -118,4 +118,20 @@ public interface IBaseService {
      * @return
      */
     public IDto queryDtoByMap(String sqlId, Map<String, Object> params);
+    
+    /**
+     * 查询某记录ByMap
+     * @param sqlId
+     * @param params
+     * @return
+     */
+    Object queryObjectByMap(String sqlId, Map<String, Object> params);
+    
+    /**
+     * 查询某记录ByDto
+     * @param sqlId
+     * @param _dto
+     * @return
+     */
+    Object queryObjectByDto(String sqlId, IDto _dto);
 }
