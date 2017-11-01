@@ -34,7 +34,7 @@ var dialog_str = `
 				</li>
 			</ul>
 		</form>
-		<div class="dialog_bottom_total">Total Cost: 　<span>￥<span id="cardialogprice">600</span></span>.00</div>
+		<div class="dialog_bottom_total">Total Cost: 　<span>￥<span id="cardialogprice">0</span></span>.00</div>
 		<button class="dialog_bottom_btn buttoncolor1" onclick="dialogsubmit()">Submit</button>
 	</div>
 `;

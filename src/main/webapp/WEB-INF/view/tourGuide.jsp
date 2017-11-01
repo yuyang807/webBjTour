@@ -37,7 +37,7 @@
 				<ul class="tour_guide_ul">
 					<li class="tour_guide_li">
 						<div class="tour_guide_li_left fl">choice a guide</div>
-						<select id="guidelist" name="guideNo" class="tour_guide_li_right fr">
+						<select id="guidelist" name="guideNo" onchange="getallprice()" class="tour_guide_li_right fr">
 							
 						</select>
 					</li>
@@ -72,7 +72,7 @@
 				</ul>
 				</form>
 				<div class="tour_guide_total">
-					<span>Total Cost:</span><span class="tour_guide_font_big">￥<span id="allprice"></span>.</span><span>00</span>
+					<span>Total Cost:</span><span class="tour_guide_font_big">￥<span id="allprice">0</span>.</span><span>00</span>
 					<button class="button100 buttoncolor1" onclick="cardpaysub()">BOOKING NOW</button>
 				</div>
 			</div>
