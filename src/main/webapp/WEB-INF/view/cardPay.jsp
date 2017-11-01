@@ -139,8 +139,9 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20170316" ></script>
 		<script>
 			var flag1hide = `
 				<input type="text" id="allprice" name="totalPrice" value='${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}' />
@@ -260,7 +261,7 @@
 				//线路
 				$("#cardPay_right_id").html(flag1str.format2({
 					img:'${ctxStatic}/juhema/img/WechatIMG58.jpeg',
-					datestr:'${startDate}',
+					datestr:gettimestr('${startDate}'),
 					adultNum:'${adultNum}',
 					unitPrice:'${unitPrice}',
 					allPrice:'${unitPrice*adultNum}',
@@ -269,7 +270,6 @@
 				$("#hiddensubmit").html(flag1hide);
 			}else if(flag == 2){
 				//汽车
-				var startDate = '${startDate}';
 				var carTypeNo = '${carTypeNo}';
 				var carTypeName = '${carTypeName}';
 				var carDay = '${carDay}';
@@ -277,7 +277,7 @@
 				var carServiceName = '${carServiceName}';
 				$("#cardPay_right_id").html(flagcarstr.format2({
 					img:'${ctxStatic}/juhema/img/WechatIMG58.jpeg',
-					startDate:'${startDate}',
+					startDate:gettimestr('${startDate}'),
 					carTypeNo:'${carTypeNo}',
 					carTypeName:'${carTypeName}',
 					carDay:'${carDay}',
@@ -294,7 +294,7 @@
 				var serviceName = '${serviceName}'
 				$("#cardPay_right_id").html(flagguidestr.format2({
 					img:'${ctxStatic}/juhema/img/WechatIMG58.jpeg',
-					startDate:'${startDate}',
+					startDate:gettimestr('${startDate}'),
 					guideDay:'${guideDay}',
 					guideNo:'${guideNo}',
 					serviceName:'${serviceName}',
@@ -358,7 +358,11 @@
 						//data:getserialize($('#cardpayform').serialize()),
 						data:JSON.stringify({"tod":JSON.stringify(TOrderDto),"tmd":JSON.stringify(TMemberDto)}),
 						success:function(data){
-							console.log(data.resultCode);
+							if(data.resCode == '00000000'){
+								submitsuccess();
+							}else{
+								submiterror();
+							}
 						}
 					});
 					
