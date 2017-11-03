@@ -71,8 +71,9 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20170316" ></script>
 		<script>
 			function showmenu(){
 				if($("#tour_top_ul_id").hasClass("tour_top_hide")){
@@ -109,7 +110,11 @@
 							referralName:$("#contactrefid").val()
 						},
 						success:function(data){
-							console.log(data);
+							if(data.resCode == '00000000'){
+								submitsuccess();
+							}else{
+								submiterror();
+							}
 						}
 					});
 				}

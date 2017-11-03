@@ -16,14 +16,14 @@ var dialog_str = `
 					<input type="hidden" name="carDay" id="guideDay" />
 					<input type="hidden" name="startDate" id="startDate" />
 					<div class="dialog_main_li_top">Select start date</div>
-					<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="guide_inputtime guide_input fl" type="text" />
+					<input id="datepicker" onblur="touroptionchange()" reg="datepickertime" class="guide_inputtime guide_input fl" type="text" />
 					<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
 					<div style="clear:both"></div>
 				</li>
 				<li id="datepicker2box" class="dialog_main_li">
 					<div class="dialog_main_li_top">Select end date</div>
 					<input id="datepicker2" reg="datepickertime2" class="guide_input fl" type="text" />
-					<div id="datepickertime2" onblur="getallprice()" class="cardPaywaring fl waringhidden">end time</div>
+					<div id="datepickertime2" onblur="touroptionchange()" class="cardPaywaring fl waringhidden">end time</div>
 					<div style="clear:both"></div>
 				</li>
 				<li class="dialog_main_li">
@@ -34,7 +34,7 @@ var dialog_str = `
 				</li>
 			</ul>
 		</form>
-		<div class="dialog_bottom_total">Total Cost: 　<span>￥<span id="cardialogprice">600</span></span>.00</div>
+		<div class="dialog_bottom_total">Total Cost: 　<span>￥<span id="cardialogprice">0</span></span>.00</div>
 		<button class="dialog_bottom_btn buttoncolor1" onclick="dialogsubmit()">Submit</button>
 	</div>
 `;
