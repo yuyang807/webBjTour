@@ -22,8 +22,8 @@ var dialog_str = `
 				</li>
 				<li id="datepicker2box" class="dialog_main_li">
 					<div class="dialog_main_li_top">Select end date</div>
-					<input id="datepicker2" reg="datepickertime2" class="guide_input fl" type="text" />
-					<div id="datepickertime2" onblur="touroptionchange()" class="cardPaywaring fl waringhidden">end time</div>
+					<input id="datepicker2" onblur="touroptionchange()" reg="datepickertime2" class="guide_input fl" type="text" />
+					<div id="datepickertime2" class="cardPaywaring fl waringhidden">end time</div>
 					<div style="clear:both"></div>
 				</li>
 				<li class="dialog_main_li">
