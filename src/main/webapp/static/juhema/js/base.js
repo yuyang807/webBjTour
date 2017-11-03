@@ -10,9 +10,9 @@ function linkfor(url){
 	window.location.href = url;
 }
 function gettimestr(datetime){
-	var newD = new Date(datetime);
+	var newD = new Date(parseInt(datetime));
 	var tyear = newD.getFullYear();
-	var tmonth = newD.getmonth()+1;
+	var tmonth = newD.getMonth()+1;
 	var tday = newD.getDate();
 	return tday+"/"+tmonth+"/"+tyear;
 }
