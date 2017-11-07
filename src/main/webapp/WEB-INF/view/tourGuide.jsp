@@ -243,7 +243,7 @@
 					t_day = ((new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime())/3600000/24+1;
 				}
 				var type = $("#guidelist").val();
-				if(type == ''){
+				if(type == '701'){
 					$(".datepickerhide").hide();
 					t_day = 1;
 				}else{
@@ -252,6 +252,7 @@
 				var t_prices_one = guidelistobj[type];
 				$("#allprice").html(t_prices_one*t_day);
 			}
+			getallprice();
 			$(".tour_details_right").on("focus","input",function(){
 				var t_regkey = $(this).attr("reg");
 				$(this).removeClass('inputerror');
