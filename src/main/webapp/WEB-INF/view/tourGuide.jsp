@@ -47,8 +47,8 @@
 						<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="guide_input fr" type="text" />
 						<input id="startDate" type="hidden" name="startDate"  />
 						<input id="guideDay" type="hidden" name="guideDay"  />
-						<span class="guide_text">To</span>
-						<input id="datepicker2" onblur="getallprice()" reg="datepickertime2" class="guide_input fr" type="text" style="float:right;" />
+						<span class="datepickerhide guide_text">To</span>
+						<input id="datepicker2" onblur="getallprice()" reg="datepickertime2" class="datepickerhide guide_input fr" type="text" style="float:right;" />
 					</li>
 					<li>
 						<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
@@ -243,6 +243,12 @@
 					t_day = ((new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime())/3600000/24+1;
 				}
 				var type = $("#guidelist").val();
+				if(type == ''){
+					$(".datepickerhide").hide();
+					t_day = 1;
+				}else{
+					$(".datepickerhide").show();
+				}
 				var t_prices_one = guidelistobj[type];
 				$("#allprice").html(t_prices_one*t_day);
 			}
