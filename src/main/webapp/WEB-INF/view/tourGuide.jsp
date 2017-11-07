@@ -98,22 +98,22 @@
 				<ul class="contact_list_ul contomize_magin">
 					<li class="contact_list displayinline">
 						<div class="contact_label">First name</div>
-						<div class="contact_input"><input type="text" /></div>
+						<div class="contact_input"><input id="fNameid" name="fName" type="text" /></div>
 					</li><!--
 					--><li class="contact_list displayinline">
 						<div class="contact_label">Last name</div>
-						<div class="contact_input"><input type="text" /></div>
+						<div class="contact_input"><input id="lNameid" name="lName" type="text" /></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">E-mail</div>
-						<div class="contact_input2"><input type="text" /></div>
+						<div class="contact_input2"><input id="emailAddressid" name="emailAddress" type="text" /></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">Special requirement:</div>
-						<textarea class="contact_textarea"></textarea>
+						<textarea class="contact_textarea" id="contentid" name="content"></textarea>
 					</li>
 				</ul>
-				<button class="buttonpublic_nochange buttoncolor3 costomizesubmit">Submit</button>
+				<button class="buttonpublic_nochange buttoncolor3 costomizesubmit" onclick="contactsub()">Submit</button>
 				<div>&nbsp;</div>
 			</div>
 		</div>
@@ -259,6 +259,40 @@
 				$("#"+t_regkey).addClass('waringhidden');
 				//submiterror();
 			});
+			function contactsub(){
+				var t_input = $(".contactinput");
+				var t_len = t_input.length;
+				var all_len = t_len;
+				for(var i = 0 ;i < t_input.length;i++){
+					var t_regkey = t_input.eq(i).attr("reg");
+					var t_val = t_input.eq(i).val();
+					if(t_val == ""){
+						all_len--;
+						t_input.eq(i).addClass('inputerror');
+						$("#"+t_regkey).removeClass('waringhidden');
+					}
+				}
+				if(all_len == t_len){
+					$.ajax({
+						type:"post",
+						url:"/advice/submit",
+						data:{
+							lName:$("#contactnameid").val(),
+							emailAddress:$("#contactmailid").val(),
+							content:$("#contacttextareaid").val(),
+							knowWay:$("#knowid").val(),
+							referralName:$("#contactrefid").val()
+						},
+						success:function(data){
+							if(data.resCode == '00000000'){
+								submitsuccess();
+							}else{
+								submiterror();
+							}
+						}
+					});
+				}
+			}
 		</script>
 	</body>
 </html>

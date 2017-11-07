@@ -22,7 +22,7 @@ var location_obj = [
 	},
 	{
 		"url":"/advice",
-		"key":"/contactUs",
+		"key":"/advice",
 		"text":"Contact Us"
 	}
 ];
