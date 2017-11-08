@@ -98,19 +98,27 @@
 				<ul class="contact_list_ul contomize_magin">
 					<li class="contact_list displayinline">
 						<div class="contact_label">First name</div>
-						<div class="contact_input"><input id="fNameid" name="fName" type="text" /></div>
+						<div class="contact_input"><input id="fNameid" name="fName" reg="contactfname" class="contactinput" type="text" /></div>
+						<div id="contactfname" class="cardPaywaring fl waringhidden">first name</div>
+						<div style="clear:both"></div>
 					</li><!--
 					--><li class="contact_list displayinline">
 						<div class="contact_label">Last name</div>
-						<div class="contact_input"><input id="lNameid" name="lName" type="text" /></div>
+						<div class="contact_input"><input id="lNameid" name="lName" reg="contactlname" class="contactinput" type="text" /></div>
+						<div id="contactlname" class="cardPaywaring fl waringhidden">Last name</div>
+						<div style="clear:both"></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">E-mail</div>
-						<div class="contact_input2"><input id="emailAddressid" name="emailAddress" type="text" /></div>
+						<div class="contact_input2"><input id="emailAddressid" reg="contactemail" class="contactinput" name="emailAddress" type="text" /></div>
+						<div id="contactemail" class="cardPaywaring fl waringhidden">E-mail</div>
+						<div style="clear:both"></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">Special requirement:</div>
-						<textarea class="contact_textarea" id="contentid" name="content"></textarea>
+						<textarea class="contact_textarea contactinput" id="contentid"  reg="contactarea" name="content"></textarea>
+						<div id="contactarea" class="cardPaywaring fl waringhidden">Special requirement</div>
+						<div style="clear:both"></div>
 					</li>
 				</ul>
 				<button class="buttonpublic_nochange buttoncolor3 costomizesubmit" onclick="contactsub()">Submit</button>
@@ -277,11 +285,10 @@
 						type:"post",
 						url:"/advice/submit",
 						data:{
-							lName:$("#contactnameid").val(),
-							emailAddress:$("#contactmailid").val(),
-							content:$("#contacttextareaid").val(),
-							knowWay:$("#knowid").val(),
-							referralName:$("#contactrefid").val()
+							fName:$("#fNameid").val(),
+							lName:$("#lNameid").val(),
+							emailAddress:$("#emailAddressid").val(),
+							content:$("#contentid").val()
 						},
 						success:function(data){
 							if(data.resCode == '00000000'){
