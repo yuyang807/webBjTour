@@ -61,28 +61,28 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TPicDto">
-       DELETE FROM t_pic WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_pic 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="picNo != null ">
-          pic_no = #{picNo} AND
+          AND pic_no = #{picNo} 
         </if>
         <if test="picName != null ">
-          pic_name = #{picName} AND
+          AND pic_name = #{picName} 
         </if>
         <if test="fileUrl != null ">
-          file_url = #{fileUrl} AND
+          AND file_url = #{fileUrl} 
         </if>
         <if test="md5 != null ">
-          md5 = #{md5} AND
+          AND md5 = #{md5} 
         </if>
         <if test="isMain != null ">
-          is_main = #{isMain} AND
+          AND is_main = #{isMain} 
         </if>
         <if test="isMainAll != null ">
-          is_main_all = #{isMainAll} AND
+          AND is_main_all = #{isMainAll} 
         </if>
        </trim>
     </delete>
@@ -119,28 +119,27 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TPicDto" resultType="TPicDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_pic
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="picNo != null ">
-          pic_no = #{picNo} AND
+          AND pic_no = #{picNo} 
         </if>
         <if test="picName != null ">
-          pic_name = #{picName} AND
+          AND pic_name = #{picName} 
         </if>
         <if test="fileUrl != null ">
-          file_url = #{fileUrl} AND
+          AND file_url = #{fileUrl} 
         </if>
         <if test="md5 != null ">
-          md5 = #{md5} AND
+          AND md5 = #{md5} 
         </if>
         <if test="isMain != null ">
-          is_main = #{isMain} AND
+          AND is_main = #{isMain} 
         </if>
         <if test="isMainAll != null ">
-          is_main_all = #{isMainAll} AND
+          AND is_main_all = #{isMainAll} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -149,36 +148,66 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TPicDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_pic
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="picNo != null ">
-          pic_no = #{picNo} AND
+          AND pic_no = #{picNo} 
         </if>
         <if test="picName != null ">
-          pic_name = #{picName} AND
+          AND pic_name = #{picName} 
         </if>
         <if test="fileUrl != null ">
-          file_url = #{fileUrl} AND
+          AND file_url = #{fileUrl} 
         </if>
         <if test="md5 != null ">
-          md5 = #{md5} AND
+          AND md5 = #{md5} 
         </if>
         <if test="isMain != null ">
-          is_main = #{isMain} AND
+          AND is_main = #{isMain} 
         </if>
         <if test="isMainAll != null ">
-          is_main_all = #{isMainAll} AND
+          AND is_main_all = #{isMainAll} 
         </if>
        </trim>
     </select>
 <!-- ##############################################自定义sql分界线##################################################################### -->
-
 	
 	<select id="queryPicByLineNo" parameterType="com.yy.tourweb.web.dto.TPicDto" resultType="map">
-		select pic_name,file_url from t_pic 
-		where pic_no in (select pic_no from t_line_pic where line_no = #{lineNo})
+		select pic_name picName, CONCAT(#{urlFront},line_no,'/',pic_name) fileUrl,line_no lineNo 
+		from t_line_pic tlp left join t_pic tp on tp.pic_no = tlp.pic_no 
+		where line_no = #{lineNo}
 	</select>
+	
+	<select id="queryWebPic" parameterType="com.yy.tourweb.web.dto.TPicDto" resultType="map">
+       SELECT pic_no picNo, CONCAT(#{urlFront},pic_name) fileUrl
+       FROM t_pic
+       <trim prefix="WHERE" prefixOverrides="AND">
+        <if test="id != null ">
+          AND id = #{id} 
+        </if>
+        <if test="picNo != null ">
+          AND pic_no = #{picNo} 
+        </if>
+        <if test="picName != null ">
+          AND pic_name = #{picName} 
+        </if>
+        <if test="fileUrl != null ">
+          AND file_url = #{fileUrl} 
+        </if>
+        <if test="md5 != null ">
+          AND md5 = #{md5} 
+        </if>
+        <if test="isMain != null ">
+          AND is_main = #{isMain} 
+        </if>
+        <if test="isMainAll != null ">
+          AND is_main_all = #{isMainAll} 
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
 </mapper>

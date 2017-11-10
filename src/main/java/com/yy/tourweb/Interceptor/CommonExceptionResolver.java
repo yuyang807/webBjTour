@@ -10,8 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 /** 
- * @Description: POS统一异常处理 
- * @author yanghj
+ * @Description: 统一异常处理 
+ * @author yy
  * @date 2017年7月1日 上午11:33:38 
  *  
  */

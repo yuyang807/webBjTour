@@ -3,7 +3,7 @@
 <mapper namespace="com.yy.tourweb.web.dto.TAdviceDto">
 
     <sql id="Base_Column_List" >
-         id, email_address, f_name, l_name, content, ip1, ip2, ip3, ip4, is_inform, lid, create_date, update_date
+         id, email_address, f_name, l_name, content, ip1, ip2, ip3, ip4, is_inform, lineno, know_way, referral_name, create_date
     </sql>
 
     <insert id="insert" parameterType="com.yy.tourweb.web.dto.TAdviceDto">
@@ -39,10 +39,18 @@
         <if test="isInform != null ">
           is_inform,
         </if>
-        <if test="lid != null ">
-          lid,
+        <if test="lineno != null ">
+          lineno,
         </if>
-        create_date
+        <if test="knowWay != null ">
+          know_way,
+        </if>
+        <if test="referralName != null ">
+          referral_name,
+        </if>
+        <if test="createDate != null ">
+          create_date,
+        </if>
        </trim>
        <trim prefix="values (" suffix=")" suffixOverrides="," >
         <if test="id != null ">
@@ -75,10 +83,18 @@
         <if test="isInform != null ">
           #{isInform},
         </if>
-        <if test="lid != null ">
-          #{lid},
+        <if test="lineno != null ">
+          #{lineno},
         </if>
-        current_timestamp()
+        <if test="knowWay != null ">
+          #{knowWay},
+        </if>
+        <if test="referralName != null ">
+          #{referralName},
+        </if>
+        <if test="createDate != null ">
+          #{createDate},
+        </if>
        </trim>
     </insert>
 
@@ -87,40 +103,55 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TAdviceDto">
-       DELETE FROM t_advice WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_advice 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="emailAddress != null ">
-          email_address = #{emailAddress} AND
+          AND email_address = #{emailAddress} 
         </if>
         <if test="fName != null ">
-          f_name = #{fName} AND
+          AND f_name = #{fName} 
         </if>
         <if test="lName != null ">
-          l_name = #{lName} AND
+          AND l_name = #{lName} 
         </if>
         <if test="content != null ">
-          content = #{content} AND
+          AND content = #{content} 
         </if>
         <if test="ip1 != null ">
-          ip1 = #{ip1} AND
+          AND ip1 = #{ip1} 
         </if>
         <if test="ip2 != null ">
-          ip2 = #{ip2} AND
+          AND ip2 = #{ip2} 
         </if>
         <if test="ip3 != null ">
-          ip3 = #{ip3} AND
+          AND ip3 = #{ip3} 
         </if>
         <if test="ip4 != null ">
-          ip4 = #{ip4} AND
+          AND ip4 = #{ip4} 
         </if>
         <if test="isInform != null ">
-          is_inform = #{isInform} AND
+          AND is_inform = #{isInform} 
         </if>
-        <if test="lid != null ">
-          lid = #{lid} AND
+        <if test="lineno != null ">
+          AND lineno = #{lineno} 
+        </if>
+        <if test="knowWay != null ">
+          AND know_way = #{knowWay} 
+        </if>
+        <if test="referralName != null ">
+          AND referral_name = #{referralName} 
+        </if>
+        <if test="createDate != null ">
+          AND create_date = #{createDate} 
+        </if>
+        <if test="startCreateDate != null ">
+          AND create_date >= #{startCreateDate} 
+        </if>
+        <if test="endCreateDate != null ">
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
         </if>
        </trim>
     </delete>
@@ -155,8 +186,17 @@
         <if test="isInform != null ">
           is_inform = #{isInform} ,
         </if>
-        <if test="lid != null ">
-          lid = #{lid} ,
+        <if test="lineno != null ">
+          lineno = #{lineno} ,
+        </if>
+        <if test="knowWay != null ">
+          know_way = #{knowWay} ,
+        </if>
+        <if test="referralName != null ">
+          referral_name = #{referralName} ,
+        </if>
+        <if test="createDate != null ">
+          create_date = #{createDate} ,
         </if>
         update_date=current_timestamp(),
        </trim>
@@ -169,40 +209,54 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TAdviceDto" resultType="TAdviceDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_advice
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="emailAddress != null ">
-          email_address = #{emailAddress} AND
+          AND email_address = #{emailAddress} 
         </if>
         <if test="fName != null ">
-          f_name = #{fName} AND
+          AND f_name = #{fName} 
         </if>
         <if test="lName != null ">
-          l_name = #{lName} AND
+          AND l_name = #{lName} 
         </if>
         <if test="content != null ">
-          content = #{content} AND
+          AND content = #{content} 
         </if>
         <if test="ip1 != null ">
-          ip1 = #{ip1} AND
+          AND ip1 = #{ip1} 
         </if>
         <if test="ip2 != null ">
-          ip2 = #{ip2} AND
+          AND ip2 = #{ip2} 
         </if>
         <if test="ip3 != null ">
-          ip3 = #{ip3} AND
+          AND ip3 = #{ip3} 
         </if>
         <if test="ip4 != null ">
-          ip4 = #{ip4} AND
+          AND ip4 = #{ip4} 
         </if>
         <if test="isInform != null ">
-          is_inform = #{isInform} AND
+          AND is_inform = #{isInform} 
         </if>
-        <if test="lid != null ">
-          lid = #{lid} AND
+        <if test="lineno != null ">
+          AND lineno = #{lineno} 
+        </if>
+        <if test="knowWay != null ">
+          AND know_way = #{knowWay} 
+        </if>
+        <if test="referralName != null ">
+          AND referral_name = #{referralName} 
+        </if>
+        <if test="createDate != null ">
+          AND create_date = #{createDate} 
+        </if>
+        <if test="startCreateDate != null ">
+          AND create_date >= #{startCreateDate} 
+        </if>
+        <if test="endCreateDate != null ">
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -211,40 +265,54 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TAdviceDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_advice
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="emailAddress != null ">
-          email_address = #{emailAddress} AND
+          AND email_address = #{emailAddress} 
         </if>
         <if test="fName != null ">
-          f_name = #{fName} AND
+          AND f_name = #{fName} 
         </if>
         <if test="lName != null ">
-          l_name = #{lName} AND
+          AND l_name = #{lName} 
         </if>
         <if test="content != null ">
-          content = #{content} AND
+          AND content = #{content} 
         </if>
         <if test="ip1 != null ">
-          ip1 = #{ip1} AND
+          AND ip1 = #{ip1} 
         </if>
         <if test="ip2 != null ">
-          ip2 = #{ip2} AND
+          AND ip2 = #{ip2} 
         </if>
         <if test="ip3 != null ">
-          ip3 = #{ip3} AND
+          AND ip3 = #{ip3} 
         </if>
         <if test="ip4 != null ">
-          ip4 = #{ip4} AND
+          AND ip4 = #{ip4} 
         </if>
         <if test="isInform != null ">
-          is_inform = #{isInform} AND
+          AND is_inform = #{isInform} 
         </if>
-        <if test="lid != null ">
-          lid = #{lid} AND
+        <if test="lineno != null ">
+          AND lineno = #{lineno} 
+        </if>
+        <if test="knowWay != null ">
+          AND know_way = #{knowWay} 
+        </if>
+        <if test="referralName != null ">
+          AND referral_name = #{referralName} 
+        </if>
+        <if test="createDate != null ">
+          AND create_date = #{createDate} 
+        </if>
+        <if test="startCreateDate != null ">
+          AND create_date >= #{startCreateDate} 
+        </if>
+        <if test="endCreateDate != null ">
+          AND create_date <![CDATA[<=]]> #{endCreateDate} 
         </if>
        </trim>
     </select>

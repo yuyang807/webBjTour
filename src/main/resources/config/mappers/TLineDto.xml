@@ -139,67 +139,67 @@
     </delete>
 
     <delete id="delete" parameterType="com.yy.tourweb.web.dto.TLineDto">
-       DELETE FROM t_line WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       DELETE FROM t_line 
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="lineName != null ">
-          line_name = #{lineName} AND
+          AND line_name = #{lineName} 
         </if>
         <if test="available != null ">
-          available = #{available} AND
+          AND available = #{available} 
         </if>
         <if test="duration != null ">
-          duration = #{duration} AND
+          AND duration = #{duration} 
         </if>
         <if test="isPrivate != null ">
-          is_private = #{isPrivate} AND
+          AND is_private = #{isPrivate} 
         </if>
         <if test="language != null ">
-          language = #{language} AND
+          AND language = #{language} 
         </if>
         <if test="pickUpPoint != null ">
-          pick_up_point = #{pickUpPoint} AND
+          AND pick_up_point = #{pickUpPoint} 
         </if>
         <if test="finishPoint != null ">
-          finish_point = #{finishPoint} AND
+          AND finish_point = #{finishPoint} 
         </if>
         <if test="pickUpTime != null ">
-          pick_up_time = #{pickUpTime} AND
+          AND pick_up_time = #{pickUpTime} 
         </if>
         <if test="endTime != null ">
-          end_time = #{endTime} AND
+          AND end_time = #{endTime} 
         </if>
         <if test="phyLevel != null ">
-          phy_level = #{phyLevel} AND
+          AND phy_level = #{phyLevel} 
         </if>
         <if test="hikingDis != null ">
-          hiking_dis = #{hikingDis} AND
+          AND hiking_dis = #{hikingDis} 
         </if>
         <if test="hikingArea != null ">
-          hiking_area = #{hikingArea} AND
+          AND hiking_area = #{hikingArea} 
         </if>
         <if test="attractions != null ">
-          attractions = #{attractions} AND
+          AND attractions = #{attractions} 
         </if>
         <if test="customizable != null ">
-          customizable = #{customizable} AND
+          AND customizable = #{customizable} 
         </if>
         <if test="layoverTime != null ">
-          layover_time = #{layoverTime} AND
+          AND layover_time = #{layoverTime} 
         </if>
         <if test="popularLevel != null ">
-          popular_level = #{popularLevel} AND
+          AND popular_level = #{popularLevel} 
         </if>
         <if test="lineTypeNo != null ">
-          line_type_no = #{lineTypeNo} AND
+          AND line_type_no = #{lineTypeNo} 
         </if>
         <if test="detail != null ">
-          detail = #{detail} AND
+          AND detail = #{detail} 
         </if>
        </trim>
     </delete>
@@ -275,67 +275,66 @@
     <select id="query" parameterType="com.yy.tourweb.web.dto.TLineDto" resultType="TLineDto">
        SELECT <include refid="Base_Column_List" />
        FROM t_line
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="lineName != null ">
-          line_name = #{lineName} AND
+          AND line_name = #{lineName} 
         </if>
         <if test="available != null ">
-          available = #{available} AND
+          AND available = #{available} 
         </if>
         <if test="duration != null ">
-          duration = #{duration} AND
+          AND duration = #{duration} 
         </if>
         <if test="isPrivate != null ">
-          is_private = #{isPrivate} AND
+          AND is_private = #{isPrivate} 
         </if>
         <if test="language != null ">
-          language = #{language} AND
+          AND language = #{language} 
         </if>
         <if test="pickUpPoint != null ">
-          pick_up_point = #{pickUpPoint} AND
+          AND pick_up_point = #{pickUpPoint} 
         </if>
         <if test="finishPoint != null ">
-          finish_point = #{finishPoint} AND
+          AND finish_point = #{finishPoint} 
         </if>
         <if test="pickUpTime != null ">
-          pick_up_time = #{pickUpTime} AND
+          AND pick_up_time = #{pickUpTime} 
         </if>
         <if test="endTime != null ">
-          end_time = #{endTime} AND
+          AND end_time = #{endTime} 
         </if>
         <if test="phyLevel != null ">
-          phy_level = #{phyLevel} AND
+          AND phy_level = #{phyLevel} 
         </if>
         <if test="hikingDis != null ">
-          hiking_dis = #{hikingDis} AND
+          AND hiking_dis = #{hikingDis} 
         </if>
         <if test="hikingArea != null ">
-          hiking_area = #{hikingArea} AND
+          AND hiking_area = #{hikingArea} 
         </if>
         <if test="attractions != null ">
-          attractions = #{attractions} AND
+          AND attractions = #{attractions} 
         </if>
         <if test="customizable != null ">
-          customizable = #{customizable} AND
+          AND customizable = #{customizable} 
         </if>
         <if test="layoverTime != null ">
-          layover_time = #{layoverTime} AND
+          AND layover_time = #{layoverTime} 
         </if>
         <if test="popularLevel != null ">
-          popular_level = #{popularLevel} AND
+          AND popular_level = #{popularLevel} 
         </if>
         <if test="lineTypeNo != null ">
-          line_type_no = #{lineTypeNo} AND
+          AND line_type_no = #{lineTypeNo} 
         </if>
         <if test="detail != null ">
-          detail = #{detail} AND
+          AND detail = #{detail} 
         </if>
        </trim>
        <if test="orderByStr != null">
@@ -344,67 +343,66 @@
     </select>
     <select id="count" parameterType="com.yy.tourweb.web.dto.TLineDto" resultType="java.lang.Long">
        SELECT count(*) FROM t_line
-       WHERE 
-       <trim suffix="" suffixOverrides="AND">
+       <trim prefix="WHERE" prefixOverrides="AND">
         <if test="id != null ">
-          id = #{id} AND
+          AND id = #{id} 
         </if>
         <if test="lineNo != null ">
-          line_no = #{lineNo} AND
+          AND line_no = #{lineNo} 
         </if>
         <if test="lineName != null ">
-          line_name = #{lineName} AND
+          AND line_name = #{lineName} 
         </if>
         <if test="available != null ">
-          available = #{available} AND
+          AND available = #{available} 
         </if>
         <if test="duration != null ">
-          duration = #{duration} AND
+          AND duration = #{duration} 
         </if>
         <if test="isPrivate != null ">
-          is_private = #{isPrivate} AND
+          AND is_private = #{isPrivate} 
         </if>
         <if test="language != null ">
-          language = #{language} AND
+          AND language = #{language} 
         </if>
         <if test="pickUpPoint != null ">
-          pick_up_point = #{pickUpPoint} AND
+          AND pick_up_point = #{pickUpPoint} 
         </if>
         <if test="finishPoint != null ">
-          finish_point = #{finishPoint} AND
+          AND finish_point = #{finishPoint} 
         </if>
         <if test="pickUpTime != null ">
-          pick_up_time = #{pickUpTime} AND
+          AND pick_up_time = #{pickUpTime} 
         </if>
         <if test="endTime != null ">
-          end_time = #{endTime} AND
+          AND end_time = #{endTime} 
         </if>
         <if test="phyLevel != null ">
-          phy_level = #{phyLevel} AND
+          AND phy_level = #{phyLevel} 
         </if>
         <if test="hikingDis != null ">
-          hiking_dis = #{hikingDis} AND
+          AND hiking_dis = #{hikingDis} 
         </if>
         <if test="hikingArea != null ">
-          hiking_area = #{hikingArea} AND
+          AND hiking_area = #{hikingArea} 
         </if>
         <if test="attractions != null ">
-          attractions = #{attractions} AND
+          AND attractions = #{attractions} 
         </if>
         <if test="customizable != null ">
-          customizable = #{customizable} AND
+          AND customizable = #{customizable} 
         </if>
         <if test="layoverTime != null ">
-          layover_time = #{layoverTime} AND
+          AND layover_time = #{layoverTime} 
         </if>
         <if test="popularLevel != null ">
-          popular_level = #{popularLevel} AND
+          AND popular_level = #{popularLevel} 
         </if>
         <if test="lineTypeNo != null ">
-          line_type_no = #{lineTypeNo} AND
+          AND line_type_no = #{lineTypeNo} 
         </if>
         <if test="detail != null ">
-          detail = #{detail} AND
+          AND detail = #{detail} 
         </if>
        </trim>
     </select>
@@ -414,7 +412,7 @@
        SELECT 
        tl.line_no lineNo, line_name lineName, available, duration,
        line_type_no lineTypeNo, type_name typeName, popular_level popularLevel, 
-       ten_p tenP,file_url fileUrl
+       ten_p tenP, CONCAT(#{urlFront},tl.line_no,'/',pic_name) fileUrl
        FROM t_line tl left join t_line_price tlp on tl.line_no = tlp.line_no
        LEFT JOIN t_linekind tlk on tl.line_type_no = tlk.type_no
        LEFT JOIN t_line_pic tlpic ON tl.line_no = tlpic.line_no
@@ -432,7 +430,7 @@
        tl.line_no lineNo, line_name lineName, available, duration, is_private isPrivate, language, pick_up_point pickUpPoint, 
        finish_point finishPoint, pick_up_time pickUpTime, end_time endTime, phy_level phyLevel, hiking_dis hikingDis, hiking_area hikingArea, attractions, 
        customizable, layover_time layoverTime, popular_level popularLevel, line_type_no lineTypeNo, detail,
-       type_name typeName, file_url mainPicUrl,
+       type_name typeName, CONCAT(#{urlFront},tl.line_no,'/',pic_name) mainPicUrl,
        one_p oneP,two_p twoP,three_p threeP,four_p fourP,five_p fiveP,six_p sixP,seven_p sevenP,eight_p eightP,nine_p nineP,ten_p tenP
        FROM t_line tl 
        LEFT JOIN t_line_price tlp on tl.line_no = tlp.line_no
@@ -448,7 +446,7 @@
 		SELECT 
        tl.line_no lineNo, line_name lineName, available, duration,
        line_type_no lineTypeNo, type_name typeName, popular_level popularLevel, 
-       ten_p tenP,file_url
+       ten_p tenP,CONCAT(#{urlFront},tl.line_no,'/',pic_name) fileUrl
        FROM t_line tl 
        left join t_line_price tlp on tl.line_no = tlp.line_no
        LEFT JOIN t_linekind tlk   on tl.line_type_no = tlk.type_no

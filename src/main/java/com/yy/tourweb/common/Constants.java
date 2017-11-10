@@ -68,6 +68,9 @@ public class Constants {
 
 	public static final String ORDER_EMAIL = PropertiesUtil.getValue("application", "order.email");
     
-    
+    /**
+     * 图片url前缀
+     */
+    public static final String PIC_FRONT_URL = PropertiesUtil.getValue("application", "pic.front.url");
     
 }

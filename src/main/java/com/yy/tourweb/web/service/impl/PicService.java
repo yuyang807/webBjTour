@@ -43,7 +43,8 @@ public class PicService implements IPicService{
 		resultStr = redisClient.get(Constants.REDIS_PIC_MAIN);
 		if(StringUtils.isBlank(resultStr)){
 			params.put("isMainAll", 1);
-			list = baseDao.queryListByMap("TPicDto.query", params);
+			params.put("urlFront", Constants.PIC_FRONT_URL+"main/");
+			list = baseDao.queryListByMap("TPicDto.queryWebPic", params);
 			String jsonStr = JSONArray.toJSONString(list);
 			redisClient.set(Constants.REDIS_PIC_MAIN,3600*3, jsonStr);
 		}else{

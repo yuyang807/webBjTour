@@ -170,4 +170,20 @@ public interface IBaseDao {
      * @return int  返回类型
      */
     int update(IDto _dto, String sqlId);
+    
+    /**
+     * 根据参数map查询指定信息
+     * @param sqlId
+     * @param params
+     * @return
+     */
+    Object queryObjectByMap(String sqlId, Map<String, Object> params);
+    
+    /**
+     * 根据参数实体类查询指定信息
+     * @param sqlId
+     * @param _dto
+     * @return
+     */
+    Object queryObjectByDto(String sqlId, IDto _dto);
 }

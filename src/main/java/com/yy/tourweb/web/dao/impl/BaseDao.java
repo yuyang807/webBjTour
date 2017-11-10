@@ -184,4 +184,16 @@ public class BaseDao implements IBaseDao{
 	public int update(IDto _dto, String sqlId) {
 		return dynamicSqlSessionTemplate.update(getNameSpace(_dto)+"."+sqlId, _dto);
 	}
+
+	@Override
+	public Object queryObjectByMap(String sqlId, Map<String, Object> params) {
+		sqlId=typeAliases+"."+sqlId;
+        return dynamicSqlSessionTemplate.selectOne(sqlId,params);
+	}
+	
+	@Override
+	public Object queryObjectByDto(String sqlId, IDto _dto) {
+		sqlId=typeAliases+"."+sqlId;
+		return dynamicSqlSessionTemplate.selectOne(sqlId,_dto);
+	}
 }
