@@ -24,7 +24,8 @@ var slider = function() {
 						slider_box = document.getElementById("pagelistmove");
 						t_len = t_data.length;
 						
-						var t_base_str = '<div class="pages" ><img src="{0}" onclick="linkfor(\'/list/{1}\')" /></div>';
+						//var t_base_str = '<div class="pages" ><img src="{0}" onclick="linkfor(\'/list/{1}\')" /></div>';
+						var t_base_str = '<div class="pages" ><img src="{0}" /></div>';
 						var t_base_dian = '<div class="dian" onmousedown="slider.dian({0})"><div class="img_border"></div><img src="{1}" /></div>';
 						var t_all_str = slider.s(t_base_str,[t_data[t_len-1].fileUrl,t_data[t_len-1].lineNo]);
 						var t_dian_str = "<div class='dian_bg' ></div>";

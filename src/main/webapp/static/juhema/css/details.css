@@ -66,7 +66,6 @@
   margin: 0 20px 20px;
 }
 .tour_details_overview_list li {
-  height: 2rem;
   line-height: 2rem;
   font-size: 0.9rem;
   color: #4A4A4A;
@@ -87,7 +86,7 @@
   background-size: 1rem auto;
 }
 .icon_attr{
-	background:url(../icon/DXYP2114.png) no-repeat 0 center;
+	background:url(../icon/DXYP2114.png) no-repeat 0 0.5rem;
   background-size: 15px auto;
 }
 .icon_dur{
@@ -117,7 +116,6 @@
   border: 1px solid #ccc;
 }
 .tour_details_left_list_text li{
-	height:1.3rem;
 	line-height:1.3rem;
 	text-indent: 1.3rem;
 	background:url(../icon/DIMD7355.png) no-repeat 0 center;
@@ -163,7 +161,7 @@
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
 }
-.tour_details_right_img_li_img{
+/*.tour_details_right_img_li_img{
 	position:absolute;
 	top:50%;
 	left:50%;
@@ -171,6 +169,9 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+}*/
+.tour_details_right_img_li_img{
+	width:100%;
 }
 .parentclose .tour_details_left_list_text{
 	display:none;
