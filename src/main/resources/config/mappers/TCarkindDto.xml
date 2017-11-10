@@ -157,8 +157,8 @@
 <!-- ##############################################自定义sql分界线##################################################################### -->
 
 		
-	<select id="queryCarAllInfo" resultType="map">
-		SELECT car_name carName, tc.car_type_no carTypeNo,	tc.pic_no picNo, file_url fileUrl, car_type_name carTypeName, 
+	<select id="queryCarAllInfo" parameterType="map" resultType="map">
+		SELECT car_name carName, tc.car_type_no carTypeNo,	tc.pic_no picNo, CONCAT(#{urlFront},tc.car_no,'/',pic_name) fileUrl, car_type_name carTypeName, 
 			(select car_service_price from t_carkind_service tcs where car_service_no='1104' and tcs.car_type_no = tc.car_type_no) halfDayPrice,
 			(select car_service_price from t_carkind_service tcs where car_service_no='1101' and tcs.car_type_no = tc.car_type_no) fullDayPrice,
 			(select car_service_price from t_carkind_service tcs where car_service_no='1102' and tcs.car_type_no = tc.car_type_no) mtyPrice,

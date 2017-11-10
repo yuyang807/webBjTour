@@ -175,8 +175,39 @@
 <!-- ##############################################自定义sql分界线##################################################################### -->
 	
 	<select id="queryPicByLineNo" parameterType="com.yy.tourweb.web.dto.TPicDto" resultType="map">
-		select pic_name picName, file_url fileUrl,line_no lineNo 
+		select pic_name picName, CONCAT(#{urlFront},line_no,'/',pic_name) fileUrl,line_no lineNo 
 		from t_line_pic tlp left join t_pic tp on tp.pic_no = tlp.pic_no 
 		where line_no = #{lineNo}
 	</select>
+	
+	<select id="queryWebPic" parameterType="com.yy.tourweb.web.dto.TPicDto" resultType="map">
+       SELECT pic_no picNo, CONCAT(#{urlFront},pic_name) fileUrl
+       FROM t_pic
+       <trim prefix="WHERE" prefixOverrides="AND">
+        <if test="id != null ">
+          AND id = #{id} 
+        </if>
+        <if test="picNo != null ">
+          AND pic_no = #{picNo} 
+        </if>
+        <if test="picName != null ">
+          AND pic_name = #{picName} 
+        </if>
+        <if test="fileUrl != null ">
+          AND file_url = #{fileUrl} 
+        </if>
+        <if test="md5 != null ">
+          AND md5 = #{md5} 
+        </if>
+        <if test="isMain != null ">
+          AND is_main = #{isMain} 
+        </if>
+        <if test="isMainAll != null ">
+          AND is_main_all = #{isMainAll} 
+        </if>
+       </trim>
+       <if test="orderByStr != null">
+       order by ${orderByStr}
+       </if>
+    </select>
 </mapper>

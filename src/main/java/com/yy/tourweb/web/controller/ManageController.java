@@ -111,6 +111,7 @@ public class ManageController {
     	
     	Map<String, Object> params = new HashMap<String, Object>();
     	params.put("lineNo", lineNo);
+    	params.put("urlFront", Constants.PIC_FRONT_URL);
     	List plist = baseService.queryListByMap("TPicDto.queryPicByLineNo", params);
     	List<Map<String,Object>> addList   = additionService.queryLineAddition(lineNo, 0);
     	List<Map<String,Object>> unaddlist = additionService.queryLineAddition(lineNo, 1);
@@ -148,7 +149,9 @@ public class ManageController {
     	model.addAttribute("unitPrice", unitPrice);
     	
     	List<TShowDto> showList = (List<TShowDto>)(List) baseService.queryListByDto(new TShowDto());
-    	List<Map<String, Object>>  carList  = baseService.queryByMap("TCarkindDto.queryCarAllInfo", new HashMap<String, Object>());
+    	Map<String, Object> carPmap = new HashMap<String, Object>();
+    	carPmap.put("urlFront", Constants.PIC_FRONT_URL);
+    	List<Map<String, Object>>  carList  = baseService.queryByMap("TCarkindDto.queryCarAllInfo", carPmap);
     	model.addAttribute("showList", JSONArray.toJSON(showList));
     	model.addAttribute("carList", JSONArray.toJSON(carList));
     	
@@ -322,6 +325,7 @@ public class ManageController {
     				+" \n \n 总价："+totalCountPrice.toString();
     		
     	}else if(2 == orderType){//cars
+    		lineNo = String.valueOf(tod.getCarServiceNo());//为生成订单号
     		TCarserviceDto tcsd = new TCarserviceDto();
     		tcsd.setCarServiceNo(tod.getCarServiceNo());
     		tcsd = (TCarserviceDto) baseService.query(tcsd);//为了查询是否是多天的标识
@@ -345,6 +349,7 @@ public class ManageController {
     				+" \n \n 总价："+totalCountPrice.toString();
     		
     	}else if(3 == orderType){//guides
+    		lineNo = String.valueOf(tod.getGuideNo());//为生成订单号
     		TGuideDto tgd = new TGuideDto();
     		tgd.setGuideNo(tod.getGuideNo());
     		tgd = (TGuideDto) baseService.query(tgd);
@@ -452,7 +457,9 @@ public class ManageController {
     
     @RequestMapping("/list/cars")
     public String redirectCars(Model model){
-    	List<Map<String, Object>> carsList = baseService.queryByMap("TCarkindDto.queryCarAllInfo", new HashMap<String, Object>());
+    	Map<String, Object> carMap = new HashMap<String, Object>();
+    	carMap.put("urlFront", Constants.PIC_FRONT_URL);
+    	List<Map<String, Object>> carsList = baseService.queryByMap("TCarkindDto.queryCarAllInfo", carMap);
     	model.addAttribute("carsList", JSONArray.toJSON(carsList));
     	List<Map<String, Object>> serviceList = baseService.queryByMap("TCarserviceDto.queryListMap", new HashMap<String, Object>());
     	model.addAttribute("serviceList", JSONArray.toJSON(serviceList));
@@ -509,7 +516,7 @@ public class ManageController {
     public String confirmGuides(TOrderDto tod, Model model){
     	TGuideDto tgd = new TGuideDto();
     	tgd.setGuideNo(tod.getGuideNo());
-    	tgd = (TGuideDto) baseService.query(tgd);
+    	tgd = (TGuideDto) baseService.query(tgd);//校验是否有这个参数 否则全查出来会报错
     	
     	model.addAttribute("startDate",tod.getStartDate());
     	model.addAttribute("guideDay",tod.getGuideDay());
