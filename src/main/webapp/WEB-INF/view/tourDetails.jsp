@@ -103,6 +103,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 						<li class="tour_guide_li">Select a date</li>
 						<li class="tour_guide_li ">
 							<input id="datepicker" class="guide_input fr" type="text" />
+							<div class="clearboth"></div>
 						</li>
 						<!--<li class="tour_guide_li">
 							<div class="tour_guide_li_left fl">Select a currency</div>
@@ -400,7 +401,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		   var lineList = ${lineList};
 		    var lineliststr = `
 		    	<li class="tour_details_right_img_li"  onclick="linkfor(/list/{lineNo})">
-					<div class="tour_details_right_img_li_inner"></div>
+					/*<div class="tour_details_right_img_li_inner"></div>*/
 					<img class="tour_details_right_img_li_img" src="{fileUrl}" />
 					<div class="tour_details_right_img_bg"></div>
 					<div class="tour_details_right_img_text">
