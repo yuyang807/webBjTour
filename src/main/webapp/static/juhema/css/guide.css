@@ -197,6 +197,8 @@
 	right:0;
 	width:50%;
 	height:100%;
+	border-left:1px solid #ccc;
+	border-right: 1px solid #ccc;
 	position:absolute;
 }
 .tour_guide_td_list_in {

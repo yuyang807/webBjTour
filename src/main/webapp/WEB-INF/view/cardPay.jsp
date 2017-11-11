@@ -185,16 +185,32 @@
 			 			<span>${allPrice}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
-			 			0 Child $0
+			 			{teenagerNum} Teenager $ {unitPrice}
+			 			<span>${teenagerPrice}</span>
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			{childNum} Child $ {unitPrice}
+			 			<span>${childPrice}</span>
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			{babyNum} Baby $ 0
 			 			<span>$0</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
 			 			Airport/Railway station Pick up
-			 			<span>$0</span>
+			 			<span>$ {pickup}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
 			 			Airport Drop Off
-			 			<span>$0</span>
+			 			<span>$ {dropoff}</span>
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			表演1
+			 			<span>$ {show1price}</span>
+			 		</div>
+			 		<div class="cardPay_right_li">
+			 			表演2
+			 			<span>$ {show2price}</span>
 			 		</div>
 			 	</div>
 				<div class="clearboth"></div>
@@ -260,12 +276,20 @@
 			if(flag == 1){
 				//线路
 				$("#cardPay_right_id").html(flag1str.format2({
-					img:'${ctxStatic}/juhema/img/WechatIMG58.jpeg',
+					img:'${mainPicUrl}',
 					datestr:gettimestr('${startDate}'),
 					adultNum:'${adultNum}',
 					unitPrice:'${unitPrice}',
 					allPrice:'${unitPrice*adultNum}',
-					totalprice:'${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}'
+					teenagerNum:'${teenagerNum}',
+					teenagerPrice:'${unitPrice*teenagerNum}',
+					childNum:'${childNum}',
+					childPrice:'${unitPrice*childNum}',
+					pickup:'${pickupPrice}',
+					dropoff:'${dropoffPrice}',
+					show1price:'${showPrice1}',
+					show2price:'${showPrice2}',
+					totalprice:'${adultNum*unitPrice+unitPrice*teenagerNum+unitPrice*childNum+pickupPrice+dropoffPrice}'
 				}));
 				$("#hiddensubmit").html(flag1hide);
 			}else if(flag == 2){
