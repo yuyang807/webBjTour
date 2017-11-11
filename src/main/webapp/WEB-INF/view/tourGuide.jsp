@@ -141,17 +141,17 @@
 		    {
 		        field: document.getElementById('datepicker'),
 		        firstDay: 1,
-		        minDate: new Date('2000-01-01'),
-		        maxDate: new Date('2020-12-31'),
-		        yearRange: [2000,2020]
+		        minDate: new Date(),
+		        maxDate: new Date('2030-12-31'),
+		        yearRange: [2010,2030]
 		    });
 			var picker2 = new Pikaday(
 		    {
 		        field: document.getElementById('datepicker2'),
 		        firstDay: 1,
-		        minDate: new Date('2000-01-01'),
-		        maxDate: new Date('2020-12-31'),
-		        yearRange: [2000,2020]
+		        minDate: new Date(),
+		        maxDate: new Date('2030-12-31'),
+		        yearRange: [2010,2030]
 		    });
 		    var table_top_html = `
 				<div class="tour_guide_table_top">

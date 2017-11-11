@@ -217,7 +217,7 @@
 		    	for(var j in onecarmap){
 		    		t_car_list += car_str.format2({
 		    			carName:onecarmap[j]['carName'],
-		    			carPicUrl:onecarmap[j]['carPicUrl']
+		    			carPicUrl:onecarmap[j]['fileUrl']
 		    		})
 		    	}
 		    	t_all_table += table_str.format2({

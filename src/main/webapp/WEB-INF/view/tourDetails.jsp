@@ -264,9 +264,9 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    {
 		        field: document.getElementById('datepicker'),
 		        firstDay: 1,
-		        minDate: new Date('2000-01-01'),
-		        maxDate: new Date('2020-12-31'),
-		        yearRange: [2000,2020]
+		        minDate: new Date(),
+		        maxDate: new Date('2030-12-31'),
+		        yearRange: [2010,2030]
 		    });
 		    $(".tour_details_left_list_title").click(function(){
 		    	var t_parent = $(this).parent();

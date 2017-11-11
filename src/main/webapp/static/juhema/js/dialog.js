@@ -51,17 +51,17 @@ $("#tour_guide_table_id").on("click",".tour_book_now",function(){
     {
         field: document.getElementById('datepicker'),
         firstDay: 1,
-        minDate: new Date('2000-01-01'),
-        maxDate: new Date('2020-12-31'),
-        yearRange: [2000,2020]
+        minDate: new Date(),
+        maxDate: new Date('2030-12-31'),
+        yearRange: [2000,2030]
     });
 	picker2 = new Pikaday(
     {
         field: document.getElementById('datepicker2'),
         firstDay: 1,
-        minDate: new Date('2000-01-01'),
-        maxDate: new Date('2020-12-31'),
-        yearRange: [2000,2020]
+        minDate: new Date(),
+        maxDate: new Date('2030-12-31'),
+        yearRange: [2000,2030]
     });
     
 	t_regkey = $(this).attr("regt");
