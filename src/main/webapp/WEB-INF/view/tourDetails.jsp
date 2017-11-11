@@ -6,16 +6,16 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider2.css?v=20170316" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider2.css?v=20171111" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -229,10 +229,10 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20170316" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20170316" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20171111" ></script>
 		<script>
 			/*var datalist = [
 				{
@@ -398,10 +398,10 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		"fileUrll":123
 		    	}
 		    ];*/
+		   /*<div class="tour_details_right_img_li_inner"></div>*/
 		   var lineList = ${lineList};
 		    var lineliststr = `
 		    	<li class="tour_details_right_img_li"  onclick="linkfor(/list/{lineNo})">
-					/*<div class="tour_details_right_img_li_inner"></div>*/
 					<img class="tour_details_right_img_li_img" src="{fileUrl}" />
 					<div class="tour_details_right_img_bg"></div>
 					<div class="tour_details_right_img_text">
