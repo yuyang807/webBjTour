@@ -5,15 +5,15 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171111" />
 	</head>
 	<body>
 		<div id="tour_top_id" class="tour_top">
@@ -105,10 +105,10 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171111" ></script>
 		<script>
 			var table_top_html = `
 				<div class="tour_guide_table_top">
@@ -186,11 +186,16 @@
 		    	
 		    }
 			$("#tour_guide_table_id").html(table_top_html+t_all_table);
-			$(".tour_details_right").on("focus","input",function(){
+			/*$(".tour_details_right").on("focus","input",function(){
 				var t_regkey = $(this).attr("reg");
 				$(this).removeClass('inputerror');
 				$("#"+t_regkey).addClass('waringhidden');
 				//submiterror();
+			});*/
+			$(".contactinput").focus(function(){
+				var t_regkey = $(this).attr("reg");
+				$(this).removeClass('inputerror');
+				$("#"+t_regkey).addClass('waringhidden');
 			});
 			function contactsub(){
 				var t_input = $(".contactinput");

@@ -6,12 +6,12 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20170316" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20170316" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171111" />
 	</head>
     <body id="viewTheTour">
 		<header id="tour_top_id" class="tour_top">
@@ -35,12 +35,12 @@
 				<div class="tour_contomize_ul">
 					<a href="/list/guides" class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
-						<img src="${ctxStatic}/juhema/icon/ATIQ0483.jpg" />
+						<img src="${ctxStatic}/juhema/icon/ATIQ0483.png" />
 						<div class="tour_contomize_div">Hire a Tour Guide</div>
 					</a><!--
 					--><a href="/list/cars"  class="tour_contomize_list">
 						<div class="tour_contomize_list_inbox"></div>
-						<img src="${ctxStatic}/juhema/icon/FXSG2704.jpg" />
+						<img src="${ctxStatic}/juhema/icon/FXSG2704.png" />
 						<div class="tour_contomize_div">Car Rental</div>
 					</a>
 				</div>
@@ -75,9 +75,9 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20170316" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20170316" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20170316" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20171111" ></script>
 		<script>
 			var t_tours_list = ${lineList};
 			var t_all_html = {};
