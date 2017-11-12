@@ -147,7 +147,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 							<div class="clearboth"></div>
 						</li>
 						<li class="tour_guide_li">
-							<div class="tour_guide_li_left fl">Child <span id="pricep3">$0</span></div>
+							<div class="tour_guide_li_left fl">Child(height between 1.2 meters and 1.4 meters equalling 3.9 feet to 55 feet) <span id="pricep3">$0</span></div>
 							<select name="childNum" class="tour_guide_li_right fr" onchange="selectprice(this,'p3')">
 								<option value="0">0</option>
 								<option value="1">1</option>

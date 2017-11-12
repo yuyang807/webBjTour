@@ -316,7 +316,13 @@
 		    	for(var i in checkobj){
 		    		if(checkobj[i]){
 		    			console.log($("#price"+i).html());
-		    			t_price += parseInt($("#price"+i+" span").html());
+		    			var all = 1;
+		    			if(i == "c3" || i == "c4"){
+		    				all = personnum;
+		    			}else{
+		    				
+		    			}
+		    			t_price += parseInt($("#price"+i+" span").html())*all;
 		    		}
 		    	}
 		    	$("#total_bottom_price").html("$"+(t_price+allprice));
