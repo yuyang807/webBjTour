@@ -6,13 +6,13 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171112" />
 	</head>
     <body>
     	<header id="tour_top_id" class="tour_top">
@@ -37,7 +37,7 @@
 					Airport/Railway station Pick up
 					<div class="tour_payCopy_checkbox_big" k="c1">
 						<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-						<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec3">$<span class="pickupprice"></span></div>
+						<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec1">$<span class="pickupprice"></span></div>
 						<div class="tour_payCopy_checkbox_more">Choose Drop off</div>
 						<select id="pickupselect" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
 							
@@ -45,7 +45,7 @@
 					</div>
 					<div class="tour_payCopy_checkbox_big2" k="c2">
 						<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-						<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec3">$<span class="pickupprice"></span></div>
+						<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec2">$<span class="pickupprice"></span></div>
 						<div class="tour_payCopy_checkbox_more">Choose Pick up</div>
 						<select id="pickupselect2" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
 							
@@ -121,8 +121,8 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171112" ></script>
 		<script>
 			var checkobj = {
 				c1:false,
@@ -289,10 +289,26 @@
 		    	getallprice()
 		    }
 		    function checkout(){
-		    	$("#pickupCarTypeNo").val($("#pickupselect2").val());
-				$("#dropoffCarTypeNo").val($("#pickupselect").val());
-				$("#showNo1").val($("#acrobaticid").val());
-				$("#showNo2").val($("#kungfuid").val());
+		    	if(checkobj['c1']){
+		    		$("#pickupCarTypeNo").val($("#pickupselect2").val());
+		    	}else{
+		    		$("#pickupCarTypeNo").remove();
+		    	}
+		    	if(checkobj['c2']){
+					$("#dropoffCarTypeNo").val($("#pickupselect").val());
+		    	}else{
+		    		$("#dropoffCarTypeNo").remove();
+		    	}
+		    	if(checkobj['c3']){
+		    		$("#showNo1").val($("#acrobaticid").val());
+		    	}else{
+		    		$("#showNo1").remove();
+		    	}
+		    	if(checkobj['c4']){
+					$("#showNo2").val($("#kungfuid").val());
+		    	}else{
+		    		$("#showNo2").remove();
+		    	}
 				$("#payCopyformid").submit();
 		    }
 		    function getallprice(){

@@ -6,12 +6,12 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171112" />
 	</head>
     <body>
     	<header id="tour_top_id" class="tour_top">
@@ -139,9 +139,9 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171112" ></script>
 		<script>
 			var flag1hide = `
 				<input type="text" id="allprice" name="totalPrice" value='${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}' />
@@ -181,16 +181,16 @@
 			 			Date:{datestr}
 			 		</div>
 			 		<div class="cardPay_right_li">
-			 			{adultNum} Adult $ {unitPrice}
-			 			<span>${allPrice}</span>
+			 			{adultNum} Adult
+			 			<span>$ {allPrice}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
-			 			{teenagerNum} Teenager $ {unitPrice}
-			 			<span>${teenagerPrice}</span>
+			 			{teenagerNum} Teenager
+			 			<span>$ {teenagerPrice}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
-			 			{childNum} Child $ {unitPrice}
-			 			<span>${childPrice}</span>
+			 			{childNum} Child
+			 			<span>$ {childPrice}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
 			 			{babyNum} Baby $ 0
@@ -205,11 +205,11 @@
 			 			<span>$ {dropoff}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
-			 			表演1
+			 			show1
 			 			<span>$ {show1price}</span>
 			 		</div>
 			 		<div class="cardPay_right_li">
-			 			表演2
+			 			show2
 			 			<span>$ {show2price}</span>
 			 		</div>
 			 	</div>
@@ -282,14 +282,15 @@
 					unitPrice:'${unitPrice}',
 					allPrice:'${unitPrice*adultNum}',
 					teenagerNum:'${teenagerNum}',
-					teenagerPrice:'${unitPrice*teenagerNum}',
+					teenagerPrice:'${unitPrice*teenagerNum*0.9}',
 					childNum:'${childNum}',
-					childPrice:'${unitPrice*childNum}',
+					childPrice:'${unitPrice*childNum*0.8}',
+					babyNum:'${babyNum}',
 					pickup:'${pickupPrice}',
 					dropoff:'${dropoffPrice}',
 					show1price:'${showPrice1}',
 					show2price:'${showPrice2}',
-					totalprice:'${adultNum*unitPrice+unitPrice*teenagerNum+unitPrice*childNum+pickupPrice+dropoffPrice}'
+					totalprice:'${adultNum*unitPrice+unitPrice*teenagerNum*0.9+unitPrice*childNum*0.8+pickupPrice+dropoffPrice+showPrice1+showPrice2}'
 				}));
 				$("#hiddensubmit").html(flag1hide);
 			}else if(flag == 2){

@@ -6,15 +6,15 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171112" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -133,9 +133,10 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171112" ></script>
 		<script>
 			var picker = new Pikaday(
 		    {
@@ -294,7 +295,7 @@
 							content:$("#contentid").val()
 						},
 						success:function(data){
-							if(data.resCode == '00000000'){
+							if(data.resultCode == '00000000'){
 								submitsuccess();
 							}else{
 								submiterror();

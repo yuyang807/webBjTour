@@ -6,16 +6,16 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171111" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider2.css?v=20171111" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider2.css?v=20171112" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -202,22 +202,30 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				<ul class="contact_list_ul contomize_magin">
 					<li class="contact_list displayinline">
 						<div class="contact_label">First name</div>
-						<div class="contact_input"><input type="text" /></div>
+						<div class="contact_input"><input id="fNameid" name="fName" reg="contactfname" class="contactinput" type="text" /></div>
+						<div id="contactfname" class="cardPaywaring fl waringhidden">first name</div>
+						<div style="clear:both"></div>
 					</li><!--
 					--><li class="contact_list displayinline">
 						<div class="contact_label">Last name</div>
-						<div class="contact_input"><input type="text" /></div>
+						<div class="contact_input"><input id="lNameid" name="lName" reg="contactlname" class="contactinput" type="text" /></div>
+						<div id="contactlname" class="cardPaywaring fl waringhidden">Last name</div>
+						<div style="clear:both"></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">E-mail</div>
-						<div class="contact_input2"><input type="text" /></div>
+						<div class="contact_input2"><input id="emailAddressid" reg="contactemail" class="contactinput" name="emailAddress" type="text" /></div>
+						<div id="contactemail" class="cardPaywaring fl waringhidden">E-mail</div>
+						<div style="clear:both"></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">Special requirement:</div>
-						<textarea class="contact_textarea"></textarea>
+						<textarea class="contact_textarea contactinput" id="contentid"  reg="contactarea" name="content"></textarea>
+						<div id="contactarea" class="cardPaywaring fl waringhidden">Special requirement</div>
+						<div style="clear:both"></div>
 					</li>
 				</ul>
-				<button class="buttonpublic_nochange buttoncolor3 costomizesubmit">Submit</button>
+				<button class="buttonpublic_nochange buttoncolor3 costomizesubmit" onclick="contactsub()">Submit</button>
 				<div>&nbsp;</div>
 			</div>
 		</div>
@@ -229,10 +237,11 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171111" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20171111" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20171112" ></script>
 		<script>
 			/*var datalist = [
 				{
@@ -433,6 +442,49 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	unaddListstr += "<li>"+unaddList[i]['add_value']+"</li>";
 		    }
 		    $("#unaddlistId").html(unaddListstr);
+		    
+		    $(".contactinput").focus(function(){
+				var t_regkey = $(this).attr("reg");
+				$(this).removeClass('inputerror');
+				$("#"+t_regkey).addClass('waringhidden');
+			});
+			/*$(".tour_details_right").on("focus","input",function(){
+				
+				//submiterror();
+			});*/
+			function contactsub(){
+				var t_input = $(".contactinput");
+				var t_len = t_input.length;
+				var all_len = t_len;
+				for(var i = 0 ;i < t_input.length;i++){
+					var t_regkey = t_input.eq(i).attr("reg");
+					var t_val = t_input.eq(i).val();
+					if(t_val == ""){
+						all_len--;
+						t_input.eq(i).addClass('inputerror');
+						$("#"+t_regkey).removeClass('waringhidden');
+					}
+				}
+				if(all_len == t_len){
+					$.ajax({
+						type:"post",
+						url:"/advice/submit",
+						data:{
+							fName:$("#fNameid").val(),
+							lName:$("#lNameid").val(),
+							emailAddress:$("#emailAddressid").val(),
+							content:$("#contentid").val()
+						},
+						success:function(data){
+							if(data.resultCode == '00000000'){
+								submitsuccess();
+							}else{
+								submiterror();
+							}
+						}
+					});
+				}
+			}
 		</script>
 	</body>
 </html>
