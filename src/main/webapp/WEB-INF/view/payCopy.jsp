@@ -319,8 +319,6 @@
 		    			var all = 1;
 		    			if(i == "c3" || i == "c4"){
 		    				all = personnum;
-		    			}else{
-		    				
 		    			}
 		    			t_price += parseInt($("#price"+i+" span").html())*all;
 		    		}
