@@ -16,3 +16,7 @@ function gettimestr(datetime){
 	var tday = newD.getDate();
 	return tday+"/"+tmonth+"/"+tyear;
 }
+var regobj = {
+	'contactmail':/^(\w)+(\.\w+)*@(\w)+((\.\w{2,5}){1,3})$/,
+	'kong':/\S/
+}

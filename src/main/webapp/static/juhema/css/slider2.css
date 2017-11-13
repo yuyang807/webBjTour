@@ -52,12 +52,50 @@
 	left:0;
 	top:50%;
 	z-index: 100;
+	margin-top: -50px;
+	height:100px;
+	width:50px;
+	background:url(../icon/righti.png) no-repeat center center;
+	background-size:20px auto;
+}
+.slider_left_bg{
+	position:absolute;
+	left:0;
+	top:50%;
+	z-index: 98;
+	margin-top: -50px;
+	height:100px;
+	width:50px;
+	background:#000;
+	opacity: 0.5;
 }
 .slider_right{
 	position:absolute;
 	right:0;
 	top:50%;
+	margin-top: -50px;
+	height:100px;
+	width:50px;
+	background:url(../icon/left.png) no-repeat center center;
+	background-size:20px auto;
 	z-index: 100;
+}
+.slider_right_bg{
+	position:absolute;
+	right:0;
+	top:50%;
+	z-index: 98;
+	margin-top: -50px;
+	height:100px;
+	width:50px;
+	background:#000;
+	opacity: 0.5;
+}
+.sliderbtnbox{
+	display: none;
+}
+#li_box_id:hover .sliderbtnbox{
+	display: block;
 }
 .pages img{
   position: absolute;
@@ -112,7 +150,7 @@
 	right:0;
 	bottom:0;
 	background:#000;
-	opacity: 0.8;
+	opacity: 0.5;
 }
 .dianhover .img_border{
 	border:2px solid red;

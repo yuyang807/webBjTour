@@ -18,7 +18,7 @@ var slider = function() {
 							c.innerHTML='body{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;-khtml-user-select:none;user-select:none}#li_box_id{position:absolute;top:0;right:0;bottom:0;left:0;overflow:hidden}#pagelistmove{position:absolute;top:0;width:100%;bottom:0;left:0;white-space:nowrap}#li_box_id .removetime{transition:all '+runtime+'ms;-moz-transition:all '+runtime+'ms;-webkit-transition:all '+runtime+'ms;-o-transition:all '+runtime+'ms}.pages{width:100%;height:100%;color:#fff;transform:translate(-100%,0);display:inline-block;position:relative;}';
 							document.getElementsByTagName('head')[0].appendChild(c);
 						// 
-						document.getElementById(id).innerHTML = '<button onclick="slider.prev()" class="slider_left">←</button><button onclick="slider.next()" class="slider_right">→</button><div id="li_box_id"  ><div id="pagelistmove" ></div><div id="dianbox" class="dianbox"></div></div>';
+						document.getElementById(id).innerHTML = '<div class="sliderbtnbox"><div class="slider_left_bg"></div><div class="slider_right_bg"></div><button onclick="slider.prev()" class="slider_left"></button><button onclick="slider.next()" class="slider_right"></button></div><div id="li_box_id"  ><div id="pagelistmove" ></div><div id="dianbox" class="dianbox"></div></div>';
 						
 						t_window_w = document.getElementById("li_box_id").clientWidth;
 						slider_box = document.getElementById("pagelistmove");
