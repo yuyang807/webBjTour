@@ -6,13 +6,13 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171115" />
 	</head>
     <body>
     	<header id="tour_top_id" class="tour_top">
@@ -121,8 +121,8 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171115" ></script>
 		<script>
 			var checkobj = {
 				c1:false,
@@ -142,48 +142,38 @@
 				}
 				getallprice();
 			});
-			var table_top_html = `
-				<div class="tour_guide_table_top">
-					<button class="tour_guide_list tour_guide_10"><span>Size of party</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_20"><span>Type of vehicle</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_20"><span>Photo</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_45"><span>Notice</span></button>
-				</div>
-			`;
-			var car_str = `
-				<div class="tour_guide_car_list">
-					<div class="tour_guide_td_list_in_new"></div>
-				 	<button class="tour_guide_car_text">{carName}</button>
-				 	<img class="tour_guide_car_img" src="{carPicUrl}" />
-				</div>
-			`;
-			var table_str = `
-				<div class="tour_guide_table_list2">
-				   	<button class="tour_guide_td_button_new">{carnum}<br>traveling<br>party</button>
-					<div class="tour_guide_td_list_new tour_guide_50">
-						{carlist}
-				   </div>
-				   	<div style="clear:both;"></div>
-				</div>
-			`;
-			var table_str_more = `
-				<div class="tour_guide_td_button_more_new">
-		   			<div class="tour_guide_text_inner">
-			   			1.The rates above are quoted separately only with Chinese-speaking driver since Most of the drivers speaks little English.<br>                                             
-						2.Our Standard Cars (Nissan, Passat, Sonata...) are in a random arrangement.<br>
-						3.Your driver will pick you up at your hotel holding a piece of paper with your name. For urgent matters, please call your trip advisor on her or his mobile.
-					</div>
-		   		</div>
-			`;
+			var table_top_html = '<div class="tour_guide_table_top">'+
+					'<button class="tour_guide_list tour_guide_10"><span>Size of party</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_20"><span>Type of vehicle</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_20"><span>Photo</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_45"><span>Notice</span></button>'+
+				'</div>';
+			var car_str = '<div class="tour_guide_car_list">'+
+					'<div class="tour_guide_td_list_in_new"></div>'+
+				 	'<button class="tour_guide_car_text">{carName}</button>'+
+				 	'<img class="tour_guide_car_img" src="{carPicUrl}" />'+
+				'</div>';
+			var table_str = '<div class="tour_guide_table_list2">'+
+				   	'<button class="tour_guide_td_button_new">{carnum}<br>traveling<br>party</button>'+
+					'<div class="tour_guide_td_list_new tour_guide_50">'+
+						'{carlist}'+
+				   '</div>'+
+				   	'<div style="clear:both;"></div>'+
+				'</div>';
+			var table_str_more = '<div class="tour_guide_td_button_more_new">'+
+		   			'<div class="tour_guide_text_inner">'+
+			   			'1.The rates above are quoted separately only with Chinese-speaking driver since Most of the drivers speaks little English.<br>'+                                             
+						'2.Our Standard Cars (Nissan, Passat, Sonata...) are in a random arrangement.<br>'+
+						'3.Your driver will pick you up at your hotel holding a piece of paper with your name. For urgent matters, please call your trip advisor on her or his mobile.'+
+					'</div>'+
+		   		'</div>';
 			$("#tour_guide_table_id").html(table_top_html+table_str+table_str+table_str_more);
-			var person_str = `
-				<ul class="payCopy_top_ul">
-					<li>The Great Wall Tour</li>
-					<li>{personnum} people, ${allprice} </li>
-					<li>Date: 14/07/2017</li>
-				</ul>
-				<div style="float:right;font-size:2rem;color:#9B9B9B;">${allprice}</div>
-			`;
+			var person_str = '<ul class="payCopy_top_ul">'+
+					'<li>The Great Wall Tour</li>'+
+					'<li>{personnum} people, ${allprice} </li>'+
+					'<li>Date: 14/07/2017</li>'+
+				'</ul>'+
+				'<div style="float:right;font-size:2rem;color:#9B9B9B;">${allprice}</div>';
 
 			var personnum = ${adultNum}+${teenagerNum}+${childNum}+${babyNum};
 			var allprice = ${adultNum}*${unitPrice}+

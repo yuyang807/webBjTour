@@ -1,43 +1,33 @@
-var dialog_str = `
-	<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>
-	<div class="dialog_box dialog_remove">
-		<div class="dialog_title">Car Rental<div class="closedialog" onclick="removedialog()"></div></div>
-		<form id="carrenform" action="/cars/confirm" method="post" >
-			<ul class="dialog_main">
-				<!--<li class="dialog_main_li">
-					<div class="dialog_main_li_top">Size of party</div>
-					<select class="dialog_main_li_input">
-						<option>1</option>
-						<option>2</option>
-					</select>
-				</li>-->
-				<li class="dialog_main_li">
-					<input type="hidden" id="carTypeNoid" name="carTypeNo" value={carTypeNo} />
-					<input type="hidden" name="carDay" id="guideDay" />
-					<input type="hidden" name="startDate" id="startDate" />
-					<div class="dialog_main_li_top">Select start date</div>
-					<input id="datepicker" onblur="touroptionchange()" reg="datepickertime" class="guide_inputtime guide_input fl" type="text" />
-					<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
-					<div style="clear:both"></div>
-				</li>
-				<li id="datepicker2box" class="dialog_main_li">
-					<div class="dialog_main_li_top">Select end date</div>
-					<input id="datepicker2" onblur="touroptionchange()" reg="datepickertime2" class="guide_input fl" type="text" />
-					<div id="datepickertime2" class="cardPaywaring fl waringhidden">end time</div>
-					<div style="clear:both"></div>
-				</li>
-				<li class="dialog_main_li">
-					<div class="dialog_main_li_top">Tour Option</div>
-					<select id="touroption" name="carServiceNo" onchange="touroptionchange()" class="dialog_main_li_input">
-						
-					</select>
-				</li>
-			</ul>
-		</form>
-		<div class="dialog_bottom_total">Total Cost: 　<span>￥<span id="cardialogprice">0</span></span>.00</div>
-		<button class="dialog_bottom_btn buttoncolor1" onclick="dialogsubmit()">Submit</button>
-	</div>
-`;
+var dialog_str = '<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>'+
+	'<div class="dialog_box dialog_remove">'+
+		'<div class="dialog_title">Car Rental<div class="closedialog" onclick="removedialog()"></div></div>'+
+		'<form id="carrenform" action="/cars/confirm" method="post" >'+
+			'<ul class="dialog_main">'+
+				'<li class="dialog_main_li">'+
+					'<input type="hidden" id="carTypeNoid" name="carTypeNo" value={carTypeNo} />'+
+					'<input type="hidden" name="carDay" id="guideDay" />'+
+					'<input type="hidden" name="startDate" id="startDate" />'+
+					'<div class="dialog_main_li_top">Select start date</div>'+
+					'<input id="datepicker" onblur="touroptionchange()" reg="datepickertime" class="guide_inputtime guide_input fl" type="text" />'+
+					'<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>'+
+					'<div style="clear:both"></div>'+
+				'</li>'+
+				'<li id="datepicker2box" class="dialog_main_li">'+
+					'<div class="dialog_main_li_top">Select end date</div>'+
+					'<input id="datepicker2" onblur="touroptionchange()" reg="datepickertime2" class="guide_input fl" type="text" />'+
+					'<div id="datepickertime2" class="cardPaywaring fl waringhidden">end time</div>'+
+					'<div style="clear:both"></div>'+
+				'</li>'+
+				'<li class="dialog_main_li">'+
+					'<div class="dialog_main_li_top">Tour Option</div>'+
+					'<select id="touroption" name="carServiceNo" onchange="touroptionchange()" class="dialog_main_li_input">'+
+					'</select>'+
+				'</li>'+
+			'</ul>'+
+		'</form>'+
+		'<div class="dialog_bottom_total">Total Cost: 　<span>￥<span id="cardialogprice">0</span></span>.00</div>'+
+		'<button class="dialog_bottom_btn buttoncolor1" onclick="dialogsubmit()">Submit</button>'+
+	'</div>';
 var picker = 0;
 var picker2 = 0;
 var t_regkey = 0;
@@ -156,26 +146,22 @@ function removedialog(){
 	$(".dialog_remove").remove();
 }
 
-var successdialogstr = `
-	<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>
-	<div class="dialog_box dialog_remove">
-		<div class="submit_s_icon"></div>
-		<div class="submit_s_text">
-			Your order has been submited successfully
-		</div>
-		<button class="dialog_bottom_btn buttoncolor1" onclick="javascript:window.location.href = '/'">back to home page</button>
-	</div>
-`;
-var errordialogstr = `
-	<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>
-	<div class="dialog_box dialog_remove">
-		<div class="submit_s_icon_error"></div>
-		<div class="submit_s_text">
-			Submission failure
-		</div>
-		<button class="dialog_bottom_btn buttoncolor1" onclick="submitfunction()">resubmit</button>
-	</div>
-`;
+var successdialogstr = '<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>'+
+	'<div class="dialog_box dialog_remove">'+
+		'<div class="submit_s_icon"></div>'+
+		'<div class="submit_s_text">'+
+			'Your order has been submited successfully'+
+		'</div>'+
+		'<button class="dialog_bottom_btn buttoncolor1" onclick="javascript:window.location.href = '/'">back to home page</button>'+
+	'</div>';
+var errordialogstr = '<div class="dialog_bg dialog_remove" onclick="removedialog()"></div>'+
+	'<div class="dialog_box dialog_remove">'+
+		'<div class="submit_s_icon_error"></div>'+
+		'<div class="submit_s_text">'+
+			'Submission failure'+
+		'</div>'+
+		'<button class="dialog_bottom_btn buttoncolor1" onclick="submitfunction()">resubmit</button>'+
+	'</div>';
 function submitsuccess(){
 	document.body.style.overflow = "hidden";
 	$("body").append(successdialogstr);

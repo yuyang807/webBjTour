@@ -5,15 +5,15 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171115" />
 	</head>
 	<body>
 		<div id="tour_top_id" class="tour_top">
@@ -105,44 +105,38 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171115" ></script>
 		<script>
-			var table_top_html = `
-				<div class="tour_guide_table_top">
-					<button class="tour_guide_list tour_guide_12"><span>Size of party</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_12"><span>Size of party</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_12"><span>Photo</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_12"><span>half day(4 hours in the downtown)</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_12"><span>full day(8 hours in the downtown)</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_12"><span>Mutianyu Great Wall</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_12"><span>Jinshanling Great Wall</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_12"><span>Lick the Book button</span></button>
-				</div>
-			`;
-			var car_str = `
-				<div class="tour_guide_car_list">
-					<div class="tour_guide_td_list_in_new"></div>
-				 	<button class="tour_guide_car_text">{carName}</button>
-				 	<img class="tour_guide_car_img" src="{fileUrl}" />
-				</div>
-			`;
-			var table_str = `
-				<div class="tour_guide_table_list2">
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable1">{carnum}<br>traveling<br>party</button>
-					<div class="tour_guide_td_list_new carrentallist tour_guide_24">
-						{carlist}
-				   </div>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{halfDayPrice}</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{fullDayPrice}</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{mtyPrice}</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{jslPrice}</button>
-				   	<button class="tour_guide_td_button_new tour_guide_12 carrentaltable6"><div id="tour_book_now_id" class="tour_book_now" regt="{carTypeNo}">Book Now</div></button>
-				   	<div style="clear:both;"></div>
-				</div>
-			`;
+			var table_top_html = '<div class="tour_guide_table_top">'+
+					'<button class="tour_guide_list tour_guide_12"><span>Size of party</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_12"><span>Size of party</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_12"><span>Photo</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_12"><span>half day(4 hours in the downtown)</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_12"><span>full day(8 hours in the downtown)</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_12"><span>Mutianyu Great Wall</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_12"><span>Jinshanling Great Wall</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_12"><span>Lick the Book button</span></button>'+
+				'</div>';
+			var car_str = '<div class="tour_guide_car_list">'+
+					'<div class="tour_guide_td_list_in_new"></div>'+
+				 	'<button class="tour_guide_car_text">{carName}</button>'+
+				 	'<img class="tour_guide_car_img" src="{fileUrl}" />'+
+				'</div>';
+			var table_str = '<div class="tour_guide_table_list2">'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable1">{carnum}<br>traveling<br>party</button>'+
+					'<div class="tour_guide_td_list_new carrentallist tour_guide_24">'+
+						'{carlist}'+
+				  '</div>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{halfDayPrice}</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{fullDayPrice}</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{mtyPrice}</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{jslPrice}</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable6"><div id="tour_book_now_id" class="tour_book_now" regt="{carTypeNo}">Book Now</div></button>'+
+				   	'<div style="clear:both;"></div>'+
+				'</div>';
 			/*var touroption = `
 				<option value=1 >halfDayPrice</option>
 				<option value=2 >fullDayPrice</option>
@@ -204,6 +198,7 @@
 				for(var i = 0 ;i < t_input.length;i++){
 					var t_regkey = t_input.eq(i).attr("reg");
 					var t_val = t_input.eq(i).val();
+					var reg_key = regobj[t_regkey];
 					if(reg_key && !reg_key.test(t_val)){
 					//if(t_val == ""){
 						all_len--;

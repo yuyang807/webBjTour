@@ -7,7 +7,7 @@
     <title>付款页面</title>
     <script src="${ctxStatic}/juhema/flexible.js"></script>
     <script src="${ctxStatic}/juhema/jquery.js"></script>
-    <link href="${ctxStatic}/juhema/self.css?v=20171114" rel="stylesheet">
+    <link href="${ctxStatic}/juhema/self.css?v=20171115" rel="stylesheet">
     <script>
         //判断微信支付宝
         var ua = navigator.userAgent.toLowerCase();
