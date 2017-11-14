@@ -18,5 +18,9 @@ function gettimestr(datetime){
 }
 var regobj = {
 	'contactmail':/^(\w)+(\.\w+)*@(\w)+((\.\w{2,5}){1,3})$/,
-	'kong':/\S/
+	'contactname':/\S/,
+	'contacttextarea':/\S/,
+	'contactfname':/\S/,
+	'contactlname':/\S/,
+	'contactarea':/\S/,
 }
