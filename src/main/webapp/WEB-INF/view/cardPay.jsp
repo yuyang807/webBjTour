@@ -6,12 +6,12 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171115" />
 	</head>
     <body>
     	<header id="tour_top_id" class="tour_top">
@@ -139,139 +139,127 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171115" ></script>
 		<script>
-			var flag1hide = `
-				<input type="text" id="allprice" name="totalPrice" value='${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}' />
-				<input type="hidden" name="lineNo" value=${lineNo} />
-				<input type="hidden" name="adultNum" value=${adultNum} />
-				<input type="hidden" name="teenagerNum" value=${teenagerNum} />
-				<input type="hidden" name="babyNum" value=${babyNum} />
-				<input type="hidden" name="childNum" value=${childNum} />
-				<input type="hidden" name="startDate" value="${startDate}" />
-				<input type="hidden" name="pickupCarTypeNo" value=${pickupCarTypeNo}  />
-				<input type="hidden" name="dropoffCarTypeNo" value=${dropoffCarTypeNo}  />
-				<input type="hidden" name="showNo" value=${showNo}  />
-				<input type="hidden" name="orderType" value=${flag}  />
-			`;
-			var flagcarhide = `
-				<input type="text" id="allprice" name="totalPrice" value='${carDay*unitPrice}' />
-				<input type="hidden" name="startDate" value="${startDate}" />
-				<input type="hidden" name="carTypeNo" value=${carTypeNo} />
-				<input type="hidden" name="carDay" value=${carDay} />
-				<input type="hidden" name="carServiceNo" value=${carServiceNo} />
-				<input type="hidden" name="orderType" value=${flag}  />
-			`;
-			var flagguidehide = `
-				<input type="text" id="allprice" name="totalPrice" value='${guideDay*unitPrice}' />
-				<input type="hidden" name="startDate" value="${startDate}" />
-				<input type="hidden" name="guideNo" value=${guideNo} />
-				<input type="hidden" name="guideDay" value=${guideDay} />
-				<input type="hidden" name="orderType" value=${flag}  />
-			`;
-			var flag1str = `
-				<img class="cardPay_right_img fl" src="{img}" />
-			 	<div class="cardPay_right_ul fr">
-			 		<div class="cardPay_name">
-			 			The Great Wall Tour
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			Date:{datestr}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			{adultNum} Adult
-			 			<span>$ {allPrice}</span>
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			{teenagerNum} Teenager
-			 			<span>$ {teenagerPrice}</span>
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			{childNum} Child
-			 			<span>$ {childPrice}</span>
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			{babyNum} Baby $ 0
-			 			<span>$0</span>
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			Airport/Railway station Pick up
-			 			<span>$ {pickup}</span>
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			Airport Drop Off
-			 			<span>$ {dropoff}</span>
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			show1
-			 			<span>$ {show1price}</span>
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			show2
-			 			<span>$ {show2price}</span>
-			 		</div>
-			 	</div>
-				<div class="clearboth"></div>
-			 	<div class="cardPay_right_total">
-			 		Total Cost: <span>$ {totalprice}</span>
-			 	</div>
-			`;
-			var flagcarstr = `
-				<img class="cardPay_right_img fl" src="{img}" />
-			 	<div class="cardPay_right_ul fr">
-			 		<div class="cardPay_name">
-			 			car
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			startDate:{startDate}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			carDay:{carDay}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			carTypeNo:{carTypeNo}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			carTypeName:{carTypeName}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			carServiceNo:{carServiceNo}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			carServiceName:{carServiceName}
-			 		</div>
-			 	</div>
-				<div class="clearboth"></div>
-			 	<div class="cardPay_right_total">
-			 		Total Cost: <span>$ {totalprice}</span>
-			 	</div>
-			`;
-			var flagguidestr = `
-				<img class="cardPay_right_img fl" src="{img}" />
-			 	<div class="cardPay_right_ul fr">
-			 		<div class="cardPay_name">
-			 			guide
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			startDate:{startDate}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			guideDay:{guideDay}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			guideNo:{guideNo}
-			 		</div>
-			 		<div class="cardPay_right_li">
-			 			serviceName:{serviceName}
-			 		</div>
-			 	</div>
-				<div class="clearboth"></div>
-			 	<div class="cardPay_right_total">
-			 		Total Cost: <span>$ {totalprice}</span>
-			 	</div>
-			`;
+			var flag1hide = '<input type="text" id="allprice" name="totalPrice" value=\'${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}\' />'+
+				'<input type="hidden" name="lineNo" value=${lineNo} />'+
+				'<input type="hidden" name="adultNum" value=${adultNum} />'+
+				'<input type="hidden" name="teenagerNum" value=${teenagerNum} />'+
+				'<input type="hidden" name="babyNum" value=${babyNum} />'+
+				'<input type="hidden" name="childNum" value=${childNum} />'+
+				'<input type="hidden" name="startDate" value="${startDate}" />'+
+				'<input type="hidden" name="pickupCarTypeNo" value=${pickupCarTypeNo}  />'+
+				'<input type="hidden" name="dropoffCarTypeNo" value=${dropoffCarTypeNo}  />'+
+				'<input type="hidden" name="showNo" value=${showNo}  />'+
+				'<input type="hidden" name="orderType" value=${flag}  />';
+			var flagcarhide = '<input type="text" id="allprice" name="totalPrice" value=\'${carDay*unitPrice}\' />'+
+				'<input type="hidden" name="startDate" value="${startDate}" />'+
+				'<input type="hidden" name="carTypeNo" value=${carTypeNo} />'+
+				'<input type="hidden" name="carDay" value=${carDay} />'+
+				'<input type="hidden" name="carServiceNo" value=${carServiceNo} />'+
+				'<input type="hidden" name="orderType" value=${flag}  />';
+			var flagguidehide = '<input type="text" id="allprice" name="totalPrice" value=\'${guideDay*unitPrice}\' />'+
+				'<input type="hidden" name="startDate" value="${startDate}" />'+
+				'<input type="hidden" name="guideNo" value=${guideNo} />'+
+				'<input type="hidden" name="guideDay" value=${guideDay} />'+
+				'<input type="hidden" name="orderType" value=${flag}  />';
+			var flag1str = '<img class="cardPay_right_img fl" src="{img}" />'+
+			 	'<div class="cardPay_right_ul fr">'+
+			 		'<div class="cardPay_name">'+
+			 		'	The Great Wall Tour'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	Date:{datestr}'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	{adultNum} Adult'+
+			 		'	<span>$ {allPrice}</span>'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	{teenagerNum} Teenager'+
+			 		'	<span>$ {teenagerPrice}</span>'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	{childNum} Child'+
+			 		'	<span>$ {childPrice}</span>'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	{babyNum} Baby $ 0'+
+			 		'	<span>$0</span>'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	Airport/Railway station Pick up'+
+			 		'	<span>$ {pickup}</span>'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	Airport Drop Off'+
+			 		'	<span>$ {dropoff}</span>'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	show1'+
+			 		'	<span>$ {show1price}</span>'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 		'	show2'+
+			 		'	<span>$ {show2price}</span>'+
+			 		'</div>'+
+			 	'</div>'+
+				'<div class="clearboth"></div>'+
+			 	'<div class="cardPay_right_total">'+
+			 	'	Total Cost: <span>$ {totalprice}</span>'+
+			 	'</div>';
+			var flagcarstr = '<img class="cardPay_right_img fl" src="{img}" />'+
+			 	'<div class="cardPay_right_ul fr">'+
+			 	'	<div class="cardPay_name">'+
+			 	'		car'+
+			 	'	</div>'+
+			 	'	<div class="cardPay_right_li">'+
+			 	'		startDate:{startDate}'+
+			 	'	</div>'+
+			 	'	<div class="cardPay_right_li">'+
+			 	'		carDay:{carDay}'+
+			 	'	</div>'+
+			 	'	<div class="cardPay_right_li">'+
+			 	'		carTypeNo:{carTypeNo}'+
+			 	'	</div>'+
+			 	'	<div class="cardPay_right_li">'+
+			 	'		carTypeName:{carTypeName}'+
+			 	'	</div>'+
+			 	'	<div class="cardPay_right_li">'+
+			 	'		carServiceNo:{carServiceNo}'+
+			 	'	</div>'+
+			 	'	<div class="cardPay_right_li">'+
+			 	'		carServiceName:{carServiceName}'+
+			 	'	</div>'+
+			 	'</div>'+
+				'<div class="clearboth"></div>'+
+			 	'<div class="cardPay_right_total">'+
+			 		'Total Cost: <span>$ {totalprice}</span>'+
+			 	'</div>';
+			var flagguidestr = '<img class="cardPay_right_img fl" src="{img}" />'+
+			 	'<div class="cardPay_right_ul fr">'+
+			 		'<div class="cardPay_name">'+
+			 			'guide'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 			'startDate:{startDate}'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 			'guideDay:{guideDay}'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 			'guideNo:{guideNo}'+
+			 		'</div>'+
+			 		'<div class="cardPay_right_li">'+
+			 			'serviceName:{serviceName}'+
+			 		'</div>'+
+			 	'</div>'+
+				'<div class="clearboth"></div>'+
+			 	'<div class="cardPay_right_total">'+
+			 		'Total Cost: <span>$ {totalprice}</span>'+
+			 	'</div>';
 			var flag = ${flag};
 			if(flag == 1){
 				//线路

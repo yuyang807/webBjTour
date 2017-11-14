@@ -6,12 +6,12 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171115" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -238,8 +238,8 @@
 				</ul>
 			</div>
 		</footer>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171115" ></script>
 	</body>
 </html>

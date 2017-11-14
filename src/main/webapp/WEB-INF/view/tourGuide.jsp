@@ -6,15 +6,15 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171114" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171115" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -133,10 +133,10 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171114" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171115" ></script>
 		<script>
 			var picker = new Pikaday(
 		    {
@@ -154,35 +154,31 @@
 		        maxDate: new Date('2030-12-31'),
 		        yearRange: [2010,2030]
 		    });
-		    var table_top_html = `
-				<div class="tour_guide_table_top">
-					<button class="tour_guide_list tour_guide_24"><span>TOUR GUIDE SERVICE</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_24"><span>HOW IT WORKS</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_24"><span>CUSTOMIZIBLE</span><div class="tour_guide_list_line"></div></button><!--
-					--><button class="tour_guide_list tour_guide_24"><span>PRICE</span></button>
-				</div>
-			`;
-			var table_str = `
-				<div class="tour_guide_table_list">
-					   <div class="tour_guide_td_list tour_guide_24">
-					   	<div class="tour_guide_td_inside">{name}<br>({guidetime} hours)</div></div><!--
-					--><div class="tour_guide_td_list tour_guide_24">
-							<div class="tour_guide_td_inside">
-							{guidetext}
-							</div>
-						</div><!--
-					--><div class="tour_guide_td_list tour_guide_24">
-						<div class="tour_guide_td_inside">
-							YES
-						</div>
-					</div><!--
-					--><div class="tour_guide_td_list tour_guide_24">
-						<div class="tour_guide_td_inside">
-							{guideprice}RMB
-						</div>
-					</div>
-				</div>
-			`;
+		    var table_top_html = '<div class="tour_guide_table_top">'+
+					'<button class="tour_guide_list tour_guide_24"><span>TOUR GUIDE SERVICE</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_24"><span>HOW IT WORKS</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_24"><span>CUSTOMIZIBLE</span><div class="tour_guide_list_line"></div></button>'+
+					'<button class="tour_guide_list tour_guide_24"><span>PRICE</span></button>'+
+				'</div>';
+			var table_str = '<div class="tour_guide_table_list">'+
+					   '<div class="tour_guide_td_list tour_guide_24">'+
+					   	'<div class="tour_guide_td_inside">{name}<br>({guidetime} hours)</div></div>'+
+					'<div class="tour_guide_td_list tour_guide_24">'+
+							'<div class="tour_guide_td_inside">'+
+							'{guidetext}'+
+							'</div>'+
+						'</div>'+
+					'<div class="tour_guide_td_list tour_guide_24">'+
+						'<div class="tour_guide_td_inside">'+
+						'	YES'+
+						'</div>'+
+					'</div>'+
+					'<div class="tour_guide_td_list tour_guide_24">'+
+						'<div class="tour_guide_td_inside">'+
+							'{guideprice}RMB'+
+						'</div>'+
+					'</div>'+
+				'</div>';
 			var guide_option = "<option value={id} >{name}</option>";
 			/*var guidelist = [
 				{
@@ -226,7 +222,8 @@
 				for(var i = 0 ;i < t_input.length;i++){
 					var t_regkey = t_input.eq(i).attr("reg");
 					var t_val = t_input.eq(i).val();
-					if(t_val == ""){
+					var reg_key = regobj[t_regkey];
+					if(reg_key && !reg_key.test(t_val)){
 						all_len--;
 						t_input.eq(i).addClass('inputerror');
 						$("#"+t_regkey).removeClass('waringhidden');

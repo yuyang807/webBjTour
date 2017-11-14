@@ -1,24 +1,24 @@
 
 var tourlist = function() {
-	var t_tours_str = `<li class="tour_list_li" onclick="linkfor('/list/{lineNo}')">
-					<div class="tour_list_imgbox">
-						<div class="tour_list_imginner"></div>
-						<img src="{fileUrl}"/>
-						<div class="tour_list_day">
-							<div class="tour_list_day_inner"></div>
-							<div class="tour_list_day_number">{duration0}</div>
-							<div class="tour_list_day_text">{duration1}</div>
-						</div>
-					</div>
-					<div class="tour_list_textall">
-						<div class="tour_list_textbox">{lineName}</div><div class="tour_list_textbox_right">
-							<div>From</div>
-							<div>{tenP} USD</div>
-						</div>
-						<div class="tour_list_textbox_more"></div>
-						<button class="tour_list_textbox_button buttoncolor1">View this trip</button>
-					</div>
-				</li>`;
+	var t_tours_str = '<li class="tour_list_li" onclick="linkfor(\'/list/{lineNo}\')">'+
+					'<div class="tour_list_imgbox">'+
+						'<div class="tour_list_imginner"></div>'+
+						'<img src="{fileUrl}"/>'+
+						'<div class="tour_list_day">'+
+							'<div class="tour_list_day_inner"></div>'+
+							'<div class="tour_list_day_number">{duration0}</div>'+
+							'<div class="tour_list_day_text">{duration1}</div>'+
+						'</div>'+
+					'</div>'+
+					'<div class="tour_list_textall">'+
+						'<div class="tour_list_textbox">{lineName}</div><div class="tour_list_textbox_right">'+
+							'<div>From</div>'+
+							'<div>{tenP} USD</div>'+
+						'</div>'+
+						'<div class="tour_list_textbox_more"></div>'+
+						'<button class="tour_list_textbox_button buttoncolor1">View this trip</button>'+
+					'</div>'+
+				'</li>';
 	return {
 		pushlist:function(id,data){
 			var t_str = '';
