@@ -6,11 +6,11 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/contact.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/contact.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171114" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -30,13 +30,13 @@
 				<li class="contact_list">
 					<div class="contact_label">Name</div>
 					<div class="contact_input"><input type="text" id="contactnameid" reg="contactname" class="contactinput" /></div>
-					<div id="contactname" class="cardPaywaring fl waringhidden">name</div>
+					<div id="contactname" class="cardPaywaring fl waringhidden">The name is required!</div>
 					<div style="clear:both"></div>
 				</li>
 				<li class="contact_list">
 					<div class="contact_label">E-mail</div>
 					<div class="contact_input"><input type="text" id="contactmailid" reg="contactmail" class="contactinput" /></div>
-					<div id="contactmail" class="cardPaywaring fl waringhidden">email</div>
+					<div id="contactmail" class="cardPaywaring fl waringhidden">The E-mail is required!</div>
 					<div style="clear:both"></div>
 				</li>
 				<li class="contact_list">
@@ -56,7 +56,7 @@
 				<li class="contact_list">
 					<div class="contact_label">How may I help you?</div>
 					<textarea id="contacttextareaid" class="contact_textarea contactinput" reg="contacttextarea" ></textarea>
-					<div id="contacttextarea" class="cardPaywaring fl waringhidden">Referral</div>
+					<div id="contacttextarea" class="cardPaywaring fl waringhidden">The E-mail is required!</div>
 					<div style="clear:both"></div>
 				</li>
 			</ul>
@@ -71,9 +71,9 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171112" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171112" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171114" ></script>
 		<script>
 			function showmenu(){
 				if($("#tour_top_ul_id").hasClass("tour_top_hide")){

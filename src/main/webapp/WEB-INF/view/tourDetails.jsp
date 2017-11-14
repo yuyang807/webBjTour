@@ -6,16 +6,16 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171112" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider2.css?v=20171112" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20171114" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider2.css?v=20171114" />
 	</head>
     <body>
 		<header id="tour_top_id" class="tour_top">
@@ -203,25 +203,25 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 					<li class="contact_list displayinline">
 						<div class="contact_label">First name</div>
 						<div class="contact_input"><input id="fNameid" name="fName" reg="contactfname" class="contactinput" type="text" /></div>
-						<div id="contactfname" class="cardPaywaring fl waringhidden">first name</div>
+						<div id="contactfname" class="cardPaywaring fl waringhidden">The First name is required!</div>
 						<div style="clear:both"></div>
 					</li><!--
 					--><li class="contact_list displayinline">
 						<div class="contact_label">Last name</div>
 						<div class="contact_input"><input id="lNameid" name="lName" reg="contactlname" class="contactinput" type="text" /></div>
-						<div id="contactlname" class="cardPaywaring fl waringhidden">Last name</div>
+						<div id="contactlname" class="cardPaywaring fl waringhidden">The Last name is required!</div>
 						<div style="clear:both"></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">E-mail</div>
 						<div class="contact_input2"><input id="emailAddressid" reg="contactemail" class="contactinput" name="emailAddress" type="text" /></div>
-						<div id="contactemail" class="cardPaywaring fl waringhidden">E-mail</div>
+						<div id="contactemail" class="cardPaywaring fl waringhidden">The E-mail is required!</div>
 						<div style="clear:both"></div>
 					</li>
 					<li class="contact_list">
 						<div class="contact_label">Special requirement:</div>
 						<textarea class="contact_textarea contactinput" id="contentid"  reg="contactarea" name="content"></textarea>
-						<div id="contactarea" class="cardPaywaring fl waringhidden">Special requirement</div>
+						<div id="contactarea" class="cardPaywaring fl waringhidden">The Special requirementis required!</div>
 						<div style="clear:both"></div>
 					</li>
 				</ul>
@@ -237,11 +237,11 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171112" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171112" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171112" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171112" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20171112" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20171114" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider_new.js?v=20171114" ></script>
 		<script>
 			/*var datalist = [
 				{
@@ -465,7 +465,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				for(var i = 0 ;i < t_input.length;i++){
 					var t_regkey = t_input.eq(i).attr("reg");
 					var t_val = t_input.eq(i).val();
-					if(t_val == ""){
+					if(reg_key && !reg_key.test(t_val)){
 						all_len--;
 						t_input.eq(i).addClass('inputerror');
 						$("#"+t_regkey).removeClass('waringhidden');
@@ -491,6 +491,12 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 					});
 				}
 			}
+			$("#tour_slider_main").mouseover(function(){
+				$(this).addClass('sliderhover');
+			})
+			$("#tour_slider_main").mouseleave(function(){
+				$(this).removeClass('sliderhover');
+			})
 		</script>
 	</body>
 </html>
