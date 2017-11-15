@@ -413,7 +413,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    ];*/
 		   /*<div class="tour_details_right_img_li_inner"></div>*/
 		   var lineList = ${lineList};
-		    var lineliststr = '<li class="tour_details_right_img_li"  onclick="linkfor('/list/{lineNo}')">'+
+		    var lineliststr = '<li class="tour_details_right_img_li"  onclick="linkfor(\'/list/{lineNo}\')">'+
 					'<img class="tour_details_right_img_li_img" src="{fileUrl}" />'+
 					'<div class="tour_details_right_img_bg"></div>'+
 					'<div class="tour_details_right_img_text">'+

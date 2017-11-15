@@ -275,6 +275,7 @@
 				for(var i = 0 ;i < t_input.length;i++){
 					var t_regkey = t_input.eq(i).attr("reg");
 					var t_val = t_input.eq(i).val();
+					var reg_key = regobj[t_regkey];
 					if(reg_key && !reg_key.test(t_val)){
 						all_len--;
 						t_input.eq(i).addClass('inputerror');
