@@ -24,4 +24,6 @@ var regobj = {
 	'contactfname':/\S/,
 	'contactlname':/\S/,
 	'contactarea':/\S/,
+	'datepickertime2':/\S/,
+	'datepickertime':/\S/
 }
