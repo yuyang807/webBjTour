@@ -41,20 +41,38 @@
 							
 						</select>
 					</li>
-					<li class="tour_guide_li">Select a date</li>
-					<li class="tour_guide_li selectdatebox">
+					<li class="tour_guide_li">
+						Select start date
+						<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="tour_guide_li_right guide_input fr" type="text" />
+						<input id="startDate" type="hidden" name="startDate"  />
+						<input id="guideDay" type="hidden" name="guideDay"  />
+					</li>
+					<li>
+						<div id="datepickertime" class="cardPaywaring fl waringhidden">The start time is required!</div>
+						<div style="clear:both"></div>
+					</li>
+					<li class="tour_guide_li datepickerhide">
+						Select end date
+						<input id="datepicker2" onblur="getallprice()" reg="datepickertime2" class="tour_guide_li_right guide_input fr" type="text" style="float:right;" />
+					</li>
+					<li>
+						<div id="datepickertime2" class="cardPaywaring fr waringhidden">The end time  is required!</div>
+						<div style="clear:both"></div>
+					</li>
+					
+					<!--<li class="tour_guide_li selectdatebox">
 						<span class="guide_text">From</span>
 						<input id="datepicker" onblur="getallprice()" reg="datepickertime" class="guide_input fr" type="text" />
 						<input id="startDate" type="hidden" name="startDate"  />
 						<input id="guideDay" type="hidden" name="guideDay"  />
 						<span class="datepickerhide guide_text">To</span>
 						<input id="datepicker2" onblur="getallprice()" reg="datepickertime2" class="datepickerhide guide_input fr" type="text" style="float:right;" />
-					</li>
-					<li>
+					</li>-->
+					<!--<li>
 						<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>
 						<div id="datepickertime2" class="cardPaywaring fr waringhidden">end time</div>
 						<div style="clear:both"></div>
-					</li>
+					</li>-->
 					<!--<li class="tour_guide_li">
 						<div class="tour_guide_li_left fl">Select a currency</div>
 						<select class="tour_guide_li_right fr">
@@ -231,12 +249,17 @@
 				}
 				if(all_len == t_len){
 					var abc = (new Date(picker2['_d'])).getTime()-(new Date(picker['_d'])).getTime();
+					var type = $("#guidelist").val();
 					if(abc < 0){
 						alert("开始日期不可以大于结束日期");
 					}else{
 						//console.log(abc/3600000/24+1);
-						$("#startDate").val((new Date(picker['_d'])).getTime());
-						$("#guideDay").val(abc/3600000/24+1);
+						if(type == '701'){
+							$("#guideDay").val(1);
+						}else{
+							$("#startDate").val((new Date(picker['_d'])).getTime());
+							$("#guideDay").val(abc/3600000/24+1);
+						}
 						$("#guideform").submit();
 					}
 					
