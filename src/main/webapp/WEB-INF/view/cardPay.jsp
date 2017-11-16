@@ -6,12 +6,12 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171115" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171115" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171115" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171115" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171115" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171115" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20171116" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20171116" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20171116" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20171116" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20171116" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20171116" />
 	</head>
     <body>
     	<header id="tour_top_id" class="tour_top">
@@ -37,41 +37,41 @@
 						
 					</div>
 					<div>
-						<input type="text" class="cardPayinput fl" name="fName" reg="firstname" placeholder="First Name" value="0" />
-						<input type="text" class="cardPayinput fr" name="lName" reg="lastname" placeholder="Last Name" value="0" />
-						<div id="firstname" class="cardPaywaring fl waringhidden">firstname</div>
-						<div id="lastname" class="cardPaywaring fr waringhidden">lastname</div>
+						<input type="text" class="cardPayinput fl" name="fName" reg="firstname" placeholder="First Name"  />
+						<input type="text" class="cardPayinput fr" name="lName" reg="lastname" placeholder="Last Name"  />
+						<div id="firstname" class="cardPaywaring fl waringhidden">First name is required!</div>
+						<div id="lastname" class="cardPaywaring fr waringhidden">Last name is required!</div>
 						<div style="clear:both"></div>
-						<input type="text" class="cardPayinput fl" name="emailAddress" reg="eaddress" placeholder="E-mail Address" value="0" />
-						<input type="text" class="cardPayinput fr" name="phoneNum" reg="phone" placeholder="Phone" value="0" />
-						<div id="eaddress" class="cardPaywaring fl waringhidden">firstname</div>
-						<div id="phone" class="cardPaywaring fr waringhidden">lastname</div>
+						<input type="text" class="cardPayinput fl" name="emailAddress" reg="eaddress" placeholder="E-mail Address"  />
+						<input type="text" class="cardPayinput fr" name="phoneNum" reg="phone" placeholder="Phone"  />
+						<div id="eaddress" class="cardPaywaring fl waringhidden">Email Address is required!</div>
+						<div id="phone" class="cardPaywaring fr waringhidden">Phone Num is required!</div>
 						<div class="clearboth"></div>
 					</div>
 					<h2 class="cardPaylisthead">
 						Passport
 					</h2>
 					<div>
-						<input type="text" class="cardPayinput fl"  reg="unitedstates" placeholder="Passport Number" value="0" />
+						<input type="text" class="cardPayinput fl"  reg="unitedstates" placeholder="Passport Number"  />
 						<div class="cardPayinput fr">
 							<select type="text" class="cardPayselect">
 								<option>United States</option>
 							</select>
 						</div>
-						<div id="unitedstates" class="cardPaywaring fl waringhidden">firstname</div>
+						<div id="unitedstates" class="cardPaywaring fl waringhidden">Passport Number is required!</div>
 						<div class="clearboth"></div>
 					</div>
 					<h2 class="cardPaylisthead">
 						Hotel
 					</h2>
 					<div>
-						<input type="text" class="cardPayinput fl" name="hotelName" reg="hotelname" placeholder="Hotel Name" value="0" />
-						<input type="text" class="cardPayinput fr" name="hotelTel" reg="hotelnumber" placeholder="Hotel Contact Number" value="0" />
-						<div id="hotelname" class="cardPaywaring fl waringhidden">firstname</div>
-						<div id="hotelnumber" class="cardPaywaring fr waringhidden">lastname</div>
+						<input type="text" class="cardPayinput fl" name="hotelName" reg="hotelname" placeholder="Hotel Name"  />
+						<input type="text" class="cardPayinput fr" name="hotelTel" reg="hotelnumber" placeholder="Hotel Contact Number"  />
+						<div id="hotelname" class="cardPaywaring fl waringhidden">Hotel Name is required!</div>
+						<div id="hotelnumber" class="cardPaywaring fr waringhidden">Hotel Contact Number is required!</div>
 						<div style="clear:both"></div>
-						<input type="text" style="width:99%;" name="hotelAddress" class="cardPayinput fl" reg="hoteladdress" placeholder="Hotel Address" value="0" />
-						<div id="hoteladdress" class="cardPaywaring fl waringhidden">firstname</div>
+						<input type="text" style="width:99%;" name="hotelAddress" class="cardPayinput fl" reg="hoteladdress" placeholder="Hotel Address"  />
+						<div id="hoteladdress" class="cardPaywaring fl waringhidden">Hotel Address is required!</div>
 						<div class="clearboth"></div>
 					</div>
 					<h2 class="cardPaylisthead">
@@ -83,8 +83,8 @@
 								<option>Arrival date</option>
 							</select>
 						</div>
-						<input type="text" class="cardPayinput fr" name="aAirplanNum" reg="arrivelairnumber" placeholder="Arrivel airplane number" value="0" />
-						<div id="arrivelairnumber" class="cardPaywaring fr waringhidden">lastname</div>
+						<input type="text" class="cardPayinput fr" name="aAirplanNum" reg="arrivelairnumber" placeholder="Arrivel airplane number" />
+						<div id="arrivelairnumber" class="cardPaywaring fr waringhidden">Arrivel airplane number is required!</div>
 						<div style="clear:both"></div>
 					</div>
 					<h2 class="cardPaylisthead">
@@ -96,29 +96,29 @@
 								<option>Departure date</option>
 							</select>
 						</div>
-						<input type="text" class="cardPayinput fr" name="departureDate" reg="depairnum" placeholder="Departure airplane number" value="0" />
-						<div id="depairnum" class="cardPaywaring fr waringhidden">lastname</div>
+						<input type="text" class="cardPayinput fr" name="departureDate" reg="depairnum" placeholder="Departure airplane number" />
+						<div id="depairnum" class="cardPaywaring fr waringhidden">Departure is required!</div>
 						<div style="clear:both"></div>
 					</div>
 					<h2 class="cardPaylisthead">
 						Tour start time
 					</h2>
 					<div>
-						<input type="text" class="cardPayinput fl" name="startTime" reg="starttime" placeholder="start time" value="0" />
+						<input type="text" class="cardPayinput fl" name="startTime" reg="starttime" placeholder="start time" />
 						<div class="cardPayinput fr">
 							<select type="text" class="cardPayselect">
 								<option>AM</option>
 								<option>PM</option>
 							</select>
 						</div>
-						<div id="starttime" class="cardPaywaring fl waringhidden">firstname</div>
+						<div id="starttime" class="cardPaywaring fl waringhidden">Start Time is required!</div>
 						<div style="clear:both"></div>
 					</div>
 					<div class="cardPaytext">
 						Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
 						We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
 					</div>
-					<textarea class="contact_textarea cardPaytextarea fr" name="instructions" >0</textarea>
+					<textarea class="contact_textarea cardPaytextarea fr" name="instructions" ></textarea>
 				</form>
 				<button class="big_submit fr" onclick="cardpaysub()">submit</button>
 				<div class="clearboth"></div>
@@ -139,11 +139,11 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171115" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171115" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171115" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20171116" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20171116" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20171116" ></script>
 		<script>
-			var flag1hide = '<input type="text" id="allprice" name="totalPrice" value=\'${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}\' />'+
+			var flag1hide = '<input type="hidden" id="allprice" name="totalPrice" value=\'${adultNum*unitPrice+childNum*unitPrice*0.8+pickupPrice+dropoffPrice}\' />'+
 				'<input type="hidden" name="lineNo" value=${lineNo} />'+
 				'<input type="hidden" name="adultNum" value=${adultNum} />'+
 				'<input type="hidden" name="teenagerNum" value=${teenagerNum} />'+

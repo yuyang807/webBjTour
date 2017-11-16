@@ -2,6 +2,9 @@
   background: #e44e47;
   color: #fff;
 }
+.tour_reviewslist_bg .cardPaywaring{
+	color:#000;
+}
 .tour_reviewslist_bg .public_title {
   color: #fff;
 }

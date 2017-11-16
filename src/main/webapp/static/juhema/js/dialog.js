@@ -9,13 +9,13 @@ var dialog_str = '<div class="dialog_bg dialog_remove" onclick="removedialog()">
 					'<input type="hidden" name="startDate" id="startDate" />'+
 					'<div class="dialog_main_li_top">Select start date</div>'+
 					'<input id="datepicker" onblur="touroptionchange()" reg="datepickertime" class="guide_inputtime guide_input fl" type="text" />'+
-					'<div id="datepickertime" class="cardPaywaring fl waringhidden">start time</div>'+
+					'<div id="datepickertime" class="cardPaywaring fl waringhidden">The start time is required!</div>'+
 					'<div style="clear:both"></div>'+
 				'</li>'+
 				'<li id="datepicker2box" class="dialog_main_li">'+
 					'<div class="dialog_main_li_top">Select end date</div>'+
 					'<input id="datepicker2" onblur="touroptionchange()" reg="datepickertime2" class="guide_input fl" type="text" />'+
-					'<div id="datepickertime2" class="cardPaywaring fl waringhidden">end time</div>'+
+					'<div id="datepickertime2" class="cardPaywaring fl waringhidden">The end time is required!</div>'+
 					'<div style="clear:both"></div>'+
 				'</li>'+
 				'<li class="dialog_main_li">'+
@@ -102,7 +102,7 @@ function dialogsubmit(){
 		}
 	}
 	if(all_len == t_len){
-		if($("#datepickertime2").val() == ""){
+		if($("#datepicker2").val() == ""){
 			$("#startDate").val((new Date(picker['_d'])).getTime());
 			$("#guideDay").val(1);
 			$("#carrenform").submit();
