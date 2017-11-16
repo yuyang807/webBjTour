@@ -14,6 +14,8 @@
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .tour_contomize_list_inbox {
   padding: 21.79930796%;
