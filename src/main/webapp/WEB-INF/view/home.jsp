@@ -53,8 +53,8 @@
 						<div class="tour_toursbox_list_inbox"></div>
 						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.png" />
 						<div class="tour_toursbox_top">
-							<div class="tour_toursbox_topfrom">- from -</div>
-							<div class="tour_toursbox_topname">Steven Byrd</div>
+							<!--<div class="tour_toursbox_topfrom">- from -</div>
+							<div class="tour_toursbox_topname">Steven Byrd</div>-->
 						</div>
 						<div class="tour_reviews_bg"></div>
 						<div class="tour_reviewslist_bottom">
@@ -76,8 +76,8 @@
 						<div class="tour_toursbox_list_inbox"></div>
 						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.png" />
 						<div class="tour_toursbox_top">
-							<div class="tour_toursbox_topfrom">- from -</div>
-							<div class="tour_toursbox_topname">Steven Byrd</div>
+							<!--<div class="tour_toursbox_topfrom">- from -</div>
+							<div class="tour_toursbox_topname">Steven Byrd</div>-->
 						</div>
 						<div class="tour_reviews_bg"></div>
 						<div class="tour_reviewslist_bottom">
@@ -102,7 +102,7 @@
 						</div>
 						<a class="tour_reviewslist_text1" href="">Beijing Tour company</a>
 						<div class="tour_reviewslist_text2">TripAdvisor Traveller Rating</div>
-						<div class="tour_reviewslist_text3">Based on 2,242 traveller reviews</div>
+						<!--<div class="tour_reviewslist_text3">Based on 2,242 traveller reviews</div>-->
 					</li>
 				</ul>
 			</div>
@@ -145,7 +145,7 @@
 		</div>
 		<div class="homepic_box">
 			<div style="padding:18% 50%;"></div>
-			<img class="homepic_img_w" src="${ctxStatic}/juhema/img/IMG_1210.JPG" />
+			<img class="homepic_img_w" src="${ctxStatic}/juhema/img/20171117155732.png" />
 			
 			<h1 class="tour_slider_title">Explore the Distant Corners of Beijing</h1>
 			<div class="tour_slider_title_text">We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years of experience.</div>
@@ -167,58 +167,9 @@
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20171116" ></script>
 			<script>
 				
-				/*var datalist = [
-					{
-						"name":"page1",
-						"img":"${ctxStatic}/juhema/img/IMG_1450.JPG"
-					},
-					{
-						"name":"page2",
-						"img":"${ctxStatic}/juhema/img/IMG_1451.JPG"
-					},
-					{
-						"name":"page3",
-						"img":"${ctxStatic}/juhema/img/IMG_1452.JPG"
-					}
-				];*/
 				var datalist = ${picList};
 				slider.init("tour_slider_main",datalist);
 				var t_tours_list = ${lineList};
-				/*var t_tours_list = [
-					{
-						"typeName":"BEIJING PRIVATE GREAT WALL DAY TOUR/GREAT WALL HIKING DAY TOUR",
-						"duration":"8 hours",
-						"lineTypeNo":true,
-						"popularLevel":1,
-						"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-						"lineNo":1,
-						"available":"Daily",
-						"tenP":500,
-						"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-					},
-					{
-						"typeName":"BEIJING PRIVATE GREAT WALL DAY TOUR/GREAT WALL HIKING DAY TOUR",
-						"duration":"7 hours",
-						"lineTypeNo":true,
-						"popularLevel":3,
-						"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-						"lineNo":1,
-						"available":"Daily",
-						"tenP":500,
-						"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-					},
-					{
-						"typeName":"BEIJING PRIVATE GREAT WALL DAY TOUR/GREAT WALL HIKING DAY TOUR",
-						"duration":"6 hours",
-						"lineTypeNo":true,
-						"popularLevel":2,
-						"lineName":"Beijing Private Great Wall Day Tour At The Mutianyu Section",
-						"lineNo":1,
-						"available":"Daily",
-						"tenP":500,
-						"fileUrl":"${ctxStatic}/juhema/img/IMG_1343.JPG"
-					}
-				];*/
 				function tosort(a,b){
 					return b.popularLevel-a.popularLevel;
 				}

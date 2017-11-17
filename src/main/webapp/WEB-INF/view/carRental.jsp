@@ -30,9 +30,9 @@
 		
 		<div class="tour_list_box">
 			<div class="tour_guide_table_box_top">
-				<select>
+				<!--<select>
 					<option>CNY</option>
-				</select>
+				</select>-->
 			</div>
 			<div class="tour_guide_table_box">
 				<div id="tour_guide_table_id" class="tour_guide_table">
