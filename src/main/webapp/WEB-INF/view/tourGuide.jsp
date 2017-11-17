@@ -90,7 +90,7 @@
 				</ul>
 				</form>
 				<div class="tour_guide_total">
-					<span>Total Cost:</span><span class="tour_guide_font_big">￥<span id="allprice">0</span>.</span><span>00</span>
+					<span>Total Cost:</span><span class="tour_guide_font_big">$<span id="allprice">0</span>.</span><span>00</span>
 					<button class="button100 buttoncolor1" onclick="cardpaysub()">BOOKING NOW</button>
 				</div>
 			</div>
@@ -193,7 +193,7 @@
 					'</div>'+
 					'<div class="tour_guide_td_list tour_guide_24">'+
 						'<div class="tour_guide_td_inside">'+
-							'{guideprice}RMB'+
+							'{guideprice}USD'+
 						'</div>'+
 					'</div>'+
 				'</div>';
