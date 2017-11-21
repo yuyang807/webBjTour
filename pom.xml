@@ -237,7 +237,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<packagingExcludes>
-						<!-- static/img/**, -->
+						static/img/**,
                         WEB-INF/classes/org/apache/ibatis/**,
                         WEB-INF/classes/org/mybatis/spring/**
                     </packagingExcludes>
