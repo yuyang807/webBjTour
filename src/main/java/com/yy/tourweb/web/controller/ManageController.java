@@ -228,7 +228,7 @@ public class ManageController {
     }
     
     @RequestMapping("/tour/order/submit")
-    public @ResponseBody Object submitOrder(@RequestBody Map<String, Object> omd){
+    public @ResponseBody Object submitOrder(HttpServletRequest request,@RequestBody Map<String, Object> omd){
     	
     	//每种情况里 都要先算钱，除了判断钱的防篡改外 还需要添加总价参数
     	//线路里 节目总价+接送机总价+线路价钱
@@ -316,7 +316,7 @@ public class ManageController {
     		}
     		
     		subject = DateUtil.getDateStrBylong(tod.getStartDate())+"号有新线路订单了！";
-    		content = "线路编号： "+tod.getLineNo()+"\n 线路名称："+oneLine.get(0).get("lineName")+"\n 出行时间："+DateUtil.getDateStrBylong(tod.getStartDate())
+    		content = "IP:"+HttpUtils.getRemoteHost(request)+" \n 线路编号： "+tod.getLineNo()+"\n 线路名称："+oneLine.get(0).get("lineName")+"\n 出行时间："+DateUtil.getDateStrBylong(tod.getStartDate())
     				+" \n 预订成人数："+tod.getAdultNum()+";Teenager："+tod.getTeenagerNum()+"；Child："+tod.getChildNum()+"；Baby："+tod.getBabyNum()
     				+" \n \n 接机/站车型："+carType1+"座 \n 送机/站车型："+carType2+"座 \n \n 杂技排数："+tsd1rows+"\n 功夫排数："+tsd2rows
     				+" \n \n 联系人："+tmd.getFName()+" "+tmd.getLName()+"\n Email："+tmd.getEmailAddress()+"\n 护照编号："+tmd.getPassportNum()
@@ -342,7 +342,7 @@ public class ManageController {
     		
     		subject = DateUtil.getDateStrBylong(tod.getStartDate())+"号有新订车订单了！";
     		String startDateStr = DateUtil.getDateStrBylong(tod.getStartDate());
-    		content = "汽车服务名称："+tcsd.getCarServiceName()+"\n 出行时间："+startDateStr+"\n 结束时间："+DateUtil.DToSLine(DateUtil.addDay(DateUtil.SLineToD(startDateStr), tod.getCarDay()))
+    		content = "IP:"+HttpUtils.getRemoteHost(request)+" \n 汽车服务名称："+tcsd.getCarServiceName()+"\n 出行时间："+startDateStr+"\n 结束时间："+DateUtil.DToSLine(DateUtil.addDay(DateUtil.SLineToD(startDateStr), tod.getCarDay()))
     				+" \n \n 联系人："+tmd.getFName()+" "+tmd.getLName()+"\n Email："+tmd.getEmailAddress()+"\n 护照编号："+tmd.getPassportNum()
     				+" \n 下榻酒店："+tod.getHotelName()+"\n 酒店地址："+tod.getHotelAddress()+"\n \n 到达航班号："+tod.getAAirplanNum()
     				+" \n 离开航班号："+tod.getDAirplanNum()+"\n 预计开始行程时间："+DateUtil.getTimeStrBylong(tod.getStartTime())+"\n \n 备注："+tod.getInstructions()
@@ -360,7 +360,7 @@ public class ManageController {
     		
     		subject = DateUtil.getDateStrBylong(tod.getStartDate())+"号有新订导游订单了！";
     		String startDateStr = DateUtil.getDateStrBylong(tod.getStartDate());
-    		content = "导游服务名称："+tgd.getServiceName()+"\n 出行时间："+startDateStr+"\n 结束时间："+DateUtil.DToSLine(DateUtil.addDay(DateUtil.SLineToD(startDateStr), tod.getGuideDay()))
+    		content = "IP:"+HttpUtils.getRemoteHost(request)+" \n 导游服务名称："+tgd.getServiceName()+"\n 出行时间："+startDateStr+"\n 结束时间："+DateUtil.DToSLine(DateUtil.addDay(DateUtil.SLineToD(startDateStr), tod.getGuideDay()))
     				+" \n \n 联系人："+tmd.getFName()+" "+tmd.getLName()+"\n Email："+tmd.getEmailAddress()+"\n 护照编号："+tmd.getPassportNum()
     				+" \n 下榻酒店："+tod.getHotelName()+"\n 酒店地址："+tod.getHotelAddress()+"\n \n 到达航班号："+tod.getAAirplanNum()
     				+" \n 离开航班号："+tod.getDAirplanNum()+"\n 预计开始行程时间："+DateUtil.getTimeStrBylong(tod.getStartTime())+"\n \n 备注："+tod.getInstructions()
@@ -482,7 +482,7 @@ public class ManageController {
     	JSONObject json = new JSONObject();
     	//发邮件
     	String subject = "您有一条来自"+tad.getLName()+"咨询信息";
-		String content = "名字："+tad.getLName()+" \n 联系邮箱： "+tad.getEmailAddress()+"\n 提问时间："+DateUtil.getCurrentDateTime()+"\n 咨询内容："+tad.getContent();
+		String content = "IP:"+HttpUtils.getRemoteHost(request)+" \n 名字："+tad.getLName()+" \n 联系邮箱： "+tad.getEmailAddress()+"\n 提问时间："+DateUtil.getCurrentDateTime()+"\n 咨询内容："+tad.getContent();
 		logger.info(content);
 		String[] emailTo = Constants.ORDER_EMAIL.split(",");
 		int emailFlag = 0;
