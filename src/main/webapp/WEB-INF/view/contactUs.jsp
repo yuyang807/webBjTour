@@ -56,7 +56,7 @@
 				<li class="contact_list">
 					<div class="contact_label">How may I help you?</div>
 					<textarea id="contacttextareaid" class="contact_textarea contactinput" reg="contacttextarea" ></textarea>
-					<div id="contacttextarea" class="cardPaywaring fl waringhidden">The E-mail is required!</div>
+					<div id="contacttextarea" class="cardPaywaring fl waringhidden">The textarea is required!</div>
 					<div style="clear:both"></div>
 				</li>
 			</ul>

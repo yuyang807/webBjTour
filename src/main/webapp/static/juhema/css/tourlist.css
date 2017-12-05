@@ -170,6 +170,9 @@
 .inputerror{
 	border:1px solid red;
 }
+.contact_list_ul .cardPaywaring{
+	width:90%;
+}
 .cardPaywaring{
 	width:49%;
 	height:0.8rem;
