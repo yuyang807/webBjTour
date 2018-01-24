@@ -7,7 +7,7 @@
     <title>付款页面</title>
     <script src="${ctxStatic}/juhema/flexible.js"></script>
     <script src="${ctxStatic}/juhema/jquery.js"></script>
-    <link href="${ctxStatic}/juhema/self.css?v=20171116" rel="stylesheet">
+    <link href="${ctxStatic}/juhema/self.css?v=20180124" rel="stylesheet">
 </head>
 <body>
 <div class="wait-page" data-orderNo="${orderNo}">

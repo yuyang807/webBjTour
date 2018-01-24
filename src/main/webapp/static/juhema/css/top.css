@@ -49,9 +49,13 @@
 }
 .tour_top_left {
   line-height: 4.4rem;
+  height: 4.4rem;
+  width: 12rem;
   font-size: 1rem;
   position:relative;
   float: left;
+  background:url(../img/topicon.png) no-repeat 0 0;
+  background-size: auto 80% ;
 }
 .tour_top_right {
   line-height: 2.2rem;

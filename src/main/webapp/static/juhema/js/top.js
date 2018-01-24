@@ -28,7 +28,8 @@ var location_obj = [
 ];
 
 var t_top_str = '<div class="tour_top_padding fl"></div>'+
-			'<div class="tour_top_left"><div class="top_icon"></div>Beijing Tour Company</div>'+
+			//'<div class="tour_top_left"><div class="top_icon"></div>Beijing Tour Company</div>'+
+			'<div class="tour_top_left"></div>'+
 			'<div class="tour_top_padding fr"></div>'+
 			'<div class="tour_top_click" onclick="showmenu()"></div>'+
 			'<div class="tour_top_right">'+
