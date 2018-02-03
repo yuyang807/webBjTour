@@ -96,12 +96,21 @@
 						</div>
 					</li><!--
 					--><li class="tour_list_li tour_reviewslist_list_bg_none">
-						<div class="tour_toursbox_list_inbox"></div>
+						<div id="TA_cdswritereviewlg78" class="TA_cdswritereviewlg">
+							<ul id="rxzn8O34Tc" class="TA_links vEMsG2hH8tjd">
+								<li id="bg0qH3s" class="4BYiCO0">
+									<a target="_blank" href="https://www.tripadvisor.com/">
+										<img src="https://www.tripadvisor.com/img/cdsi/img2/branding/medium-logo-12097-2.png " alt="TripAdvisor"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!--<div class="tour_toursbox_list_inbox"></div>
 						<div class="tour_reviewslist_icon">
 							<img src="${ctxStatic}/juhema/icon/tripadvisor.png" style="width:100%" />
 						</div>
 						<a class="tour_reviewslist_text1" href="">Beijing Tour company</a>
-						<div class="tour_reviewslist_text2">TripAdvisor Traveller Rating</div>
+						<div class="tour_reviewslist_text2">TripAdvisor Traveller Rating</div>-->
 						<!--<div class="tour_reviewslist_text3">Based on 2,242 traveller reviews</div>-->
 					</li>
 				</ul>
@@ -160,6 +169,7 @@
 				</ul>
 			</div>
 		</footer>
+			<script async src="https://www.jscache.com/wejs?wtype=cdswritereviewlg&amp;uniq=78&amp;locationId=13282963&amp;lang=en_US&amp;lang=en_US&amp;display_version=2 "></script>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js?v=20180124" ></script>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180124" ></script>
