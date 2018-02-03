@@ -50,11 +50,16 @@
 			<div class="tour_list_box">
 				<ul class="tour_list_ul">
 					<li class="tour_list_li tour_reviewslist_list_bg">
-						<div class="tour_toursbox_list_inbox"></div>
+						<div id="TA_excellent712" class="TA_excellent">
+						<ul id="Rotqpi" class="TA_links JCNWfvG">
+						<li id="Mti4k3atoHJd" class="LrRVW6v">
+						<a target="_blank" href=" ">< img src="https://static.tacdn.com/img2/widget/tripadvisor_logo_115x18.gif" alt="TripAdvisor" class="widEXCIMG" id="CDSWIDEXCLOGO"/></a >
+						</li>
+						</ul>
+						</div>
+						<!--<div class="tour_toursbox_list_inbox"></div>
 						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.png" />
 						<div class="tour_toursbox_top">
-							<!--<div class="tour_toursbox_topfrom">- from -</div>
-							<div class="tour_toursbox_topname">Steven Byrd</div>-->
 						</div>
 						<div class="tour_reviews_bg"></div>
 						<div class="tour_reviewslist_bottom">
@@ -70,14 +75,19 @@
 							<div class="tour_reviews_img_bottom">
 								
 							</div>
-						</div>
+						</div>-->
 					</li><!--
 					--><li class="tour_list_li tour_reviewslist_list_bg">
-						<div class="tour_toursbox_list_inbox"></div>
+						<div id="TA_selfserveprop885" class="TA_selfserveprop">
+						<ul id="qdbgTJYy" class="TA_links I4lwmcVF">
+						<li id="sksMQTGdKq" class="3aue5tWtom6">
+						<a target="_blank" href=" ">< img src="https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a >
+						</li>
+						</ul>
+						</div>
+						<!--<div class="tour_toursbox_list_inbox"></div>
 						<img class="tour_reviews_all_img" src="${ctxStatic}/juhema/icon/ADSH6844.png" />
 						<div class="tour_toursbox_top">
-							<!--<div class="tour_toursbox_topfrom">- from -</div>
-							<div class="tour_toursbox_topname">Steven Byrd</div>-->
 						</div>
 						<div class="tour_reviews_bg"></div>
 						<div class="tour_reviewslist_bottom">
@@ -93,7 +103,7 @@
 							<div class="tour_reviews_img_bottom">
 								
 							</div>
-						</div>
+						</div>-->
 					</li><!--
 					--><li class="tour_list_li tour_reviewslist_list_bg_none">
 						<div id="TA_cdswritereviewlg78" class="TA_cdswritereviewlg">
@@ -169,6 +179,8 @@
 				</ul>
 			</div>
 		</footer>
+			<script async src="https://www.jscache.com/wejs?wtype=excellent&amp;uniq=712&amp;locationId=13282963&amp;lang=en_US&amp;display_version=2"></script>
+			<script async src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=885&amp;locationId=13282963&amp;lang=en_US&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=false&amp;border=true&amp;display_version=2"></script>
 			<script async src="https://www.jscache.com/wejs?wtype=cdswritereviewlg&amp;uniq=78&amp;locationId=13282963&amp;lang=en_US&amp;lang=en_US&amp;display_version=2 "></script>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js?v=20180124" ></script>
