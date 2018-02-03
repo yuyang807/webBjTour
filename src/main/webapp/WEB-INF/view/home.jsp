@@ -17,6 +17,9 @@
 			.tour_top{
 				background:transparent;
 			}
+			#CDSWIDSSP{
+				width:100% !important;
+			}
 		</style>
 	</head>
 	<body>
