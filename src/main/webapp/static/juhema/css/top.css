@@ -54,8 +54,8 @@
   font-size: 1rem;
   position:relative;
   float: left;
-  background:url(../img/topicon.png) no-repeat 0 0;
-  background-size: auto 80% ;
+  background:url(../img/topicon.png) no-repeat 0 center;
+  background-size: auto 60% ;
 }
 .tour_top_right {
   line-height: 2.2rem;

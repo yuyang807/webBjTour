@@ -35,27 +35,27 @@
 				<div class="tour_payCopy_top">
 					<div class="tour_payCopy_top_r"></div>
 					Airport/Railway station Pick up
-					<div class="tour_payCopy_checkbox_big" k="c1">
-						<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-						<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec1">$<span class="pickupprice"></span></div>
-						<div class="tour_payCopy_checkbox_more">Choose Drop off</div>
-						<select id="pickupselect" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
-							
-						</select>
-					</div>
-					<div class="tour_payCopy_checkbox_big2" k="c2">
-						<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
-						<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec2">$<span class="pickupprice"></span></div>
-						<div class="tour_payCopy_checkbox_more">Choose Pick up</div>
-						<select id="pickupselect2" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
-							
-						</select>
-					</div>
 				</div>
 				<div class="tour_guide_table_wai">
 					<div id="tour_guide_table_id" class="tour_guide_table">
 						
 					</div>
+				</div>
+				<div class="tour_payCopy_checkbox_big_top" k="c1">
+					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec1">$<span class="pickupprice"></span></div>
+					<div class="tour_payCopy_checkbox_more">Choose Drop off</div>
+					<select id="pickupselect" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
+						
+					</select>
+				</div>
+				<div class="tour_payCopy_checkbox_big2" k="c2">
+					<div class="tour_payCopy_checkbox_left tour_payCopy_click"></div>
+					<div class="tour_payCopy_checkbox_text tour_payCopy_click" id="pricec2">$<span class="pickupprice"></span></div>
+					<div class="tour_payCopy_checkbox_more">Choose Pick up</div>
+					<select id="pickupselect2" class="tour_payCopy_checkbox_select" onchange="changecarselect(this)">
+						
+					</select>
 				</div>
 			</div>
 			

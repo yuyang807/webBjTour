@@ -76,6 +76,7 @@
 }
 .tour_guide_table_box {
   margin-bottom: 20px;
+  position:relative;
 }
 .tour_guide_table {
   border-left: 1px solid #9B9B9B;
@@ -107,6 +108,7 @@
 .tour_guide_list span {
   margin-left: 5px;
   display: block;
+  text-align: center;
 }
 .tour_guide_td_list {
   display: inline-block;
@@ -290,6 +292,7 @@
 }
 .tour_guide_td_inside {
   margin: 0 5px;
+  text-align: center;
 }
 .tour_guide_20 {
   width: 20%;
@@ -376,6 +379,15 @@
   background: #FFE7C4;
   cursor: pointer;
 }
+.tour_payCopy_checkbox_big_top{
+  position: absolute;
+  bottom: 0.7rem;
+  height: 6rem;
+  width: 6.4rem;
+  right: 0;
+  background: #FFE7C4;
+  cursor: pointer;
+}
 .tour_payCopy_checkbox_big{
   position: absolute;
   top: 0.7rem;
@@ -387,7 +399,7 @@
 }
 .tour_payCopy_checkbox_big2{
   position: absolute;
-  top: 7rem;
+  bottom: 7rem;
   height: 6rem;
   width: 6.4rem;
   right: 0;

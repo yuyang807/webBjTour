@@ -91,7 +91,8 @@
 			var t_tours_list = ${lineList};
 			var t_all_html = {};
 			for(var i in t_tours_list){
-				var t_key = t_tours_list[i]['typeName'];
+				//var t_key = t_tours_list[i]['typeName'];
+				var t_key = t_tours_list[i]['lineTypeNo'];
 				if(!t_all_html[t_key]){
 					t_all_html[t_key] = [];
 				}
@@ -106,7 +107,7 @@
 			var htmlindex = 0;
 			for(var j in t_all_html){
 				htmlindex++;
-				$("#tour_list_box_all").append(t_html_str.format2({name:j,id:htmlindex}));
+				$("#tour_list_box_all").append(t_html_str.format2({name:t_all_html[j][0]['typeName'],id:htmlindex}));
 				tourlist.pushlist("tour_list_id"+htmlindex,t_all_html[j]);
 			}
 			
