@@ -41,7 +41,7 @@ var t_top_str = '<div class="tour_top_padding fl"></div>'+
 var t_foot_str = '<li class="tour_foot_li tour_foot_short color1 tour_foot_shai"><a class="tour_foot_link"  style="color:#e44e47;"><div class="footicon"></div>Beijing Tour Company</a></li>'+
 				'<li class="tour_foot_li tour_foot_long tour_foot_align_right tour_foot_shai">{li_list}</li>'+
 				'<li class="tour_foot_li"><a class="tour_foot_link">@Copyright 2017 Beijing Tour Company</a></li>'+
-				'<li class="tour_foot_li tour_foot_align_right"><a class="tour_foot_link">Phone number:+86 13939494902</a></li>';
+				'<li class="tour_foot_li tour_foot_align_right"><a class="tour_foot_link">Phone number:+86 13263397945</a></li>';
 var t_list = '<li><a class="{class}" href="{url}">{text}</a></li>';
 var t_list_foot = '<a class="{class} {classmargin}" href="{url}" >{text}</a>';
 var now_location = window.location.href;
