@@ -23,8 +23,8 @@
 			</div>
 			<div class="contacttitle">Copntact Us</div>
 			<div class="contacttext">
-				We are here to answer any questions you may have about our combadi experiences. Reach out to us and we'll respond as soon as we can.<br><br>
-				Even if there is something you have always wanted to experience and can't find it on combadi, let us know and we promise we'll do our best to find it for you and send you there.<br><br>
+				We are here to answer any questions you may have about our company’s experiences. Reach out to us and we'll respond as soon as we can.<br><br>
+				Even if there is something you have always wanted to experience and can't find it on our website , let us know and we promise we'll do our best to find it for you and send you there.<br><br>
 			</div>
 			<ul class="contact_list_ul">
 				<li class="contact_list">
