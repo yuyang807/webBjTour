@@ -411,10 +411,10 @@
 	<select id="queryLines" parameterType="map" resultType="map">
        SELECT 
        tl.line_no lineNo, line_name lineName, available, duration,
-       line_type_no lineTypeNo, type_name typeName, popular_level popularLevel, 
-       ten_p tenP, CONCAT(#{urlFront},tl.line_no,'/',pic_name) fileUrl
+       line_type_no lineTypeNo, label typeName, popular_level popularLevel, 
+       ten_p tenP, CONCAT(#{urlFront},tl.line_no,'/',pic_name) fileUrl,sort 
        FROM t_line tl left join t_line_price tlp on tl.line_no = tlp.line_no
-       LEFT JOIN t_linekind tlk on tl.line_type_no = tlk.type_no
+       LEFT JOIN sys_dict sd ON tl.line_type_no = sd.value and type='lineType'
        LEFT JOIN t_line_pic tlpic ON tl.line_no = tlpic.line_no
 		LEFT JOIN t_pic tp on tlpic.pic_no = tp.pic_no
        <if test="limit != null">
@@ -427,14 +427,17 @@
 
 	<select id="queryOneLine" parameterType="map" resultType="map">
        SELECT 
-       tl.line_no lineNo, line_name lineName, available, duration, is_private isPrivate, language, pick_up_point pickUpPoint, 
-       finish_point finishPoint, pick_up_time pickUpTime, end_time endTime, phy_level phyLevel, hiking_dis hikingDis, hiking_area hikingArea, attractions, 
+       tl.line_no lineNo, line_name lineName, available, duration, is_private isPrivate, language,
+        (select label from sys_dict where type='pickDropPoint' and pick_up_point = value) pickUpPoint, 
+       (select label from sys_dict where type='pickDropPoint' and finish_point = value) finishPoint, 
+       pick_up_time pickUpTime, end_time endTime, (select label from sys_dict where type='phyLevel' and phy_level = value) phyLevel, 
+       hiking_dis hikingDis, hiking_area hikingArea, attractions, 
        customizable, layover_time layoverTime, popular_level popularLevel, line_type_no lineTypeNo, detail,
-       type_name typeName, CONCAT(#{urlFront},tl.line_no,'/',pic_name) mainPicUrl,
+       label typeName, CONCAT(#{urlFront},tl.line_no,'/',pic_name) mainPicUrl,
        one_p oneP,two_p twoP,three_p threeP,four_p fourP,five_p fiveP,six_p sixP,seven_p sevenP,eight_p eightP,nine_p nineP,ten_p tenP
        FROM t_line tl 
        LEFT JOIN t_line_price tlp on tl.line_no = tlp.line_no
-       LEFT JOIN t_linekind tlk   on tl.line_type_no = tlk.type_no
+       LEFT JOIN sys_dict sd ON tl.line_type_no = sd.value and type='lineType'
        LEFT JOIN t_line_pic tlpic on tl.line_no = tlpic.line_no
        LEFT JOIN t_pic tp         on tlpic.pic_no = tp.pic_no
        <!-- LEFT JOIN t_line_addition tla on tl.line_no = tla.line_no --> 
@@ -445,11 +448,11 @@
 	<select id="queryRandom3" resultType="map">
 		SELECT 
        tl.line_no lineNo, line_name lineName, available, duration,
-       line_type_no lineTypeNo, type_name typeName, popular_level popularLevel, 
+       line_type_no lineTypeNo, label typeName, popular_level popularLevel, 
        ten_p tenP,CONCAT(#{urlFront},tl.line_no,'/',pic_name) fileUrl
        FROM t_line tl 
        left join t_line_price tlp on tl.line_no = tlp.line_no
-       LEFT JOIN t_linekind tlk   on tl.line_type_no = tlk.type_no
+       LEFT JOIN sys_dict sd on tl.line_type_no = sd.value and type='lineType'
        LEFT JOIN t_line_pic tlpic on tl.line_no = tlpic.line_no
        LEFT JOIN t_pic tp         on tlpic.pic_no = tp.pic_no
        order by RAND() LIMIT 3
