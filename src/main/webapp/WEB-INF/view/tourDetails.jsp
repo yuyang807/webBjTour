@@ -306,7 +306,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	language:datalist['language'],
 		    	tourtype:datalist['isPrivate'],
 		    	amount:datalist['phyLevel'],
-		    	customizable:datalist['customizable']
+		    	customizable:gettrueorfalse(datalist['customizable'])
 		    }));
 		    
 		    // 打折规则
@@ -340,6 +340,13 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	nineP:60,
 		    	tenP:55
 		    };*/
+		   	function gettrueorfalse(key){
+		   		if(key == 0){
+		   			return 'Yes';
+		   		}else{
+		   			return 'No';
+		   		}
+		   	}
 		    $("#linenumberid").val(datalist['lineNo']);
 		    var pricemap = ['oneP','oneP','twoP','threeP','fourP','fiveP','sixP','sevenP','eightP','nineP','tenP'];
 		    function showval(){
