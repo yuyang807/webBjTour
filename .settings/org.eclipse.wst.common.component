@@ -5,7 +5,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="java-output-path" value="/webBJTour/target/classes"/>
-        <property name="component.exclusion.patterns" value="WEB-INF/classes/org/apache/ibatis/**,WEB-INF/classes/org/mybatis/spring/**"/>
         <property name="context-root" value="webBjTour"/>
+        <property name="component.exclusion.patterns" value="static/img/**,WEB-INF/classes/org/apache/ibatis/**,WEB-INF/classes/org/mybatis/spring/**"/>
     </wb-module>
 </project-modules>

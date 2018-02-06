@@ -1,13 +1,8 @@
 package com.yy.tourweb.web.redis;
 
 import javax.annotation.Resource;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-
 import com.yy.tourweb.util.AppLogger;
-
 import redis.clients.jedis.ShardedJedis;
 
 @Repository("redisClientTemplate")

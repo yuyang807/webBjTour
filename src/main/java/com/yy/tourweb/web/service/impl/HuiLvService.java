@@ -122,8 +122,8 @@ public class HuiLvService implements IHuiLvService{
         String result =null;
         String url ="http://op.juhe.cn/onebox/exchange/currency";//请求接口地址
         Map params = new HashMap();//请求参数
-            params.put("from","");//转换汇率前的货币代码
-            params.put("to","");//转换汇率成的货币代码
+            params.put("from","CNY");//转换汇率前的货币代码
+            params.put("to","LKR");//转换汇率成的货币代码
             params.put("key",APPKEY);//应用APPKEY(应用详细页查询)
  
         try {
@@ -147,10 +147,40 @@ public class HuiLvService implements IHuiLvService{
     	HuiLvService hs = new HuiLvService();
 //    	hs.getUSDExchangeRate();
 //    	hs.getRequest2();
-//    	hs.getRequest3();
+    	hs.getRequest3();
     	
-         BigDecimal rate = new BigDecimal("663.4600").movePointLeft(2);
-         System.out.println(String.valueOf(rate));
+         /*BigDecimal rate = new BigDecimal("663.4600").movePointLeft(2);
+         System.out.println(String.valueOf(rate));*/
+    	
+//    	String url ="http://op.juhe.cn/onebox/exchange/query";//请求接口地址
+//		Map<String, String> params = new HashMap<String, String>();//请求参数
+//		params.put("key",APPKEY);//应用APPKEY(应用详细页查询)
+//		
+//		try {
+//			String result =net(url, params, "GET");
+//			JSONObject object = JSONObject.parseObject(result);
+//			if(object.getIntValue("error_code")==0){
+//				System.out.println(object.get("result"));
+//				
+//				Map<String, Object> m = (Map<String, Object>) object.get("result");
+//				List<List<String>> ml = (List<List<String>>) m.get("list");
+//				String exchangeRate="";
+//				
+//				outer:for(List<String> mml : ml){
+//					for(String str : mml){
+//						if("美元".equals(str)){
+//							exchangeRate = mml.get(5);
+//							break outer;
+//						}
+//					}
+//				}
+//				System.out.println("exchangeRate:"+exchangeRate);
+//			}else{
+//				System.out.println(object.get("error_code")+":"+object.get("reason"));
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
     }
  
     /**
