@@ -52,7 +52,7 @@
 			
 			<div class="tour_list_box">
 				<ul class="tour_list_ul">
-					<li class="tour_list_li tour_reviewslist_list_bg">
+					<li class="tour_list_li tour_reviewslist_list_bg" style="opacity: 0;">
 						<div id="TA_excellent712" class="TA_excellent">
 						<ul id="Rotqpi" class="TA_links JCNWfvG">
 						<li id="Mti4k3atoHJd" class="LrRVW6v">
@@ -108,7 +108,7 @@
 							</div>
 						</div>-->
 					</li><!--
-					--><li class="tour_list_li tour_reviewslist_list_bg_none">
+					--><li class="tour_list_li tour_reviewslist_list_bg_none" style="opacity: 0;">
 						<div id="TA_cdswritereviewlg78" class="TA_cdswritereviewlg">
 							<ul id="rxzn8O34Tc" class="TA_links vEMsG2hH8tjd">
 								<li id="bg0qH3s" class="4BYiCO0">
