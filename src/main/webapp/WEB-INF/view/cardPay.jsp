@@ -115,8 +115,11 @@
 						<div style="clear:both"></div>
 					</div>
 					<div class="cardPaytext">
-						Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
+						<!--Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)<br><br>
 						We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
+						--></br>
+						We suggest that starting time is around 8:00-8:30AM according to our experiences, we can make sure that you have enough time to visit all the sights properly. But if you prefer another time, please let us know. We are very flexible.<br><br>
+						Please let us know your requirements.
 					</div>
 					<textarea class="contact_textarea cardPaytextarea fr" name="instructions" ></textarea>
 				</form>

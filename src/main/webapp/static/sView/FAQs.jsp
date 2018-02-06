@@ -26,14 +26,14 @@
 		<h1 class="public_title5">Common Questions</h1>
 		<div class="tour_list_box">
 			<ul class="tour_faqs_ul">
-				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link1" >Do We Need A Chinese Visa ?</a></li>
+				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link1" >Do We Need A Chinese Visa Before We Arrive China?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link2" >How To Meet The Driver At The Railway Station In Beijing?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link3" >Do You Have The English Speaking Driver For The Airport Pick Up Service ?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link4" >Do You Have Group Tours ?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link5" >Is It Safe To Take Taxi In Beijing Or Other Cities ?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link6" >Hotels Recommendation In Beijing</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link7" >How Much Should We Gratitude To The Driver And Guide ?</a></li>
-				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link8" >Can We Exchange Money In The Airport? </a></li>
+				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link8" >Can We Exchange Money In The Airport?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link9" >Do We Have The Same Guide And Driver Through The Whole Trip ?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link10" >How Much Time Do We Need To Be The Airport For The International Flight Or Domestic Flight ?</a></li>
 				<li><div class="tour_faqs_linklist_circle_top"></div><a href="#faqs_link11" >How Can I Book And Cancel The Tour ？</a></li>
@@ -46,19 +46,27 @@
 					When And How To Apply For A Tourist Visa
 				</div>
 				<div class="tour_faqs_linklist_text">
-					If you stay in China for more than 72 hours, you should apply a visa to enter China, we can also provide invitation letter for your visa application, pls let us know everyone’s full name, birth date, passport expire dates and travel dates cities in China.<br>
-					The single-entry tourist visa normally has a validity period of three months so it’s best to apply for a China tourist visa 30 to 60 days before your intended date of entry. If you apply too far in advance, the visa may expire.<br>
-					Unless you are traveling as part of a group, you will need to arrange your own visa. You normally need one photograph, a completed application form for each person, and a bank check or credit card. Fedex or another courier can handle the transfer and return. Search on the internet for the Chinese embassy or consulate nearest to you. You can also apply for Chinese visas outside of your home country, just make sure that you fulfill the application requirements.<br>
+					If you stay in China for more than 72 hours, you should get a tourist visa to visit China, we are happy to offer you the invitation letter if you were requested a invitation letter by Chinese embassy, pls email us to let us know everyone’s full name, birth date, passport number and expire dates, arrival and departure date and cities you will stay  in China.<br>
+					The single-entry tourist visa normally has a validity period of three months so it’s better to apply for a China tourist visa 30 to 60 days before your intended date of entry. If you apply too far in advance, the visa may expire.<br>
+					Unless you are traveling as a traveling party, you will need to arrange your own visa. You normally need one photograph, a completed application form for each person, and a bank check or credit card. Fedex or another courier can handle the transfer and return. Search on the internet for the Chinese embassy or consulate nearest to you. You can also apply for Chinese visas outside of your home country, just make sure that you fulfill the application requirements.<br>
 					Some countries have visa agents but this adds substantially to the cost. If you can go straight to the embassy/consulate it will be cheaper.<br>
-					Visa applications are normally processed within three to four working days but you can choose to pay an extra amount to rush it. If you go to the visa office you may be able to get a visa on the same day for a fee.<br>
+					Visa applications are normally processed within three to four working days but you can choose to pay an extra amount to rush it. If you go to the visa office you may be able to get a visa on the same day for  special fee.<br>
 					When applying for China tourist visas, the procedures, requirements, issue time, and fee may vary from country to country. Details and application forms can be found on the website of the Chinese embassy in your country.<br>
-					Make sure your passport is valid for at least six months at the time of arrival in China.
+					Make sure your passport is valid for at least six months at the time of arrival in China.<br>
 				</div>
 				<div class="tour_faqs_linklist_h1">
 					<div class="tour_faqs_linklist_circle"></div>
 					72-Hour Visa-Free Entry
 				</div>
 				<div class="tour_faqs_linklist_text">
+					If you stay in China for more than 72 hours, you should get a tourist visa to visit China, we are happy to offer you the invitation letter if you were requested a invitation letter by Chinese embassy, pls email us to let us know everyone’s full name, birth date, passport number and expire dates, arrival and departure date and cities you will stay  in China.<br>
+					The single-entry tourist visa normally has a validity period of three months so it’s better to apply for a China tourist visa 30 to 60 days before your intended date of entry. If you apply too far in advance, the visa may expire.<br>
+					Unless you are traveling as a traveling party, you will need to arrange your own visa. You normally need one photograph, a completed application form for each person, and a bank check or credit card. Fedex or another courier can handle the transfer and return. Search on the internet for the Chinese embassy or consulate nearest to you. You can also apply for Chinese visas outside of your home country, just make sure that you fulfill the application requirements.<br>
+					Some countries have visa agents but this adds substantially to the cost. If you can go straight to the embassy/consulate it will be cheaper.<br>
+					Visa applications are normally processed within three to four working days but you can choose to pay an extra amount to rush it. If you go to the visa office you may be able to get a visa on the same day for  special fee.<br>
+					When applying for China tourist visas, the procedures, requirements, issue time, and fee may vary from country to country. Details and application forms can be found on the website of the Chinese embassy in your country.</br>
+					Make sure your passport is valid for at least six months at the time of arrival in China.
+					<!--
 					If you’re going to stay in China less 72 hours and meet with the following conditions then you don’t need apply for Chinese visa .
 					Travelers passing through Beijing Capital Airport, Shanghai Pudong and Hongqiao Airports, Guangzhou, Chengdu, Chongqing, Shenyang, Dalian, Harbin, Xian, Guilin, Kunming, Hangzhou, Wuhan, Tianjin, Qingdao, Nanjing, Changsha, and Xiamen for less than 72 hours may be eligible for visa-free entry (check below if your nationality is on the list). If you are in possession of a valid third country visa and confirmed onward plane ticket, you may apply for a transit without visa permit (TWOV) at the port of entry.
 					This will allow you to enter China without a visa for up to 72 hours. Your 72 hours will be counted from the moment you receive your TWOV permit at the Exit and Entry Administration desk at each of the above-mentioned airports.
@@ -69,7 +77,7 @@
 					The Americas: Canada, United States, Mexico, Brazil, Argentina, and Chile.
 					Asia: Korea, Japan, Singapore, Brunei, United Arab Emirates, and Qatar.
 					Oceania: Australia and New Zealand
-					For more details, please check with your local Chinese Consulate or Embassy.
+					For more details, please check with your local Chinese Consulate or Embassy.-->
 				</div>
 				<a class="backclass" href="#backid">back</a>
 			</div>
@@ -81,18 +89,18 @@
 					How To Pick Up At The Beijing South Railway Station?
 				</div>
 				<div class="tour_faqs_linklist_text">
-					While as there are two exits (each train will come out two different gates one is in an odd number and one is in an even number) at the railway station and the driver can’t get to the platform to pick your guys up and we suggest our driver can wait for you at the fixed arrival gate at Arrival Gate 6 and whatever gates you get out then go to the arrival gate 6 to find the driver and he will hold a sign with your name on it so you can easily recognize him then.<br>
-					If you couldn’t find the driver when you are there pls wait there and don’t move and our driver will find you or give us a call at 8613263397645.
+					While as there are two exits for each train which the two exits are opposite to each other(each train will come out two different gates one is in an odd number and one is in an even number) at the railway station, and due to the driver are not able to go to the platform to pick your guys up and we suggest our driver to wait for you at the fixed arrival gate which is Arrival Gate 6 and whichever gates you will get out, please go to the arrival gate 6 to find the driver and he will hold a sign with caption ‘ your name’ , so you can easily recognize him.<br>
+					If you couldn’t find the driver any how when you are at the arrival gate 6, pls do not move and wait there, our driver will find you or give us a call at +8613263397645.
 				</div>
 				<div class="tour_faqs_linklist_h1">
 					<div class="tour_faqs_linklist_circle"></div>
 					How To Pick Up At The Beijing West Railway Station?
 				</div>
 				<div class="tour_faqs_linklist_text">
-					While the Beijing West Railway station is a big railway station and there are 4 exits in the railway station. So mostly for the high speedy train will get out of South 1 or South 2 exit and for the normal overnight Z or T train will get out of North 1 or North 2 exit.<br>
-					So if you take the high speedy train pls go to the South 2 Exit  to find the driver.<br>
-					If you take the Z or T train pls go to the  North 2 Exit to find the driver.<br>
-					If you couldn’t find the driver when you get out of the exit pls wait there and don’t move and our driver will find you or give us a call at 8618612452188 or 86-18551151099.<br>
+					While the Beijing West Railway station is a big railway station and there are 4 exits in the railway station. So mostly for the high speedy train’s passengers , they will get out of South 1 or South 2 exit and for the normal overnight Z or T train’s passengers, they will get out of North 1 or North 2 exit.<br>
+					If you take the high speedy train, pls go to the South 2 Exit to find the driver.<br>
+					If you take the Z or T train pls go to the North 2 Exit to find the driver.<br>
+					If you couldn’t find the driver any how after you get out of the exit, pls do not move and wait there, our driver will find you or give us a call at +8613263397645.
 				</div>
 				<a class="backclass" href="#backid">back</a>
 			</div>
@@ -100,9 +108,9 @@
 				<div id="faqs_link3" class="link_top" ></div>
 				<div class="tour_faqs_linklist_title">Do You Have The English Speaking Driver For The Airport Pick Up Service ?</div>
 				<div class="tour_faqs_linklist_text">
-					Catherine Lu Tours doesn’t have English speaking driver in our company and the driver only can speak Mandarin with very limited English like “hello” “goodbye”. We will forward the detailed information to the driver in advance then according to your flight information, the driver will track the flight in advance and pick you up in the airport on time and transfer to the right hotel then.<br>
-					Upon your arrival the driver can meet you at the airport holding a piece of paper with your name on it so you can easily recognize him. It’s right inside the airport after you reclaim your luggage and clear the customs and many people are waiting to pick up their clients. It normally takes one hour to get out of the customers.<br>
-					If you have any problems finding us go to the information desk opposite the terminal exit (staff there speak English and are always ready to help), and ask the staff to make a phone and call us at 86-18612452188 or 86-18551151099 for emergency.<br>
+					We are so sorry to tell you that now we do not have English speaking drivers in our company and the driver only can speak Mandarin, they only can say  hello and goodbye. We will forward the detailed information to the driver in advance then according to your flight information, the driver will track the flight in advance and pick you up in the airport on time and transfer you to the right hotel then.<br>
+					Upon your arrival the driver can meet you at the exit of the airport holding a sign with caption ‘ your name’, so you can easily recognize him. The exit is right inside the airport after you reclaim your luggage and clear the customs and many people are waiting to pick up their clients , friends or families. It normally takes one hour to get out of the customers.<br>
+					If you have any problems finding us go to the information desk opposite the terminal exit (staff there can speak English and are always ready to help), and ask the staff to make a phone and call us at +8613263397645 for emergency.
 				</div>
 				<a class="backclass" href="#backid">back</a>
 			</div>
@@ -110,7 +118,7 @@
 				<div id="faqs_link4" class="link_top" ></div>
 				<div class="tour_faqs_linklist_title">Do You Have Group Tours ?</div>
 				<div class="tour_faqs_linklist_text">
-					We only conduct  private tours for individuals, families, friends and organization but not group tours. If you’re alone then it will be just yourself and we won’t mix you with others!
+					We only offer private tours for individuals, families, friends and organization but not group tours. If you’re alone then it will be just yourself and we won’t mix you with others!
 				</div>
 				<a class="backclass" href="#backid">back</a>
 			</div>
@@ -127,7 +135,7 @@
 				<div class="tour_faqs_linklist_title">Hotels Recommendation In Beijing</div>
 				<div class="tour_faqs_linklist_text">
 					We have worked with a few hotels in Beijing, Xi’an & Shanghai mostly 4-5 star hotels. If you need our help to book those hotels we can arrange it for you but we will pay for the hotel reservation full amount 1 week in advance.<br>
-					About the accommodation in Beijing, we suggest that you should stay the area near the Wangfujing Street such as:
+					About the accommodation in Beijing, we suggest that you should stay the area near the Wangfujing Street such as:	
 				</div>
 				<div class="tour_faqs_linklist_h1">
 					<div class="tour_faqs_linklist_circle"></div>
@@ -182,7 +190,7 @@
 				<div class="tour_faqs_linklist_title">How Much Should We Gratitude To The Driver And Guide ?</div>
 				<div class="tour_faqs_linklist_text">
 					For tipping, its not compulsory but a kind of encouragement for providing good service for both the drivers and guides.<br>
-					If you are a group for 1-4  and are happy with our service you can tip the driver (for tours) 80CNY to 100CNY per day and the guide could be twice as much as the driver; if you are a group of 5- 8 people and you can tip the driver for 100CNY-180CNY per day and the guide can be twice as much as the driver;  If you are over 10 people and are happy with our service you can tip the driver ( for tours ) 200CNY to 250CNY per-day and the guide could be twice as much as the driver .<br>
+					If you are a group for 1-4 and are happy with our service you can tip the driver (for tours) 80CNY to 100CNY per day and the guide could be twice as much as the driver; if you are a group of 5- 8 people and you can tip the driver for 100CNY-180CNY per day and the guide can be twice as much as the driver; If you are over 10 people and are happy with our service you can tip the driver ( for tours ) 200CNY to 250CNY per-day and the guide could be twice as much as the driver .<br>
 					It’s quite flexible and you can tip more or less and it’s up to you.
 				</div>
 				<a class="backclass" href="#backid">back</a>
