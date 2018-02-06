@@ -92,7 +92,7 @@
 			var t_all_html = {};
 			for(var i in t_tours_list){
 				//var t_key = t_tours_list[i]['typeName'];
-				var t_key = t_tours_list[i]['lineTypeNo'];
+				var t_key = t_tours_list[i]['sort'];
 				if(!t_all_html[t_key]){
 					t_all_html[t_key] = [];
 				}
