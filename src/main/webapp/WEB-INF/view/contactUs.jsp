@@ -19,7 +19,7 @@
 		<div class="contactbox">
 			<div class="tourlink">
 				<a href="/">Home</a>　>　 
-				<span>Contect Us</span>
+				<span>Contact Us</span>
 			</div>
 			<div class="contacttitle">Copntact Us</div>
 			<div class="contacttext">
