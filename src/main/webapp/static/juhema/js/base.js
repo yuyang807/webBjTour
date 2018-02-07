@@ -10,6 +10,9 @@ function linkfor(url){
 	window.location.href = url;
 }
 function gettimestr(datetime){
+	if(datetime.length == 10){
+		datetime = datetime+'000';
+	}
 	var newD = new Date(parseInt(datetime));
 	var tyear = newD.getFullYear();
 	var tmonth = newD.getMonth()+1;
