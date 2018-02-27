@@ -304,7 +304,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	attraction:datalist['attractions'],
 		    	duration:datalist['duration'],
 		    	language:datalist['language'],
-		    	tourtype:datalist['isPrivate'],
+		    	tourtype:datalist['isPrivate'] == 0 ? 'private tour' : 'bus tour',
 		    	amount:datalist['phyLevel'],
 		    	customizable:gettrueorfalse(datalist['customizable'])
 		    }));
