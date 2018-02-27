@@ -195,7 +195,7 @@
 		    	}
 		    	carmap[carkey].push(carList[i]);
 		    	cartypeobj[cartypeno] = {
-		    		name:carList[i]['carName'],
+		    		name:carList[i]['carTypeName']+" traveling"+" party",
 		    		price:carList[i]['transferPrice']
 		    	};
 		    }

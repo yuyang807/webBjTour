@@ -44,14 +44,14 @@
 				</div>
 				<div class="tour_details_left_list">
 					<div class="tour_details_left_list_title">Detailed Itinerary</div>
-					<div class="tour_details_left_list_text">
-						Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)
+					<div id="detail_text" class="tour_details_left_list_text">
+						<!--Pick up at the hotel lobby at 8:00am to 8:30am (if you prefer to start at different time pls let us know)
 
 We first visit Tian’anmen Square, the world’s largest public square. Explore the sites around the square with opportunities to take some amazing pictures.
 
 We venture northward to the Tian’anmen Rostrum guarded by the enormous and portrait of Mao for all to see and what has universally been photographed all over the world.
 
-Next, the magnificent Forbidden City, the largest Imperial Palace in the world. We’ll spend a couple of hours wandering around this amazing example of Imperial architecture and learning about the history of the palace.
+Next, the magnificent Forbidden City, the largest Imperial Palace in the world. We’ll spend a couple of hours wandering around this amazing example of Imperial architecture and learning about the history of the palace.-->
 					</div>
 				</div>
 				<div class="tour_details_left_list">
@@ -308,7 +308,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	amount:datalist['phyLevel'],
 		    	customizable:gettrueorfalse(datalist['customizable'])
 		    }));
-		    
+		    $("#detail_text").html(datalist.detail);
 		    // 打折规则
 		    var t_number = {
 		    	p1:{
