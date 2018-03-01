@@ -171,7 +171,7 @@
 			var person_str = '<ul class="payCopy_top_ul">'+
 					'<li>The Great Wall Tour</li>'+
 					'<li>{personnum} people, ${allprice} </li>'+
-					'<li>Date: ${date}</li>'+
+					'<li>Date: {date}</li>'+
 				'</ul>'+
 				'<div style="float:right;font-size:2rem;color:#9B9B9B;">${allprice}</div>';
 
