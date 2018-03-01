@@ -308,7 +308,8 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    	amount:datalist['phyLevel'],
 		    	customizable:gettrueorfalse(datalist['customizable'])
 		    }));
-		    $("#detail_text").html(datalist.detail);
+			var detailhtml = datalist.detail.replace(/\n/g,'<br>');
+		    $("#detail_text").html(detailhtml);
 		    // 打折规则
 		    var t_number = {
 		    	p1:{
