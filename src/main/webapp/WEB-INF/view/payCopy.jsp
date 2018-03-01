@@ -171,7 +171,7 @@
 			var person_str = '<ul class="payCopy_top_ul">'+
 					'<li>The Great Wall Tour</li>'+
 					'<li>{personnum} people, ${allprice} </li>'+
-					'<li>Date: 14/07/2017</li>'+
+					'<li>Date: ${date}</li>'+
 				'</ul>'+
 				'<div style="float:right;font-size:2rem;color:#9B9B9B;">${allprice}</div>';
 
@@ -179,9 +179,11 @@
 			var allprice = ${adultNum}*${unitPrice}+
 			${teenagerNum}*${unitPrice}*0.9+
 			${childNum}*${unitPrice}*0.8;
+			var startDate = ${startDate};
 			$("#personlist").append(person_str.format2({
 				personnum:personnum,
-				allprice:allprice
+				allprice:allprice,
+				date:gettimestr(startDate)
 			}));
 			
 			var carList = ${carList};
