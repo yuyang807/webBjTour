@@ -6,13 +6,13 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/step.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider.css?v=20180124" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/step.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider.css?v=20180326" />
 		<style>
 			.tour_top{
 				background:transparent;
@@ -186,10 +186,10 @@
 			<script async src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=885&amp;locationId=13282963&amp;lang=en_US&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=false&amp;border=true&amp;display_version=2"></script>
 			<script async src="https://www.jscache.com/wejs?wtype=cdswritereviewlg&amp;uniq=78&amp;locationId=13282963&amp;lang=en_US&amp;lang=en_US&amp;display_version=2 "></script>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js?v=20180124" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180124" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180124" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20180124" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js?v=20180326" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180326" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180326" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20180326" ></script>
 			<script>
 				
 				var datalist = ${picList};

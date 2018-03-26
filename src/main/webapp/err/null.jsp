@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>温馨提示</title>
-    <script src="${ctxStatic}/juhema/flexible.js?v=20180124"></script>
-    <link href="${ctxStatic}/juhema/self.css?v=20180124" rel="stylesheet">
+    <script src="${ctxStatic}/juhema/flexible.js?v=20180326"></script>
+    <link href="${ctxStatic}/juhema/self.css?v=20180326" rel="stylesheet">
 </head>
 <body>
 <div class="null-page">

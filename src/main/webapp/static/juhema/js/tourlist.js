@@ -4,7 +4,7 @@ var tourlist = function() {
 					'<div class="tour_list_imgbox">'+
 						'<div class="tour_list_imginner"></div>'+
 						'<img src="{fileUrl}"/>'+
-						'<div class="tour_list_day">'+
+						'<div class="tour_list_day" style="display:none;">'+
 							'<div class="tour_list_day_inner"></div>'+
 							'<div class="tour_list_day_number">{duration0}</div>'+
 							'<div class="tour_list_day_text">{duration1}</div>'+
