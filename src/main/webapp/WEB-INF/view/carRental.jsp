@@ -130,10 +130,10 @@
 					'<div class="tour_guide_td_list_new carrentallist tour_guide_24">'+
 						'{carlist}'+
 				  '</div>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{halfDayPrice}</button>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{fullDayPrice}</button>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{mtyPrice}</button>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{jslPrice}</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{halfDayPrice} USD</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{fullDayPrice} USD</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{mtyPrice} USD</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{jslPrice} USD</button>'+
 				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable6"><div id="tour_book_now_id" class="tour_book_now" regt="{carTypeNo}">Book Now</div></button>'+
 				   	'<div style="clear:both;"></div>'+
 				'</div>';
@@ -169,7 +169,7 @@
 		    		})
 		    	}
 		    	t_all_table += table_str.format2({
-		    		carnum:i,
+		    		carnum:onecarmap[0].carTypeName,
 		    		carlist:t_car_list,
 		    		halfDayPrice:onecarmap[0].halfDayPrice,
 		    		fullDayPrice:onecarmap[0].fullDayPrice,
