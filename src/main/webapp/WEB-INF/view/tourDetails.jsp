@@ -77,17 +77,11 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 				<div class="tour_details_left_list">
 					<div class="tour_details_left_list_title">Notice</div>
 					<div class="tour_details_left_list_text">
-						1. The quoted price is for a-8 hour tour per day. If you use more than 6 hours or less than 8 hours per day it will still be considered a full day.
+						1. The quotation of the tour is for a 8-hour service a day/per day. Extra hour service fee is charged 10USD to 20USD per hour for your guide and it is charged at the same price for your driver.
 <br><br>
-2. Additional hours are billed at 50CNY to 100CNY for the guide and 50CNY to 100CNY for the driver.
+2. For the lunch, our experienced tour guides know so many good restaurants with different types of food in Beijing, he/she will recommend you different restaurant as your taste, like preferring Chinese food or western food and your budget. Your guide would also like to help you odder some specialities from different restaurants. If you like to learn some Chinese food culture and table manners, you can share your lunch with your helpful guide.
 <br><br>
-3. Pls note that the itinerary is flexible and we can adjust it according to your personal interests, the weather or any unexpected conditions.
-<br><br>
-4. For the lunch, we will take you to the authentic Chinese local restaurant catering for the locals. If you prefer to take a lunch in a fancy restaurant or order the dishes above our budget then you can just cover the cost difference above our budget! The guide will assist you to order some dishes and you can share the lunch with the guide
-<br><br>
-5. We conduct only private tour but not group tour and won’t mix you with others.
-<br><br>
-6. Our tours are complete non-forced shopping tour and we won’t take you to any factories without request to waste your valuable time.
+3. Our private tours are very flexible, we would like very much to adjust it to your interest or unpredictable weather. We will use our knowledge to maximize your touring time and smooth your trip.
 
  					</div>
 				</div>
@@ -317,11 +311,11 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		n:0
 		    	},
 		    	p2:{
-		    		z:0.9,
+		    		z:1,
 		    		n:0
 		    	},
 		    	p3:{
-		    		z:0.8,
+		    		z:9.5,
 		    		n:0
 		    	},
 		    	p4:{

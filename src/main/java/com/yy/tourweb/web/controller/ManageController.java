@@ -47,7 +47,7 @@ import java.util.Map;
 /**
  * 页面跳转Controller
  * @author yy 2017-2-24
- *
+ * 
  */
 @Controller
 public class ManageController {
@@ -258,8 +258,8 @@ public class ManageController {
     		Map<String,Object> tldMap = tldList.get(0);
     		int unitPrice = getUnitPrice(totalPriceNum,tldMap);
     		BigDecimal lineAdultPrice    = new BigDecimal(tod.getAdultNum()*unitPrice);
-    		BigDecimal lineTeenagerPrice = new BigDecimal(tod.getTeenagerNum()*unitPrice).multiply(new BigDecimal(0.9,mc));
-    		BigDecimal lineChildPrice    = new BigDecimal(tod.getChildNum()*unitPrice).multiply(new BigDecimal(0.8,mc));
+    		BigDecimal lineTeenagerPrice = new BigDecimal(tod.getTeenagerNum()*unitPrice);
+    		BigDecimal lineChildPrice    = new BigDecimal(tod.getChildNum()*unitPrice).multiply(new BigDecimal(9.5,mc));
     		BigDecimal lineTotalPrice = lineAdultPrice.add(lineTeenagerPrice).add(lineChildPrice);
     		
     		TShowDto tsd1 = null;

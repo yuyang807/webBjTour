@@ -177,8 +177,8 @@
 
 			var personnum = ${adultNum}+${teenagerNum}+${childNum}+${babyNum};
 			var allprice = ${adultNum}*${unitPrice}+
-			${teenagerNum}*${unitPrice}*0.9+
-			${childNum}*${unitPrice}*0.8;
+			${teenagerNum}*${unitPrice}+
+			${childNum}*${unitPrice}*9.5;
 			var startDate = ${startDate};
 			$("#personlist").append(person_str.format2({
 				personnum:personnum,
