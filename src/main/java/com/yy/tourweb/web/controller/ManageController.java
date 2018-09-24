@@ -259,7 +259,7 @@ public class ManageController {
     		int unitPrice = getUnitPrice(totalPriceNum,tldMap);
     		BigDecimal lineAdultPrice    = new BigDecimal(tod.getAdultNum()*unitPrice);
     		BigDecimal lineTeenagerPrice = new BigDecimal(tod.getTeenagerNum()*unitPrice);
-    		BigDecimal lineChildPrice    = new BigDecimal(tod.getChildNum()*unitPrice).multiply(new BigDecimal(9.5,mc));
+    		BigDecimal lineChildPrice    = new BigDecimal(tod.getChildNum()*unitPrice).multiply(new BigDecimal(0.95,mc));
     		BigDecimal lineTotalPrice = lineAdultPrice.add(lineTeenagerPrice).add(lineChildPrice);
     		
     		TShowDto tsd1 = null;

@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180326" />
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180326" />
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180326" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/jfuhema/css/costomize.css?v=20180326" />
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20180326" />
 		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20180326" />
 	</head>
@@ -178,7 +178,7 @@
 			var personnum = ${adultNum}+${teenagerNum}+${childNum}+${babyNum};
 			var allprice = ${adultNum}*${unitPrice}+
 			${teenagerNum}*${unitPrice}+
-			${childNum}*${unitPrice}*9.5;
+			${childNum}*${unitPrice}*0.95;
 			var startDate = ${startDate};
 			$("#personlist").append(person_str.format2({
 				personnum:personnum,

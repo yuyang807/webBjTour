@@ -315,7 +315,7 @@ Next, the magnificent Forbidden City, the largest Imperial Palace in the world. 
 		    		n:0
 		    	},
 		    	p3:{
-		    		z:9.5,
+		    		z:0.95,
 		    		n:0
 		    	},
 		    	p4:{
