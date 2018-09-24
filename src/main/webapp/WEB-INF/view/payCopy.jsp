@@ -6,13 +6,13 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20180124" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/jfuhema/css/costomize.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/faqs.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20180326" />
 	</head>
     <body>
     	<header id="tour_top_id" class="tour_top">
@@ -121,8 +121,8 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180124" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180124" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180326" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180326" ></script>
 		<script>
 			var checkobj = {
 				c1:false,
@@ -171,17 +171,19 @@
 			var person_str = '<ul class="payCopy_top_ul">'+
 					'<li>The Great Wall Tour</li>'+
 					'<li>{personnum} people, ${allprice} </li>'+
-					'<li>Date: 14/07/2017</li>'+
+					'<li>Date: {date}</li>'+
 				'</ul>'+
 				'<div style="float:right;font-size:2rem;color:#9B9B9B;">${allprice}</div>';
 
 			var personnum = ${adultNum}+${teenagerNum}+${childNum}+${babyNum};
 			var allprice = ${adultNum}*${unitPrice}+
-			${teenagerNum}*${unitPrice}*0.9+
-			${childNum}*${unitPrice}*0.8;
+			${teenagerNum}*${unitPrice}+
+			${childNum}*${unitPrice}*0.95;
+			var startDate = ${startDate};
 			$("#personlist").append(person_str.format2({
 				personnum:personnum,
-				allprice:allprice
+				allprice:allprice,
+				date:gettimestr(startDate)
 			}));
 			
 			var carList = ${carList};

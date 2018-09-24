@@ -5,15 +5,15 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20180124" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/costomize.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/details.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/guide.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/pikaday.css?v=20180326" />
 	</head>
 	<body>
 		<div id="tour_top_id" class="tour_top">
@@ -105,10 +105,10 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180124" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180124" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20180124" ></script>
-		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20180124" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180326" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180326" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/dialog.js?v=20180326" ></script>
+		<script type="text/javascript" src="${ctxStatic}/juhema/js/pikaday.js?v=20180326" ></script>
 		<script>
 			var table_top_html = '<div class="tour_guide_table_top">'+
 					'<button class="tour_guide_list tour_guide_12"><span>Size of party</span><div class="tour_guide_list_line"></div></button>'+
@@ -130,10 +130,10 @@
 					'<div class="tour_guide_td_list_new carrentallist tour_guide_24">'+
 						'{carlist}'+
 				  '</div>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{halfDayPrice}</button>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{fullDayPrice}</button>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{mtyPrice}</button>'+
-				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{jslPrice}</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable2">{halfDayPrice} USD</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable3">{fullDayPrice} USD</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable4">{mtyPrice} USD</button>'+
+				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable5">{jslPrice} USD</button>'+
 				   	'<button class="tour_guide_td_button_new tour_guide_12 carrentaltable6"><div id="tour_book_now_id" class="tour_book_now" regt="{carTypeNo}">Book Now</div></button>'+
 				   	'<div style="clear:both;"></div>'+
 				'</div>';
@@ -169,7 +169,7 @@
 		    		})
 		    	}
 		    	t_all_table += table_str.format2({
-		    		carnum:i,
+		    		carnum:onecarmap[0].carTypeName,
 		    		carlist:t_car_list,
 		    		halfDayPrice:onecarmap[0].halfDayPrice,
 		    		fullDayPrice:onecarmap[0].fullDayPrice,

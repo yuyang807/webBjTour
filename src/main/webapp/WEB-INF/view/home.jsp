@@ -6,13 +6,13 @@
 	    <title>Beijing Tour Company</title>
 	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta name="keywords" content="Beijing Tour Company" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/step.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180124" />
-		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider.css?v=20180124" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/base.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/top.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/step.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/tourlist.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/reviewslist.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/foot.css?v=20180326" />
+		<link rel="stylesheet" href="${ctxStatic}/juhema/css/slider.css?v=20180326" />
 		<style>
 			.tour_top{
 				background:transparent;
@@ -141,25 +141,25 @@
 						<img  class="tour_step_list_icon_for" src="${ctxStatic}/juhema/icon/Group6Copy4.png" />
 						<img class="tour_step_list_icon" src="${ctxStatic}/juhema/icon/Group9.png" />
 						<div class="tour_step_list_top">Step One</div>
-						<div class="tour_step_list_text">First browse our menu of the sample itineraries,choose the one you like,set your date and number of travel mates,and then click "book" button</div>
+						<div class="tour_step_list_text">Please browse our menu of our sample tours, choose the one you like, set your date and number of travel mates, and then click “book” button.</div>
 					</div><br class="br_show_all"><!--
 					--><div class="tour_step_list">
 						<img  class="tour_step_list_icon_for tour_step_list_icon_for_hidden" src="${ctxStatic}/juhema/icon/Group6Copy4.png" />
 						<img class="tour_step_list_icon" src="${ctxStatic}/juhema/icon/Group13.png" />
 						<div class="tour_step_list_top">Step Two</div>
-						<div class="tour_step_list_text">Fill in the form to complete your booking.No advance or booking fee is needed at this booking stage.You will ony be required to pay when you finally meet your tour guide in Beijing.</div>
+						<div class="tour_step_list_text">Please fill in the form to complete your booking.</div>
 					</div><br class="br_show"><!--
 					--><div class="tour_step_list">
 						<img  class="tour_step_list_icon_for" src="${ctxStatic}/juhema/icon/Group6Copy4.png" />
 						<img class="tour_step_list_icon" src="${ctxStatic}/juhema/icon/Group14.png" />
 						<div class="tour_step_list_top">Step Three</div>
-						<div class="tour_step_list_text">A confirmation email will be sent within 24 hours of your booking.</div>
+						<div class="tour_step_list_text">A couple of emails will be needed for better planning your tour and confirming the tour with you. Some deposit of your booking is required at this booking stage for the final confirmation.</div>
 						<!--<img class="tour_step_list_text" src="icon/step3_text.png" />-->
 					</div><br class="br_show_all"><!--
 					--><div class="tour_step_list">
 						<img class="tour_step_list_icon" src="${ctxStatic}/juhema/icon/Group15.png" />
 						<div class="tour_step_list_top">Step Four</div>
-						<div class="tour_step_list_text">Once you get our confirm-ation, your booking is finali-sed and just be prepared for the exciting journey ahead! Looking forward to seeing you in Beijing soon!</div>
+						<div class="tour_step_list_text">Once you get the final confirmation. Just be prepared for the exciting journey ahead. We will get everything ready for you and look forward to meeting you in Beijing soon.</div>
 						<!--<img class="tour_step_list_text" src="icon/step4_text.png" />-->
 					</div>
 				</div>
@@ -186,10 +186,10 @@
 			<script async src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=885&amp;locationId=13282963&amp;lang=en_US&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=false&amp;border=true&amp;display_version=2"></script>
 			<script async src="https://www.jscache.com/wejs?wtype=cdswritereviewlg&amp;uniq=78&amp;locationId=13282963&amp;lang=en_US&amp;lang=en_US&amp;display_version=2 "></script>
 			<script type="text/javascript" src="${ctxStatic}/juhema/js/jquery-1.11.0.js" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js?v=20180124" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180124" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180124" ></script>
-			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20180124" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/lbx_slider.js?v=20180326" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/base.js?v=20180326" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/top.js?v=20180326" ></script>
+			<script type="text/javascript" src="${ctxStatic}/juhema/js/tourlist.js?v=20180326" ></script>
 			<script>
 				
 				var datalist = ${picList};

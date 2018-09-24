@@ -6,7 +6,7 @@
     <title>支付成功</title>
     <script src="${ctxStatic}/juhema/jquery.js"></script>
     <script src="${ctxStatic}/juhema/flexible.js"></script>
-    <link href="${ctxStatic}/juhema/self.css?v=20180124" rel="stylesheet">
+    <link href="${ctxStatic}/juhema/self.css?v=20180326" rel="stylesheet">
 </head>
 <body>
 <div class="state-page success">
